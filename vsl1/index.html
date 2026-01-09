@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Sanas para tu Bebé - Método Comprobado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B9D;
+            --primary-dark: #E5568A;
+            --secondary: #A8E6CF;
+            --accent: #FFD93D;
+            --dark: #2C3E50;
+            --light: #F8F9FA;
+            --cream: #FFF8F0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--cream);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFE8F0 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 230, 207, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-weight: 900;
+        }
+
+        h1 .highlight {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .product-image {
+            max-width: 600px;
+            margin: 40px auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 60px rgba(0,0,0,0.15));
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .payment-icons span {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            background: white;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .section-emoji {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pain-card {
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFF 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #FFE8F0;
+            transition: all 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .pain-card::before {
+            content: '✓';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .pain-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, var(--secondary) 0%, #8DD9BF 100%);
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .benefits h2 {
+            color: white;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Qualification Section */
+        .qualification {
+            background: var(--dark);
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .qualification h2 {
+            color: white;
+        }
+
+        .qual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .qual-box {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(168, 230, 207, 0.3);
+        }
+
+        .qual-box.for {
+            border-color: var(--secondary);
+        }
+
+        .qual-box.not {
+            border-color: var(--primary);
+        }
+
+        .qual-box h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qual-box h3::before {
+            content: '✓';
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .qual-box.not h3::before {
+            content: '✗';
+            background: var(--primary);
+        }
+
+        .qual-box ul {
+            list-style: none;
+        }
+
+        .qual-box li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .qual-box li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFF 100%);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 120px;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .testimonial-author::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Bonuses Section */
+        .bonuses {
+            background: linear-gradient(135deg, #FFE8F0 0%, #FFF8F0 100%);
+            padding: 80px 20px;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .bonus-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .bonus-number {
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .bonus-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .bonus-value {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* Price Section */
+        .pricing {
+            background: var(--dark);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            color: white;
+        }
+
+        .price-stack {
+            max-width: 500px;
+            margin: 50px auto;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(168, 230, 207, 0.2);
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 18px;
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--secondary);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .price-total {
+            font-size: 24px;
+            color: #999;
+            text-decoration: line-through;
+            margin: 30px 0 10px;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .price-current {
+            font-size: 72px;
+            font-weight: 900;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+            margin: 20px 0;
+        }
+
+        .price-current small {
+            font-size: 32px;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .guarantee-badge {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #8DD9BF 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            box-shadow: 0 15px 40px rgba(168, 230, 207, 0.4);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .guarantee-badge .days {
+            font-size: 56px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .guarantee-badge .text {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .guarantee h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .guarantee p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .timer {
+            background: rgba(0,0,0,0.2);
+            padding: 20px 40px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .urgency-text {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--cream);
+            padding: 80px 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--cream);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 28px;
+            color: var(--primary);
+            font-weight: 400;
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: #666;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .price-current {
+                font-size: 56px;
+            }
+
+            .qual-grid,
+            .benefit-grid,
+            .testimonial-grid,
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">🎯 MÉTODO COMPROBADO POR +2,300 MAMÁS</span>
+            <h1>
+                <span class="highlight">Alimenta a tu bebé</span><br>
+                con seguridad y sin estrés
+            </h1>
+            <p class="subtitle">
+                Da los primeros pasos en la alimentación de tu bebé sin miedo ni dudas. 
+                Introduce a tu bebé en el mundo de la alimentación complementaria con confianza.
+            </p>
+            
+            <div class="product-image">
+                <img src="images/product-mockup.png" alt="Recetas Sanas para tu Bebé" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect fill=%22%23A8E6CF%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22 font-size=%2232%22 font-family=%22Arial%22%3ERecetario Digital%3C/text%3E%3C/svg%3E'">
+            </div>
+
+            <a href="#precio" class="cta-primary">¡SÍ, QUIERO RECETAS FÁCILES Y SALUDABLES!</a>
+
+            <div class="payment-icons">
+                <span>VISA</span>
+                <span>MASTERCARD</span>
+                <span>PAYPAL</span>
+                <span>OXXO</span>
+                <span>MERCADOPAGO</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="pain-points">
+        <div class="container">
+            <div class="section-emoji">🤔</div>
+            <h2>¿Te identificas con esto?</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <p>¿Te cuesta iniciar una conversación alimenticia con tu bebé y no sabes por dónde empezar?</p>
+                </div>
+                <div class="pain-card">
+                    <p>¿Sientes que las primeras comidas se vuelven aburridas o monótonas?</p>
+                </div>
+                <div class="pain-card">
+                    <p>¿Te gustaría saber exactamente qué darle y cómo actuar para generar buenos hábitos?</p>
+                </div>
+                <div class="pain-card">
+                    <p>¿Quieres que tu bebé coma sano y piense en ti constantemente durante las comidas?</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px; font-size: 20px; color: var(--primary); font-weight: 600;">
+                Si respondiste "SÍ" a alguna de estas preguntas, este recetario es tu solución definitiva.
+            </p>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-emoji">🎉</div>
+            <h2>¿Qué vas a lograr?</h2>
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">✨</span>
+                    <h3>Confianza Total</h3>
+                    <p>Iniciar con confianza, ten todo lo que necesitas para comenzar la alimentación complementaria con tranquilidad y seguridad.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🥗</span>
+                    <h3>Variedad Nutritiva</h3>
+                    <p>Generar química, deseo y conexión con cada comida, incluso si no eres el más experto en nutrición.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">💝</span>
+                    <h3>Bebé Feliz</h3>
+                    <p>Que tu bebé te busque y piense en ti con más intensidad durante cada hora de comida.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">😊</span>
+                    <h3>Sin Estrés</h3>
+                    <p>Recuperar tu autoestima y volver a sentirte tranquila sabiendo que estás alimentando sano.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 50px; font-size: 18px; font-weight: 600;">
+                💪 Transformación en 7 días o menos. ¡Empieza a notar relaciones diferentes desde las primeras 48h!
+            </p>
+        </div>
+    </section>
+
+    <!-- Qualification -->
+    <section class="qualification">
+        <div class="container">
+            <h2>¿Para quién es este recetario?</h2>
+            <div class="qual-grid">
+                <div class="qual-box for">
+                    <h3>ESTO ES PARA TI SI...</h3>
+                    <ul>
+                        <li>Quieres dejar de ser solo "mamá" y convertirte en la chef favorita de tu bebé</li>
+                        <li>Buscas una alimentación genuina, no solo trucos vacíos</li>
+                        <li>Estás dispuesta a invertir en tu desarrollo como madre</li>
+                        <li>Te sientes invisible y quieres destacar sin fingir</li>
+                    </ul>
+                </div>
+                <div class="qual-box not">
+                    <h3>ESTO NO ES PARA TI SI...</h3>
+                    <ul>
+                        <li>Buscas manipular a tu bebé con técnicas tóxicas</li>
+                        <li>Quieres una "píldora mágica" sin poner nada de tu parte</li>
+                        <li>No tienes respeto por los demás bebés</li>
+                        <li>Crees que ya lo sabes todo y tienes el ego muy alto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-emoji">💬</div>
+            <h2>Lo que dicen nuestras mamás</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 20px;">
+                ¡Más de 2,300 mamás ya han transformado sus interacciones alimenticias!
+            </p>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <p>"Las recetas para el desayuno son variadas y fáciles de preparar. A mi bebé de 7 meses le encantan y yo me siento tranquila sabiendo que está comiendo sano."</p>
+                        <div class="testimonial-author">María R.</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <p>"Soy madre primeriza y me encantaron las recetas, súper fáciles de hacer. Mi bebé tiene seis meses y no sabía por dónde empezar. El recetario está ayudando mucho con mi bebé."</p>
+                        <div class="testimonial-author">Claudia H.</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <p>"Este recetario ha sido un acierto total! Mi peque de 10 meses no comía mucho, pero con las recetas está comiendo mejor y disfrutando de sus comidas."</p>
+                        <div class="testimonial-author">Joanna A.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses -->
+    <section class="bonuses">
+        <div class="container">
+            <div style="text-align: center;">
+                <div class="section-emoji">🎁</div>
+                <h2>5 Regalos Exclusivos</h2>
+            </div>
+            <p style="text-align: center; font-size: 18px; margin-bottom: 20px; color: #666;">
+                Además del recetario, hoy te llevas estos 5 bonos exclusivos GRATIS (por tiempo limitado)
+            </p>
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-number">BONO #1</div>
+                    <h3>Guía Primer Mes</h3>
+                    <p>Menú estructurado para los primeros 30 días</p>
+                    <div class="bonus-value">Valor: $17.90</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-number">BONO #2</div>
+                    <h3>Método BLW</h3>
+                    <p>Introducción al método BLW paso a paso</p>
+                    <div class="bonus-value">Valor: $9.90</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-number">BONO #3</div>
+                    <h3>Lista Prohibidos</h3>
+                    <p>Guía de alimentos prohibidos completa</p>
+                    <div class="bonus-value">Valor: $9.90</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-number">BONO #4</div>
+                    <h3>Snacks y Postres</h3>
+                    <p>Recetario de snacks y postres saludables</p>
+                    <div class="bonus-value">Valor: $7.90</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-number">BONO #5</div>
+                    <h3>Alergénicos</h3>
+                    <p>Guía de alimentos alergénicos</p>
+                    <div class="bonus-value">Valor: $7.90</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="precio">
+        <div class="container">
+            <div class="section-emoji">💰</div>
+            <h2>+150 Recetas sanas para tu bebé</h2>
+            <p style="font-size: 24px; margin-bottom: 30px;">al precio de un café</p>
+
+            <div class="price-stack">
+                <div class="price-item">
+                    <span>Manual de +150 Recetas Saludables</span>
+                    <span>$37 USD</span>
+                </div>
+                <div class="price-item">
+                    <span>Pack de 5 Bonos Exclusivos</span>
+                    <span>$40 USD</span>
+                </div>
+                <div class="price-item">
+                    <span><strong>VALOR TOTAL</strong></span>
+                    <span><strong>$77 USD</strong></span>
+                </div>
+            </div>
+
+            <div class="price-total">Antes: $77 USD</div>
+            <div class="discount-badge">AHORRA 79%</div>
+            <div class="price-current">$9.90 <small>USD</small></div>
+
+            <p style="font-size: 18px; margin: 30px 0;">
+                🔒 Acceso inmediato y de por vida<br>
+                ✅ Recibe el acceso en tu WhatsApp
+            </p>
+
+            <a href="#checkout" class="cta-primary">¡QUIERO ACCEDER AL RECETARIO CON DESCUENTO AHORA!</a>
+
+            <div style="margin-top: 40px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <div>
+                    <div style="font-size: 40px;">🔐</div>
+                    <div>Pago Seguro</div>
+                </div>
+                <div>
+                    <div style="font-size: 40px;">🏆</div>
+                    <div>Satisfacción Garantizada</div>
+                </div>
+                <div>
+                    <div style="font-size: 40px;">🔒</div>
+                    <div>Privacidad Protegida</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-emoji">👋</div>
+            <h2>¡Hola!</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 22px; font-weight: 700; margin-bottom: 20px; color: var(--primary);">
+                    Soy María, mamá, asesora de lactancia certificada por LactApp y especialista en sueño infantil.
+                </p>
+                <p style="font-size: 18px; line-height: 1.8; color: #666; margin-bottom: 20px;">
+                    También soy la creadora de Academy Bebé, donde he ayudado a miles de familias a empezar la alimentación complementaria con seguridad y confianza.
+                </p>
+                <p style="font-size: 18px; line-height: 1.8; color: #666; margin-bottom: 20px;">
+                    Al comienzo de la alimentación complementaria con mi hija, <strong>sentí muchas dudas, inseguridad y miedo de cometer errores.</strong>
+                </p>
+                <p style="font-size: 18px; line-height: 1.8; color: #666;">
+                    Ahí me di cuenta de que no estaba sola: <strong>hablando con otras madres, entendí que muchas se sentían igual de confundidas, inseguras y abrumadas.</strong>
+                </p>
+                <p style="font-size: 18px; line-height: 1.8; color: #666; margin-top: 20px;">
+                    Por eso creé esta guía: <strong>Aquí no hay teoría vacía.</strong> Todo lo que comparto está basado en información actualizada, experiencia vivida y mucho amor por esta etapa tan especial.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-badge">
+                <div class="days">7 DÍAS</div>
+                <div class="text">De Garantía</div>
+            </div>
+            <h2>¡7 DÍAS DE GARANTÍA!</h2>
+            <p>
+                Si por cualquier motivo crees que este recetario no es para ti, 
+                solo tienes que escribirnos dentro de los 7 días y te haremos 
+                un reembolso completo, <strong>sin preguntas ni complicaciones.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="timer">⏰ OFERTA EXPIRA EN: 14:52</div>
+            <p class="urgency-text">⚠️ ¡Esta oferta está activa solo por tiempo limitado!</p>
+            <h2 style="font-size: 42px; margin-bottom: 40px; color: white;">
+                HAZ CLIC AQUÍ Y ACCEDE AHORA 👇
+            </h2>
+            <a href="#checkout" class="cta-primary" style="background: var(--accent); color: var(--dark);">
+                ¡QUIERO ACCEDER AL RECETARIO CON DESCUENTO AHORA!
+            </a>
+            <p style="margin-top: 30px; font-size: 16px; opacity: 0.9;">
+                Completa desde tu celular o computadora. La compra es inmediata.<br>
+                Una vez completes tu compra recibirás un correo automático con el acceso al recetario y todos los bonos.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-emoji">❓</div>
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">¿Cómo recibiré mi Recetario y los bonos? ¿Es imprimible?</div>
+                    <div class="faq-answer">
+                        Tu acceso es inmediato. Una vez completes tu compra recibirás un correo automático con el acceso al recetario y todos los bonos. Además, te enviaremos por WhatsApp el enlace directo para acceder fácilmente. Podrás ver todo online o descargarlo para tenerlo siempre a mano. Y si prefieres, puedes imprimirlo cómodamente en casa.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿El pago es seguro?</div>
+                    <div class="faq-answer">
+                        Sí, totalmente seguro. Procesamos todos los pagos a través de plataformas certificadas y encriptadas que protegen tu información en todo momento.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿A quién va dirigido el Recetario?</div>
+                    <div class="faq-answer">
+                        Este recetario está diseñado para madres y padres que están comenzando o están en proceso de introducir la alimentación complementaria a sus bebés de 6 a 12 meses. Es ideal para quienes buscan recetas saludables, fáciles y seguras.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Durante cuánto tiempo tendré acceso al contenido?</div>
+                    <div class="faq-answer">
+                        Tu acceso es de por vida. Una vez que compres el recetario, será tuyo para siempre. Podrás consultarlo cuando quieras, las veces que necesites.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Tengo garantía?</div>
+                    <div class="faq-answer">
+                        Sí, tienes 7 días de garantía de satisfacción. Si por cualquier razón no estás satisfecha con tu compra, te devolvemos el 100% de tu dinero sin preguntas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Copyright 2025 - Academy Bebé - Todos los derechos reservados</p>
+            <p style="margin-top: 20px; font-size: 12px;">
+                Este sitio no está afiliado con Facebook, ni con Herbalife, ni Metafix, ni Velasmx, ni con cualquier otra empresa. Marcas registradas de sus respectivas compañías.<br>
+                Los resultados individuales pueden variar en función del compromiso y aplicación de las técnicas recomendadas.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple countdown timer
+        let minutes = 14;
+        let seconds = 52;
+        
+        setInterval(() => {
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    minutes = 14;
+                    seconds = 59;
+                } else {
+                    minutes--;
+                    seconds = 59;
+                }
+            } else {
+                seconds--;
+            }
+            
+            const timerElement = document.querySelector('.timer');
+            if (timerElement) {
+                timerElement.innerHTML = `⏰ OFERTA EXPIRA EN: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }, 1000);
+
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    a.style.display = 'none';
+                });
+                
+                // Reset all questions
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.style.background = '';
+                });
+                
+                // Toggle current answer
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                    this.style.background = 'var(--cream)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
