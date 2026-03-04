@@ -648,10 +648,9 @@
       .headline br,.section-title br{display:none}
     }
 
-    @media (min-width: 768px){
-      .sticky-cta{display:none!important}
-      .footer-note{padding-bottom:40px}
-    }
+   @media (min-width: 768px){
+  .footer-note{padding-bottom:40px}
+}
   </style>
 </head>
 <body>
@@ -1451,12 +1450,11 @@
     const stickyCta = document.getElementById('stickyCta');
     const offerTrigger = document.getElementById('offer-trigger');
 
-    function toggleStickyCta() {
-      if (window.innerWidth >= 768) return;
-      const rect = offerTrigger.getBoundingClientRect();
-      const shouldShow = rect.top <= window.innerHeight * 0.72;
-      stickyCta.classList.toggle('visible', shouldShow);
-    }
+   function toggleStickyCta() {
+  const rect = offerTrigger.getBoundingClientRect();
+  const shouldShow = rect.top <= window.innerHeight * 0.72;
+  stickyCta.classList.toggle('visible', shouldShow);
+}
 
     window.addEventListener('scroll', toggleStickyCta, { passive: true });
     window.addEventListener('resize', toggleStickyCta);
