@@ -636,7 +636,30 @@
       .hero-mobile-visual{display:none}
       .hero-desktop-visual{display:block}
     }
+/* Contenedor de badges: 1 sola línea */
+.hero-badges{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;   /* o flex-start si los querés alineados a la izquierda */
+  flex-wrap: nowrap;         /* IMPORTANTÍSIMO: evita que bajen a otra línea */
+  white-space: nowrap;       /* evita saltos de línea dentro */
+}
 
+/* Cada badge */
+.hero-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  
+  font-size: 0.8em;          /* ↓ 20% (si antes era 1em) */
+  line-height: 1;            /* más compacto */
+  font-weight: 600;
+}
     @media (min-width: 980px){
       .pain-grid{grid-template-columns:repeat(3,1fr)}
       .deliver-grid{grid-template-columns:repeat(3,1fr)}
@@ -688,11 +711,11 @@
               ✅ Quiero empezar hoy
             </a>
 
-             <div class="hero-stats">
-              <div class="badge">👩‍⚕️ Lic. Martha La Fuente</div>
-              <div class="badge">🩷 17 años de experiencia</div>
-              <div class="badge">👶 +2,900 familias acompañadas</div>
-            </div>
+          <div class="hero-badges">
+  <span class="hero-badge">👩‍⚕️ Lic. Martha La Fuente</span>
+  <span class="hero-badge">🗓️ 17 años de experiencia</span>
+  <span class="hero-badge">👶 +2,900 familias acompañadas</span>
+</div>
           </div>
 
           <div class="hero-desktop-visual">
