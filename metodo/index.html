@@ -89,35 +89,32 @@
       box-shadow:var(--shadow);
     }
 
-   .headline{
-  font-family:'Crimson Pro', Georgia, serif;
-  font-weight:700;
-  line-height:1.04;
-  letter-spacing:-.03em;
-  margin:16px 0 12px;
-  font-size:clamp(2.05rem, 5.8vw, 4.5rem);
-  color:var(--navy);
-  text-align:center;
-}
+    .headline{
+      font-family:'Crimson Pro', Georgia, serif;
+      font-weight:700;
+      line-height:1.04;
+      letter-spacing:-.03em;
+      margin:16px 0 12px;
+      font-size:clamp(2.05rem, 5.8vw, 4.5rem);
+      color:var(--navy);
+      text-align:center;
+    }
 
     @media (min-width: 700px){
-  .headline{
-    text-align:left;
-  }
-}
+      .headline{ text-align:left; }
+    }
 
-   .headline .accent-line{
-  display:block;
-  color:var(--pink);
-  font-style:italic;
-  margin-top:8px;
-  text-align:center;
-}
+    .headline .accent-line{
+      display:block;
+      color:var(--pink);
+      font-style:italic;
+      margin-top:8px;
+      text-align:center;
+    }
+
     @media (min-width: 700px){
-  .headline .accent-line{
-    text-align:left;
-  }
-}
+      .headline .accent-line{ text-align:left; }
+    }
 
     .subheadline{
       font-size:1.08rem;
@@ -158,9 +155,7 @@
 
     .grid{display:grid; gap:16px}
 
-    .hero{
-      padding:24px 0 30px;
-    }
+    .hero{ padding:24px 0 30px; }
 
     .hero-wrap{
       display:grid;
@@ -227,6 +222,9 @@
       border:none;
       width:100%;
       text-align:center;
+
+      /* ✅ ESPACIO ENTRE BOTÓN Y BADGES (lo que pediste) */
+      margin-bottom: 14px;
     }
 
     .cta:hover{
@@ -398,9 +396,7 @@
       object-fit:cover;
     }
 
-    .bonus-image{
-      margin-bottom:10px;
-    }
+    .bonus-image{ margin-bottom:10px; }
 
     .bonus-card.featured{
       border:1.5px solid rgba(244,106,164,.30);
@@ -436,9 +432,7 @@
       color:var(--text);
     }
 
-    .offer-box{
-      padding:24px;
-    }
+    .offer-box{ padding:24px; }
 
     .offer-grid{
       display:grid;
@@ -501,9 +495,7 @@
       align-items:start;
     }
 
-    .author-bio{
-      padding:24px;
-    }
+    .author-bio{ padding:24px; }
 
     .author-stats{
       display:grid;
@@ -636,31 +628,58 @@
       .hero-mobile-visual{display:none}
       .hero-desktop-visual{display:block}
     }
-/* Contenedor de badges: 1 sola línea */
-.hero-badges{
-  margin-top: 16px;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;   /* o flex-start si los querés alineados a la izquierda */
-  flex-wrap: nowrap;         /* IMPORTANTÍSIMO: evita que bajen a otra línea */
-  white-space: nowrap;       /* evita saltos de línea dentro */
-}
 
-/* Cada badge */
-.hero-badge{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  
-  font-size: 0.8em;          /* ↓ 20% (si antes era 1em) */
-  line-height: 1;            /* más compacto */
-  font-weight: 600;
-}
+    /* =========================================================
+       ✅ HERO BADGES RESPONSIVE (FIX MOBILE)
+       - Desktop: 1 sola línea
+       - Mobile: wrap para que NO se rompa ni desborde
+    ========================================================= */
+    .hero-badges{
+      margin-top: 8px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.9);
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+      font-size:0.8em;   /* ↓ 20% */
+      line-height:1;
+      font-weight:600;
+      color:var(--navy);
+      border:1px solid var(--border);
+    }
+
+    /* Desktop: 1 línea */
+    @media (min-width: 700px){
+      .hero-badges{
+        justify-content:flex-start;
+        flex-wrap:nowrap;
+        white-space:nowrap;
+      }
+    }
+
+    /* Mobile: wrap (para que se vea bien) */
+    @media (max-width: 699px){
+      .hero-badges{
+        justify-content:center;
+        flex-wrap:wrap;
+        white-space:normal;
+        gap:10px;
+      }
+      .hero-badge{
+        font-size:.86rem;
+        padding:9px 12px;
+      }
+    }
+
     @media (min-width: 980px){
       .pain-grid{grid-template-columns:repeat(3,1fr)}
       .deliver-grid{grid-template-columns:repeat(3,1fr)}
@@ -672,20 +691,19 @@
       .headline br,.section-title br{display:none}
     }
 
-   @media (min-width: 768px){
-  .footer-note{padding-bottom:40px}
-}
+    @media (min-width: 768px){
+      .footer-note{padding-bottom:40px}
+    }
   </style>
 </head>
-<body>
 
+<body>
   <main>
     <!-- BLOQUE 1 HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-wrap">
           <div class="hero-copy">
-          <!--   <div style="font-size:3rem; line-height:1; margin-bottom:14px;">👶 🍎</div>-->
             <div class="eyebrow">✨ Más de 2,900 familias confían en nosotros</div>
 
             <h1 class="headline">
@@ -707,16 +725,15 @@
               <li><span>🥣</span><span><strong>Valores nutricionales reales</strong> por receta: calorías, proteína, hierro, calcio, fibra y vitaminas.</span></li>
             </ul>
 
-           
             <a class="cta" href="#oferta" aria-label="Ver todo lo que incluye tu compra">
               ✅ Quiero empezar hoy
             </a>
 
-          <div class="hero-badges">
-  <span class="hero-badge">👩‍⚕️ Lic. Martha La Fuente</span>
-  <span class="hero-badge">🗓️ 17 años de experiencia</span>
-  <span class="hero-badge">👶 +2,900 familias acompañadas</span>
-</div>
+            <div class="hero-badges">
+              <span class="hero-badge">👩‍⚕️ Lic. Martha La Fuente</span>
+              <span class="hero-badge">🗓️ 17 años de experiencia</span>
+              <span class="hero-badge">👶 +2,900 familias acompañadas</span>
+            </div>
           </div>
 
           <div class="hero-desktop-visual">
@@ -1005,9 +1022,6 @@
             <h3>“Me dio paz mental desde el primer día”</h3>
             <p class="small" style="margin:0;">“Lo que más me ayudó fue no tener que pensar qué hacer cada vez. Abría la guía, veía el día y listo. Sentí mucha más seguridad.”</p>
             <div class="testi-caption">— Mamá de bebé de 6 meses</div>
-           <!--   <div class="proof-shot">
-              <img src="images/testimonio-1.webp" alt="Captura de testimonio real 1" loading="lazy" />
-            </div>   -->
           </article>
 
           <article class="testi-card">
@@ -1015,9 +1029,6 @@
             <h3>“Cuando rechazaba, ya no entraba en pánico”</h3>
             <p class="small" style="margin:0;">“Las estrategias de rechazo me ayudaron muchísimo. Antes pensaba que todo era un fracaso. Ahora sé cómo insistir sin estrés.”</p>
             <div class="testi-caption">— Mamá primeriza</div>
-         <!--    <div class="proof-shot">
-              <img src="images/testimonio-2.webp" alt="Captura de testimonio real 2" loading="lazy" />
-            </div>-->
           </article>
 
           <article class="testi-card">
@@ -1025,9 +1036,6 @@
             <h3>“De verdad se siente rápido y práctico”</h3>
             <p class="small" style="margin:0;">“Los tiempos exactos y las listas de compras me facilitaron demasiado la semana. Dejé de improvisar y eso se nota.”</p>
             <div class="testi-caption">— Mamá con poco tiempo</div>
-          <!--  <div class="proof-shot">
-              <img src="images/testimonio-3.webp" alt="Captura de testimonio real 3" loading="lazy" />
-            </div>-->
           </article>
         </div>
       </div>
@@ -1248,24 +1256,25 @@
             </div>
 
             <div class="offer-price">
-  <div class="striked">Antes $147 USD</div>
-  <div class="price">$9.99 <span>USD hoy</span></div>
+              <div class="striked">Antes $147 USD</div>
+              <div class="price">$9.99 <span>USD hoy</span></div>
 
-  <p class="muted" style="margin:14px 0 18px;" id="checkout-copy">
-    Obtén acceso al sistema completo <strong>Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses (sin miedo ni dudas)</strong>.
-  </p>
-<div class="offer-image" style="margin:18px 0 14px;">
-    <img src="/metodo/images/todo_en_uno.webp" alt="Método Modular La Fuente con todo lo incluido" loading="lazy" />
-  </div>
+              <p class="muted" style="margin:14px 0 18px;" id="checkout-copy">
+                Obtén acceso al sistema completo <strong>Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses (sin miedo ni dudas)</strong>.
+              </p>
 
-  <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
-    Quiero empezar hoy 💝
-  </a>
+              <div class="offer-image" style="margin:18px 0 14px;">
+                <img src="/metodo/images/todo_en_uno.webp" alt="Método Modular La Fuente con todo lo incluido" loading="lazy" />
+              </div>
 
-  
-  <p class="microcopy">Recíbelo al instante por email · Prueba 15 días</p>
-  <p class="seed-line">En el checkout podrás añadir imprimibles opcionales para momentos de pancita, noches difíciles y decisión rápida diaria.</p>
-</div>
+              <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
+                Quiero empezar hoy 💝
+              </a>
+
+              <p class="microcopy">Recíbelo al instante por email · Prueba 15 días</p>
+              <p class="seed-line">En el checkout podrás añadir imprimibles opcionales para momentos de pancita, noches difíciles y decisión rápida diaria.</p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -1479,11 +1488,11 @@
     const stickyCta = document.getElementById('stickyCta');
     const offerTrigger = document.getElementById('offer-trigger');
 
-   function toggleStickyCta() {
-  const rect = offerTrigger.getBoundingClientRect();
-  const shouldShow = rect.top <= window.innerHeight * 0.72;
-  stickyCta.classList.toggle('visible', shouldShow);
-}
+    function toggleStickyCta() {
+      const rect = offerTrigger.getBoundingClientRect();
+      const shouldShow = rect.top <= window.innerHeight * 0.72;
+      stickyCta.classList.toggle('visible', shouldShow);
+    }
 
     window.addEventListener('scroll', toggleStickyCta, { passive: true });
     window.addEventListener('resize', toggleStickyCta);
