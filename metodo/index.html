@@ -14,21 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Meta Pixel Placeholder -->
-  <!--
-  <script>
-    // Insertar Meta Pixel aquí
-  </script>
-  -->
-
-  <!-- GA4 Placeholder -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    // Insertar configuración GA4 aquí
-  </script>
-  -->
-
   <style>
     :root{
       --bg:#F4E8EC;
@@ -184,27 +169,6 @@
       font-weight:600;
     }
 
-    .hero-stats{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin:18px 0 20px;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.92);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      font-size:.9rem;
-      font-weight:700;
-      color:var(--navy);
-    }
-
     .cta{
       display:inline-flex;
       align-items:center;
@@ -223,7 +187,7 @@
       width:100%;
       text-align:center;
 
-      /* ✅ ESPACIO ENTRE BOTÓN Y BADGES (lo que pediste) */
+      /* ✅ Espacio entre botón y badges */
       margin-bottom: 14px;
     }
 
@@ -319,101 +283,6 @@
       border-radius:999px;
       background:var(--mint);
       color:var(--navy);
-    }
-
-    .comparison-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      margin-top:24px;
-    }
-
-    .compare-card .feature-name{
-      font-weight:800;
-      color:var(--navy);
-      margin-bottom:12px;
-      font-size:1rem;
-    }
-
-    .compare-cols{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-    }
-
-    .compare-box{
-      border-radius:16px;
-      padding:14px;
-      background:#fff;
-      border:1px solid var(--border);
-    }
-
-    .compare-box strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:.86rem;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-      color:var(--navy-soft);
-    }
-
-    .compare-box.winner{
-      background:linear-gradient(180deg, rgba(191,232,216,.45), rgba(255,255,255,.98));
-      border-color:rgba(124,184,161,.28);
-    }
-
-    .winner-pill{
-      display:inline-flex;
-      margin-top:10px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:var(--pink);
-      color:#fff;
-      font-size:.74rem;
-      font-weight:800;
-      letter-spacing:.03em;
-      text-transform:uppercase;
-    }
-
-    .stars{font-size:1rem; color:#E59B54}
-    .testi-caption{
-      font-size:.9rem;
-      font-weight:700;
-      color:var(--navy);
-    }
-
-    .proof-shot,.bonus-image,.guarantee-image{
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      background:#fff;
-    }
-
-    .proof-shot img{
-      width:100%;
-      aspect-ratio:4/5;
-      object-fit:cover;
-    }
-
-    .bonus-image{ margin-bottom:10px; }
-
-    .bonus-card.featured{
-      border:1.5px solid rgba(244,106,164,.30);
-      box-shadow:0 18px 40px rgba(244,106,164,.16);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .bonus-card.featured::before{
-      content:"⭐ Elimina el miedo más común al empezar";
-      display:block;
-      margin:-20px -20px 12px;
-      padding:10px 16px;
-      background:rgba(244,106,164,.12);
-      color:var(--pink-dark);
-      font-weight:800;
-      font-size:.82rem;
     }
 
     .filter-card ul,
@@ -621,12 +490,25 @@
       .deliver-grid{grid-template-columns:repeat(2,1fr)}
       .bonus-grid{grid-template-columns:repeat(2,1fr)}
       .testi-grid{grid-template-columns:repeat(3,1fr)}
-      .comparison-grid{grid-template-columns:repeat(2,1fr)}
-      .compare-cols{grid-template-columns:1fr 1fr}
       .author-wrap{grid-template-columns:1.2fr .8fr}
       .offer-grid{grid-template-columns:1.08fr .92fr}
       .hero-mobile-visual{display:none}
       .hero-desktop-visual{display:block}
+    }
+
+    @media (min-width: 980px){
+      .pain-grid{grid-template-columns:repeat(3,1fr)}
+      .deliver-grid{grid-template-columns:repeat(3,1fr)}
+      .bonus-grid{grid-template-columns:repeat(4,1fr)}
+    }
+
+    @media (max-width: 767px){
+      body{padding-bottom:0}
+      .headline br,.section-title br{display:none}
+    }
+
+    @media (min-width: 768px){
+      .footer-note{padding-bottom:40px}
     }
 
     /* =========================================================
@@ -657,7 +539,6 @@
       border:1px solid var(--border);
     }
 
-    /* Desktop: 1 línea */
     @media (min-width: 700px){
       .hero-badges{
         justify-content:flex-start;
@@ -666,7 +547,6 @@
       }
     }
 
-    /* Mobile: wrap (para que se vea bien) */
     @media (max-width: 699px){
       .hero-badges{
         justify-content:center;
@@ -680,31 +560,96 @@
       }
     }
 
-    @media (min-width: 980px){
-      .pain-grid{grid-template-columns:repeat(3,1fr)}
-      .deliver-grid{grid-template-columns:repeat(3,1fr)}
-      .bonus-grid{grid-template-columns:repeat(4,1fr)}
+    /* =========================================================
+       ✅ NUEVA SECCIÓN DIFERENCIADORES (PREMIUM + MOBILE)
+    ========================================================= */
+    .diff-wrap{
+      max-width: 980px;
+      margin: 24px auto 0;
+      display: grid;
+      gap: 14px;
     }
 
-    @media (max-width: 767px){
-      body{padding-bottom:0}
-      .headline br,.section-title br{display:none}
+    .diff-card{
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      padding: 22px;
     }
 
-    @media (min-width: 768px){
-      .footer-note{padding-bottom:40px}
+    .diff-card h3{
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.1rem;
+    }
+
+    .diff-list{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .diff-item{
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(244,106,164,.06);
+      border: 1px solid rgba(244,106,164,.14);
+      color: var(--navy-soft);
+      font-weight: 600;
+    }
+
+    .diff-item strong{ color: var(--navy); }
+
+    .mini-compare{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .mini-box{
+      border-radius: 18px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .mini-box .kicker{
+      display: inline-flex;
+      font-size: .78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--navy-soft);
+      margin-bottom: 6px;
+    }
+
+    .mini-box.good{
+      background: linear-gradient(180deg, rgba(191,232,216,.55), rgba(255,255,255,.98));
+      border-color: rgba(124,184,161,.28);
+    }
+
+    @media (min-width: 820px){
+      .mini-compare{ grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 
 <body>
+
   <main>
     <!-- BLOQUE 1 HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-wrap">
           <div class="hero-copy">
-            <div class="eyebrow">✨ +2,900 familias confían en nosotros</div>
+            <div class="eyebrow">✨ Más de 2,900 familias confían en nosotros</div>
 
             <h1 class="headline">
               Empieza la alimentación complementaria
@@ -750,8 +695,7 @@
       <div class="container">
         <div class="soft" style="padding:26px;">
           <div class="center">
-            <h2 class="section-title">Así funciona el Método Modular La Fuente™ 
-              (en 3 pasos)</h2>
+            <h2 class="section-title">Así funciona el Método Modular La Fuente™ (en 3 pasos)</h2>
             <p class="section-lead">Sin complicarte. Sin Google. Sin tener que adivinar cada comida.</p>
           </div>
 
@@ -877,7 +821,7 @@
       </div>
     </section>
 
-    <!-- BLOQUE 5 COMPARACIÓN -->
+    <!-- BLOQUE 5 DIFERENCIADORES (VERSIÓN PREMIUM + MOBILE) -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -885,126 +829,37 @@
           <p class="section-lead">No se trata de tener más información. Se trata de tener la información correcta, ordenada y usable justo cuando la necesitas.</p>
         </div>
 
-        <div class="comparison-grid">
-          <article class="compare-card">
-            <div class="feature-name">Organización por edad</div>
-            <div class="compare-cols">
-              <div class="compare-box">
-                <strong>Otros</strong>
-                A veces mezclado o general.
-              </div>
-              <div class="compare-box winner">
-                <strong>Método Modular</strong>
-                Sí, por módulos claros de 6–18 meses.
-                <span class="winner-pill">Mejor opción</span>
-              </div>
-            </div>
-          </article>
+        <div class="diff-wrap">
+          <div class="diff-card">
+            <h3>✨ Método Modular La Fuente™ incluye:</h3>
 
-          <article class="compare-card">
-            <div class="feature-name">Plan listo por semanas</div>
-            <div class="compare-cols">
-              <div class="compare-box">
-                <strong>Otros</strong>
-                No siempre.
-              </div>
-              <div class="compare-box winner">
-                <strong>Método Modular</strong>
-                Sí, 112 días planeados (16 semanas).
-                <span class="winner-pill">Mejor opción</span>
-              </div>
-            </div>
-          </article>
+            <ul class="diff-list">
+              <li class="diff-item">📚 <span><strong>Modular por edad:</strong> usas solo la guía que necesitas HOY (sin abrumarte).</span></li>
+              <li class="diff-item">📅 <span><strong>112 días planeados:</strong> calendarios + listas de compra para avanzar con orden.</span></li>
+              <li class="diff-item">⏱️ <span><strong>Tiempos exactos:</strong> 5 / 10 / 15–20 minutos (decides rápido).</span></li>
+              <li class="diff-item">📊 <span><strong>Valores nutricionales reales:</strong> visibles por receta.</span></li>
+              <li class="diff-item">🍼 <span><strong>Si rechaza:</strong> estrategias prácticas en cada receta.</span></li>
+              <li class="diff-item">🌾 <span><strong>Alergias:</strong> variaciones por receta cuando lo necesitas.</span></li>
+            </ul>
 
-          <article class="compare-card">
-            <div class="feature-name">Valores nutricionales por receta</div>
-            <div class="compare-cols">
-              <div class="compare-box">
-                <strong>Otros</strong>
-                Rara vez completos.
+            <div class="mini-compare">
+              <div class="mini-box">
+                <div class="kicker">Otros recetarios</div>
+                <div class="small">Información mezclada, tiempos vagos y poca guía cuando tu bebé rechaza o hay alergias.</div>
               </div>
-              <div class="compare-box winner">
-                <strong>Método Modular</strong>
-                Sí, visibles y detallados.
-                <span class="winner-pill">Mejor opción</span>
+              <div class="mini-box good">
+                <div class="kicker">Método Modular</div>
+                <div class="small"><strong>Abres → sigues → sirves.</strong> Todo ordenado por etapa para decidir sin estrés.</div>
               </div>
             </div>
-          </article>
+          </div>
 
-          <article class="compare-card">
-            <div class="feature-name">Tiempos exactos de preparación</div>
-            <div class="compare-cols">
-              <div class="compare-box">
-                <strong>Otros</strong>
-                No o muy ambiguos.
-              </div>
-              <div class="compare-box winner">
-                <strong>Método Modular</strong>
-                Sí, 5 / 10 / 15–20 minutos.
-                <span class="winner-pill">Mejor opción</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="compare-card">
-            <div class="feature-name">Estrategias si rechaza</div>
-            <div class="compare-cols">
-              <div class="compare-box">
-                <strong>Otros</strong>
-                Casi nunca.
-              </div>
-              <div class="compare-box winner">
-                <strong>Método Modular</strong>
-                Sí, incluidas en cada receta.
-                <span class="winner-pill">Mejor opción</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="compare-card">
-            <div class="feature-name">Variaciones para alergias</div>
-            <div class="compare-cols">
-              <div class="compare-box">
-                <strong>Otros</strong>
-                Parciales o ausentes.
-              </div>
-              <div class="compare-box winner">
-                <strong>Método Modular</strong>
-                Sí, por receta.
-                <span class="winner-pill">Mejor opción</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="compare-card">
-            <div class="feature-name">Consulta rápida sin estrés</div>
-            <div class="compare-cols">
-              <div class="compare-box">
-                <strong>Otros</strong>
-                Toca buscar demasiado.
-              </div>
-              <div class="compare-box winner">
-                <strong>Método Modular</strong>
-                Sí, con Guía de Rescate e índices rápidos.
-                <span class="winner-pill">Mejor opción</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="compare-card">
-            <div class="feature-name">Autoridad profesional</div>
-            <div class="compare-cols">
-              <div class="compare-box">
-                <strong>Otros</strong>
-                No siempre clara.
-              </div>
-              <div class="compare-box winner">
-                <strong>Método Modular</strong>
-                Sí, Nutrióloga Pediátrica Certificada.
-                <span class="winner-pill">Mejor opción</span>
-              </div>
-            </div>
-          </article>
+          <div class="center" style="margin-top:8px;">
+            <a class="cta" href="#oferta" aria-label="Ver oferta y precio">
+              ✅ Quiero el plan completo
+            </a>
+            <p class="microcopy">Recíbelo al instante por email · Prueba 15 días</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1275,7 +1130,6 @@
               <p class="microcopy">Recíbelo al instante por email · Prueba 15 días</p>
               <p class="seed-line">En el checkout podrás añadir imprimibles opcionales para momentos de pancita, noches difíciles y decisión rápida diaria.</p>
             </div>
-
           </div>
         </div>
       </div>
