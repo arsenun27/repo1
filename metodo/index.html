@@ -104,7 +104,7 @@
     .subheadline{
       font-size:1.08rem;
       color:var(--text);
-      margin:0 0 18px;
+      margin:0 0 14px;
     }
 
     .section-title{
@@ -141,61 +141,9 @@
     .grid{display:grid; gap:16px}
 
     .hero{ padding:24px 0 30px; }
+    .hero-wrap{ display:grid; gap:22px; align-items:center; }
 
-    .hero-wrap{
-      display:grid;
-      gap:22px;
-      align-items:center;
-    }
-
-    .hero-copy .checklist{
-      list-style:none;
-      padding:0;
-      margin:18px 0 20px;
-      display:grid;
-      gap:10px;
-    }
-
-    .hero-copy .checklist li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:13px 14px;
-      background:rgba(255,255,255,.9);
-      border:1px solid var(--border);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      color:var(--navy-soft);
-      font-weight:600;
-    }
-
-    .cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:58px;
-      padding:15px 24px;
-      border-radius:999px;
-      background:linear-gradient(180deg, var(--pink), var(--pink-dark));
-      color:#fff;
-      font-weight:800;
-      font-size:1rem;
-      box-shadow:0 16px 36px rgba(244,106,164,.28);
-      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
-      border:none;
-      width:100%;
-      text-align:center;
-
-      /* ✅ Espacio entre botón y badges */
-      margin-bottom: 14px;
-    }
-
-    .cta:hover{
-      transform:translateY(-1px);
-      box-shadow:0 20px 40px rgba(244,106,164,.32);
-    }
-
+    /* HERO VISUALS */
     .hero-visual,
     .hero-mobile-visual{
       position:relative;
@@ -215,9 +163,129 @@
       object-fit:contain;
     }
 
-    .hero-mobile-visual{display:block; margin:16px 0 18px;}
+    .hero-mobile-visual{display:block; margin:14px 0 14px;}
     .hero-desktop-visual{display:none;}
 
+    /* CTA */
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:58px;
+      padding:15px 24px;
+      border-radius:999px;
+      background:linear-gradient(180deg, var(--pink), var(--pink-dark));
+      color:#fff;
+      font-weight:800;
+      font-size:1rem;
+      box-shadow:0 16px 36px rgba(244,106,164,.28);
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+      border:none;
+      width:100%;
+      text-align:center;
+      margin-bottom: 10px; /* espacio controlado */
+    }
+
+    .cta:hover{
+      transform:translateY(-1px);
+      box-shadow:0 20px 40px rgba(244,106,164,.32);
+    }
+
+    /* Trust line (debajo del CTA) */
+    .trust-line{
+      margin: 0 0 10px;
+      font-size: .94rem;
+      font-weight: 800;
+      color: var(--navy);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .trust-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      color:var(--navy);
+      font-size:.92rem;
+      font-weight:800;
+    }
+
+    /* HERO BADGES (20% smaller + responsive) */
+    .hero-badges{
+      margin-top: 8px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.9);
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+      font-size:0.8em;   /* ↓ 20% */
+      line-height:1;
+      font-weight:600;
+      color:var(--navy);
+      border:1px solid var(--border);
+    }
+
+    @media (min-width: 700px){
+      .hero-badges{
+        justify-content:flex-start;
+        flex-wrap:nowrap;
+        white-space:nowrap;
+      }
+    }
+
+    @media (max-width: 699px){
+      .hero-badges{
+        justify-content:center;
+        flex-wrap:wrap;
+        white-space:normal;
+        gap:10px;
+      }
+      .hero-badge{
+        font-size:.86rem;
+        padding:9px 12px;
+      }
+    }
+
+    /* HERO CHECKLIST */
+    .hero-copy .checklist{
+      list-style:none;
+      padding:0;
+      margin:12px 0 0;
+      display:grid;
+      gap:10px;
+    }
+
+    .hero-copy .checklist li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:13px 14px;
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      color:var(--navy-soft);
+      font-weight:600;
+    }
+
+    /* BLOQUE 2 - steps */
     .mini-steps{grid-template-columns:1fr; margin-top:18px;}
     .step-card{
       padding:22px 18px;
@@ -238,22 +306,23 @@
       font-weight:800;
     }
 
+    /* Grids */
     .pain-grid,.deliver-grid,.bonus-grid,.filter-grid,.testi-grid,.diff-grid,.faq-list{
       grid-template-columns:1fr;
     }
 
-    .pain-item,.feature-card,.deliver-card,.bonus-card,.testi-card,.filter-card,.compare-card,.offer-box{
+    .pain-item,.feature-card,.deliver-card,.bonus-card,.testi-card,.filter-card,.offer-box{
       background:rgba(255,255,255,.9);
       border:1px solid var(--border);
       border-radius:22px;
       box-shadow:var(--shadow);
     }
 
-    .pain-item,.feature-card,.deliver-card,.bonus-card,.testi-card,.filter-card,.compare-card{
+    .pain-item,.feature-card,.deliver-card,.bonus-card,.testi-card,.filter-card{
       padding:20px;
     }
 
-    .pain-item h3,.feature-card h3,.deliver-card h3,.bonus-card h3,.testi-card h3,.filter-card h3,.compare-card h3{
+    .pain-item h3,.feature-card h3,.deliver-card h3,.bonus-card h3,.testi-card h3,.filter-card h3{
       margin:0 0 8px;
       font-size:1.03rem;
       line-height:1.2;
@@ -285,30 +354,9 @@
       color:var(--navy);
     }
 
-    .filter-card ul,
-    .deliver-card ul,
-    .bonus-card ul,
-    .offer-list{
-      margin:12px 0 0;
-      padding-left:18px;
-      display:grid;
-      gap:8px;
-    }
-
-    .age{
-      font-size:.84rem;
-      font-weight:700;
-      color:var(--text);
-    }
-
+    /* OFERTA - nuevo layout más escaneable */
     .offer-box{ padding:24px; }
-
-    .offer-grid{
-      display:grid;
-      gap:20px;
-      align-items:start;
-    }
-
+    .offer-grid{ display:grid; gap:20px; align-items:start; }
     .offer-price{
       background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,242,245,.98));
       border:1px solid var(--border);
@@ -358,19 +406,39 @@
       border-radius:14px;
     }
 
-    .author-wrap{
-      display:grid;
-      gap:18px;
-      align-items:start;
-    }
-
-    .author-bio{ padding:24px; }
-
-    .author-stats{
+    .offer-stack{
       display:grid;
       gap:12px;
+      margin-top:14px;
+    }
+    .offer-block{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+    .offer-block h4{
+      margin:0 0 8px;
+      color:var(--navy);
+      font-weight:900;
+      font-size:.95rem;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
+    .offer-ul{
+      margin:0;
+      padding-left:18px;
+      display:grid;
+      gap:8px;
+      color:var(--navy-soft);
+      font-weight:650;
     }
 
+    /* Author */
+    .author-wrap{ display:grid; gap:18px; align-items:start; }
+    .author-bio{ padding:24px; }
+    .author-stats{ display:grid; gap:12px; }
     .stat{
       padding:18px;
       border-radius:20px;
@@ -378,7 +446,6 @@
       border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
-
     .stat strong{
       display:block;
       font-size:1.6rem;
@@ -387,6 +454,7 @@
       margin-bottom:6px;
     }
 
+    /* Guarantee */
     .guarantee{
       padding:26px;
       text-align:center;
@@ -396,6 +464,7 @@
       box-shadow:var(--shadow);
     }
 
+    /* FAQ */
     .faq-wrap{
       background:rgba(255,255,255,.92);
       border:1px solid var(--border);
@@ -403,7 +472,6 @@
       box-shadow:var(--shadow);
       overflow:hidden;
     }
-
     .faq-item + .faq-item{border-top:1px solid rgba(46,69,97,.08)}
 
     .faq-btn{
@@ -439,6 +507,7 @@
       color:var(--text);
     }
 
+    /* Final CTA card */
     .final-cta{
       background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.86));
       border-radius:28px;
@@ -447,6 +516,7 @@
       border:1px solid var(--border);
     }
 
+    /* Sticky CTA (punto 8) */
     .sticky-cta{
       position:fixed;
       left:0; right:0; bottom:0;
@@ -471,6 +541,22 @@
     .sticky-inner{
       width:min(calc(100% - 12px), 640px);
       margin-inline:auto;
+      display:grid;
+      gap:8px;
+    }
+
+    .sticky-mini{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      color:var(--navy);
+      font-size:.88rem;
+    }
+    .sticky-mini span{
+      font-weight:800;
+      color:var(--navy-soft);
     }
 
     .footer-note{
@@ -511,58 +597,9 @@
       .footer-note{padding-bottom:40px}
     }
 
-    /* =========================================================
-       ✅ HERO BADGES RESPONSIVE (FIX MOBILE)
-       - Desktop: 1 sola línea
-       - Mobile: wrap para que NO se rompa ni desborde
-    ========================================================= */
-    .hero-badges{
-      margin-top: 8px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .hero-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.9);
-      box-shadow:0 2px 10px rgba(0,0,0,0.08);
-      font-size:0.8em;   /* ↓ 20% */
-      line-height:1;
-      font-weight:600;
-      color:var(--navy);
-      border:1px solid var(--border);
-    }
-
-    @media (min-width: 700px){
-      .hero-badges{
-        justify-content:flex-start;
-        flex-wrap:nowrap;
-        white-space:nowrap;
-      }
-    }
-
-    @media (max-width: 699px){
-      .hero-badges{
-        justify-content:center;
-        flex-wrap:wrap;
-        white-space:normal;
-        gap:10px;
-      }
-      .hero-badge{
-        font-size:.86rem;
-        padding:9px 12px;
-      }
-    }
-
-    /* =========================================================
-       ✅ NUEVA SECCIÓN DIFERENCIADORES (PREMIUM + MOBILE)
-    ========================================================= */
+    /* ==========================================
+      Diferenciadores Premium (ya estaba aprobado)
+    ========================================== */
     .diff-wrap{
       max-width: 980px;
       margin: 24px auto 0;
@@ -638,6 +675,7 @@
     @media (min-width: 820px){
       .mini-compare{ grid-template-columns: 1fr 1fr; }
     }
+
   </style>
 </head>
 
@@ -660,32 +698,43 @@
               Con el <strong>Método Modular La Fuente™</strong>… abres la guía de su edad, sigues el calendario semanal y listo: sabes qué ofrecer, cómo servirlo, cuánto tarda y cómo adaptarlo si rechaza o si hay alergias.
             </p>
 
+            <!-- Imagen debajo del subtitular (móvil) -->
             <div class="hero-mobile-visual">
               <img src="/metodo/images/todo_en_uno.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
             </div>
 
-            <ul class="checklist">
-              <li><span>✅</span><span><strong>112 días planeados</strong> para dejar de improvisar y empezar con una ruta clara.</span></li>
-              <li><span>⏱️</span><span><strong>Tiempos exactos</strong> por receta: 5 / 10 / 15–20 minutos para decidir rápido.</span></li>
-              <li><span>🥣</span><span><strong>Valores nutricionales reales</strong> por receta: calorías, proteína, hierro, calcio, fibra y vitaminas.</span></li>
-            </ul>
-
+            <!-- CTA inmediato (punto 1 + 3) -->
             <a class="cta" href="#oferta" aria-label="Ver todo lo que incluye tu compra">
               ✅ Quiero empezar sin miedo hoy
             </a>
 
+            <!-- Trust line exacta (punto 2) -->
+            <div class="trust-line">
+              <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
+            </div>
+
+            <!-- Badges autoridad -->
             <div class="hero-badges">
               <span class="hero-badge">👩‍⚕️ Lic. Martha La Fuente</span>
               <span class="hero-badge">🗓️ 17 años de experiencia</span>
               <span class="hero-badge">👶 +2,900 familias acompañadas</span>
             </div>
+
+            <!-- Checklist (queda debajo para no empujar el CTA fuera del fold) -->
+            <ul class="checklist">
+              <li><span>✅</span><span><strong>112 días planeados</strong> para dejar de improvisar y empezar con una ruta clara.</span></li>
+              <li><span>⏱️</span><span><strong>Tiempos exactos</strong> por receta: 5 / 10 / 15–20 minutos para decidir rápido.</span></li>
+              <li><span>🥣</span><span><strong>Valores nutricionales reales</strong> por receta: calorías, proteína, hierro, calcio, fibra y vitaminas.</span></li>
+            </ul>
           </div>
 
+          <!-- Visual desktop -->
           <div class="hero-desktop-visual">
             <div class="hero-visual">
               <img src="/metodo/images/todo_en_uno.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -730,48 +779,43 @@
       </div>
     </section>
 
-    <!-- BLOQUE 3 PROBLEMA -->
+    <!-- BLOQUE 3 PROBLEMA (punto 4: 4 pains fuertes) -->
     <section class="section">
       <div class="container">
         <div class="center">
           <h2 class="section-title">Si estás por empezar, es normal sentir miedo, dudas y presión.</h2>
-          <p class="section-lead">No porque no seas capaz. Sino porque te toca decidir todos los días con un bebé pequeño, poco tiempo y demasiada información contradictoria.</p>
+          <p class="section-lead">No porque no seas capaz. Sino porque te toca decidir todos los días con un bebé pequeño y poco tiempo.</p>
         </div>
 
         <div class="grid pain-grid" style="margin-top:24px;">
           <div class="pain-item">
             <h3>😰 Miedo al atragantamiento</h3>
-            <p class="small" style="margin:0;">Te preocupa ofrecer algo mal cortado o no saber diferenciar una arcada normal de una situación real de riesgo.</p>
+            <p class="small" style="margin:0;">Te preocupa ofrecer algo mal cortado o no saber qué hacer si pasa algo inesperado.</p>
           </div>
 
           <div class="pain-item">
-            <h3>🤯 Dudas por cada alimento</h3>
-            <p class="small" style="margin:0;">No sabes qué ofrecer primero, cuánto, con qué textura o cómo avanzar sin sentirte perdida.</p>
-          </div>
-
-          <div class="pain-item">
-            <h3>📱 Información contradictoria</h3>
-            <p class="small" style="margin:0;">Un perfil dice una cosa, otro dice otra, y al final terminas más confundida que antes.</p>
+            <h3>🤯 Dudas diarias</h3>
+            <p class="small" style="margin:0;">¿Qué ofrecer hoy? ¿Cuánto? ¿Textura? ¿Voy avanzando bien? La mente no para.</p>
           </div>
 
           <div class="pain-item">
             <h3>⏳ Falta de tiempo real</h3>
-            <p class="small" style="margin:0;">Quieres hacerlo bien, pero necesitas recetas posibles para tu día a día, no ideas lindas imposibles de sostener.</p>
+            <p class="small" style="margin:0;">Quieres hacerlo bien, pero necesitas recetas posibles para tu día a día, no ideas imposibles de sostener.</p>
           </div>
 
           <div class="pain-item">
-            <h3>🥄 Improvisación constante</h3>
-            <p class="small" style="margin:0;">Abrir la nevera y decidir “lo que salga” genera más estrés, más compras sueltas y menos confianza.</p>
-          </div>
-
-          <div class="pain-item">
-            <h3>💭 Culpa por no hacerlo perfecto</h3>
-            <p class="small" style="margin:0;">Sientes que deberías saber más, organizarte mejor o reaccionar más rápido… y eso pesa.</p>
+            <h3>🥄 Improvisación + culpa</h3>
+            <p class="small" style="margin:0;">Improvisar agota… y encima sientes que “deberías hacerlo mejor”.</p>
           </div>
         </div>
 
+        <!-- Los otros 2 dolores movidos a microcopy (info contradictoria + presión) -->
+        <p class="small" style="margin:14px 0 0; font-weight:700; color:var(--navy); text-align:center;">
+          Y para rematar: demasiada <strong>información contradictoria</strong> (redes/familia/pediatra) que te deja aún más confundida.
+        </p>
+
         <div class="highlight">
-          <strong>Y si mañana hay pancita o noche difícil, lo peor es no saber qué hacer en el momento.</strong>
+          <strong>Y si mañana hay pancita o una noche difícil, lo peor es no saber qué hacer en el momento.</strong>
         </div>
       </div>
     </section>
@@ -821,7 +865,7 @@
       </div>
     </section>
 
-    <!-- BLOQUE 5 DIFERENCIADORES (VERSIÓN PREMIUM + MOBILE) -->
+    <!-- BLOQUE 5 DIFERENCIADORES PREMIUM (punto 5 incluido) -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -834,7 +878,7 @@
             <h3>✨ Método Modular La Fuente™ incluye:</h3>
 
             <ul class="diff-list">
-              <li class="diff-item">📚 <span><strong>Modular por edad:</strong> usas solo la guía que necesitas HOY (sin abrumarte).</span></li>
+              <li class="diff-item">📚 <span><strong>Modular por edad (6–18 meses):</strong> usas solo la guía que necesitas HOY (sin abrumarte).</span></li>
               <li class="diff-item">📅 <span><strong>112 días planeados:</strong> calendarios + listas de compra para avanzar con orden.</span></li>
               <li class="diff-item">⏱️ <span><strong>Tiempos exactos:</strong> 5 / 10 / 15–20 minutos (decides rápido).</span></li>
               <li class="diff-item">📊 <span><strong>Valores nutricionales reales:</strong> visibles por receta.</span></li>
@@ -856,15 +900,15 @@
 
           <div class="center" style="margin-top:8px;">
             <a class="cta" href="#oferta" aria-label="Ver oferta y precio">
-              ✅ Quiero el plan completo
+              ✅ Quiero empezar sin miedo hoy
             </a>
-            <p class="microcopy">Recíbelo al instante por email · Prueba 15 días</p>
+            <p class="microcopy">⚡ Acceso inmediato + entrega automática por email · Prueba 15 días</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOQUE 6 TESTIMONIOS -->
+    <!-- BLOQUE 6 TESTIMONIOS (sin cambios - punto 6 lo haces luego) -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="center">
@@ -874,24 +918,18 @@
 
         <div class="grid testi-grid" style="margin-top:24px;">
           <article class="testi-card">
-            <div class="stars">★★★★★</div>
-            <h3>“Me dio paz mental desde el primer día”</h3>
-            <p class="small" style="margin:0;">“Lo que más me ayudó fue no tener que pensar qué hacer cada vez. Abría la guía, veía el día y listo. Sentí mucha más seguridad.”</p>
-            <div class="testi-caption">— Mamá de bebé de 6 meses</div>
+            <h3 style="margin:0 0 8px; color:var(--navy);">★★★★★ “Me dio paz mental desde el primer día”</h3>
+            <p class="small" style="margin:0;">“Abría la guía, veía el día y listo. Sentí mucha más seguridad.”</p>
           </article>
 
           <article class="testi-card">
-            <div class="stars">★★★★★</div>
-            <h3>“Cuando rechazaba, ya no entraba en pánico”</h3>
-            <p class="small" style="margin:0;">“Las estrategias de rechazo me ayudaron muchísimo. Antes pensaba que todo era un fracaso. Ahora sé cómo insistir sin estrés.”</p>
-            <div class="testi-caption">— Mamá primeriza</div>
+            <h3 style="margin:0 0 8px; color:var(--navy);">★★★★★ “Cuando rechazaba, ya no entraba en pánico”</h3>
+            <p class="small" style="margin:0;">“Ahora sé cómo insistir sin estrés y sin convertir la comida en pelea.”</p>
           </article>
 
           <article class="testi-card">
-            <div class="stars">★★★★★</div>
-            <h3>“De verdad se siente rápido y práctico”</h3>
-            <p class="small" style="margin:0;">“Los tiempos exactos y las listas de compras me facilitaron demasiado la semana. Dejé de improvisar y eso se nota.”</p>
-            <div class="testi-caption">— Mamá con poco tiempo</div>
+            <h3 style="margin:0 0 8px; color:var(--navy);">★★★★★ “Se siente rápido y práctico”</h3>
+            <p class="small" style="margin:0;">“Los tiempos exactos y las listas de compras me facilitaron demasiado la semana.”</p>
           </article>
         </div>
       </div>
@@ -1024,70 +1062,54 @@
         </div>
 
         <div class="grid bonus-grid" style="margin-top:24px;">
-          <article class="bonus-card featured">
-            <div class="bonus-image">
-              <img src="/metodo/images/bono1.webp" alt="Certificado de Seguridad" loading="lazy" />
-            </div>
+          <article class="bonus-card">
             <div class="tag">Bono 1</div>
             <h3>Certificado de Seguridad</h3>
-            <p class="small" style="margin:0;"><strong>Valor $27</strong></p>
+            <p class="small" style="margin:0;"><strong>Valor $27</strong> · Gratis hoy</p>
             <ul>
               <li>Arcada vs atragantamiento</li>
               <li>Maniobra Heimlich pediátrica</li>
               <li>Cortes seguros para empezar con más calma</li>
             </ul>
-            <p class="small" style="margin:0; font-weight:800; color:var(--navy);">Gratis hoy</p>
           </article>
 
           <article class="bonus-card">
-            <div class="bonus-image">
-              <img src="/metodo/images/bono2.webp" alt="Método Domingo meal prep 2 horas" loading="lazy" />
-            </div>
             <div class="tag">Bono 2</div>
             <h3>Método Domingo meal prep 2 horas</h3>
-            <p class="small" style="margin:0;"><strong>Valor $19</strong></p>
+            <p class="small" style="margin:0;"><strong>Valor $19</strong> · Gratis hoy</p>
             <ul>
               <li>Cómo adelantar la semana sin agotarte</li>
               <li>Organización simple y realista</li>
               <li>Más orden, menos estrés diario</li>
             </ul>
-            <p class="small" style="margin:0; font-weight:800; color:var(--navy);">Gratis hoy</p>
           </article>
 
           <article class="bonus-card">
-            <div class="bonus-image">
-              <img src="/metodo/images/bono3.webp" alt="Kit rastreo alergias y lista compra inteligente" loading="lazy" />
-            </div>
             <div class="tag">Bono 3</div>
             <h3>Kit rastreo alergias + lista compra inteligente</h3>
-            <p class="small" style="margin:0;"><strong>Valor $17</strong></p>
+            <p class="small" style="margin:0;"><strong>Valor $17</strong> · Gratis hoy</p>
             <ul>
               <li>Imprimibles para registrar con claridad</li>
               <li>Seguimiento simple para tu rutina</li>
               <li>Compra más ordenada y funcional</li>
             </ul>
-            <p class="small" style="margin:0; font-weight:800; color:var(--navy);">Gratis hoy</p>
           </article>
 
           <article class="bonus-card">
-            <div class="bonus-image">
-              <img src="/metodo/images/bono4.webp" alt="SOS mamá recetario crisis 5 minutos" loading="lazy" />
-            </div>
             <div class="tag">Bono 4</div>
             <h3>SOS mamá recetario crisis 5 min</h3>
-            <p class="small" style="margin:0;"><strong>Valor $12</strong></p>
+            <p class="small" style="margin:0;"><strong>Valor $12</strong> · Gratis hoy</p>
             <ul>
               <li>Recetas rápidas para días complicados</li>
               <li>Apoyo cuando no tienes tiempo</li>
               <li>Más resolución, menos improvisación</li>
             </ul>
-            <p class="small" style="margin:0; font-weight:800; color:var(--navy);">Gratis hoy</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- BLOQUE 10 OFERTA + PRECIO -->
+    <!-- BLOQUE 10 OFERTA + PRECIO (punto 7) -->
     <section class="section" id="oferta">
       <div class="container">
         <div class="offer-box" id="offer-trigger">
@@ -1097,39 +1119,64 @@
               <h2 class="section-title" style="font-size:clamp(1.7rem,4vw,2.8rem); margin-top:10px;">
                 Todo lo que incluye tu compra
               </h2>
-              <ul class="offer-list">
-                <li>✅ 6 guías modulares en PDF (330–350 páginas total)</li>
-                <li>✅ 180 recetas profesionales</li>
-                <li>✅ 112 días planeados (16 semanas)</li>
-                <li>✅ 16 listas de compras</li>
-                <li>✅ Tiempos exactos por receta</li>
-                <li>✅ Valores nutricionales completos</li>
-                <li>✅ Texturas/cortes, almacenamiento y notas de seguridad</li>
-                <li>✅ Estrategias si rechaza</li>
-                <li>✅ Variaciones para alergias por receta</li>
-                <li>✅ 4 bonos incluidos hoy (valor total bonos: $75)</li>
-              </ul>
+
+              <!-- Nueva estructura escaneable -->
+              <div class="offer-stack">
+                <div class="offer-block">
+                  <h4>Sistema principal</h4>
+                  <ul class="offer-ul">
+                    <li>✅ 6 guías modulares en PDF (330–350 páginas total)</li>
+                    <li>✅ 180 recetas profesionales</li>
+                    <li>✅ Modular por edad (6–18 meses)</li>
+                  </ul>
+                </div>
+
+                <div class="offer-block">
+                  <h4>Plan listo (para que no improvises)</h4>
+                  <ul class="offer-ul">
+                    <li>✅ 112 días planeados (16 semanas)</li>
+                    <li>✅ 16 listas de compras</li>
+                    <li>✅ Tiempos exactos por receta (5/10/15–20)</li>
+                  </ul>
+                </div>
+
+                <div class="offer-block">
+                  <h4>Bonos incluidos hoy (valor $75)</h4>
+                  <ul class="offer-ul">
+                    <li>🎁 Bono 1: Certificado de Seguridad (Valor $27)</li>
+                    <li>🎁 Bono 2: Método Domingo (Valor $19)</li>
+                    <li>🎁 Bono 3: Kit Alergias + Checklists (Valor $17)</li>
+                    <li>🎁 Bono 4: SOS Mamá 5 min (Valor $12)</li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <div class="offer-price">
               <div class="striked">Antes $147 USD</div>
               <div class="price">$9.99 <span>USD hoy</span></div>
 
-              <p class="muted" style="margin:14px 0 18px;" id="checkout-copy">
-                Obtén acceso al sistema completo <strong>Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses (sin miedo ni dudas)</strong>.
+              <p class="muted" style="margin:12px 0 14px; font-weight:700; color:var(--navy);" id="checkout-copy">
+                Compra segura en Hotmart. Acceso inmediato por email.
               </p>
 
-              <div class="offer-image" style="margin:18px 0 14px;">
+              <div class="trust-line" style="margin-bottom:12px;">
+                <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
+                <span class="trust-pill">✅ Prueba 15 días</span>
+              </div>
+
+              <div class="offer-image" style="margin:12px 0 14px;">
                 <img src="/metodo/images/todo_en_uno.webp" alt="Método Modular La Fuente con todo lo incluido" loading="lazy" />
               </div>
 
               <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
-                Quiero empezar hoy 💝
+                ✅ Quiero empezar sin miedo hoy
               </a>
 
-              <p class="microcopy">Recíbelo al instante por email · Prueba 15 días</p>
+              <p class="microcopy">Entrega automática por email · Acceso inmediato · Garantía 15 días</p>
               <p class="seed-line">En el checkout podrás añadir imprimibles opcionales para momentos de pancita, noches difíciles y decisión rápida diaria.</p>
             </div>
+
           </div>
         </div>
       </div>
@@ -1146,7 +1193,7 @@
 
             <p>Durante 17 años, Martha ha acompañado a familias que querían empezar la alimentación complementaria con más seguridad, menos estrés y una estructura que sí pudieran seguir en la vida real.</p>
 
-            <p>Después de ver el mismo patrón una y otra vez —miedo, sobreinformación, culpa y falta de tiempo— reunió lo más útil en un sistema claro: recetas profesionales, calendarios semanales, listas de compras, notas de seguridad y apoyo para situaciones comunes como rechazo o adaptación por alergias.</p>
+            <p>Después de ver el mismo patrón una y otra vez —miedo, presión y falta de tiempo— reunió lo más útil en un sistema claro: recetas, calendarios, listas de compras, notas de seguridad y apoyo para situaciones comunes como rechazo o adaptación por alergias.</p>
 
             <p>El resultado es el <strong>Método Modular La Fuente™</strong>: una forma práctica de avanzar por etapas, con confianza y con una guía que apoya la alimentación complementaria sin hacerte sentir sola ni perdida.</p>
           </div>
@@ -1173,13 +1220,10 @@
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="guarantee">
-          <div class="guarantee-image" style="max-width:340px; margin:0 auto 16px;">
-            <img src="/metodo/images/garantia_15dias.webp" alt="Prueba de 15 días" loading="lazy" />
-          </div>
           <div class="tag" style="margin-bottom:10px;">Prueba 15 días</div>
           <h2 class="section-title" style="margin-top:0;">Pruébalo 15 días. Si no es para ti, te devolvemos el 100%.</h2>
           <p class="section-lead" style="max-width:760px;">
-            Compra hoy, revisa el material con calma y evalúa si realmente te ayuda a sentirte más segura y organizada. Si no es lo que esperabas, tienes 15 días para solicitar tu reembolso completo, sin preguntas.
+            Compra hoy, revisa el material con calma. Si no era lo que esperabas, tienes 15 días para solicitar tu reembolso completo.
           </p>
         </div>
       </div>
@@ -1200,7 +1244,18 @@
               <span>+</span>
             </button>
             <div class="faq-content">
-              <p>Después de completar tu compra, recibirás el acceso por email. La entrega es automática. Vas a poder descargar las guías en PDF y los imprimibles incluidos. Si no ves el correo enseguida, revisá spam/promociones 3–5 min.</p>
+              <p><strong>⚡ Acceso inmediato + entrega automática por email.</strong> Podrás descargar las guías en PDF y los imprimibles incluidos. Si no ves el correo enseguida, revisá spam/promociones 3–5 min.</p>
+            </div>
+          </div>
+
+          <!-- Movemos "info contradictoria" aquí también para reforzar el dolor (sin crear otra tarjeta en Problema) -->
+          <div class="faq-item">
+            <button class="faq-btn" type="button" aria-expanded="false">
+              <span>¿Qué pasa si siento que hay información contradictoria por todos lados?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-content">
+              <p>Justamente por eso el método es modular y guiado: te dice qué hacer por etapa, con calendario, tiempos exactos y criterios claros para avanzar sin adivinar.</p>
             </div>
           </div>
 
@@ -1210,7 +1265,7 @@
               <span>+</span>
             </button>
             <div class="faq-content">
-              <p>Sí. El método está pensado para bebés de 6 a 18 meses. Si estás por empezar, puedes abrir la guía inicial y seguir el calendario y las indicaciones desde el primer día.</p>
+              <p>Sí. Está pensado para bebés de 6 a 18 meses. Si estás por empezar, abres la guía inicial y sigues el calendario y las indicaciones desde el primer día.</p>
             </div>
           </div>
 
@@ -1220,7 +1275,7 @@
               <span>+</span>
             </button>
             <div class="faq-content">
-              <p>Cada receta incluye tiempo exacto de preparación, porciones, textura/cortes, valores nutricionales completos, almacenamiento, estrategias si rechaza, variaciones para alergias y notas de seguridad.</p>
+              <p>Tiempo exacto de preparación, porciones, textura/cortes, valores nutricionales, almacenamiento, estrategias si rechaza y variaciones para alergias.</p>
             </div>
           </div>
 
@@ -1230,27 +1285,7 @@
               <span>+</span>
             </button>
             <div class="faq-content">
-              <p>No. La Guía Maestra te orienta para BLW, tradicional o mixto. La idea es ayudarte a elegir la forma que mejor se adapte a tu bebé y a tu contexto.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-btn" type="button" aria-expanded="false">
-              <span>¿Incluye apoyo para alergias o restricciones?</span>
-              <span>+</span>
-            </button>
-            <div class="faq-content">
-              <p>Sí. Las recetas incluyen variaciones para lácteos, huevo, gluten y frutos secos, además de un kit de rastreo y apoyo práctico para que puedas registrar con más claridad.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-btn" type="button" aria-expanded="false">
-              <span>¿Y si mi bebé rechaza algunos alimentos?</span>
-              <span>+</span>
-            </button>
-            <div class="faq-content">
-              <p>El método contempla eso. Cada receta incorpora estrategias para el rechazo, de forma que tengas opciones claras para insistir con calma y ajustar sin entrar en estrés.</p>
+              <p>No. La Guía Maestra te orienta para BLW, tradicional o mixto. La idea es adaptarlo a tu bebé y a tu contexto.</p>
             </div>
           </div>
 
@@ -1261,16 +1296,6 @@
             </button>
             <div class="faq-content">
               <p>Tienes 15 días desde la compra. Si dentro de ese plazo consideras que no es para ti, puedes solicitar el reembolso completo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-btn" type="button" aria-expanded="false">
-              <span>¿Necesito imprimir todo?</span>
-              <span>+</span>
-            </button>
-            <div class="faq-content">
-              <p>No es obligatorio. Puedes usar el material desde tu móvil, tablet o computador. Si prefieres tener algunas hojas a mano, también podrás descargar imprimibles para organizarte mejor.</p>
             </div>
           </div>
         </div>
@@ -1287,19 +1312,26 @@
 
           <div style="max-width:520px; margin:20px auto 0;">
             <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
-              Quiero empezar hoy 💝
+              ✅ Quiero empezar sin miedo hoy
             </a>
+            <div class="trust-line" style="margin-top:10px;">
+              <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
+              <span class="trust-pill">✅ Prueba 15 días</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- STICKY CTA MOBILE -->
+  <!-- STICKY CTA MOBILE (punto 8) -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="false">
     <div class="sticky-inner">
+      <div class="sticky-mini">
+        <span>$9.99</span> · <span>Entrega por email</span> · <span>Garantía 15 días</span>
+      </div>
       <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora desde la barra fija">
-        Quiero empezar hoy 💝
+        ✅ Quiero empezar sin miedo hoy
       </a>
     </div>
   </div>
@@ -1327,23 +1359,11 @@
       });
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId.length > 1) {
-          const target = document.querySelector(targetId);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      });
-    });
-
     const stickyCta = document.getElementById('stickyCta');
     const offerTrigger = document.getElementById('offer-trigger');
 
     function toggleStickyCta() {
+      if (!offerTrigger) return;
       const rect = offerTrigger.getBoundingClientRect();
       const shouldShow = rect.top <= window.innerHeight * 0.72;
       stickyCta.classList.toggle('visible', shouldShow);
