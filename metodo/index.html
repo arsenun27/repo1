@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses (sin miedo ni dudas)</title>
   <meta name="description" content="Sistema completo de 6 guías modulares en PDF para alimentación complementaria 6–18 meses. 180 recetas, 112 días planeados, listas de compras, seguridad, alergias, rechazo y más." />
-  <meta name="theme-color" content="#4A7C59" />
+  <meta name="theme-color" content="#F28AB2" />
   <meta property="og:title" content="Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses" />
-  <meta property="og:description" content="Empieza la alimentación complementaria sin miedo ni dudas. Acceso inmediato + entrega automática por email." />
+  <meta property="og:description" content="Empieza la alimentación complementaria sin miedo ni dudas. Recíbelo al instante por email." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/metodo/images/todo_en_uno.webp" />
+  <meta property="og:image" content="images/todo_en_uno.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -31,19 +31,21 @@
 
   <style>
     :root{
-      --primary:#4A7C59;
-      --light:#6B9D7A;
-      --dark:#2F5940;
-      --accent:#F4A460;
-      --cream:#FFF8F0;
-      --text:#2C3E2F;
-      --gray:#6B7C7E;
-      --white:#ffffff;
-      --border:rgba(47,89,64,.12);
-      --shadow:0 10px 30px rgba(47,89,64,.08);
-      --shadow-lg:0 18px 42px rgba(47,89,64,.14);
-      --radius:22px;
-      --radius-sm:16px;
+      --bg:#F4E8EC;
+      --bg-soft:#FAF2F5;
+      --white:#FFFFFF;
+      --navy:#2E4561;
+      --navy-soft:#51657D;
+      --pink:#F46AA4;
+      --pink-dark:#E05591;
+      --mint:#BFE8D8;
+      --mint-dark:#7CB8A1;
+      --text:#6B6E76;
+      --border:rgba(46,69,97,.10);
+      --shadow:0 10px 30px rgba(46,69,97,.08);
+      --shadow-lg:0 18px 40px rgba(46,69,97,.12);
+      --radius:24px;
+      --radius-sm:18px;
       --max:1140px;
     }
 
@@ -53,7 +55,9 @@
       margin:0;
       font-family:'Outfit',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       color:var(--text);
-      background:linear-gradient(180deg,#fffdf9 0%, var(--cream) 100%);
+      background:
+        radial-gradient(circle at top right, rgba(244,106,164,.10), transparent 25%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
       line-height:1.55;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
@@ -63,404 +67,448 @@
     a{text-decoration:none;color:inherit}
     button{font:inherit}
     .container{width:min(calc(100% - 28px), var(--max)); margin-inline:auto}
-    .section{padding:56px 0}
-    .section-tight{padding:34px 0}
+    .section{padding:58px 0}
+    .section-tight{padding:36px 0}
+    .center{text-align:center}
+    .muted{color:var(--text)}
+    .small{font-size:.94rem}
+    .tiny{font-size:.84rem}
+
     .eyebrow{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 14px; border-radius:999px;
-      background:rgba(74,124,89,.10); color:var(--dark);
-      font-size:.88rem; font-weight:700; letter-spacing:.01em;
-      border:1px solid rgba(74,124,89,.13);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 18px;
+      border-radius:999px;
+      background:var(--mint);
+      color:var(--navy);
+      font-size:.9rem;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      box-shadow:var(--shadow);
     }
+
     .headline{
       font-family:'Crimson Pro', Georgia, serif;
       font-weight:700;
-      line-height:1.03;
-      letter-spacing:-.02em;
-      margin:14px 0 12px;
-      font-size:clamp(2rem, 5.5vw, 4.2rem);
+      line-height:1.04;
+      letter-spacing:-.03em;
+      margin:16px 0 12px;
+      font-size:clamp(2.05rem, 5.8vw, 4.5rem);
+      color:var(--navy);
     }
+
+    .headline .accent-line{
+      display:block;
+      color:var(--pink);
+      font-style:italic;
+      margin-top:8px;
+    }
+
     .subheadline{
       font-size:1.08rem;
-      color:var(--gray);
-      margin:0 0 20px;
+      color:var(--text);
+      margin:0 0 18px;
     }
+
     .section-title{
       font-family:'Crimson Pro', Georgia, serif;
-      font-size:clamp(1.7rem,4.1vw,3rem);
+      font-size:clamp(1.8rem, 4.5vw, 3.1rem);
       line-height:1.08;
       margin:0 0 12px;
-      letter-spacing:-.02em;
+      letter-spacing:-.03em;
+      color:var(--navy);
     }
+
     .section-lead{
-      color:var(--gray);
+      color:var(--text);
       max-width:760px;
-      margin:0 auto 0;
-      font-size:1.02rem;
+      margin:0 auto;
+      font-size:1.03rem;
     }
-    .center{text-align:center}
-    .muted{color:var(--gray)}
-    .small{font-size:.94rem}
-    .tiny{font-size:.84rem}
+
+    .card{
+      background:rgba(255,255,255,.88);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+
+    .soft{
+      background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.72));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .grid{display:grid; gap:16px}
+
+    .hero{
+      padding:24px 0 30px;
+    }
+
+    .hero-wrap{
+      display:grid;
+      gap:22px;
+      align-items:center;
+    }
+
+    .hero-copy .checklist{
+      list-style:none;
+      padding:0;
+      margin:18px 0 20px;
+      display:grid;
+      gap:10px;
+    }
+
+    .hero-copy .checklist li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:13px 14px;
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      color:var(--navy-soft);
+      font-weight:600;
+    }
+
+    .hero-stats{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:18px 0 20px;
+    }
+
     .badge{
       display:inline-flex;
       align-items:center;
       gap:8px;
       padding:10px 14px;
       border-radius:999px;
-      background:var(--white);
+      background:rgba(255,255,255,.92);
       border:1px solid var(--border);
       box-shadow:var(--shadow);
       font-size:.9rem;
       font-weight:700;
-      color:var(--dark);
+      color:var(--navy);
     }
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:999px;background:#fff;
-      border:1px solid var(--border);font-weight:600;font-size:.88rem;
-    }
-    .card{
-      background:var(--white);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .card-pad{padding:22px}
-    .card-pad-lg{padding:26px}
-    .soft{
-      background:linear-gradient(180deg,rgba(107,157,122,.10),rgba(255,255,255,.72));
-      border:1px solid rgba(74,124,89,.10);
-      border-radius:var(--radius);
-    }
-    .grid{display:grid; gap:16px}
-    .hero{
-      padding:24px 0 26px;
-    }
-    .hero-wrap{
-      display:grid;
-      gap:18px;
-      align-items:center;
-    }
-    .hero-copy .checklist{
-      list-style:none; padding:0; margin:18px 0 20px;
-      display:grid; gap:10px;
-    }
-    .hero-copy .checklist li{
-      display:flex; gap:10px; align-items:flex-start;
-      padding:12px 14px; background:#fff; border:1px solid var(--border);
-      border-radius:16px; box-shadow:var(--shadow);
-      font-weight:600;
-    }
-    .hero-stats{
-      display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 20px;
-    }
-    .hero-visual{
-      position:relative;
-      overflow:hidden;
-      padding:16px;
-      border-radius:28px;
-      background:
-        radial-gradient(circle at top right, rgba(244,164,96,.22), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(107,157,122,.18), transparent 35%),
-        linear-gradient(180deg,#ffffff 0%, #fffaf3 100%);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow-lg);
-    }
-    .hero-visual img{
-      border-radius:18px;
-      width:100%;
-      height:auto;
-      object-fit:contain;
-    }
-    .hero-trust{
-      display:grid; gap:10px; margin-top:14px;
-    }
-    .trust-row{
-      display:flex; flex-wrap:wrap; gap:8px;
-    }
+
     .cta{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      min-height:56px;
-      padding:14px 22px;
+      min-height:58px;
+      padding:15px 24px;
       border-radius:999px;
-      background:linear-gradient(180deg, var(--primary), var(--dark));
-      color:var(--white);
+      background:linear-gradient(180deg, var(--pink), var(--pink-dark));
+      color:#fff;
       font-weight:800;
       font-size:1rem;
-      box-shadow:0 14px 30px rgba(47,89,64,.24);
+      box-shadow:0 16px 36px rgba(244,106,164,.28);
       transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
       border:none;
       width:100%;
       text-align:center;
     }
-    .cta:hover{transform:translateY(-1px); box-shadow:0 18px 36px rgba(47,89,64,.28)}
-    .cta.secondary{
-      background:#fff; color:var(--dark); border:1px solid var(--border); box-shadow:var(--shadow);
+
+    .cta:hover{
+      transform:translateY(-1px);
+      box-shadow:0 20px 40px rgba(244,106,164,.32);
     }
 
-    .mini-steps{
-      grid-template-columns:1fr;
-      margin-top:18px;
+    .hero-visual,
+    .hero-mobile-visual{
+      position:relative;
+      overflow:hidden;
+      padding:16px;
+      border-radius:30px;
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.76));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-lg);
     }
+
+    .hero-visual img,
+    .hero-mobile-visual img{
+      border-radius:18px;
+      width:100%;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .hero-mobile-visual{display:block; margin:16px 0 18px;}
+    .hero-desktop-visual{display:none;}
+
+    .mini-steps{grid-template-columns:1fr; margin-top:18px;}
     .step-card{
       padding:22px 18px;
       display:flex;
       gap:14px;
       align-items:flex-start;
-      background:#fff;
+      background:rgba(255,255,255,.9);
       border-radius:22px;
       border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
+
     .step-num{
       width:40px;height:40px;flex:0 0 40px;
       display:grid;place-items:center;border-radius:50%;
-      background:rgba(74,124,89,.10); color:var(--dark); font-weight:800;
-      border:1px solid rgba(74,124,89,.15);
+      background:var(--mint);
+      color:var(--navy);
+      font-weight:800;
     }
 
-    .pain-grid,.deliver-grid,.bonus-grid,.filter-grid,.testi-grid,.compare-grid,.diff-grid,.faq-list,.value-grid{
+    .pain-grid,.deliver-grid,.bonus-grid,.filter-grid,.testi-grid,.diff-grid,.faq-list{
       grid-template-columns:1fr;
     }
 
-    .pain-item{
-      padding:18px;
-      border-radius:18px;
-      background:#fff;
+    .pain-item,.feature-card,.deliver-card,.bonus-card,.testi-card,.filter-card,.compare-card,.offer-box{
+      background:rgba(255,255,255,.9);
       border:1px solid var(--border);
+      border-radius:22px;
       box-shadow:var(--shadow);
     }
-    .pain-item h3,.feature-card h3,.deliver-card h3,.bonus-card h3,.testi-card h3,.filter-card h3{
+
+    .pain-item,.feature-card,.deliver-card,.bonus-card,.testi-card,.filter-card,.compare-card{
+      padding:20px;
+    }
+
+    .pain-item h3,.feature-card h3,.deliver-card h3,.bonus-card h3,.testi-card h3,.filter-card h3,.compare-card h3{
       margin:0 0 8px;
-      font-size:1.02rem;
+      font-size:1.03rem;
       line-height:1.2;
+      color:var(--navy);
     }
 
     .highlight{
       padding:20px;
       border-radius:24px;
-      border:1px solid rgba(74,124,89,.14);
-      background:linear-gradient(180deg, rgba(74,124,89,.08), rgba(255,255,255,.95));
+      border:1px solid rgba(244,106,164,.16);
+      background:linear-gradient(180deg, rgba(244,106,164,.08), rgba(255,255,255,.92));
       box-shadow:var(--shadow);
-      margin:18px 0 18px;
-    }
-    .highlight strong{color:var(--dark)}
-    .feature-card{
-      padding:16px;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:18px;
+      margin:18px 0;
+      color:var(--navy);
     }
 
-    .comparison-wrap{
-      overflow:hidden;
-      border-radius:24px;
-      border:1px solid var(--border);
-      box-shadow:var(--shadow-lg);
-      background:#fff;
-    }
-    table{
-      width:100%;
-      border-collapse:collapse;
-      font-size:.94rem;
-    }
-    thead th{
-      padding:16px 14px;
-      text-align:left;
-      background:#f7faf7;
-      border-bottom:1px solid var(--border);
-      font-size:.93rem;
-    }
-    tbody td{
-      padding:14px;
-      border-bottom:1px solid rgba(47,89,64,.08);
-      vertical-align:top;
-    }
-    tbody tr:last-child td{border-bottom:none}
-    .winner-head{
-      background:linear-gradient(180deg, rgba(74,124,89,.14), rgba(107,157,122,.08));
-      color:var(--dark);
-      position:relative;
-    }
-    .winner-badge{
-      display:inline-block;
-      margin-top:8px;
-      font-size:.76rem;
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      font-size:.78rem;
       font-weight:800;
-      padding:5px 10px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      padding:8px 11px;
       border-radius:999px;
-      background:var(--dark);
-      color:#fff;
+      background:var(--mint);
+      color:var(--navy);
     }
-    .yes{color:var(--dark); font-weight:700}
-    .no{color:#a06d3b; font-weight:700}
 
-    .testi-card{
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
+    .comparison-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:24px;
     }
-    .stars{font-size:1rem; color:#D58A2A}
+
+    .compare-card .feature-name{
+      font-weight:800;
+      color:var(--navy);
+      margin-bottom:12px;
+      font-size:1rem;
+    }
+
+    .compare-cols{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .compare-box{
+      border-radius:16px;
+      padding:14px;
+      background:#fff;
+      border:1px solid var(--border);
+    }
+
+    .compare-box strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:.86rem;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:var(--navy-soft);
+    }
+
+    .compare-box.winner{
+      background:linear-gradient(180deg, rgba(191,232,216,.45), rgba(255,255,255,.98));
+      border-color:rgba(124,184,161,.28);
+    }
+
+    .winner-pill{
+      display:inline-flex;
+      margin-top:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--pink);
+      color:#fff;
+      font-size:.74rem;
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+
+    .stars{font-size:1rem; color:#E59B54}
     .testi-caption{
       font-size:.9rem;
       font-weight:700;
-      color:var(--dark);
+      color:var(--navy);
     }
-    .proof-shot{
+
+    .proof-shot,.bonus-image,.guarantee-image{
       border-radius:18px;
       overflow:hidden;
       border:1px solid var(--border);
       box-shadow:var(--shadow);
       background:#fff;
     }
+
     .proof-shot img{
       width:100%;
-      aspect-ratio: 4/5;
+      aspect-ratio:4/5;
       object-fit:cover;
     }
 
-    .filter-card{
-      padding:22px;
-      height:100%;
-    }
-    .filter-card ul{
-      margin:12px 0 0;
-      padding-left:18px;
-      display:grid;
-      gap:10px;
+    .bonus-image{
+      margin-bottom:10px;
     }
 
-    .deliver-card,.bonus-card,.value-card{
-      padding:20px;
-      height:100%;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
+    .bonus-card.featured{
+      border:1.5px solid rgba(244,106,164,.30);
+      box-shadow:0 18px 40px rgba(244,106,164,.16);
+      position:relative;
+      overflow:hidden;
     }
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      width:max-content;
-      font-size:.78rem; font-weight:800; letter-spacing:.02em;
-      text-transform:uppercase;
-      padding:7px 10px;
-      border-radius:999px;
-      background:rgba(74,124,89,.10);
-      color:var(--dark);
+
+    .bonus-card.featured::before{
+      content:"⭐ Elimina el miedo más común al empezar";
+      display:block;
+      margin:-20px -20px 12px;
+      padding:10px 16px;
+      background:rgba(244,106,164,.12);
+      color:var(--pink-dark);
+      font-weight:800;
+      font-size:.82rem;
     }
-    .age{
-      font-size:.84rem; font-weight:700; color:var(--gray);
-    }
-    .deliver-card ul,.bonus-card ul,.value-card ul{
-      margin:0;
+
+    .filter-card ul,
+    .deliver-card ul,
+    .bonus-card ul,
+    .offer-list{
+      margin:12px 0 0;
       padding-left:18px;
       display:grid;
       gap:8px;
     }
 
-    .bonus-card.featured{
-      border:1.5px solid rgba(244,164,96,.55);
-      box-shadow:0 16px 38px rgba(244,164,96,.18);
-      position:relative;
-      overflow:hidden;
-    }
-    .bonus-card.featured::before{
-      content:"⭐ Bono más valioso para empezar con seguridad";
-      display:block;
-      margin:-20px -20px 12px;
-      padding:10px 16px;
-      background:rgba(244,164,96,.18);
-      color:#8a5a28;
-      font-weight:800;
-      font-size:.82rem;
-    }
-    .bonus-image,
-    .guarantee-image{
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      background:#fff;
-      margin-bottom:8px;
-    }
-    .bonus-image img,
-    .guarantee-image img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
+    .age{
+      font-size:.84rem;
+      font-weight:700;
+      color:var(--text);
     }
 
-    .price-box{
+    .offer-box{
       padding:24px;
-      background:linear-gradient(180deg,#ffffff 0%, #fffaf4 100%);
+    }
+
+    .offer-grid{
+      display:grid;
+      gap:20px;
+      align-items:start;
+    }
+
+    .offer-price{
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,242,245,.98));
       border:1px solid var(--border);
-      border-radius:28px;
-      box-shadow:var(--shadow-lg);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
     }
-    .price-top{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
+
     .striked{
-      color:#9aa4a5;
+      color:#9B9CA3;
       text-decoration:line-through;
       font-size:1.08rem;
       font-weight:700;
+      margin-bottom:6px;
     }
+
     .price{
-      font-size:clamp(2.4rem, 9vw, 4rem);
+      font-size:clamp(2.5rem, 9vw, 4rem);
       line-height:1;
-      color:var(--dark);
+      color:var(--navy);
       font-weight:800;
       letter-spacing:-.03em;
+      margin-bottom:8px;
     }
+
     .price span{
       font-size:1rem;
-      color:var(--gray);
+      color:var(--text);
       font-weight:700;
       letter-spacing:0;
     }
+
     .microcopy{
-      font-size:.9rem;
-      color:var(--gray);
+      font-size:.92rem;
+      color:var(--text);
       margin-top:10px;
     }
+
     .seed-line{
       margin-top:12px;
       font-size:.94rem;
-      color:var(--dark);
+      color:var(--navy);
       font-weight:600;
-      background:rgba(74,124,89,.08);
-      border:1px dashed rgba(74,124,89,.20);
+      background:rgba(191,232,216,.42);
+      border:1px dashed rgba(124,184,161,.35);
       padding:12px 14px;
       border-radius:14px;
     }
 
     .author-wrap{
-      display:grid; gap:18px; align-items:start;
+      display:grid;
+      gap:18px;
+      align-items:start;
     }
+
     .author-bio{
       padding:24px;
     }
+
     .author-stats{
-      display:grid; gap:12px;
+      display:grid;
+      gap:12px;
     }
+
     .stat{
       padding:18px;
       border-radius:20px;
-      background:#fff;
+      background:rgba(255,255,255,.9);
       border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
+
     .stat strong{
       display:block;
       font-size:1.6rem;
-      color:var(--dark);
+      color:var(--navy);
       line-height:1;
       margin-bottom:6px;
     }
@@ -468,71 +516,61 @@
     .guarantee{
       padding:26px;
       text-align:center;
-      background:linear-gradient(180deg, rgba(74,124,89,.10), rgba(255,255,255,.98));
+      background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(250,242,245,.92));
       border-radius:28px;
-      border:1px solid rgba(74,124,89,.14);
+      border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
 
     .faq-wrap{
-      background:#fff;
+      background:rgba(255,255,255,.92);
       border:1px solid var(--border);
       border-radius:26px;
       box-shadow:var(--shadow);
       overflow:hidden;
     }
-    .faq-item + .faq-item{border-top:1px solid rgba(47,89,64,.08)}
+
+    .faq-item + .faq-item{border-top:1px solid rgba(46,69,97,.08)}
+
     .faq-btn{
       width:100%;
       background:#fff;
       border:none;
-      padding:18px 18px;
+      padding:18px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:16px;
       text-align:left;
       cursor:pointer;
-      color:var(--text);
+      color:var(--navy);
       font-weight:700;
       font-size:1rem;
     }
+
     .faq-btn span:last-child{
       width:30px;height:30px;flex:0 0 30px;border-radius:50%;
-      display:grid;place-items:center;background:rgba(74,124,89,.10);color:var(--dark);font-weight:800;
+      display:grid;place-items:center;background:var(--mint);color:var(--navy);font-weight:800;
     }
+
     .faq-content{
       max-height:0;
       overflow:hidden;
       transition:max-height .25s ease;
       padding:0 18px;
     }
+
     .faq-content p{
       margin:0 0 18px;
-      color:var(--gray);
+      color:var(--text);
     }
 
     .final-cta{
-      background:linear-gradient(180deg,var(--dark), #234633);
-      color:#fff;
+      background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.86));
       border-radius:28px;
-      padding:28px 22px;
-      box-shadow:0 18px 46px rgba(47,89,64,.30);
-    }
-    .final-cta .section-title,
-    .final-cta .section-lead{
-      color:#fff;
-    }
-    .final-cta .section-lead{opacity:.85}
-    .final-cta .trust-row .pill{
-      background:rgba(255,255,255,.10);
-      color:#fff;
-      border-color:rgba(255,255,255,.14);
-    }
-    .final-cta .cta{
-      background:#fff;
-      color:var(--dark);
-      box-shadow:none;
+      padding:30px 22px;
+      box-shadow:var(--shadow-lg);
+      border:1px solid var(--border);
     }
 
     .sticky-cta{
@@ -540,69 +578,65 @@
       left:0; right:0; bottom:0;
       z-index:999;
       padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-      background:rgba(255,248,240,.92);
+      background:rgba(244,232,236,.92);
       backdrop-filter:blur(10px);
-      border-top:1px solid rgba(47,89,64,.10);
-      box-shadow:0 -10px 26px rgba(47,89,64,.08);
+      border-top:1px solid rgba(46,69,97,.08);
+      box-shadow:0 -10px 26px rgba(46,69,97,.08);
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(120%);
+      transition:opacity .24s ease, transform .24s ease;
     }
+
+    .sticky-cta.visible{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+
     .sticky-inner{
       width:min(calc(100% - 12px), 640px);
       margin-inline:auto;
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    .sticky-price{
-      display:none;
-      color:var(--dark);
-      font-weight:800;
-      white-space:nowrap;
-    }
-    .sticky-price small{
-      display:block;
-      font-size:.76rem;
-      color:var(--gray);
-      font-weight:700;
     }
 
     .footer-note{
       padding:24px 0 110px;
       text-align:center;
-      color:var(--gray);
+      color:var(--text);
       font-size:.82rem;
     }
 
     @media (min-width: 700px){
-      .section{padding:72px 0}
+      .section{padding:76px 0}
       .hero{padding:34px 0 40px}
-      .hero-wrap{grid-template-columns:1.05fr .95fr; gap:28px}
+      .hero-wrap{grid-template-columns:1.02fr .98fr; gap:30px}
       .mini-steps{grid-template-columns:repeat(3,1fr)}
       .pain-grid{grid-template-columns:repeat(2,1fr)}
       .filter-grid{grid-template-columns:repeat(2,1fr)}
       .deliver-grid{grid-template-columns:repeat(2,1fr)}
       .bonus-grid{grid-template-columns:repeat(2,1fr)}
-      .value-grid{grid-template-columns:1.05fr .95fr}
       .testi-grid{grid-template-columns:repeat(3,1fr)}
+      .comparison-grid{grid-template-columns:repeat(2,1fr)}
+      .compare-cols{grid-template-columns:1fr 1fr}
       .author-wrap{grid-template-columns:1.2fr .8fr}
-      .price-top{flex-direction:row; justify-content:space-between; align-items:flex-end}
-      .sticky-price{display:block}
+      .offer-grid{grid-template-columns:1.08fr .92fr}
+      .hero-mobile-visual{display:none}
+      .hero-desktop-visual{display:block}
     }
 
-    @media (min-width: 960px){
+    @media (min-width: 980px){
       .pain-grid{grid-template-columns:repeat(3,1fr)}
       .deliver-grid{grid-template-columns:repeat(3,1fr)}
       .bonus-grid{grid-template-columns:repeat(4,1fr)}
     }
 
     @media (max-width: 767px){
-      body{padding-bottom:92px}
+      body{padding-bottom:0}
       .headline br,.section-title br{display:none}
-      .comparison-wrap{overflow-x:auto}
-      table{min-width:720px}
     }
 
     @media (min-width: 768px){
-      .sticky-cta{display:none}
+      .sticky-cta{display:none!important}
       .footer-note{padding-bottom:40px}
     }
   </style>
@@ -615,9 +649,21 @@
       <div class="container">
         <div class="hero-wrap">
           <div class="hero-copy">
-            <div class="eyebrow">✨ Alimentación Complementaria 6–18 meses</div>
-            <h1 class="headline">Empieza la alimentación complementaria sin miedo ni dudas.</h1>
-            <p class="subheadline">Con el <strong>Método Modular La Fuente™</strong>… abres la guía de su edad, sigues el calendario semanal y listo: sabes qué ofrecer, cómo servirlo, cuánto tarda y cómo adaptarlo si rechaza o si hay alergias.</p>
+            <div style="font-size:3rem; line-height:1; margin-bottom:14px;">👶 🍎</div>
+            <div class="eyebrow">✨ Más de 2,900 familias confían en nosotros</div>
+
+            <h1 class="headline">
+              Empieza la alimentación complementaria
+              <span class="accent-line">sin miedo ni dudas</span>
+            </h1>
+
+            <p class="subheadline">
+              Con el <strong>Método Modular La Fuente™</strong>… abres la guía de su edad, sigues el calendario semanal y listo: sabes qué ofrecer, cómo servirlo, cuánto tarda y cómo adaptarlo si rechaza o si hay alergias.
+            </p>
+
+            <div class="hero-mobile-visual">
+              <img src="images/todo_en_uno.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
+            </div>
 
             <ul class="checklist">
               <li><span>✅</span><span><strong>112 días planeados</strong> para dejar de improvisar y empezar con una ruta clara.</span></li>
@@ -627,25 +673,19 @@
 
             <div class="hero-stats">
               <div class="badge">👩‍⚕️ Lic. Martha La Fuente</div>
-              <div class="badge">🛡️ 17 años de experiencia</div>
+              <div class="badge">🩷 17 años de experiencia</div>
               <div class="badge">👶 +2,900 familias acompañadas</div>
             </div>
 
-            <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Ir al checkout seguro">
-              ✅ Quiero empezar con confianza hoy
+            <a class="cta" href="#oferta" aria-label="Ver todo lo que incluye tu compra">
+              Ver todo lo que incluye tu compra 🎁
             </a>
-
-            <div class="hero-trust">
-              <div class="trust-row">
-                <div class="pill">🔒 Pago seguro por Hotmart</div>
-                <div class="pill">⚡ Acceso inmediato + entrega automática por email</div>
-                <div class="pill">🛟 Garantía 15 días</div>
-              </div>
-            </div>
           </div>
 
-          <div class="hero-visual">
-            <img src="/metodo/images/todo_en_uno.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
+          <div class="hero-desktop-visual">
+            <div class="hero-visual">
+              <img src="images/todo_en_uno.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
@@ -654,7 +694,7 @@
     <!-- BLOQUE 2 CÓMO FUNCIONA -->
     <section class="section-tight">
       <div class="container">
-        <div class="soft card-pad-lg">
+        <div class="soft" style="padding:26px;">
           <div class="center">
             <h2 class="section-title">Así funciona el Método Modular La Fuente™ (en 3 pasos)</h2>
             <p class="section-lead">Sin complicarte. Sin Google. Sin tener que adivinar cada comida.</p>
@@ -664,27 +704,29 @@
             <div class="step-card">
               <div class="step-num">1</div>
               <div>
-                <h3>Abrir la guía de su edad</h3>
-                <p class="muted small">Vas directo al módulo que corresponde a su etapa. Nada de PDF eterno ni información mezclada.</p>
+                <h3 style="margin:0 0 8px; color:var(--navy);">Abrir la guía de su edad</h3>
+                <p class="muted small" style="margin:0;">Vas directo al módulo que corresponde a su etapa. Nada de PDF eterno ni información mezclada.</p>
               </div>
             </div>
+
             <div class="step-card">
               <div class="step-num">2</div>
               <div>
-                <h3>Seguir el calendario semanal</h3>
-                <p class="muted small">Tienes 4 semanas por guía, con recetas organizadas y lista de compras para avanzar con orden.</p>
+                <h3 style="margin:0 0 8px; color:var(--navy);">Seguir el calendario semanal</h3>
+                <p class="muted small" style="margin:0;">Tienes 4 semanas por guía, con recetas organizadas y lista de compras para avanzar con orden.</p>
               </div>
             </div>
+
             <div class="step-card">
               <div class="step-num">3</div>
               <div>
-                <h3>Cocinar rápido y servir seguro</h3>
-                <p class="muted small">Cada receta te indica tiempo, porciones, textura/cortes, almacenamiento y qué hacer si rechaza.</p>
+                <h3 style="margin:0 0 8px; color:var(--navy);">Cocinar rápido y servir seguro</h3>
+                <p class="muted small" style="margin:0;">Cada receta te indica tiempo, porciones, textura/cortes, almacenamiento y qué hacer si rechaza.</p>
               </div>
             </div>
           </div>
 
-          <p class="center" style="margin:18px 0 0; font-weight:800; color:var(--dark);">abrir → seguir → servir</p>
+          <p class="center" style="margin:18px 0 0; font-weight:800; color:var(--navy);">abrir → seguir → servir</p>
         </div>
       </div>
     </section>
@@ -693,34 +735,39 @@
     <section class="section">
       <div class="container">
         <div class="center">
-          <h2 class="section-title">Si estás por empezar… es normal sentir miedo, dudas y presión.</h2>
+          <h2 class="section-title">Si estás por empezar, es normal sentir miedo, dudas y presión.</h2>
           <p class="section-lead">No porque no seas capaz. Sino porque te toca decidir todos los días con un bebé pequeño, poco tiempo y demasiada información contradictoria.</p>
         </div>
 
         <div class="grid pain-grid" style="margin-top:24px;">
           <div class="pain-item">
             <h3>😰 Miedo al atragantamiento</h3>
-            <p class="muted small">Te preocupa ofrecer algo “mal cortado” o no saber diferenciar una arcada normal de una situación real de riesgo.</p>
+            <p class="small" style="margin:0;">Te preocupa ofrecer algo mal cortado o no saber diferenciar una arcada normal de una situación real de riesgo.</p>
           </div>
+
           <div class="pain-item">
             <h3>🤯 Dudas por cada alimento</h3>
-            <p class="muted small">No sabes qué ofrecer primero, cuánto, con qué textura o cómo avanzar sin sentirte perdida.</p>
+            <p class="small" style="margin:0;">No sabes qué ofrecer primero, cuánto, con qué textura o cómo avanzar sin sentirte perdida.</p>
           </div>
+
           <div class="pain-item">
             <h3>📱 Información contradictoria</h3>
-            <p class="muted small">Un perfil dice una cosa, otro dice otra, y al final terminas más confundida que antes.</p>
+            <p class="small" style="margin:0;">Un perfil dice una cosa, otro dice otra, y al final terminas más confundida que antes.</p>
           </div>
+
           <div class="pain-item">
             <h3>⏳ Falta de tiempo real</h3>
-            <p class="muted small">Quieres hacerlo bien, pero necesitas recetas posibles para tu día a día, no ideas lindas imposibles de sostener.</p>
+            <p class="small" style="margin:0;">Quieres hacerlo bien, pero necesitas recetas posibles para tu día a día, no ideas lindas imposibles de sostener.</p>
           </div>
+
           <div class="pain-item">
             <h3>🥄 Improvisación constante</h3>
-            <p class="muted small">Abrir la nevera y decidir “lo que salga” genera más estrés, más compras sueltas y menos confianza.</p>
+            <p class="small" style="margin:0;">Abrir la nevera y decidir “lo que salga” genera más estrés, más compras sueltas y menos confianza.</p>
           </div>
+
           <div class="pain-item">
             <h3>💭 Culpa por no hacerlo perfecto</h3>
-            <p class="muted small">Sientes que deberías saber más, organizarte mejor o reaccionar más rápido… y eso pesa.</p>
+            <p class="small" style="margin:0;">Sientes que deberías saber más, organizarte mejor o reaccionar más rápido… y eso pesa.</p>
           </div>
         </div>
 
@@ -733,40 +780,42 @@
     <!-- BLOQUE 4 SOLUCIÓN -->
     <section class="section" style="padding-top:0;">
       <div class="container">
-        <div class="soft card-pad-lg">
+        <div class="soft" style="padding:26px;">
           <div class="center">
-            <h2 class="section-title">La salida no es “leer más”. Es tener un método claro y modular.</h2>
+            <h2 class="section-title">La salida no es leer más. Es tener un método claro y modular.</h2>
             <p class="section-lead">Por eso el <strong>Método Modular La Fuente™</strong> organiza todo por etapa, te da 112 días planeados y te ayuda a tomar decisiones sin googlear cada comida.</p>
           </div>
 
           <div class="highlight">
-            <p style="margin:0; font-size:1.02rem;"><strong>No es un recetario suelto.</strong> Es un <strong>Método Modular</strong>: abres el módulo de su edad, ves el calendario, eliges la receta y sigues instrucciones prácticas con tiempos, textura, nutrición, almacenamiento, alergias y apoyo si rechaza.</p>
+            <p style="margin:0; font-size:1.02rem;">
+              <strong>No es un recetario suelto.</strong> Es un <strong>Método Modular</strong>: abres el módulo de su edad, ves el calendario, eliges la receta y sigues instrucciones prácticas con tiempos, textura, nutrición, almacenamiento, alergias y apoyo si rechaza.
+            </p>
           </div>
 
           <div class="grid diff-grid">
             <div class="feature-card">
               <h3>🗓️ 112 días planeados</h3>
-              <p class="muted small">16 semanas listas para que no improvises ni repitas ideas al azar.</p>
+              <p class="small" style="margin:0;">16 semanas listas para que no improvises ni repitas ideas al azar.</p>
             </div>
             <div class="feature-card">
               <h3>🥣 180 recetas profesionales</h3>
-              <p class="muted small">Pensadas para bebés de 6 a 18 meses, con foco práctico y realista.</p>
+              <p class="small" style="margin:0;">Pensadas para bebés de 6 a 18 meses, con foco práctico y realista.</p>
             </div>
             <div class="feature-card">
               <h3>⚖️ Nutrición visible por receta</h3>
-              <p class="muted small">Calorías, proteína, hierro, calcio, fibra y vitaminas en un solo vistazo.</p>
+              <p class="small" style="margin:0;">Calorías, proteína, hierro, calcio, fibra y vitaminas en un solo vistazo.</p>
             </div>
             <div class="feature-card">
               <h3>⏱️ Tiempos exactos</h3>
-              <p class="muted small">Sabes si tardarás 5, 10 o 15–20 minutos antes de empezar.</p>
+              <p class="small" style="margin:0;">Sabes si tardarás 5, 10 o 15–20 minutos antes de empezar.</p>
             </div>
             <div class="feature-card">
               <h3>🍼 Estrategias si rechaza</h3>
-              <p class="muted small">Ideas concretas para insistir con calma, sin convertir la comida en pelea.</p>
+              <p class="small" style="margin:0;">Ideas concretas para insistir con calma, sin convertir la comida en pelea.</p>
             </div>
             <div class="feature-card">
               <h3>🌾 Variaciones por alergias</h3>
-              <p class="muted small">Opciones sin lácteos, huevo, gluten o frutos secos cuando lo necesites.</p>
+              <p class="small" style="margin:0;">Opciones sin lácteos, huevo, gluten o frutos secos cuando lo necesites.</p>
             </div>
           </div>
         </div>
@@ -778,61 +827,129 @@
       <div class="container">
         <div class="center">
           <h2 class="section-title">La diferencia se nota cuando necesitas decidir rápido.</h2>
-          <p class="section-lead">No se trata de tener “más información”. Se trata de tener la información correcta, ordenada y usable justo cuando la necesitas.</p>
+          <p class="section-lead">No se trata de tener más información. Se trata de tener la información correcta, ordenada y usable justo cuando la necesitas.</p>
         </div>
 
-        <div class="comparison-wrap" style="margin-top:22px;">
-          <table aria-label="Comparación entre otros recetarios y el Método Modular La Fuente">
-            <thead>
-              <tr>
-                <th>Qué necesitas de verdad</th>
-                <th>Otros recetarios</th>
-                <th class="winner-head">Método Modular La Fuente™<br><span class="winner-badge">MEJOR OPCIÓN</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Organización por edad</td>
-                <td class="no">A veces mezclado o general</td>
-                <td class="yes">Sí, por módulos claros de 6–18 meses</td>
-              </tr>
-              <tr>
-                <td>Plan listo por semanas</td>
-                <td class="no">No siempre</td>
-                <td class="yes">Sí, 112 días planeados (16 semanas)</td>
-              </tr>
-              <tr>
-                <td>Valores nutricionales por receta</td>
-                <td class="no">Rara vez completos</td>
-                <td class="yes">Sí, visibles y detallados</td>
-              </tr>
-              <tr>
-                <td>Tiempos exactos de preparación</td>
-                <td class="no">No o muy ambiguos</td>
-                <td class="yes">Sí, 5 / 10 / 15–20 minutos</td>
-              </tr>
-              <tr>
-                <td>Estrategias si rechaza</td>
-                <td class="no">Casi nunca</td>
-                <td class="yes">Sí, incluidas en cada receta</td>
-              </tr>
-              <tr>
-                <td>Variaciones para alergias</td>
-                <td class="no">Parciales o ausentes</td>
-                <td class="yes">Sí, por receta</td>
-              </tr>
-              <tr>
-                <td>Consulta rápida sin estrés</td>
-                <td class="no">Toca buscar demasiado</td>
-                <td class="yes">Sí, con Guía de Rescate e índices rápidos</td>
-              </tr>
-              <tr>
-                <td>Autoridad profesional</td>
-                <td class="no">No siempre clara</td>
-                <td class="yes">Sí, Nutrióloga Pediátrica Certificada</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="comparison-grid">
+          <article class="compare-card">
+            <div class="feature-name">Organización por edad</div>
+            <div class="compare-cols">
+              <div class="compare-box">
+                <strong>Otros</strong>
+                A veces mezclado o general.
+              </div>
+              <div class="compare-box winner">
+                <strong>Método Modular</strong>
+                Sí, por módulos claros de 6–18 meses.
+                <span class="winner-pill">Mejor opción</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="feature-name">Plan listo por semanas</div>
+            <div class="compare-cols">
+              <div class="compare-box">
+                <strong>Otros</strong>
+                No siempre.
+              </div>
+              <div class="compare-box winner">
+                <strong>Método Modular</strong>
+                Sí, 112 días planeados (16 semanas).
+                <span class="winner-pill">Mejor opción</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="feature-name">Valores nutricionales por receta</div>
+            <div class="compare-cols">
+              <div class="compare-box">
+                <strong>Otros</strong>
+                Rara vez completos.
+              </div>
+              <div class="compare-box winner">
+                <strong>Método Modular</strong>
+                Sí, visibles y detallados.
+                <span class="winner-pill">Mejor opción</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="feature-name">Tiempos exactos de preparación</div>
+            <div class="compare-cols">
+              <div class="compare-box">
+                <strong>Otros</strong>
+                No o muy ambiguos.
+              </div>
+              <div class="compare-box winner">
+                <strong>Método Modular</strong>
+                Sí, 5 / 10 / 15–20 minutos.
+                <span class="winner-pill">Mejor opción</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="feature-name">Estrategias si rechaza</div>
+            <div class="compare-cols">
+              <div class="compare-box">
+                <strong>Otros</strong>
+                Casi nunca.
+              </div>
+              <div class="compare-box winner">
+                <strong>Método Modular</strong>
+                Sí, incluidas en cada receta.
+                <span class="winner-pill">Mejor opción</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="feature-name">Variaciones para alergias</div>
+            <div class="compare-cols">
+              <div class="compare-box">
+                <strong>Otros</strong>
+                Parciales o ausentes.
+              </div>
+              <div class="compare-box winner">
+                <strong>Método Modular</strong>
+                Sí, por receta.
+                <span class="winner-pill">Mejor opción</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="feature-name">Consulta rápida sin estrés</div>
+            <div class="compare-cols">
+              <div class="compare-box">
+                <strong>Otros</strong>
+                Toca buscar demasiado.
+              </div>
+              <div class="compare-box winner">
+                <strong>Método Modular</strong>
+                Sí, con Guía de Rescate e índices rápidos.
+                <span class="winner-pill">Mejor opción</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="feature-name">Autoridad profesional</div>
+            <div class="compare-cols">
+              <div class="compare-box">
+                <strong>Otros</strong>
+                No siempre clara.
+              </div>
+              <div class="compare-box winner">
+                <strong>Método Modular</strong>
+                Sí, Nutrióloga Pediátrica Certificada.
+                <span class="winner-pill">Mejor opción</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -846,30 +963,30 @@
         </div>
 
         <div class="grid testi-grid" style="margin-top:24px;">
-          <article class="card testi-card">
+          <article class="testi-card">
             <div class="stars">★★★★★</div>
             <h3>“Me dio paz mental desde el primer día”</h3>
-            <p class="muted small">“Lo que más me ayudó fue no tener que pensar qué hacer cada vez. Abría la guía, veía el día y listo. Sentí mucha más seguridad.”</p>
+            <p class="small" style="margin:0;">“Lo que más me ayudó fue no tener que pensar qué hacer cada vez. Abría la guía, veía el día y listo. Sentí mucha más seguridad.”</p>
             <div class="testi-caption">— Mamá de bebé de 6 meses</div>
             <div class="proof-shot">
               <img src="images/testimonio-1.webp" alt="Captura de testimonio real 1" loading="lazy" />
             </div>
           </article>
 
-          <article class="card testi-card">
+          <article class="testi-card">
             <div class="stars">★★★★★</div>
             <h3>“Cuando rechazaba, ya no entraba en pánico”</h3>
-            <p class="muted small">“Las estrategias de rechazo me ayudaron muchísimo. Antes pensaba que todo era un fracaso. Ahora sé cómo insistir sin estrés.”</p>
+            <p class="small" style="margin:0;">“Las estrategias de rechazo me ayudaron muchísimo. Antes pensaba que todo era un fracaso. Ahora sé cómo insistir sin estrés.”</p>
             <div class="testi-caption">— Mamá primeriza</div>
             <div class="proof-shot">
               <img src="images/testimonio-2.webp" alt="Captura de testimonio real 2" loading="lazy" />
             </div>
           </article>
 
-          <article class="card testi-card">
+          <article class="testi-card">
             <div class="stars">★★★★★</div>
             <h3>“De verdad se siente rápido y práctico”</h3>
-            <p class="muted small">“Los tiempos exactos y las listas de compras me facilitaron demasiado la semana. Dejé de improvisar y eso se nota.”</p>
+            <p class="small" style="margin:0;">“Los tiempos exactos y las listas de compras me facilitaron demasiado la semana. Dejé de improvisar y eso se nota.”</p>
             <div class="testi-caption">— Mamá con poco tiempo</div>
             <div class="proof-shot">
               <img src="images/testimonio-3.webp" alt="Captura de testimonio real 3" loading="lazy" />
@@ -888,18 +1005,18 @@
         </div>
 
         <div class="grid filter-grid" style="margin-top:24px;">
-          <div class="card filter-card">
+          <div class="filter-card">
             <div class="tag">✅ Sí es para ti</div>
             <ul>
               <li>Si tu bebé tiene 6 meses o estás por empezar la alimentación complementaria.</li>
               <li>Si quieres una guía clara y práctica en vez de buscar información suelta.</li>
               <li>Si te tranquiliza tener tiempos, texturas/cortes y nutrición en cada receta.</li>
-              <li>Si necesitas ideas reales para días normales, no solo recetas “bonitas”.</li>
+              <li>Si necesitas ideas reales para días normales, no solo recetas bonitas.</li>
               <li>Si quieres avanzar con seguridad, orden y menos culpa.</li>
             </ul>
           </div>
 
-          <div class="card filter-card">
+          <div class="filter-card">
             <div class="tag">❌ No es para ti</div>
             <ul>
               <li>Si prefieres improvisar cada comida y decidir todo sobre la marcha.</li>
@@ -922,7 +1039,7 @@
         </div>
 
         <div class="grid deliver-grid" style="margin-top:24px;">
-          <article class="card deliver-card">
+          <article class="deliver-card">
             <div class="tag">Guía 1</div>
             <h3>Recetas 6–8 meses</h3>
             <div class="age">Primeras semanas de inicio</div>
@@ -934,7 +1051,7 @@
             </ul>
           </article>
 
-          <article class="card deliver-card">
+          <article class="deliver-card">
             <div class="tag">Guía 2</div>
             <h3>Recetas 8–10 meses</h3>
             <div class="age">Más variedad con estructura</div>
@@ -946,7 +1063,7 @@
             </ul>
           </article>
 
-          <article class="card deliver-card">
+          <article class="deliver-card">
             <div class="tag">Guía 3</div>
             <h3>Recetas 10–12 meses</h3>
             <div class="age">Avance con seguridad</div>
@@ -958,7 +1075,7 @@
             </ul>
           </article>
 
-          <article class="card deliver-card">
+          <article class="deliver-card">
             <div class="tag">Guía 4</div>
             <h3>Recetas 12–18 meses</h3>
             <div class="age">Continuidad sin improvisación</div>
@@ -970,7 +1087,7 @@
             </ul>
           </article>
 
-          <article class="card deliver-card">
+          <article class="deliver-card">
             <div class="tag">Guía 5</div>
             <h3>Guía Maestra</h3>
             <div class="age">Tu mapa general</div>
@@ -982,7 +1099,7 @@
             </ul>
           </article>
 
-          <article class="card deliver-card">
+          <article class="deliver-card">
             <div class="tag">Guía 6</div>
             <h3>Guía de Rescate</h3>
             <div class="age">Consulta rápida, sin estrés</div>
@@ -1006,107 +1123,108 @@
         </div>
 
         <div class="grid bonus-grid" style="margin-top:24px;">
-          <article class="card bonus-card featured">
+          <article class="bonus-card featured">
             <div class="bonus-image">
-              <img src="/metodo/images/bono1.webp" alt="Certificado de Seguridad" loading="lazy" />
+              <img src="images/bono1.webp" alt="Certificado de Seguridad" loading="lazy" />
             </div>
             <div class="tag">Bono 1</div>
             <h3>Certificado de Seguridad</h3>
-            <p class="muted small"><strong>Valor $27</strong></p>
+            <p class="small" style="margin:0;"><strong>Valor $27</strong></p>
             <ul>
               <li>Arcada vs atragantamiento</li>
               <li>Maniobra Heimlich pediátrica</li>
               <li>Cortes seguros para empezar con más calma</li>
             </ul>
-            <p class="small" style="margin:0; font-weight:800; color:var(--dark);">Gratis hoy</p>
+            <p class="small" style="margin:0; font-weight:800; color:var(--navy);">Gratis hoy</p>
           </article>
 
-          <article class="card bonus-card">
+          <article class="bonus-card">
             <div class="bonus-image">
-              <img src="/metodo/images/bono2.webp" alt="Método Domingo meal prep 2 horas" loading="lazy" />
+              <img src="images/bono2.webp" alt="Método Domingo meal prep 2 horas" loading="lazy" />
             </div>
             <div class="tag">Bono 2</div>
             <h3>Método Domingo meal prep 2 horas</h3>
-            <p class="muted small"><strong>Valor $19</strong></p>
+            <p class="small" style="margin:0;"><strong>Valor $19</strong></p>
             <ul>
               <li>Cómo adelantar la semana sin agotarte</li>
               <li>Organización simple y realista</li>
               <li>Más orden, menos estrés diario</li>
             </ul>
-            <p class="small" style="margin:0; font-weight:800; color:var(--dark);">Gratis hoy</p>
+            <p class="small" style="margin:0; font-weight:800; color:var(--navy);">Gratis hoy</p>
           </article>
 
-          <article class="card bonus-card">
+          <article class="bonus-card">
             <div class="bonus-image">
-              <img src="/metodo/images/bono3.webp" alt="Kit rastreo alergias más lista compra inteligente" loading="lazy" />
+              <img src="images/bono3.webp" alt="Kit rastreo alergias y lista compra inteligente" loading="lazy" />
             </div>
             <div class="tag">Bono 3</div>
             <h3>Kit rastreo alergias + lista compra inteligente</h3>
-            <p class="muted small"><strong>Valor $17</strong></p>
+            <p class="small" style="margin:0;"><strong>Valor $17</strong></p>
             <ul>
               <li>Imprimibles para registrar con claridad</li>
               <li>Seguimiento simple para tu rutina</li>
               <li>Compra más ordenada y funcional</li>
             </ul>
-            <p class="small" style="margin:0; font-weight:800; color:var(--dark);">Gratis hoy</p>
+            <p class="small" style="margin:0; font-weight:800; color:var(--navy);">Gratis hoy</p>
           </article>
 
-          <article class="card bonus-card">
+          <article class="bonus-card">
             <div class="bonus-image">
-              <img src="/metodo/images/bono4.webp" alt="SOS mamá recetario crisis 5 minutos" loading="lazy" />
+              <img src="images/bono4.webp" alt="SOS mamá recetario crisis 5 minutos" loading="lazy" />
             </div>
             <div class="tag">Bono 4</div>
             <h3>SOS mamá recetario crisis 5 min</h3>
-            <p class="muted small"><strong>Valor $12</strong></p>
+            <p class="small" style="margin:0;"><strong>Valor $12</strong></p>
             <ul>
               <li>Recetas rápidas para días complicados</li>
               <li>Apoyo cuando no tienes tiempo</li>
               <li>Más resolución, menos improvisación</li>
             </ul>
-            <p class="small" style="margin:0; font-weight:800; color:var(--dark);">Gratis hoy</p>
+            <p class="small" style="margin:0; font-weight:800; color:var(--navy);">Gratis hoy</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- BLOQUE 10 OFERTA + PRECIO -->
-    <section class="section" id="precio">
+    <section class="section" id="oferta">
       <div class="container">
-        <div class="grid value-grid">
-          <div class="card value-card">
-            <div class="tag">Todo lo que incluye tu compra</div>
-            <h2 class="section-title" style="font-size:clamp(1.7rem,4vw,2.6rem); margin:6px 0 8px;">Una solución completa por menos de lo que cuesta improvisar una semana.</h2>
-            <ul>
-              <li>✅ 6 guías modulares en PDF (330–350 páginas total)</li>
-              <li>✅ 180 recetas profesionales</li>
-              <li>✅ 112 días planeados (16 semanas)</li>
-              <li>✅ 16 listas de compras</li>
-              <li>✅ Tiempos exactos por receta</li>
-              <li>✅ Valores nutricionales completos</li>
-              <li>✅ Texturas/cortes, almacenamiento y notas de seguridad</li>
-              <li>✅ Estrategias si rechaza</li>
-              <li>✅ Variaciones para alergias por receta</li>
-              <li>✅ 4 bonos incluidos hoy (valor total bonos: $75)</li>
-            </ul>
-          </div>
-
-          <div class="price-box">
-            <div class="price-top">
-              <div>
-                <div class="striked">Antes $147 USD</div>
-                <div class="price">$9.99 <span>USD hoy</span></div>
-              </div>
-              <div class="pill">🛡️ Garantía de 15 días</div>
+        <div class="offer-box" id="offer-trigger">
+          <div class="offer-grid">
+            <div>
+              <div class="tag">Todo lo que incluye tu compra</div>
+              <h2 class="section-title" style="font-size:clamp(1.7rem,4vw,2.8rem); margin-top:10px;">
+                Todo lo que incluye tu compra
+              </h2>
+              <ul class="offer-list">
+                <li>✅ 6 guías modulares en PDF (330–350 páginas total)</li>
+                <li>✅ 180 recetas profesionales</li>
+                <li>✅ 112 días planeados (16 semanas)</li>
+                <li>✅ 16 listas de compras</li>
+                <li>✅ Tiempos exactos por receta</li>
+                <li>✅ Valores nutricionales completos</li>
+                <li>✅ Texturas/cortes, almacenamiento y notas de seguridad</li>
+                <li>✅ Estrategias si rechaza</li>
+                <li>✅ Variaciones para alergias por receta</li>
+                <li>✅ 4 bonos incluidos hoy (valor total bonos: $75)</li>
+              </ul>
             </div>
 
-            <p class="muted" style="margin:14px 0 18px;">Obtén acceso al sistema completo <strong>Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses (sin miedo ni dudas)</strong>.</p>
+            <div class="offer-price">
+              <div class="striked">Antes $147 USD</div>
+              <div class="price">$9.99 <span>USD hoy</span></div>
 
-            <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora por Hotmart">
-              ✅ Sí, quiero acceso inmediato ahora
-            </a>
+              <p class="muted" style="margin:14px 0 18px;" id="checkout-copy">
+                Obtén acceso al sistema completo <strong>Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses (sin miedo ni dudas)</strong>.
+              </p>
 
-            <p class="microcopy">Pago seguro por Hotmart · Acceso inmediato + entrega automática por email · Garantía 15 días</p>
-            <p class="seed-line">En el checkout podrás añadir imprimibles opcionales para momentos de pancita, noches difíciles y decisión rápida diaria.</p>
+              <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
+                Quiero empezar hoy 💝
+              </a>
+
+              <p class="microcopy">Recíbelo al instante por email · Prueba 15 días</p>
+              <p class="seed-line">En el checkout podrás añadir imprimibles opcionales para momentos de pancita, noches difíciles y decisión rápida diaria.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1151,11 +1269,13 @@
       <div class="container">
         <div class="guarantee">
           <div class="guarantee-image" style="max-width:340px; margin:0 auto 16px;">
-            <img src="/metodo/images/garantia-15dias.webp" alt="Garantía de 15 días" loading="lazy" />
+            <img src="images/garantia-15dias.webp" alt="Prueba de 15 días" loading="lazy" />
           </div>
-          <div class="tag" style="margin-bottom:10px;">Garantía 15 días</div>
+          <div class="tag" style="margin-bottom:10px;">Prueba 15 días</div>
           <h2 class="section-title" style="margin-top:0;">Pruébalo 15 días. Si no es para ti, te devolvemos el 100%.</h2>
-          <p class="section-lead" style="max-width:760px;">Compra hoy, revisa el material con calma y evalúa si realmente te ayuda a sentirte más segura y organizada. Si no es lo que esperabas, tienes <strong>15 días de garantía</strong> para solicitar tu reembolso completo, sin preguntas.</p>
+          <p class="section-lead" style="max-width:760px;">
+            Compra hoy, revisa el material con calma y evalúa si realmente te ayuda a sentirte más segura y organizada. Si no es lo que esperabas, tienes 15 días para solicitar tu reembolso completo, sin preguntas.
+          </p>
         </div>
       </div>
     </section>
@@ -1175,7 +1295,7 @@
               <span>+</span>
             </button>
             <div class="faq-content">
-              <p>Después de completar tu pago por Hotmart, recibirás el acceso por email. La entrega es inmediata y automática. Vas a poder descargar las guías en PDF y los imprimibles incluidos. Si no ves el correo enseguida, revisá spam/promociones 3–5 min.</p>
+              <p>Después de completar tu compra, recibirás el acceso por email. La entrega es automática. Vas a poder descargar las guías en PDF y los imprimibles incluidos. Si no ves el correo enseguida, revisá spam/promociones 3–5 min.</p>
             </div>
           </div>
 
@@ -1235,7 +1355,7 @@
               <span>+</span>
             </button>
             <div class="faq-content">
-              <p>Tienes 15 días de garantía desde la compra. Si dentro de ese plazo consideras que no es para ti, puedes solicitar el reembolso completo.</p>
+              <p>Tienes 15 días desde la compra. Si dentro de ese plazo consideras que no es para ti, puedes solicitar el reembolso completo.</p>
             </div>
           </div>
 
@@ -1256,20 +1376,14 @@
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="final-cta center">
-          <div class="eyebrow" style="background:rgba(255,255,255,.12); color:#fff; border-color:rgba(255,255,255,.16);">✨ Empieza hoy con más calma y claridad</div>
+          <div class="eyebrow">✨ Empieza hoy con más calma y claridad</div>
           <h2 class="section-title" style="margin-top:14px;">Tu próxima comida no tiene por qué empezar con dudas.</h2>
           <p class="section-lead">Accede hoy al <strong>Método Modular La Fuente™</strong> y avanza con una guía clara, práctica y pensada para la vida real.</p>
 
           <div style="max-width:520px; margin:20px auto 0;">
-            <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora con acceso inmediato">
-              ✅ Quiero mi acceso inmediato ahora
+            <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
+              Quiero empezar hoy 💝
             </a>
-          </div>
-
-          <div class="trust-row" style="justify-content:center; margin-top:14px;">
-            <div class="pill">🔒 Pago seguro por Hotmart</div>
-            <div class="pill">⚡ Acceso inmediato + entrega automática por email</div>
-            <div class="pill">🛟 Garantía 15 días</div>
           </div>
         </div>
       </div>
@@ -1277,14 +1391,10 @@
   </main>
 
   <!-- STICKY CTA MOBILE -->
-  <div class="sticky-cta" aria-hidden="false">
+  <div class="sticky-cta" id="stickyCta" aria-hidden="false">
     <div class="sticky-inner">
-      <div class="sticky-price">
-        $9.99
-        <small>USD hoy · garantía 15 días</small>
-      </div>
       <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora desde la barra fija">
-        ✅ Acceso inmediato
+        Quiero empezar hoy 💝
       </a>
     </div>
   </div>
@@ -1324,6 +1434,20 @@
         }
       });
     });
+
+    const stickyCta = document.getElementById('stickyCta');
+    const offerTrigger = document.getElementById('offer-trigger');
+
+    function toggleStickyCta() {
+      if (window.innerWidth >= 768) return;
+      const rect = offerTrigger.getBoundingClientRect();
+      const shouldShow = rect.top <= window.innerHeight * 0.72;
+      stickyCta.classList.toggle('visible', shouldShow);
+    }
+
+    window.addEventListener('scroll', toggleStickyCta, { passive: true });
+    window.addEventListener('resize', toggleStickyCta);
+    window.addEventListener('load', toggleStickyCta);
   </script>
 </body>
 </html>
