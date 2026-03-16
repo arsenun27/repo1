@@ -1,3 +1,5 @@
+Tengo este codigo, luego te diré que necesito
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -163,7 +165,7 @@
       object-fit:contain;
     }
 
-    .hero-mobile-visual{display:none;}
+    .hero-mobile-visual{display:block; margin:14px 0 14px;}
     .hero-desktop-visual{display:none;}
 
     /* CTA */
@@ -243,20 +245,11 @@
     }
 
     @media (min-width: 700px){
-  .section{padding:76px 0}
-  .hero{padding:34px 0 40px}
-  .hero-wrap{grid-template-columns:1.02fr .98fr; gap:30px}
-  .mini-steps{grid-template-columns:repeat(3,1fr)}
-  .pain-grid{grid-template-columns:repeat(2,1fr)}
-  .filter-grid{grid-template-columns:repeat(2,1fr)}
-  .deliver-grid{grid-template-columns:repeat(2,1fr)}
-  .bonus-grid{grid-template-columns:repeat(2,1fr)}
-  .testi-grid{grid-template-columns:repeat(3,1fr)}
-  .author-wrap{grid-template-columns:1.2fr .8fr}
-  .offer-grid{grid-template-columns:1.08fr .92fr}
-  .hero-mobile-visual{display:none;}
-  .hero-desktop-visual{display:block;}
-}
+      .hero-badges{
+        justify-content:flex-start;
+        flex-wrap:nowrap;
+        white-space:nowrap;
+      }
     }
 
     @media (max-width: 699px){
@@ -709,7 +702,7 @@
 
             <!-- Imagen debajo del subtitular (móvil) -->
             <div class="hero-mobile-visual">
-              <img src="/metodo/images/hero.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
+              <img src="/metodo/images/todo_en_uno.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
             </div>
 
             <!-- CTA inmediato (punto 1 + 3) -->
