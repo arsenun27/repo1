@@ -74,37 +74,49 @@
       box-shadow:var(--shadow);
     }
 
-    .headline{
+    /* TÍTULO HERO CORREGIDO */
+    .hero-title{
       font-family:'Crimson Pro', Georgia, serif;
       font-weight:700;
       line-height:1.04;
       letter-spacing:-.03em;
-      margin:16px 0 12px;
+      margin:16px 0 8px;
       font-size:clamp(2.05rem, 5.8vw, 4.5rem);
       color:var(--navy);
       text-align:center;
     }
 
-    @media (min-width: 700px){
-      .headline{ text-align:left; }
-    }
-
-    .headline .accent-line{
+    .hero-title .hero-highlight{
       display:block;
       color:var(--pink);
       font-style:italic;
-      margin-top:8px;
+      margin-top:2px;
+      line-height:1;
       text-align:center;
     }
 
     @media (min-width: 700px){
-      .headline .accent-line{ text-align:left; }
+      .hero-title{
+        text-align:left;
+      }
+
+      .hero-title .hero-highlight{
+        text-align:left;
+      }
     }
 
     .subheadline{
       font-size:1.08rem;
       color:var(--text);
-      margin:0 0 14px;
+      margin:0 0 12px;
+    }
+
+    .hero-copy .subheadline:first-of-type{
+      margin-top:0;
+    }
+
+    .hero-copy .subheadline + .subheadline{
+      margin-top:2px;
     }
 
     .section-title{
@@ -143,35 +155,33 @@
     .hero{ padding:24px 0 30px; }
     .hero-wrap{ display:grid; gap:22px; align-items:center; }
 
-    /* HERO VISUALS */
-  .hero-visual,
-.hero-mobile-visual,
-.hero-desktop-visual{
-  position: relative;
-  overflow: visible;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+    .hero-visual,
+    .hero-mobile-visual,
+    .hero-desktop-visual{
+      position: relative;
+      overflow: visible;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
     }
 
- .hero-visual img,
-.hero-mobile-visual img{
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  filter: drop-shadow(0 10px 24px rgba(46,69,97,.16));
+    .hero-visual img,
+    .hero-mobile-visual img{
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      filter: drop-shadow(0 10px 24px rgba(46,69,97,.16));
     }
 
     .hero-mobile-visual{display:block; margin:14px 0 14px;}
     .hero-desktop-visual{display:none;}
 
-    /* CTA */
     .cta{
       display:inline-flex;
       align-items:center;
@@ -189,7 +199,7 @@
       border:none;
       width:100%;
       text-align:center;
-      margin-bottom: 10px; /* espacio controlado */
+      margin-bottom: 10px;
     }
 
     .cta:hover{
@@ -197,7 +207,6 @@
       box-shadow:0 20px 40px rgba(244,106,164,.32);
     }
 
-    /* Trust line (debajo del CTA) */
     .trust-line{
       margin: 0 0 10px;
       font-size: .94rem;
@@ -209,6 +218,7 @@
       justify-content:center;
       flex-wrap:wrap;
     }
+
     .trust-pill{
       display:inline-flex;
       align-items:center;
@@ -223,7 +233,6 @@
       font-weight:800;
     }
 
-    /* HERO BADGES (20% smaller + responsive) */
     .hero-badges{
       margin-top: 8px;
       display:flex;
@@ -240,7 +249,7 @@
       border-radius:999px;
       background:rgba(255,255,255,0.9);
       box-shadow:0 2px 10px rgba(0,0,0,0.08);
-      font-size:0.8em;   /* ↓ 20% */
+      font-size:0.8em;
       line-height:1;
       font-weight:600;
       color:var(--navy);
@@ -268,7 +277,6 @@
       }
     }
 
-    /* HERO CHECKLIST */
     .hero-copy .checklist{
       list-style:none;
       padding:0;
@@ -290,7 +298,6 @@
       font-weight:600;
     }
 
-    /* BLOQUE 2 - steps */
     .mini-steps{grid-template-columns:1fr; margin-top:18px;}
     .step-card{
       padding:22px 18px;
@@ -311,7 +318,6 @@
       font-weight:800;
     }
 
-    /* Grids */
     .pain-grid,.deliver-grid,.bonus-grid,.filter-grid,.testi-grid,.diff-grid,.faq-list{
       grid-template-columns:1fr;
     }
@@ -359,7 +365,6 @@
       color:var(--navy);
     }
 
-    /* OFERTA - nuevo layout más escaneable */
     .offer-box{ padding:24px; }
     .offer-grid{ display:grid; gap:20px; align-items:start; }
     .offer-price{
@@ -416,6 +421,7 @@
       gap:12px;
       margin-top:14px;
     }
+
     .offer-block{
       background:#fff;
       border:1px solid var(--border);
@@ -423,6 +429,7 @@
       padding:14px;
       box-shadow:var(--shadow);
     }
+
     .offer-block h4{
       margin:0 0 8px;
       color:var(--navy);
@@ -431,6 +438,7 @@
       letter-spacing:.02em;
       text-transform:uppercase;
     }
+
     .offer-ul{
       margin:0;
       padding-left:18px;
@@ -440,10 +448,10 @@
       font-weight:650;
     }
 
-    /* Author */
     .author-wrap{ display:grid; gap:18px; align-items:start; }
     .author-bio{ padding:24px; }
     .author-stats{ display:grid; gap:12px; }
+
     .stat{
       padding:18px;
       border-radius:20px;
@@ -451,6 +459,7 @@
       border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
+
     .stat strong{
       display:block;
       font-size:1.6rem;
@@ -459,7 +468,6 @@
       margin-bottom:6px;
     }
 
-    /* Guarantee */
     .guarantee{
       padding:26px;
       text-align:center;
@@ -469,7 +477,6 @@
       box-shadow:var(--shadow);
     }
 
-    /* FAQ */
     .faq-wrap{
       background:rgba(255,255,255,.92);
       border:1px solid var(--border);
@@ -477,6 +484,7 @@
       box-shadow:var(--shadow);
       overflow:hidden;
     }
+
     .faq-item + .faq-item{border-top:1px solid rgba(46,69,97,.08)}
 
     .faq-btn{
@@ -512,7 +520,6 @@
       color:var(--text);
     }
 
-    /* Final CTA card */
     .final-cta{
       background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.86));
       border-radius:28px;
@@ -521,7 +528,6 @@
       border:1px solid var(--border);
     }
 
-    /* Sticky CTA (punto 8) */
     .sticky-cta{
       position:fixed;
       left:0; right:0; bottom:0;
@@ -559,6 +565,7 @@
       color:var(--navy);
       font-size:.88rem;
     }
+
     .sticky-mini span{
       font-weight:800;
       color:var(--navy-soft);
@@ -595,16 +602,13 @@
 
     @media (max-width: 767px){
       body{padding-bottom:0}
-      .headline br,.section-title br{display:none}
+      .section-title br{display:none}
     }
 
     @media (min-width: 768px){
       .footer-note{padding-bottom:40px}
     }
 
-    /* ==========================================
-      Diferenciadores Premium (ya estaba aprobado)
-    ========================================== */
     .diff-wrap{
       max-width: 980px;
       margin: 24px auto 0;
@@ -680,14 +684,12 @@
     @media (min-width: 820px){
       .mini-compare{ grid-template-columns: 1fr 1fr; }
     }
-
   </style>
 </head>
 
 <body>
 
   <main>
-    <!-- BLOQUE 1 HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-wrap">
@@ -695,39 +697,36 @@
             <div class="eyebrow">✨ +2,900 familias ya confían</div>
 
             <h1 class="hero-title">
-  Empieza la alimentación complementaria
-  <span class="hero-highlight">sin miedo ni improvisación</span>
-</h1>
+              Empieza la alimentación complementaria
+              <span class="hero-highlight">sin miedo ni improvisación</span>
+            </h1>
 
             <p class="subheadline">
               Para mamás de bebés que empiezan a comer: una ruta clara, por edad, para saber qué ofrecer y cómo avanzar paso a paso.
             </p>
-             <p class="subheadline">
+
+            <p class="subheadline">
               Abres la guía de su edad, sigues el calendario semanal y listo: sabes qué ofrecer, cómo servirlo y cómo adaptarlo si rechaza o si hay alergias.
             </p>
-            <!-- Imagen debajo del subtitular (móvil) -->
+
             <div class="hero-mobile-visual">
               <img src="/metodo/images/hero.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
             </div>
 
-            <!-- CTA inmediato (punto 1 + 3) -->
             <a class="cta" href="#oferta" aria-label="Ver todo lo que incluye tu compra">
               ✅ Quiero empezar sin miedo hoy
             </a>
 
-            <!-- Trust line exacta (punto 2) -->
             <div class="trust-line">
               <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
             </div>
 
-            <!-- Badges autoridad -->
             <div class="hero-badges">
               <span class="hero-badge">👩‍⚕️ Lic. Martha La Fuente</span>
               <span class="hero-badge">🗓️ 17 años de experiencia</span>
               <span class="hero-badge">👶 +2,900 familias acompañadas</span>
             </div>
 
-            <!-- Checklist (queda debajo para no empujar el CTA fuera del fold) -->
             <ul class="checklist">
               <li><span>✅</span><span><strong>112 días planeados</strong> para dejar de improvisar y empezar con una ruta clara.</span></li>
               <li><span>⏱️</span><span><strong>Tiempos exactos</strong> por receta: 5 / 10 / 15–20 minutos para decidir rápido.</span></li>
@@ -735,7 +734,6 @@
             </ul>
           </div>
 
-          <!-- Visual desktop -->
           <div class="hero-desktop-visual">
             <div class="hero-visual">
               <img src="/metodo/images/hero.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
@@ -746,7 +744,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 2 CÓMO FUNCIONA -->
     <section class="section-tight">
       <div class="container">
         <div class="soft" style="padding:26px;">
@@ -786,7 +783,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 3 PROBLEMA (punto 4: 4 pains fuertes) -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -816,7 +812,6 @@
           </div>
         </div>
 
-        <!-- Los otros 2 dolores movidos a microcopy (info contradictoria + presión) -->
         <p class="small" style="margin:14px 0 0; font-weight:700; color:var(--navy); text-align:center;">
           Y para rematar: demasiada <strong>información contradictoria</strong> (redes/familia/pediatra) que te deja aún más confundida.
         </p>
@@ -827,7 +822,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 4 SOLUCIÓN -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="soft" style="padding:26px;">
@@ -872,7 +866,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 5 DIFERENCIADORES PREMIUM (punto 5 incluido) -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -915,7 +908,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 6 TESTIMONIOS (sin cambios - punto 6 lo haces luego) -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="center">
@@ -942,7 +934,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 7 PARA QUIÉN ES / NO ES -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -976,7 +967,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 8 ENTREGABLES -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="center">
@@ -1060,7 +1050,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 9 BONOS -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1116,7 +1105,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 10 OFERTA + PRECIO (punto 7) -->
     <section class="section" id="oferta">
       <div class="container">
         <div class="offer-box" id="offer-trigger">
@@ -1127,7 +1115,6 @@
                 Todo lo que incluye tu compra
               </h2>
 
-              <!-- Nueva estructura escaneable -->
               <div class="offer-stack">
                 <div class="offer-block">
                   <h4>Sistema principal</h4>
@@ -1189,7 +1176,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 11 AUTOR -->
     <section class="section">
       <div class="container">
         <div class="author-wrap">
@@ -1223,7 +1209,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 12 GARANTÍA -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="guarantee">
@@ -1236,7 +1221,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1255,7 +1239,6 @@
             </div>
           </div>
 
-          <!-- Movemos "info contradictoria" aquí también para reforzar el dolor (sin crear otra tarjeta en Problema) -->
           <div class="faq-item">
             <button class="faq-btn" type="button" aria-expanded="false">
               <span>¿Qué pasa si siento que hay información contradictoria por todos lados?</span>
@@ -1309,7 +1292,6 @@
       </div>
     </section>
 
-    <!-- CTA FINAL -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="final-cta center">
@@ -1331,7 +1313,6 @@
     </section>
   </main>
 
-  <!-- STICKY CTA MOBILE (punto 8) -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="false">
     <div class="sticky-inner">
       <div class="sticky-mini">
