@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses (sin miedo ni dudas)</title>
+  <title>Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses (sin miedo ni improvisación)</title>
   <meta name="description" content="Sistema completo de 6 guías modulares en PDF para alimentación complementaria 6–18 meses. 180 recetas, 112 días planeados, listas de compras, seguridad, alergias, rechazo y más." />
   <meta name="theme-color" content="#F28AB2" />
   <meta property="og:title" content="Método Modular La Fuente™ — Alimentación Complementaria 6–18 meses" />
-  <meta property="og:description" content="Empieza la alimentación complementaria sin miedo ni dudas. Recíbelo al instante por email." />
+  <meta property="og:description" content="Empieza la alimentación complementaria sin miedo ni improvisación. Recíbelo al instante por email." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/metodo/images/todo_en_uno.webp" />
+  <meta property="og:image" content="/metodo/images/hero_c6.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -74,49 +74,31 @@
       box-shadow:var(--shadow);
     }
 
-    /* TÍTULO HERO CORREGIDO */
     .hero-title{
       font-family:'Crimson Pro', Georgia, serif;
       font-weight:700;
-      line-height:1.04;
-      letter-spacing:-.03em;
-      margin:16px 0 8px;
-      font-size:clamp(2.05rem, 5.8vw, 4.5rem);
+      line-height:.98;
+      letter-spacing:-.035em;
+      margin:0 0 12px;
+      font-size:clamp(2.25rem, 10vw, 5.1rem);
       color:var(--navy);
       text-align:center;
+      text-wrap:balance;
     }
 
     .hero-title .hero-highlight{
       display:block;
       color:var(--pink);
       font-style:italic;
-      margin-top:2px;
-      line-height:1;
+      margin-top:8px;
+      line-height:.95;
       text-align:center;
-    }
-
-    @media (min-width: 700px){
-      .hero-title{
-        text-align:left;
-      }
-
-      .hero-title .hero-highlight{
-        text-align:left;
-      }
     }
 
     .subheadline{
       font-size:1.08rem;
       color:var(--text);
       margin:0 0 12px;
-    }
-
-    .hero-copy .subheadline:first-of-type{
-      margin-top:0;
-    }
-
-    .hero-copy .subheadline + .subheadline{
-      margin-top:2px;
     }
 
     .section-title{
@@ -152,35 +134,79 @@
 
     .grid{display:grid; gap:16px}
 
-    .hero{ padding:24px 0 30px; }
-    .hero-wrap{ display:grid; gap:22px; align-items:center; }
+    /* HERO NUEVO */
+    .hero{
+      padding:24px 0 34px;
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .hero-copy{
+      text-align:center;
+    }
+
+    .hero .eyebrow{
+      margin:0 auto 16px;
+      justify-content:center;
+    }
+
+    .hero .subheadline{
+      max-width:34ch;
+      margin:0 auto 10px;
+      font-size:1.02rem;
+      line-height:1.45;
+      text-align:center;
+      color:var(--text);
+    }
+
+    .hero-mechanism{
+      max-width:30ch;
+      margin:0 auto 18px;
+      font-size:1rem;
+      line-height:1.45;
+      font-weight:650;
+      color:var(--navy-soft);
+      text-align:center;
+    }
 
     .hero-visual,
     .hero-mobile-visual,
     .hero-desktop-visual{
-      position: relative;
-      overflow: visible;
-      padding: 0 !important;
-      border-radius: 0 !important;
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
+      position:relative;
+      overflow:visible;
+      padding:0;
+      border-radius:0;
+      background:transparent;
+      border:none;
+      box-shadow:none;
     }
 
     .hero-visual img,
     .hero-mobile-visual img{
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 0 !important;
-      background: transparent !important;
-      box-shadow: none !important;
-      filter: drop-shadow(0 10px 24px rgba(46,69,97,.16));
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:contain;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+      filter:drop-shadow(0 12px 26px rgba(46,69,97,.16));
     }
 
-    .hero-mobile-visual{display:block; margin:14px 0 14px;}
-    .hero-desktop-visual{display:none;}
+    .hero-mobile-visual{
+      display:block;
+      width:min(92%, 470px);
+      margin:0 auto 14px;
+    }
+
+    .hero-desktop-visual{
+      display:none;
+    }
 
     .cta{
       display:inline-flex;
@@ -199,7 +225,7 @@
       border:none;
       width:100%;
       text-align:center;
-      margin-bottom: 10px;
+      margin-bottom:10px;
     }
 
     .cta:hover{
@@ -208,15 +234,20 @@
     }
 
     .trust-line{
-      margin: 0 0 10px;
-      font-size: .94rem;
-      font-weight: 800;
-      color: var(--navy);
+      margin:0 0 10px;
+      font-size:.94rem;
+      font-weight:800;
+      color:var(--navy);
       display:flex;
       gap:10px;
       align-items:center;
       justify-content:center;
       flex-wrap:wrap;
+    }
+
+    .hero .trust-line{
+      margin:0 0 18px;
+      justify-content:center;
     }
 
     .trust-pill{
@@ -234,68 +265,31 @@
     }
 
     .hero-badges{
-      margin-top: 8px;
+      margin-top:0;
       display:flex;
-      gap:12px;
+      gap:10px;
       align-items:center;
       justify-content:center;
+      flex-wrap:wrap;
     }
 
     .hero-badge{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:10px 14px;
+      padding:10px 12px;
       border-radius:999px;
       background:rgba(255,255,255,0.9);
       box-shadow:0 2px 10px rgba(0,0,0,0.08);
-      font-size:0.8em;
+      font-size:.88rem;
       line-height:1;
       font-weight:600;
       color:var(--navy);
       border:1px solid var(--border);
     }
 
-    @media (min-width: 700px){
-      .hero-badges{
-        justify-content:flex-start;
-        flex-wrap:nowrap;
-        white-space:nowrap;
-      }
-    }
-
-    @media (max-width: 699px){
-      .hero-badges{
-        justify-content:center;
-        flex-wrap:wrap;
-        white-space:normal;
-        gap:10px;
-      }
-      .hero-badge{
-        font-size:.86rem;
-        padding:9px 12px;
-      }
-    }
-
     .hero-copy .checklist{
-      list-style:none;
-      padding:0;
-      margin:12px 0 0;
-      display:grid;
-      gap:10px;
-    }
-
-    .hero-copy .checklist li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:13px 14px;
-      background:rgba(255,255,255,.9);
-      border:1px solid var(--border);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      color:var(--navy-soft);
-      font-weight:600;
+      display:none !important;
     }
 
     .mini-steps{grid-template-columns:1fr; margin-top:18px;}
@@ -367,6 +361,7 @@
 
     .offer-box{ padding:24px; }
     .offer-grid{ display:grid; gap:20px; align-items:start; }
+
     .offer-price{
       background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,242,245,.98));
       border:1px solid var(--border);
@@ -564,6 +559,7 @@
       font-weight:900;
       color:var(--navy);
       font-size:.88rem;
+      flex-wrap:wrap;
     }
 
     .sticky-mini span{
@@ -578,10 +574,80 @@
       font-size:.82rem;
     }
 
+    .diff-wrap{
+      max-width:980px;
+      margin:24px auto 0;
+      display:grid;
+      gap:14px;
+    }
+
+    .diff-card{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--border);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .diff-card h3{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:1.1rem;
+    }
+
+    .diff-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
+
+    .diff-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px 14px;
+      border-radius:16px;
+      background:rgba(244,106,164,.06);
+      border:1px solid rgba(244,106,164,.14);
+      color:var(--navy-soft);
+      font-weight:600;
+    }
+
+    .diff-item strong{ color:var(--navy); }
+
+    .mini-compare{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .mini-box{
+      border-radius:18px;
+      padding:14px;
+      border:1px solid var(--border);
+      background:#fff;
+    }
+
+    .mini-box .kicker{
+      display:inline-flex;
+      font-size:.78rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      color:var(--navy-soft);
+      margin-bottom:6px;
+    }
+
+    .mini-box.good{
+      background:linear-gradient(180deg, rgba(191,232,216,.55), rgba(255,255,255,.98));
+      border-color:rgba(124,184,161,.28);
+    }
+
     @media (min-width: 700px){
       .section{padding:76px 0}
-      .hero{padding:34px 0 40px}
-      .hero-wrap{grid-template-columns:1.02fr .98fr; gap:30px}
       .mini-steps{grid-template-columns:repeat(3,1fr)}
       .pain-grid{grid-template-columns:repeat(2,1fr)}
       .filter-grid{grid-template-columns:repeat(2,1fr)}
@@ -590,8 +656,86 @@
       .testi-grid{grid-template-columns:repeat(3,1fr)}
       .author-wrap{grid-template-columns:1.2fr .8fr}
       .offer-grid{grid-template-columns:1.08fr .92fr}
-      .hero-mobile-visual{display:none}
-      .hero-desktop-visual{display:block}
+    }
+
+    @media (min-width: 820px){
+      .mini-compare{ grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 900px){
+      .hero{
+        padding:34px 0 44px;
+      }
+
+      .hero-wrap{
+        grid-template-columns:48% 52%;
+        gap:40px;
+        align-items:start;
+      }
+
+      .hero-copy{
+        text-align:left;
+        padding-right:8px;
+      }
+
+      .hero .eyebrow{
+        margin:0 0 16px;
+        justify-content:flex-start;
+      }
+
+      .hero-title{
+        text-align:left;
+        font-size:clamp(3.6rem, 5.2vw, 5.25rem);
+        max-width:11ch;
+      }
+
+      .hero-title .hero-highlight{
+        text-align:left;
+      }
+
+      .hero .subheadline{
+        margin:0 0 10px;
+        max-width:32rem;
+        text-align:left;
+        font-size:1.12rem;
+      }
+
+      .hero-mechanism{
+        margin:0 0 18px;
+        max-width:27rem;
+        text-align:left;
+        font-size:1.02rem;
+      }
+
+      .hero .cta{
+        margin:0 0 10px;
+        max-width:430px;
+      }
+
+      .hero .trust-line{
+        margin:0 0 18px;
+        justify-content:flex-start;
+      }
+
+      .hero-mobile-visual{
+        display:none;
+      }
+
+      .hero-desktop-visual{
+        display:block;
+        align-self:start;
+      }
+
+      .hero-visual{
+        width:100%;
+        max-width:640px;
+        margin-left:auto;
+      }
+
+      .hero-badges{
+        justify-content:flex-start;
+        gap:12px;
+      }
     }
 
     @media (min-width: 980px){
@@ -605,84 +749,36 @@
       .section-title br{display:none}
     }
 
+    @media (max-width: 699px){
+      .hero{
+        padding:22px 0 30px;
+      }
+
+      .hero .eyebrow{
+        font-size:.88rem;
+        padding:10px 16px;
+      }
+
+      .hero-title{
+        font-size:clamp(2.2rem, 11vw, 3.35rem);
+      }
+
+      .hero .subheadline{
+        font-size:1rem;
+      }
+
+      .hero-mechanism{
+        font-size:.98rem;
+      }
+
+      .hero-badge{
+        font-size:.86rem;
+        padding:9px 12px;
+      }
+    }
+
     @media (min-width: 768px){
       .footer-note{padding-bottom:40px}
-    }
-
-    .diff-wrap{
-      max-width: 980px;
-      margin: 24px auto 0;
-      display: grid;
-      gap: 14px;
-    }
-
-    .diff-card{
-      background: rgba(255,255,255,.92);
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      padding: 22px;
-    }
-
-    .diff-card h3{
-      margin: 0 0 10px;
-      color: var(--navy);
-      font-size: 1.1rem;
-    }
-
-    .diff-list{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .diff-item{
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(244,106,164,.06);
-      border: 1px solid rgba(244,106,164,.14);
-      color: var(--navy-soft);
-      font-weight: 600;
-    }
-
-    .diff-item strong{ color: var(--navy); }
-
-    .mini-compare{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .mini-box{
-      border-radius: 18px;
-      padding: 14px;
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-
-    .mini-box .kicker{
-      display: inline-flex;
-      font-size: .78rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: var(--navy-soft);
-      margin-bottom: 6px;
-    }
-
-    .mini-box.good{
-      background: linear-gradient(180deg, rgba(191,232,216,.55), rgba(255,255,255,.98));
-      border-color: rgba(124,184,161,.28);
-    }
-
-    @media (min-width: 820px){
-      .mini-compare{ grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -690,9 +786,11 @@
 <body>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-wrap">
+
           <div class="hero-copy">
             <div class="eyebrow">✨ +2,900 familias ya confían</div>
 
@@ -702,36 +800,38 @@
             </h1>
 
             <p class="subheadline">
-              Para mamás de bebés que empiezan a comer y necesitan una guía clara, por edad, para saber qué ofrecer, cómo servirlo y cómo avanzar sin pensar todo desde cero.
+              Para mamás de bebés que empiezan a comer: una ruta clara, por edad, para saber qué ofrecer y cómo avanzar paso a paso.
             </p>
-            <div class="hero-mobile-visual">
-              <img src="/metodo/images/hero_c6.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
-            </div>
+
+            <p class="hero-mechanism">
+              Abres la guía de su edad, sigues el calendario y sabes qué hacer.
+            </p>
 
             <a class="cta" href="#oferta" aria-label="Ver todo lo que incluye tu compra">
-              ✅ Quiero empezar sin miedo hoy
+              ✅ Quiero empezar con claridad
             </a>
 
             <div class="trust-line">
               <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
             </div>
 
+            <!-- Imagen hero móvil -->
+            <div class="hero-mobile-visual">
+              <img src="/metodo/images/hero_c6.webp" alt="Mockup del Método Modular La Fuente con 6 guías organizadas por etapa y bebé" loading="eager" />
+            </div>
+
+            <!-- Autoridad -->
             <div class="hero-badges">
               <span class="hero-badge">👩‍⚕️ Lic. Martha La Fuente</span>
               <span class="hero-badge">🗓️ 17 años de experiencia</span>
               <span class="hero-badge">👶 +2,900 familias acompañadas</span>
             </div>
-
-            <ul class="checklist">
-              <li><span>✅</span><span><strong>112 días planeados</strong> para dejar de improvisar y empezar con una ruta clara.</span></li>
-              <li><span>⏱️</span><span><strong>Tiempos exactos</strong> por receta: 5 / 10 / 15–20 minutos para decidir rápido.</span></li>
-              <li><span>🥣</span><span><strong>Valores nutricionales reales</strong> por receta: calorías, proteína, hierro, calcio, fibra y vitaminas.</span></li>
-            </ul>
           </div>
 
+          <!-- Imagen hero desktop -->
           <div class="hero-desktop-visual">
             <div class="hero-visual">
-              <img src="/metodo/images/hero_c6.webp" alt="Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
+              <img src="/metodo/images/hero_c6.webp" alt="Mockup del Método Modular La Fuente con 6 guías organizadas por etapa y bebé" loading="eager" />
             </div>
           </div>
 
@@ -739,6 +839,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 2 CÓMO FUNCIONA -->
     <section class="section-tight">
       <div class="container">
         <div class="soft" style="padding:26px;">
@@ -778,6 +879,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 3 PROBLEMA -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -817,6 +919,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 4 SOLUCIÓN -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="soft" style="padding:26px;">
@@ -861,6 +964,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 5 DIFERENCIADORES -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -895,7 +999,7 @@
 
           <div class="center" style="margin-top:8px;">
             <a class="cta" href="#oferta" aria-label="Ver oferta y precio">
-              ✅ Quiero empezar sin miedo hoy
+              ✅ Quiero empezar con claridad
             </a>
             <p class="microcopy">⚡ Acceso inmediato + entrega automática por email · Prueba 15 días</p>
           </div>
@@ -903,6 +1007,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 6 TESTIMONIOS -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="center">
@@ -929,6 +1034,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 7 PARA QUIÉN ES / NO ES -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -962,6 +1068,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 8 ENTREGABLES -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="center">
@@ -1045,6 +1152,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 9 BONOS -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1100,6 +1208,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 10 OFERTA -->
     <section class="section" id="oferta">
       <div class="container">
         <div class="offer-box" id="offer-trigger">
@@ -1155,11 +1264,11 @@
               </div>
 
               <div class="offer-image" style="margin:12px 0 14px;">
-                <img src="/metodo/images/todo_en_uno.webp" alt="Método Modular La Fuente con todo lo incluido" loading="lazy" />
+                <img src="/metodo/images/hero_c6.webp" alt="Método Modular La Fuente con todo lo incluido" loading="lazy" />
               </div>
 
               <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
-                ✅ Quiero empezar sin miedo hoy
+                ✅ Quiero empezar con claridad
               </a>
 
               <p class="microcopy">Entrega automática por email · Acceso inmediato · Garantía 15 días</p>
@@ -1171,6 +1280,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 11 AUTOR -->
     <section class="section">
       <div class="container">
         <div class="author-wrap">
@@ -1204,6 +1314,7 @@
       </div>
     </section>
 
+    <!-- BLOQUE 12 GARANTÍA -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="guarantee">
@@ -1216,6 +1327,7 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1287,6 +1399,7 @@
       </div>
     </section>
 
+    <!-- CTA FINAL -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="final-cta center">
@@ -1296,7 +1409,7 @@
 
           <div style="max-width:520px; margin:20px auto 0;">
             <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
-              ✅ Quiero empezar sin miedo hoy
+              ✅ Quiero empezar con claridad
             </a>
             <div class="trust-line" style="margin-top:10px;">
               <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
@@ -1308,13 +1421,14 @@
     </section>
   </main>
 
+  <!-- STICKY CTA MOBILE -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="false">
     <div class="sticky-inner">
       <div class="sticky-mini">
         <span>$9.99</span> · <span>Entrega por email</span> · <span>Garantía 15 días</span>
       </div>
       <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora desde la barra fija">
-        ✅ Quiero empezar sin miedo hoy
+        ✅ Quiero empezar con claridad
       </a>
     </div>
   </div>
