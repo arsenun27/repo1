@@ -134,7 +134,7 @@
 
     .grid{display:grid; gap:16px}
 
-    /* HERO NUEVO */
+    /* HERO */
     .hero{
       padding:24px 0 34px;
     }
@@ -286,10 +286,6 @@
       font-weight:600;
       color:var(--navy);
       border:1px solid var(--border);
-    }
-
-    .hero-copy .checklist{
-      display:none !important;
     }
 
     .mini-steps{grid-template-columns:1fr; margin-top:18px;}
@@ -751,29 +747,70 @@
 
     @media (max-width: 699px){
       .hero{
-        padding:22px 0 30px;
+        padding:18px 0 24px;
       }
 
       .hero .eyebrow{
-        font-size:.88rem;
-        padding:10px 16px;
+        margin:0 auto 14px;
+        padding:9px 15px;
+        font-size:.84rem;
       }
 
       .hero-title{
-        font-size:clamp(2.2rem, 11vw, 3.35rem);
+        font-size:clamp(2.05rem, 9.4vw, 3.08rem);
+        line-height:.94;
+        margin:0 0 10px;
+        letter-spacing:-.04em;
+      }
+
+      .hero-title .hero-highlight{
+        margin-top:5px;
+        line-height:.9;
       }
 
       .hero .subheadline{
-        font-size:1rem;
+        font-size:.97rem;
+        line-height:1.38;
+        margin:0 auto 8px;
+        max-width:31ch;
       }
 
       .hero-mechanism{
-        font-size:.98rem;
+        font-size:.95rem;
+        line-height:1.36;
+        margin:0 auto 14px;
+        max-width:29ch;
+      }
+
+      .hero .cta{
+        min-height:54px;
+        padding:14px 20px;
+        font-size:.97rem;
+        margin:0 auto 8px;
+      }
+
+      .hero .trust-line{
+        margin:0 0 12px;
+      }
+
+      .hero .trust-pill{
+        padding:8px 12px;
+        font-size:.82rem;
+        line-height:1.2;
+      }
+
+      .hero .hero-mobile-visual{
+        width:min(94%, 455px);
+        margin:2px auto 12px;
+      }
+
+      .hero-badges{
+        gap:8px;
       }
 
       .hero-badge{
-        font-size:.86rem;
-        padding:9px 12px;
+        font-size:.8rem;
+        padding:8px 10px;
       }
     }
 
@@ -815,12 +852,10 @@
               <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
             </div>
 
-            <!-- Imagen hero móvil -->
             <div class="hero-mobile-visual">
               <img src="/metodo/images/hero_c6.webp" alt="Mockup del Método Modular La Fuente con 6 guías organizadas por etapa y bebé" loading="eager" />
             </div>
 
-            <!-- Autoridad -->
             <div class="hero-badges">
               <span class="hero-badge">👩‍⚕️ Lic. Martha La Fuente</span>
               <span class="hero-badge">🗓️ 17 años de experiencia</span>
@@ -828,7 +863,6 @@
             </div>
           </div>
 
-          <!-- Imagen hero desktop -->
           <div class="hero-desktop-visual">
             <div class="hero-visual">
               <img src="/metodo/images/hero_c6.webp" alt="Mockup del Método Modular La Fuente con 6 guías organizadas por etapa y bebé" loading="eager" />
