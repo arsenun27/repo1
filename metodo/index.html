@@ -459,7 +459,7 @@
       margin-bottom:6px;
     }
 
-   .guarantee{
+ .guarantee{
   padding:26px;
   text-align:center;
   background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(250,242,245,.92));
@@ -474,10 +474,20 @@
   filter:drop-shadow(0 10px 20px rgba(46,69,97,.14));
 }
 
+.guarantee .section-lead{
+  max-width:620px;
+}
+
+@media (min-width: 900px){
+  .guarantee-badge{
+    width:250px;
+  }
+}
+
 @media (max-width: 699px){
   .guarantee-badge{
     width:min(190px, 58vw);
-    margin:0 auto 12px;
+    margin:0 auto 10px;
   }
 }
 
