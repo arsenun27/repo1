@@ -459,7 +459,6 @@
       margin-bottom:6px;
     }
 
-    /* GARANTÍA */
     .guarantee{
       padding:22px 20px 26px;
       text-align:center;
@@ -665,16 +664,8 @@
       border-color:rgba(124,184,161,.28);
     }
 
-    /* NUEVOS BLOQUES VISUALES */
     .visual-block{
       margin-top:24px;
-    }
-
-    .visual-block picture,
-    .visual-block img{
-      width:100%;
-      height:auto;
-      display:block;
     }
 
     .visual-frame{
@@ -689,6 +680,18 @@
       width:100%;
       height:auto;
       display:block;
+    }
+
+    .img-desktop{
+      display:none;
+      width:100%;
+      height:auto;
+    }
+
+    .img-mobile{
+      display:block;
+      width:100%;
+      height:auto;
     }
 
     .solution-copy{
@@ -823,18 +826,21 @@
       .bonus-grid{grid-template-columns:repeat(4,1fr)}
     }
 
+    @media (min-width: 768px){
+      .img-desktop{
+        display:block;
+      }
+
+      .img-mobile{
+        display:none;
+      }
+    }
+
     @media (max-width: 767px){
       body{padding-bottom:0}
       .section-title br{display:none}
-
-      .visual-block{
-        margin-top:18px;
-      }
-
-      .visual-frame{
-        border-radius:20px;
-      }
-
+      .visual-block{margin-top:18px}
+      .visual-frame{border-radius:20px}
       .solution-copy .highlight{
         padding:18px 16px;
         border-radius:20px;
@@ -962,7 +968,6 @@
 <body>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-wrap">
@@ -1012,7 +1017,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 2 CÓMO FUNCIONA -->
     <section class="section-tight">
       <div class="container">
         <div class="soft" style="padding:26px;">
@@ -1023,17 +1027,14 @@
 
           <div class="visual-block">
             <div class="visual-frame">
-              <picture>
-                <source media="(min-width: 768px)" srcset="/metodo/images/3pasos-pc.webp" />
-                <img src="/metodo/images/3pasos-mo.webp" alt="Así funciona el Método Modular La Fuente en 3 pasos: abrir la guía de su edad, seguir el plan semanal y preparar y servir con seguridad" loading="lazy" />
-              </picture>
+              <img class="img-desktop" src="/metodo/images/3pasos-pc.webp" alt="Así funciona el Método Modular La Fuente en 3 pasos en versión escritorio" loading="lazy" />
+              <img class="img-mobile" src="/metodo/images/3pasos-mo.webp" alt="Así funciona el Método Modular La Fuente en 3 pasos en versión móvil" loading="lazy" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOQUE 3 PROBLEMA -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1043,10 +1044,8 @@
 
         <div class="visual-block pain-visual-block">
           <div class="visual-frame pain-visual-frame">
-            <picture>
-              <source media="(min-width: 768px)" srcset="/metodo/images/duda1.webp" />
-              <img src="/metodo/images/duda2.webp" alt="Mamá evaluando la cuchara y la comida de su bebé con dudas sobre si la textura y la cantidad son correctas" loading="lazy" />
-            </picture>
+            <img class="img-desktop" src="/metodo/images/duda1.webp" alt="Versión escritorio de la sección de dudas sobre la alimentación del bebé" loading="lazy" />
+            <img class="img-mobile" src="/metodo/images/duda2.webp" alt="Versión móvil de la sección de dudas sobre la alimentación del bebé" loading="lazy" />
           </div>
         </div>
 
@@ -1082,7 +1081,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 4 SOLUCIÓN -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="soft" style="padding:26px;">
@@ -1099,17 +1097,14 @@
 
           <div class="visual-block">
             <div class="visual-frame">
-              <picture>
-                <source media="(min-width: 768px)" srcset="/metodo/images/salida-pc.webp" />
-                <img src="/metodo/images/salida-mo.webp" alt="Sistema modular con 112 días planeados, 180 recetas, nutrición visible, tiempos exactos, ayuda si rechaza y variaciones por alergias" loading="lazy" />
-              </picture>
+              <img class="img-desktop" src="/metodo/images/salida-pc.webp" alt="Sistema modular en versión escritorio" loading="lazy" />
+              <img class="img-mobile" src="/metodo/images/salida-mo.webp" alt="Sistema modular en versión móvil" loading="lazy" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOQUE 5 DIFERENCIADORES -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1119,10 +1114,8 @@
 
         <div class="visual-block diff-visual-block">
           <div class="visual-frame diff-visual-frame">
-            <picture>
-              <source media="(min-width: 768px)" srcset="/metodo/images/diferencia1.webp" />
-              <img src="/metodo/images/diferencia1.webp" alt="Comparativa entre otros recetarios y el Método Modular La Fuente mostrando orden por etapas, calendario listo, tiempos exactos, apoyo si rechaza, alertas, texturas y valores nutricionales" loading="lazy" />
-            </picture>
+            <img class="img-desktop" src="/metodo/images/diferencia1.webp" alt="Comparativa entre otros recetarios y el Método Modular La Fuente en versión escritorio" loading="lazy" />
+            <img class="img-mobile" src="/metodo/images/diferencia2.webp" alt="Comparativa entre otros recetarios y el Método Modular La Fuente en versión móvil" loading="lazy" />
           </div>
         </div>
 
@@ -1161,7 +1154,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 6 TESTIMONIOS -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="center">
@@ -1188,7 +1180,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 7 PARA QUIÉN ES / NO ES -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1222,7 +1213,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 8 ENTREGABLES -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="center">
@@ -1306,7 +1296,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 9 BONOS -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1362,7 +1351,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 10 OFERTA -->
     <section class="section" id="oferta">
       <div class="container">
         <div class="offer-box" id="offer-trigger">
@@ -1434,7 +1422,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 11 AUTOR -->
     <section class="section">
       <div class="container">
         <div class="author-wrap">
@@ -1468,7 +1455,6 @@
       </div>
     </section>
 
-    <!-- BLOQUE 12 GARANTÍA -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="guarantee">
@@ -1482,7 +1468,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section">
       <div class="container">
         <div class="center">
@@ -1554,7 +1539,6 @@
       </div>
     </section>
 
-    <!-- CTA FINAL -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="final-cta center">
@@ -1576,7 +1560,6 @@
     </section>
   </main>
 
-  <!-- STICKY CTA MOBILE -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="false">
     <div class="sticky-inner">
       <div class="sticky-mini">
