@@ -705,6 +705,26 @@
       max-width:900px;
     }
 
+    .pain-visual-block,
+    .diff-visual-block{
+      max-width:980px;
+      margin:24px auto 0;
+    }
+
+    .pain-visual-frame,
+    .diff-visual-frame{
+      background:rgba(255,255,255,.4);
+    }
+
+    .pain-remate{
+      max-width:680px;
+      margin-inline:auto;
+    }
+
+    .pain-highlight{
+      max-width:1140px;
+    }
+
     @media (min-width: 700px){
       .section{padding:76px 0}
       .mini-steps{grid-template-columns:repeat(3,1fr)}
@@ -1018,7 +1038,16 @@
       <div class="container">
         <div class="center">
           <h2 class="section-title">Si estás por empezar, es normal sentir miedo, dudas y presión.</h2>
-          <p class="section-lead">No porque no seas capaz. Sino porque te toca decidir todos los días con un bebé pequeño y poco tiempo.</p>
+          <p class="section-lead">No porque no seas capaz, sino porque te toca decidir todos los días con un bebé pequeño y poco tiempo.</p>
+        </div>
+
+        <div class="visual-block pain-visual-block">
+          <div class="visual-frame pain-visual-frame">
+            <picture>
+              <source media="(min-width: 768px)" srcset="/metodo/images/duda1.webp" />
+              <img src="/metodo/images/duda2.webp" alt="Mamá evaluando la cuchara y la comida de su bebé con dudas sobre si la textura y la cantidad son correctas" loading="lazy" />
+            </picture>
+          </div>
         </div>
 
         <div class="grid pain-grid" style="margin-top:24px;">
@@ -1029,7 +1058,7 @@
 
           <div class="pain-item">
             <h3>🤯 Dudas diarias</h3>
-            <p class="small" style="margin:0;">¿Qué ofrecer hoy? ¿Cuánto? ¿Qué Textura? ¿Voy avanzando bien? La mente no para.</p>
+            <p class="small" style="margin:0;">¿Qué ofrecer hoy? ¿Cuánto? ¿Qué textura? ¿Voy avanzando bien? La mente no para.</p>
           </div>
 
           <div class="pain-item">
@@ -1043,11 +1072,11 @@
           </div>
         </div>
 
-        <p class="small" style="margin:14px 0 0; font-weight:700; color:var(--navy); text-align:center;">
-          Y encima recibes <strong>opiniones contradictorias</strong>de todos lados..
+        <p class="small pain-remate" style="margin:14px 0 0; font-weight:700; color:var(--navy); text-align:center;">
+          Y encima recibes opiniones contradictorias de todos lados.
         </p>
 
-        <div class="highlight">
+        <div class="highlight pain-highlight">
           <strong>Y si mañana hay pancita o una noche difícil, lo peor es no saber qué hacer en el momento.</strong>
         </div>
       </div>
@@ -1088,14 +1117,23 @@
           <p class="section-lead">No se trata de tener más información. Se trata de tener la información correcta, ordenada y usable justo cuando la necesitas.</p>
         </div>
 
+        <div class="visual-block diff-visual-block">
+          <div class="visual-frame diff-visual-frame">
+            <picture>
+              <source media="(min-width: 768px)" srcset="/metodo/images/diferencia1.webp" />
+              <img src="/metodo/images/diferencia2.webp" alt="Comparativa entre otros recetarios y el Método Modular La Fuente mostrando orden por etapas, calendario listo, tiempos exactos, apoyo si rechaza, alertas, texturas y valores nutricionales" loading="lazy" />
+            </picture>
+          </div>
+        </div>
+
         <div class="diff-wrap">
           <div class="diff-card">
             <h3>✨ Método Modular La Fuente™ incluye:</h3>
 
             <ul class="diff-list">
-              <li class="diff-item">📚 <span><strong>Modular por edad (6–18 meses):</strong> usas solo la guía que necesitas HOY (sin abrumarte).</span></li>
+              <li class="diff-item">📚 <span><strong>Modular por edad (6–18 meses):</strong> usas solo la guía que necesitas HOY, sin abrumarte.</span></li>
               <li class="diff-item">📅 <span><strong>112 días planeados:</strong> calendarios + listas de compra para avanzar con orden.</span></li>
-              <li class="diff-item">⏱️ <span><strong>Tiempos exactos:</strong> 5 / 10 / 15–20 minutos (decides rápido).</span></li>
+              <li class="diff-item">⏱️ <span><strong>Tiempos exactos:</strong> 5 / 10 / 15–20 minutos para decidir rápido.</span></li>
               <li class="diff-item">📊 <span><strong>Valores nutricionales reales:</strong> visibles por receta.</span></li>
               <li class="diff-item">🍼 <span><strong>Si rechaza:</strong> estrategias prácticas en cada receta.</span></li>
               <li class="diff-item">🌾 <span><strong>Alergias:</strong> variaciones por receta cuando lo necesitas.</span></li>
@@ -1501,7 +1539,7 @@
             <div class="faq-content">
               <p>No. La Guía Maestra te orienta para BLW, tradicional o mixto. La idea es adaptarlo a tu bebé y a tu contexto.</p>
             </div>
-          </div          </div>
+          </div>
 
           <div class="faq-item">
             <button class="faq-btn" type="button" aria-expanded="false">
