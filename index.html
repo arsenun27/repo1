@@ -701,20 +701,17 @@
       align-items:center;
     }
 
-    .offer-stack-visual img{
+    .offer-stack-visual picture{
       width:100%;
-      height:auto;
       display:block;
     }
 
-    .offer-stack-visual .stack-desktop{
-      display:none !important;
+    .offer-stack-visual img{
+      width:100%;
       max-width:560px;
-    }
-
-    .offer-stack-visual .stack-mobile{
-      display:block !important;
-      max-width:340px;
+      height:auto;
+      display:block;
+      margin-inline:auto;
     }
 
     .solution-copy{
@@ -857,14 +854,6 @@
       .visual-frame .img-mobile{
         display:none !important;
       }
-
-      .offer-stack-visual .stack-desktop{
-        display:block !important;
-      }
-
-      .offer-stack-visual .stack-mobile{
-        display:none !important;
-      }
     }
 
     @media (max-width: 767px){
@@ -875,6 +864,9 @@
       .solution-copy .highlight{
         padding:18px 16px;
         border-radius:20px;
+      }
+      .offer-stack-visual img{
+        max-width:340px;
       }
     }
 
@@ -1437,8 +1429,10 @@
               </div>
 
               <div class="offer-image offer-stack-visual" style="margin:12px 0 14px;">
-                <img class="stack-desktop" src="/metodo/images/stackpc.webp" alt="Mockup premium del Método La Fuente con las 6 guías y 4 bonos en versión escritorio" loading="lazy" />
-                <img class="stack-mobile" src="/metodo/images/stackmo.webp" alt="Mockup premium del Método La Fuente con las 6 guías y 4 bonos en versión móvil" loading="lazy" />
+                <picture>
+                  <source media="(max-width: 767px)" srcset="/metodo/images/stackmo.webp" />
+                  <img src="/metodo/images/stackpc.webp" alt="Mockup premium del Método La Fuente con las 6 guías y 4 bonos" loading="lazy" />
+                </picture>
               </div>
 
               <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
