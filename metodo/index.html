@@ -470,6 +470,98 @@ object-fit:cover;
 .author-copy p:last-child{ margin-bottom:0; }
 .author-stats{ display:grid; gap:12px; }
 
+.author-copy{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.author-copy .section-title{
+text-wrap:balance;
+}
+
+.deliver-card,
+.bonus-card{
+display:flex;
+flex-direction:column;
+gap:14px;
+height:100%;
+}
+
+.deliver-cover,
+.bonus-cover{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:14px;
+min-height:220px;
+border-radius:20px;
+background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,242,245,.96));
+border:1px solid rgba(46,69,97,.08);
+box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+overflow:hidden;
+}
+
+.deliver-cover img,
+.bonus-cover img{
+width:100%;
+height:auto;
+max-height:380px;
+object-fit:contain;
+filter:drop-shadow(0 12px 24px rgba(46,69,97,.12));
+}
+
+.age{
+font-size:.94rem;
+font-weight:700;
+color:var(--navy-soft);
+margin-top:-2px;
+}
+
+.deliver-card ul,
+.bonus-card ul,
+.filter-card ul{
+margin:0;
+padding-left:20px;
+display:grid;
+gap:8px;
+}
+
+.deliver-card ul li,
+.bonus-card ul li,
+.filter-card ul li{
+color:var(--navy-soft);
+font-weight:650;
+}
+
+.offer-image{
+display:flex;
+justify-content:center;
+align-items:center;
+margin:12px 0 14px;
+}
+
+.offer-image picture,
+.offer-image img{
+display:block;
+width:100%;
+}
+
+.offer-image img{
+width:min(100%, 520px);
+height:auto;
+margin-inline:auto;
+filter:drop-shadow(0 18px 32px rgba(46,69,97,.16));
+}
+
+@media (max-width: 699px){
+.deliver-cover,
+.bonus-cover{
+min-height:170px;
+padding:12px;
+}
+}
+
 .stat{
 padding:18px;
 border-radius:20px;
@@ -763,8 +855,8 @@ max-width:1140px;
 .deliver-grid{grid-template-columns:repeat(2,1fr)}
 .bonus-grid{grid-template-columns:repeat(2,1fr)}
 .testi-grid{grid-template-columns:repeat(3,1fr)}
-.author-wrap{grid-template-columns:1.22fr .78fr}
-.author-bio-grid{grid-template-columns:minmax(240px, 320px) minmax(0, 1fr)}
+.author-wrap{grid-template-columns:minmax(0, 1.4fr) minmax(280px, .8fr); gap:20px}
+.author-bio-grid{grid-template-columns:minmax(250px, 320px) minmax(0, 1fr); gap:24px; align-items:start}
 .offer-grid{grid-template-columns:1.08fr .92fr}
 }
 
@@ -1173,7 +1265,8 @@ claridad </a>
 </div>
 </div>
 </div>
-<section class="section" style="padding-top: 0pt;"> </section>
+<section class="section" style="padding-top: 0pt;">
+</section>
 <div class="container">
 <div class="center">
 <h2 class="section-title">Lo que más repiten las mamás: “ahora me
@@ -1181,24 +1274,27 @@ siento tranquila”.</h2>
 <p class="section-lead">No porque todo sea perfecto, sino porque por
 fin tienen una guía clara y una forma simple de avanzar.</p>
 </div>
-<div class="grid testi-grid" style="margin-top: 24px;"> <article
-class="testi-card"> </article>
+<div class="grid testi-grid" style="margin-top: 24px;">
+<article class="testi-card"></article>
 <h3 style="margin: 0pt 0pt 8px;">★★★★★ “Me dio paz mental desde el
 primer día”</h3>
 <p class="small" style="margin: 0pt;">“Abría la guía, veía el día y
 listo. Sentí mucha más seguridad.”</p>
-<article class="testi-card"> </article>
+<article class="testi-card">
+</article>
 <h3 style="margin: 0pt 0pt 8px;">★★★★★ “Cuando rechazaba, ya no entraba
 en pánico”</h3>
 <p class="small" style="margin: 0pt;">“Ahora sé cómo insistir sin
 estrés y sin convertir la comida en pelea.”</p>
-<article class="testi-card"> </article>
+<article class="testi-card">
+</article>
 <h3 style="margin: 0pt 0pt 8px;">★★★★★ “Se siente rápido y práctico”</h3>
 <p class="small" style="margin: 0pt;">“Los tiempos exactos y las listas
 de compras me facilitaron demasiado la semana.”</p>
 </div>
 </div>
-<section class="section"> </section>
+<section class="section">
+</section>
 <div class="container">
 <div class="center">
 <h2 class="section-title">Para quién es… y para quién no.</h2>
@@ -1235,7 +1331,8 @@ información dispersa.</li>
 </div>
 </div>
 </div>
-<section class="section" style="padding-top: 0pt;"> </section>
+<section class="section" style="padding-top: 0pt;">
+</section>
 <div class="container">
 <div class="center">
 <h2 class="section-title">Lo que recibes hoy: 6 guías modulares listas
@@ -1243,70 +1340,94 @@ para usar.</h2>
 <p class="section-lead">Un sistema completo en PDF con 330–350 páginas
 totales, organizado para que siempre sepas qué hacer según su etapa.</p>
 </div>
-<div class="grid deliver-grid" style="margin-top: 24px;"> <article
-class="deliver-card"> </article>
+<div class="grid deliver-grid" style="margin-top: 24px;">
+<article class="deliver-card"></article>
+<div class="deliver-cover"><img src="/metodo/images/Ebook1.webp"
+alt="Portada Guía 1 Primeros Bocados 6–7 meses" loading="lazy"
+decoding="async"></div>
 <div class="tag">Guía 1</div>
-<h3>Recetas 6–8 meses</h3>
-<div class="age">Primeras semanas de inicio</div>
+<h3>Primeros bocados (6–7 meses)</h3>
+<div class="age">Empezar bien, sin miedo ni improvisación</div>
+<ul>
+<li>45 recetas seguras</li>
+<li>Calendario de 4 semanas</li>
+<li>Texturas y porciones adaptadas</li>
+<li>Inicio claro para las primeras semanas</li>
+</ul>
+<article class="deliver-card">
+</article>
+<div class="deliver-cover"><img src="/metodo/images/Ebook2.webp"
+alt="Portada Guía 2 Explorando Sabores 8–9 meses" loading="lazy"
+decoding="async"></div>
+<div class="tag">Guía 2</div>
+<h3>Explorando sabores (8–9 meses)</h3>
+<div class="age">Más variedad, misma seguridad</div>
 <ul>
 <li>45 recetas profesionales</li>
 <li>Calendario de 4 semanas</li>
-<li>Lista de compras incluida</li>
-<li>Textura y cortes seguros por receta</li>
+<li>Texturas y tamaños blandos</li>
+<li>Más estructura para avanzar con calma</li>
 </ul>
-<article class="deliver-card"> </article>
-<div class="tag">Guía 2</div>
-<h3>Recetas 8–10 meses</h3>
-<div class="age">Más variedad con estructura</div>
-<ul>
-<li>45 recetas profesionales</li>
-<li>4 semanas organizadas</li>
-<li>Tiempos exactos para cocinar</li>
-<li>Notas si rechaza o necesita adaptación</li>
-</ul>
-<article class="deliver-card"> </article>
+<article class="deliver-card">
+</article>
+<div class="deliver-cover"><img src="/metodo/images/Ebook3.webp"
+alt="Portada Guía 3 Autonomía en la Mesa 10–12 meses" loading="lazy"
+decoding="async"></div>
 <div class="tag">Guía 3</div>
-<h3>Recetas 10–12 meses</h3>
-<div class="age">Avance con seguridad</div>
+<h3>Autonomía en la mesa (10–12 meses)</h3>
+<div class="age">Acompañar sin forzar</div>
 <ul>
 <li>45 recetas profesionales</li>
-<li>Porciones y almacenamiento</li>
-<li>Valores nutricionales completos</li>
-<li>Variaciones para alergias</li>
+<li>Calendario de 4 semanas</li>
+<li>Porciones pequeñas manejables</li>
+<li>Más autonomía con apoyo práctico</li>
 </ul>
-<article class="deliver-card"> </article>
+<article class="deliver-card">
+</article>
+<div class="deliver-cover"><img src="/metodo/images/Ebook4.webp"
+alt="Portada Guía 4 Pequeño Gourmet 12–15 meses" loading="lazy"
+decoding="async"></div>
 <div class="tag">Guía 4</div>
-<h3>Recetas 12–18 meses</h3>
-<div class="age">Continuidad sin improvisación</div>
+<h3>Pequeño gourmet (12–15 meses)</h3>
+<div class="age">Come con la familia, a su ritmo</div>
 <ul>
 <li>45 recetas profesionales</li>
-<li>Calendario semanal claro</li>
-<li>Ideas sostenibles para el día a día</li>
-<li>Notas de seguridad y apoyo práctico</li>
+<li>Calendario de 4 semanas</li>
+<li>Texturas variadas, sin presión</li>
+<li>Continuidad realista para el día a día</li>
 </ul>
-<article class="deliver-card"> </article>
+<article class="deliver-card">
+</article>
+<div class="deliver-cover"><img src="/metodo/images/Ebook5.webp"
+alt="Portada Guía Maestra Fundamentos" loading="lazy" decoding="async"></div>
 <div class="tag">Guía 5</div>
-<h3>Guía Maestra</h3>
-<div class="age">Tu mapa general</div>
+<h3>Guía Maestra — Fundamentos</h3>
+<div class="age">Todo lo que necesitás saber, en un solo lugar</div>
 <ul>
-<li>BLW / Tradicional / Mixto</li>
-<li>Prohibidos por edad</li>
-<li>Alergias y preguntas frecuentes</li>
-<li>Base clara para empezar sin dudas</li>
+<li>BLW, tradicional y mixto</li>
+<li>Alimentos prohibidos por edad</li>
+<li>Alergias, FAQ y seguridad</li>
+<li>Mapa general para empezar sin dudas</li>
 </ul>
-<article class="deliver-card"> </article>
+<article class="deliver-card">
+</article>
+<div class="deliver-cover"><img
+src="/metodo/images/ebook6%20rescate.webp"
+alt="Portada Guía de Rescate para Padres" loading="lazy"
+decoding="async"></div>
 <div class="tag">Guía 6</div>
-<h3>Guía de Rescate</h3>
-<div class="age">Consulta rápida, sin estrés</div>
+<h3>Guía de Rescate para Padres</h3>
+<div class="age">Cuando no sabés qué hacer, acá está la respuesta</div>
 <ul>
 <li>Índices y tablas de consulta rápida</li>
-<li>Decisión rápida diaria</li>
-<li>Apoyo cuando no sabes qué ofrecer</li>
+<li>Decisiones diarias sin estrés</li>
+<li>Apoyo cuando no sabés qué ofrecer</li>
 <li>Menos vueltas, más claridad</li>
 </ul>
 </div>
 </div>
-<section class="section"> </section>
+<section class="section">
+</section>
 <div class="container">
 <div class="center">
 <h2 class="section-title">Además, hoy te llevas 4 bonos incluidos
@@ -1314,8 +1435,11 @@ gratis.</h2>
 <p class="section-lead">Diseñados para eliminar miedo, ahorrar tiempo y
 ayudarte a reaccionar con más claridad en lo cotidiano.</p>
 </div>
-<div class="grid bonus-grid" style="margin-top: 24px;"> <article
-class="bonus-card"> </article>
+<div class="grid bonus-grid" style="margin-top: 24px;">
+<article class="bonus-card"></article>
+<div class="bonus-cover"><img src="/metodo/images/bono1.webp"
+alt="Portada Bono 1 Certificado de Seguridad" loading="lazy"
+decoding="async"></div>
 <div class="tag">Bono 1</div>
 <h3>Certificado de Seguridad</h3>
 <p class="small" style="margin: 0pt;"><strong>Valor $27</strong> ·
@@ -1325,9 +1449,13 @@ Gratis hoy</p>
 <li>Maniobra Heimlich pediátrica</li>
 <li>Cortes seguros para empezar con más calma</li>
 </ul>
-<article class="bonus-card"> </article>
+<article class="bonus-card">
+</article>
+<div class="bonus-cover"><img src="/metodo/images/bono2.webp"
+alt="Portada Bono 2 El Método Domingo Meal Prep 2 Horas" loading="lazy"
+decoding="async"></div>
 <div class="tag">Bono 2</div>
-<h3>Método Domingo meal prep 2 horas</h3>
+<h3>El Método Domingo meal prep 2 horas</h3>
 <p class="small" style="margin: 0pt;"><strong>Valor $19</strong> ·
 Gratis hoy</p>
 <ul>
@@ -1335,9 +1463,13 @@ Gratis hoy</p>
 <li>Organización simple y realista</li>
 <li>Más orden, menos estrés diario</li>
 </ul>
-<article class="bonus-card"> </article>
+<article class="bonus-card">
+</article>
+<div class="bonus-cover"><img src="/metodo/images/bono3.webp"
+alt="Portada Bono 3 Kit de Rastreo de Alergias" loading="lazy"
+decoding="async"></div>
 <div class="tag">Bono 3</div>
-<h3>Kit rastreo alergias + lista compra inteligente</h3>
+<h3>Kit de rastreo de alergias + lista inteligente</h3>
 <p class="small" style="margin: 0pt;"><strong>Valor $17</strong> ·
 Gratis hoy</p>
 <ul>
@@ -1345,7 +1477,11 @@ Gratis hoy</p>
 <li>Seguimiento simple para tu rutina</li>
 <li>Compra más ordenada y funcional</li>
 </ul>
-<article class="bonus-card"> </article>
+<article class="bonus-card">
+</article>
+<div class="bonus-cover"><img src="/metodo/images/bono4.webp"
+alt="Portada Bono 4 SOS Mamá Recetario de Crisis 5 min" loading="lazy"
+decoding="async"></div>
 <div class="tag">Bono 4</div>
 <h3>SOS mamá recetario crisis 5 min</h3>
 <p class="small" style="margin: 0pt;"><strong>Valor $12</strong> ·
@@ -1357,7 +1493,8 @@ Gratis hoy</p>
 </ul>
 </div>
 </div>
-<section class="section" id="oferta"> </section>
+<section class="section" id="oferta">
+</section>
 <div class="container">
 <div class="offer-box" id="offer-trigger">
 <div class="offer-grid">
@@ -1402,9 +1539,11 @@ email. </p>
 <div class="trust-line" style="margin-bottom: 12px;"> <span
 class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
 <span class="trust-pill">✅ Prueba 15 días</span> </div>
-<div class="offer-image" style="margin: 12px 0pt 14px;"> <img
-src="/metodo/images/hero_c6.webp"
-alt="Método Modular La Fuente con todo lo incluido" loading="lazy"> </div>
+<div class="offer-image"><picture><source media="(min-width: 700px)"
+srcset="/metodo/images/stackpc.webp"><img
+src="/metodo/images/stackmo.webp"
+alt="Stack del Método Modular La Fuente con las 6 guías y 4 bonos"
+loading="lazy" decoding="async"></source></picture></div>
 <a class="cta"
 href="%5BURL_HOTMART_CHECKOUT%5D?utm_source=%7B%7Butm_source%7D%7D&amp;utm_medium=%7B%7Butm_medium%7D%7D&amp;utm_campaign=%7B%7Butm_campaign%7D%7D&amp;utm_content=%7B%7Butm_content%7D%7D"
 aria-label="Comprar ahora"> ✅ Quiero empezar con claridad </a>
@@ -1417,15 +1556,16 @@ diaria.</p>
 </div>
 </div>
 </div>
-<section class="section"> </section>
+<section class="section">
+</section>
 <div class="container">
 <div class="author-wrap">
 <div class="card author-bio">
 <div class="author-bio-grid">
 <div class="author-photo-wrap">
-<div class="author-photo-frame"> <img src="/metodo/images/marta.webp"
+<div class="author-photo-frame"><img src="/metodo/images/marta.webp"
 alt="Retrato profesional de la Lic. Martha La Fuente" loading="lazy"
-decoding="async"> </div>
+decoding="async"></div>
 </div>
 <div class="author-copy">
 <div class="tag">Sobre la autora</div>
@@ -1445,16 +1585,17 @@ apoya la alimentación complementaria sin hacerte sentir sola ni perdida.</p>
 </div>
 </div>
 <div class="author-stats">
-<div class="stat"> <strong>17</strong> <span>Años de experiencia
-profesional acompañando alimentación infantil.</span> </div>
-<div class="stat"> <strong>+2,900</strong> <span>Familias acompañadas
-con enfoque práctico, seguro y realista.</span> </div>
-<div class="stat"> <strong>180</strong> <span>Recetas profesionales
-integradas en un sistema modular por etapas.</span> </div>
+<div class="stat"><strong>17</strong><span>Años de experiencia
+profesional acompañando alimentación infantil.</span></div>
+<div class="stat"><strong>+2,900</strong><span>Familias acompañadas con
+enfoque práctico, seguro y realista.</span></div>
+<div class="stat"><strong>180</strong><span>Recetas profesionales
+integradas en un sistema modular por etapas.</span></div>
 </div>
 </div>
 </div>
-<section class="section" style="padding-top: 0pt;"> </section>
+<section class="section" style="padding-top: 0pt;">
+</section>
 <div class="container">
 <div class="guarantee"> <img class="guarantee-badge"
 src="/metodo/images/wa15.webp"
