@@ -174,9 +174,7 @@
       text-align:center;
     }
 
-    .hero-visual,
-    .hero-mobile-visual,
-    .hero-desktop-visual{
+    .hero-visual{
       position:relative;
       overflow:visible;
       padding:0;
@@ -184,10 +182,17 @@
       background:transparent;
       border:none;
       box-shadow:none;
+      width:min(92%, 470px);
+      margin:14px auto 0;
     }
 
-    .hero-visual img,
-    .hero-mobile-visual img{
+    .hero-visual picture,
+    .visual-frame picture{
+      display:block;
+      width:100%;
+    }
+
+    .hero-visual img{
       display:block;
       width:100%;
       height:auto;
@@ -196,16 +201,6 @@
       background:transparent;
       box-shadow:none;
       filter:drop-shadow(0 12px 26px rgba(46,69,97,.16));
-    }
-
-    .hero-mobile-visual{
-      display:block;
-      width:min(92%, 470px);
-      margin:0 auto 14px;
-    }
-
-    .hero-desktop-visual{
-      display:none;
     }
 
     .cta{
@@ -323,11 +318,60 @@
       padding:20px;
     }
 
+    .deliver-card,
+    .bonus-card{
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+
     .pain-item h3,.feature-card h3,.deliver-card h3,.bonus-card h3,.testi-card h3,.filter-card h3{
       margin:0 0 8px;
       font-size:1.03rem;
       line-height:1.2;
       color:var(--navy);
+    }
+
+    .deliver-media,
+    .bonus-media{
+      display:grid;
+      place-items:center;
+      padding:16px;
+      margin-bottom:16px;
+      border-radius:20px;
+      min-height:272px;
+      background:linear-gradient(180deg, rgba(244,106,164,.06), rgba(191,232,216,.14));
+      border:1px solid rgba(46,69,97,.08);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+      overflow:hidden;
+    }
+
+    .bonus-media{
+      min-height:248px;
+    }
+
+    .deliver-media img,
+    .bonus-media img{
+      display:block;
+      width:min(100%, 210px);
+      height:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 14px 24px rgba(46,69,97,.16));
+    }
+
+    .deliver-card .tag,
+    .bonus-card .tag{
+      margin-bottom:10px;
+    }
+
+    .deliver-card ul,
+    .bonus-card ul{
+      margin:10px 0 0;
+      padding-left:22px;
+    }
+
+    .deliver-card .age{
+      margin-bottom:8px;
     }
 
     .highlight{
@@ -704,12 +748,7 @@
       display:block;
     }
 
-    .img-desktop{
-      display:none;
-      width:100%;
-      height:auto;
-    }
-
+    .img-desktop,
     .img-mobile{
       display:block;
       width:100%;
@@ -822,19 +861,11 @@
         justify-content:flex-start;
       }
 
-      .hero-mobile-visual{
-        display:none;
-      }
-
-      .hero-desktop-visual{
-        display:block;
-        align-self:start;
-      }
-
       .hero-visual{
         width:100%;
         max-width:690px;
-        margin-left:auto;
+        margin:0 0 0 auto;
+        align-self:start;
       }
 
       .hero-badges{
@@ -849,16 +880,6 @@
       .bonus-grid{grid-template-columns:repeat(4,1fr)}
     }
 
-    @media (min-width: 768px){
-      .img-desktop{
-        display:block;
-      }
-
-      .img-mobile{
-        display:none;
-      }
-    }
-
     @media (max-width: 767px){
       body{padding-bottom:0}
       .section-title br{display:none}
@@ -868,6 +889,10 @@
         padding:18px 16px;
         border-radius:20px;
       }
+      .deliver-media{min-height:232px}
+      .bonus-media{min-height:220px}
+      .deliver-media img,
+      .bonus-media img{width:min(100%, 180px)}
     }
 
     @media (max-width: 699px){
@@ -922,11 +947,6 @@
         padding:7px 11px;
         font-size:.79rem;
         line-height:1.15;
-      }
-
-      .hero .hero-mobile-visual{
-        width:min(95%, 470px);
-        margin:0 auto 10px;
       }
 
       .hero-badges{
@@ -1019,10 +1039,6 @@
               <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
             </div>
 
-            <div class="hero-mobile-visual">
-              <img src="/metodo/images/hero_c6.webp" alt="Mockup del Método Modular La Fuente con 6 guías organizadas por etapa y bebé" loading="eager" />
-            </div>
-
             <div class="hero-badges">
               <span class="hero-badge">👩‍⚕️ Lic. Martha La Fuente</span>
               <span class="hero-badge">🗓️ 17 años de experiencia</span>
@@ -1030,10 +1046,11 @@
             </div>
           </div>
 
-          <div class="hero-desktop-visual">
-            <div class="hero-visual">
+          <div class="hero-visual">
+            <picture>
+              <source media="(min-width: 900px)" srcset="/metodo/images/hero_c6.webp" />
               <img src="/metodo/images/hero_c6.webp" alt="Mockup del Método Modular La Fuente con 6 guías organizadas por etapa y bebé" loading="eager" />
-            </div>
+            </picture>
           </div>
 
         </div>
@@ -1050,8 +1067,10 @@
 
           <div class="visual-block">
             <div class="visual-frame">
-              <img class="img-desktop" src="/metodo/images/3pasos-pc.webp" alt="Así funciona el Método Modular La Fuente en 3 pasos en versión escritorio" loading="lazy" />
-              <img class="img-mobile" src="/metodo/images/3pasos-mo.webp" alt="Así funciona el Método Modular La Fuente en 3 pasos en versión móvil" loading="lazy" />
+              <picture>
+                <source media="(min-width: 768px)" srcset="/metodo/images/3pasos-pc.webp" />
+                <img src="/metodo/images/3pasos-mo.webp" alt="Así funciona el Método Modular La Fuente en 3 pasos" loading="lazy" />
+              </picture>
             </div>
           </div>
         </div>
@@ -1067,8 +1086,10 @@
 
         <div class="visual-block pain-visual-block">
           <div class="visual-frame pain-visual-frame">
-            <img class="img-desktop" src="/metodo/images/duda1.webp" alt="Versión escritorio de la sección de dudas sobre la alimentación del bebé" loading="lazy" />
-            <img class="img-mobile" src="/metodo/images/duda2.webp" alt="Versión móvil de la sección de dudas sobre la alimentación del bebé" loading="lazy" />
+            <picture>
+              <source media="(min-width: 768px)" srcset="/metodo/images/duda1.webp" />
+              <img src="/metodo/images/duda2.webp" alt="Dudas frecuentes al empezar la alimentación complementaria" loading="lazy" />
+            </picture>
           </div>
         </div>
 
@@ -1120,8 +1141,10 @@
 
           <div class="visual-block">
             <div class="visual-frame">
-              <img class="img-desktop" src="/metodo/images/salida-pc.webp" alt="Sistema modular en versión escritorio" loading="lazy" />
-              <img class="img-mobile" src="/metodo/images/salida-mo.webp" alt="Sistema modular en versión móvil" loading="lazy" />
+              <picture>
+                <source media="(min-width: 768px)" srcset="/metodo/images/salida-pc.webp" />
+                <img src="/metodo/images/salida-mo.webp" alt="Cómo se organiza el Método Modular La Fuente" loading="lazy" />
+              </picture>
             </div>
           </div>
         </div>
@@ -1137,8 +1160,10 @@
 
         <div class="visual-block diff-visual-block">
           <div class="visual-frame diff-visual-frame">
-            <img class="img-desktop" src="/metodo/images/diferencia1.webp" alt="Comparativa entre otros recetarios y el Método Modular La Fuente en versión escritorio" loading="lazy" />
-            <img class="img-mobile" src="/metodo/images/diferencia2.webp" alt="Comparativa entre otros recetarios y el Método Modular La Fuente en versión móvil" loading="lazy" />
+            <picture>
+              <source media="(min-width: 768px)" srcset="/metodo/images/diferencia1.webp" />
+              <img src="/metodo/images/diferencia2.webp" alt="Comparativa entre otros recetarios y el Método Modular La Fuente" loading="lazy" />
+            </picture>
           </div>
         </div>
 
@@ -1245,6 +1270,9 @@
 
         <div class="grid deliver-grid" style="margin-top:24px;">
           <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook1.webp" alt="Portada de la Guía 1 Primeros bocados" loading="lazy" />
+            </div>
             <div class="tag">Guía 1</div>
             <h3>Recetas 6–8 meses</h3>
             <div class="age">Primeras semanas de inicio</div>
@@ -1257,6 +1285,9 @@
           </article>
 
           <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook2.webp" alt="Portada de la Guía 2 Explorando sabores" loading="lazy" />
+            </div>
             <div class="tag">Guía 2</div>
             <h3>Recetas 8–10 meses</h3>
             <div class="age">Más variedad con estructura</div>
@@ -1269,6 +1300,9 @@
           </article>
 
           <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook3.webp" alt="Portada de la Guía 3 Autonomía en la mesa" loading="lazy" />
+            </div>
             <div class="tag">Guía 3</div>
             <h3>Recetas 10–12 meses</h3>
             <div class="age">Avance con seguridad</div>
@@ -1281,6 +1315,9 @@
           </article>
 
           <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook4.webp" alt="Portada de la Guía 4 Pequeño Gourmet" loading="lazy" />
+            </div>
             <div class="tag">Guía 4</div>
             <h3>Recetas 12–18 meses</h3>
             <div class="age">Continuidad sin improvisación</div>
@@ -1293,6 +1330,9 @@
           </article>
 
           <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook5.webp" alt="Portada de la Guía Maestra Fundamentos" loading="lazy" />
+            </div>
             <div class="tag">Guía 5</div>
             <h3>Guía Maestra</h3>
             <div class="age">Tu mapa general</div>
@@ -1305,6 +1345,9 @@
           </article>
 
           <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/ebook6%20rescate.webp" alt="Portada de la Guía de Rescate para padres" loading="lazy" />
+            </div>
             <div class="tag">Guía 6</div>
             <h3>Guía de Rescate</h3>
             <div class="age">Consulta rápida, sin estrés</div>
@@ -1328,6 +1371,9 @@
 
         <div class="grid bonus-grid" style="margin-top:24px;">
           <article class="bonus-card">
+            <div class="bonus-media">
+              <img src="/metodo/images/bono1.webp" alt="Portada del Bono 1 Certificado de Seguridad" loading="lazy" />
+            </div>
             <div class="tag">Bono 1</div>
             <h3>Certificado de Seguridad</h3>
             <p class="small" style="margin:0;"><strong>Valor $27</strong> · Gratis hoy</p>
@@ -1339,6 +1385,9 @@
           </article>
 
           <article class="bonus-card">
+            <div class="bonus-media">
+              <img src="/metodo/images/bono2.webp" alt="Portada del Bono 2 Método Domingo meal prep" loading="lazy" />
+            </div>
             <div class="tag">Bono 2</div>
             <h3>Método Domingo meal prep 2 horas</h3>
             <p class="small" style="margin:0;"><strong>Valor $19</strong> · Gratis hoy</p>
@@ -1350,6 +1399,9 @@
           </article>
 
           <article class="bonus-card">
+            <div class="bonus-media">
+              <img src="/metodo/images/bono3.webp" alt="Portada del Bono 3 Kit de rastreo de alergias" loading="lazy" />
+            </div>
             <div class="tag">Bono 3</div>
             <h3>Kit rastreo alergias + lista compra inteligente</h3>
             <p class="small" style="margin:0;"><strong>Valor $17</strong> · Gratis hoy</p>
@@ -1361,6 +1413,9 @@
           </article>
 
           <article class="bonus-card">
+            <div class="bonus-media">
+              <img src="/metodo/images/bono4.webp" alt="Portada del Bono 4 SOS Mamá recetario de crisis" loading="lazy" />
+            </div>
             <div class="tag">Bono 4</div>
             <h3>SOS mamá recetario crisis 5 min</h3>
             <p class="small" style="margin:0;"><strong>Valor $12</strong> · Gratis hoy</p>
