@@ -681,7 +681,6 @@
       display:block;
     }
 
-    /* CORRECCIÓN FUERTE PARA MOBILE/DESKTOP */
     .visual-frame .img-desktop{
       display:none !important;
       width:100%;
@@ -692,6 +691,27 @@
       display:block !important;
       width:100%;
       height:auto;
+    }
+
+    /* STACK VISUAL */
+    .offer-stack-visual{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .offer-stack-visual picture{
+      width:100%;
+      display:block;
+    }
+
+    .offer-stack-visual img{
+      width:100%;
+      max-width:560px;
+      height:auto;
+      display:block;
+      margin-inline:auto;
     }
 
     .solution-copy{
@@ -844,6 +864,9 @@
       .solution-copy .highlight{
         padding:18px 16px;
         border-radius:20px;
+      }
+      .offer-stack-visual img{
+        max-width:340px;
       }
     }
 
@@ -1405,8 +1428,11 @@
                 <span class="trust-pill">✅ Prueba 15 días</span>
               </div>
 
-              <div class="offer-image" style="margin:12px 0 14px;">
-                <img src="/metodo/images/hero_c6.webp" alt="Método Modular La Fuente con todo lo incluido" loading="lazy" />
+              <div class="offer-image offer-stack-visual" style="margin:12px 0 14px;">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="/metodo/images/stackmo.webp" />
+                  <img src="/metodo/images/stackpc.webp" alt="Mockup premium del Método La Fuente con las 6 guías y 4 bonos" loading="lazy" />
+                </picture>
               </div>
 
               <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
