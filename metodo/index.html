@@ -944,6 +944,23 @@
     }
 
     @media (max-width: 699px){
+      .offer-trust-line,
+      #checkout-copy,
+      .offer-price .microcopy{
+        display:none;
+      }
+
+      .offer-mobile-trust{
+        display:block;
+      }
+
+      .offer-image img{
+        max-height:220px;
+        width:auto;
+        margin:0 auto;
+        object-fit:contain;
+      }
+
       .hero{
         padding:18px 0 24px;
       }
@@ -1292,6 +1309,19 @@
       height:auto;
       display:block;
       object-fit:cover;
+    }
+
+    .offer-primary-cta{
+      margin:0 0 8px;
+    }
+
+    .offer-mobile-trust{
+      display:none;
+      text-align:center;
+      font-size:.82rem;
+      color:var(--navy-soft);
+      font-weight:700;
+      margin:6px 0 0;
     }
 
     @media (min-width: 700px){
@@ -1747,17 +1777,18 @@
 </div>
 </div>
 <div class="offer-price">
-<div class="launch-note">Precio de lanzamiento</div><div class="striked">Antes $57 USD</div>
+<div class="launch-note">⏳ Hoy $9.99 · Sube a $19.99 el 31 mar</div><div class="striked">Antes $57 USD</div>
 <div class="price">$9.99 <span>USD hoy</span></div>
 <p class="muted" id="checkout-copy" style="margin:12px 0 14px; font-weight:700; color:var(--navy);">Compra segura en Hotmart. Acceso inmediato por email y garantía de 15 días.</p>
-<div class="trust-line" style="margin-bottom:12px;">
+<div class="trust-line offer-trust-line" style="margin-bottom:12px;">
 <span class="trust-pill">⚡ Acceso inmediato + entrega automática por email</span>
 <span class="trust-pill">✅ Prueba 15 días</span>
 </div>
+<a aria-label="Comprar ahora" class="cta offer-primary-cta" href="https://pay.hotmart.com/Q104668319P?checkoutMode=10&amp;offDiscount=LAFUENTE&amp;bid=1772516312334">✅ Acceder ahora por $9.99</a>
+<p class="offer-mobile-trust">🔒 Pago seguro · Acceso inmediato · Garantía 15 días</p>
 <div class="offer-image" style="margin:12px 0 14px;">
 <img alt="Stack del Método Modular La Fuente con 6 guías y 4 bonos incluidos" class="js-responsive-img" data-breakpoint="900" data-desktop-src="/metodo/images/stackpc.webp" data-mobile-src="/metodo/images/stackmo.webp" loading="lazy" src="/metodo/images/stackmo.webp"/>
 </div>
-<a aria-label="Comprar ahora" class="cta" href="https://pay.hotmart.com/Q104668319P?checkoutMode=10&amp;offDiscount=LAFUENTE&amp;bid=1772516312334">✅ Acceder ahora por $9.99</a>
 <p class="microcopy">Pago seguro en Hotmart · Acceso inmediato · Garantía 15 días</p>
 <p class="seed-line">Bonos incluidos hoy con tu acceso. En el checkout podrás añadir imprimibles opcionales para momentos de pancita, noches difíciles y decisión rápida diaria.</p>
 </div>
