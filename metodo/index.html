@@ -484,8 +484,10 @@
     }
 
     .author-wrap{ display:grid; gap:18px; align-items:start; }
-    .author-bio{ padding:24px; }
-    .author-bio-grid{ display:grid; gap:20px; align-items:center; }
+    .author-photo-card,
+    .author-copy-card{
+      padding:24px;
+    }
     .author-photo-wrap{
       display:flex;
       justify-content:center;
@@ -506,7 +508,26 @@
       display:block;
       object-fit:cover;
     }
-    .author-copy p:last-child{ margin-bottom:0; }
+    .author-hook{
+      font-size:clamp(1.7rem, 3vw, 2.6rem);
+      line-height:1.08;
+      margin:10px 0 12px;
+      max-width:12ch;
+    }
+    .author-name{
+      font-family:Baloo2, system-ui, sans-serif;
+      font-size:clamp(1.55rem, 2.4vw, 2.2rem);
+      line-height:1.08;
+      color:var(--navy);
+      margin:0 0 8px;
+    }
+    .author-cred{
+      margin:0 0 16px;
+      font-weight:800;
+      color:var(--navy-soft);
+    }
+    .author-copy-card p:last-child{ margin-bottom:0; }
+    .author-copy-card p{ max-width:58ch; }
     .author-stats{ display:grid; gap:12px; }
 
     .stat{
@@ -797,8 +818,10 @@
       .deliver-grid{grid-template-columns:repeat(2,1fr)}
       .bonus-grid{grid-template-columns:repeat(2,1fr)}
       .testi-grid{grid-template-columns:repeat(3,1fr)}
-      .author-wrap{grid-template-columns:minmax(300px, .78fr) minmax(0, 1.22fr)}
-      .author-side{position:sticky; top:100px}
+      .author-wrap{grid-template-columns:minmax(320px, .84fr) minmax(0, 1.16fr)}
+      .author-photo-card{grid-column:1; grid-row:1;}
+      .author-stats{grid-column:1; grid-row:2;}
+      .author-copy-card{grid-column:2; grid-row:1 / span 2; padding:28px;}
       .offer-grid{grid-template-columns:1.08fr .92fr}
     }
 
@@ -1503,40 +1526,41 @@
     <section class="section">
       <div class="container">
         <div class="author-wrap">
-          <div class="card author-bio">
-            <div class="author-bio-grid">
-              <div class="author-photo-wrap">
-                <div class="author-photo-frame">
-                  <img src="/metodo/images/marta.webp" alt="Retrato profesional de la Lic. Martha La Fuente" loading="lazy" decoding="async" />
-                </div>
-              </div>
-
-              <div class="author-copy">
-                <div class="tag">Sobre la autora</div>
-                <h2 class="section-title" style="font-size:clamp(1.7rem,4vw,2.7rem); margin-top:8px;">Lic. Martha La Fuente</h2>
-                <p class="muted"><strong>Nutrióloga Pediátrica Certificada</strong></p>
-
-                <p>Durante 17 años, Martha ha acompañado a familias que querían empezar la alimentación complementaria con más seguridad, menos estrés y una estructura que sí pudieran seguir en la vida real.</p>
-
-                <p>Después de ver el mismo patrón una y otra vez —miedo, presión y falta de tiempo— reunió lo más útil en un sistema claro: recetas, calendarios, listas de compras, notas de seguridad y apoyo para situaciones comunes como rechazo o adaptación por alergias.</p>
-
-                <p>El resultado es el <strong>Método Modular La Fuente™</strong>: una forma práctica de avanzar por etapas, con confianza y con una guía que apoya la alimentación complementaria sin hacerte sentir sola ni perdida.</p>
+          <div class="card author-photo-card">
+            <div class="author-photo-wrap">
+              <div class="author-photo-frame">
+                <img src="/metodo/images/marta.webp" alt="Retrato profesional de la Lic. Martha La Fuente" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
 
+          <div class="card author-copy-card">
+            <div class="tag">Sobre la autora</div>
+            <h2 class="section-title author-hook">La especialista que ya ayudó a más de 2.900 familias a empezar sin miedo</h2>
+            <h3 class="author-name">Lic. Martha La Fuente</h3>
+            <p class="author-cred">Nutrióloga Pediátrica Certificada</p>
+
+            <p>Durante años, Martha vio repetirse el mismo problema: mamás con miedo, confundidas y sin una estructura clara para saber qué ofrecer, cuándo y cómo hacerlo de forma segura.</p>
+
+            <p>No faltaba información. Lo que faltaba era claridad práctica para tomar decisiones sin estrés y sin depender de Google a cada comida.</p>
+
+            <p>Por eso creó un sistema simple y útil para la vida real: recetas claras, calendarios por etapa, listas de compras, notas de seguridad y apoyo para situaciones comunes como rechazo o adaptación por alergias.</p>
+
+            <p>Hoy, ese sistema es el <strong>Método Modular La Fuente™</strong>: una forma de avanzar con seguridad, más confianza y menos improvisación desde el primer bocado.</p>
+          </div>
+
           <div class="author-stats">
             <div class="stat">
-              <strong>17</strong>
-              <span>Años de experiencia profesional acompañando alimentación infantil.</span>
+              <strong>17 años</strong>
+              <span>Acompañando a familias en alimentación infantil con enfoque profesional y realista.</span>
             </div>
             <div class="stat">
-              <strong>+2,900</strong>
-              <span>Familias acompañadas con enfoque práctico, seguro y realista.</span>
+              <strong>+2,900 familias</strong>
+              <span>Guiadas paso a paso para empezar con más calma, claridad y seguridad.</span>
             </div>
             <div class="stat">
-              <strong>180</strong>
-              <span>Recetas profesionales integradas en un sistema modular por etapas.</span>
+              <strong>180 recetas</strong>
+              <span>Integradas dentro de un sistema modular por etapas, listo para aplicar.</span>
             </div>
           </div>
         </div>
