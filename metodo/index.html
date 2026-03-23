@@ -330,6 +330,33 @@
       color:var(--navy);
     }
 
+    .deliver-media,
+    .bonus-media{
+      display:grid;
+      place-items:center;
+      padding:16px;
+      margin-bottom:16px;
+      border-radius:20px;
+      min-height:272px;
+      background:linear-gradient(180deg, rgba(244,106,164,.06), rgba(191,232,216,.14));
+      border:1px solid rgba(46,69,97,.08);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+      overflow:hidden;
+    }
+
+    .bonus-media{
+      min-height:248px;
+    }
+
+    .deliver-media img,
+    .bonus-media img{
+      display:block;
+      width:min(100%, 210px);
+      height:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 14px 24px rgba(46,69,97,.16));
+    }
+
     .highlight{
       padding:20px;
       border-radius:24px;
@@ -1203,7 +1230,7 @@
 <p class="hero-mechanism">
               Abres la guía de su edad, sigues el calendario y sabes qué hacer.
             </p>
-<a aria-label="Ver todo lo que incluye tu compra" class="cta" href="https://pay.hotmart.com/Q104668319P?checkoutMode=10&amp;offDiscount=LAFUENTE&amp;bid=1772516312334">✅ Quiero una guía clara para empezar</a><p class="hero-price">Solo $9.99 USD hoy · Garantía 15 días · Acceso inmediato</p>
+<a aria-label="Ir a la sección del stack con todo lo que incluye tu compra" class="cta" href="#stack">✅ Quiero una guía clara para empezar</a><p class="hero-price">Solo $9.99 USD hoy · Garantía 15 días · Acceso inmediato</p>
 
 <div class="hero-mobile-visual">
 <img alt="Mockup del Método Modular La Fuente con 6 guías organizadas por etapa y bebé" loading="eager" src="/metodo/images/hero_c6.webp"/>
@@ -1430,73 +1457,96 @@
 <p class="section-lead">Un sistema completo en PDF con 330–350 páginas totales, organizado para que siempre sepas qué hacer según su etapa.</p>
 </div>
 <div class="grid deliver-grid" style="margin-top:24px;">
-<article class="deliver-card">
-<div class="tag">Guía 1</div>
-<h3>Recetas 6–8 meses</h3>
-<div class="age">Primeras semanas de inicio</div>
-<ul>
-<li>45 recetas profesionales</li>
-<li>Calendario de 4 semanas</li>
-<li>Lista de compras incluida</li>
-<li>Textura y cortes seguros por receta</li>
-</ul>
-</article>
-<article class="deliver-card">
-<div class="tag">Guía 2</div>
-<h3>Recetas 8–10 meses</h3>
-<div class="age">Más variedad con estructura</div>
-<ul>
-<li>45 recetas profesionales</li>
-<li>4 semanas organizadas</li>
-<li>Tiempos exactos para cocinar</li>
-<li>Notas si rechaza o necesita adaptación</li>
-</ul>
-</article>
-<article class="deliver-card">
-<div class="tag">Guía 3</div>
-<h3>Recetas 10–12 meses</h3>
-<div class="age">Avance con seguridad</div>
-<ul>
-<li>45 recetas profesionales</li>
-<li>Porciones y almacenamiento</li>
-<li>Valores nutricionales completos</li>
-<li>Variaciones para alergias</li>
-</ul>
-</article>
-<article class="deliver-card">
-<div class="tag">Guía 4</div>
-<h3>Recetas 12–18 meses</h3>
-<div class="age">Continuidad sin improvisación</div>
-<ul>
-<li>45 recetas profesionales</li>
-<li>Calendario semanal claro</li>
-<li>Ideas sostenibles para el día a día</li>
-<li>Notas de seguridad y apoyo práctico</li>
-</ul>
-</article>
-<article class="deliver-card">
-<div class="tag">Guía 5</div>
-<h3>Guía Maestra</h3>
-<div class="age">Tu mapa general</div>
-<ul>
-<li>BLW / Tradicional / Mixto</li>
-<li>Prohibidos por edad</li>
-<li>Alergias y preguntas frecuentes</li>
-<li>Base clara para empezar sin dudas</li>
-</ul>
-</article>
-<article class="deliver-card">
-<div class="tag">Guía 6</div>
-<h3>Guía de Rescate</h3>
-<div class="age">Consulta rápida, sin estrés</div>
-<ul>
-<li>Índices y tablas de consulta rápida</li>
-<li>Decisión rápida diaria</li>
-<li>Apoyo cuando no sabes qué ofrecer</li>
-<li>Menos vueltas, más claridad</li>
-</ul>
-</article>
-</div>
+          <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook1.webp" alt="Portada de la Guía 1 Primeros bocados" loading="lazy" />
+            </div>
+            <div class="tag">Guía 1</div>
+            <h3>Recetas 6–8 meses</h3>
+            <div class="age">Primeras semanas de inicio</div>
+            <ul>
+              <li>45 recetas profesionales</li>
+              <li>Calendario de 4 semanas</li>
+              <li>Lista de compras incluida</li>
+              <li>Textura y cortes seguros por receta</li>
+            </ul>
+          </article>
+
+          <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook2.webp" alt="Portada de la Guía 2 Explorando sabores" loading="lazy" />
+            </div>
+            <div class="tag">Guía 2</div>
+            <h3>Recetas 8–10 meses</h3>
+            <div class="age">Más variedad con estructura</div>
+            <ul>
+              <li>45 recetas profesionales</li>
+              <li>4 semanas organizadas</li>
+              <li>Tiempos exactos para cocinar</li>
+              <li>Notas si rechaza o necesita adaptación</li>
+            </ul>
+          </article>
+
+          <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook3.webp" alt="Portada de la Guía 3 Autonomía en la mesa" loading="lazy" />
+            </div>
+            <div class="tag">Guía 3</div>
+            <h3>Recetas 10–12 meses</h3>
+            <div class="age">Avance con seguridad</div>
+            <ul>
+              <li>45 recetas profesionales</li>
+              <li>Porciones y almacenamiento</li>
+              <li>Valores nutricionales completos</li>
+              <li>Variaciones para alergias</li>
+            </ul>
+          </article>
+
+          <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook4.webp" alt="Portada de la Guía 4 Pequeño Gourmet" loading="lazy" />
+            </div>
+            <div class="tag">Guía 4</div>
+            <h3>Recetas 12–18 meses</h3>
+            <div class="age">Continuidad sin improvisación</div>
+            <ul>
+              <li>45 recetas profesionales</li>
+              <li>Calendario semanal claro</li>
+              <li>Ideas sostenibles para el día a día</li>
+              <li>Notas de seguridad y apoyo práctico</li>
+            </ul>
+          </article>
+
+          <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/Ebook5.webp" alt="Portada de la Guía Maestra Fundamentos" loading="lazy" />
+            </div>
+            <div class="tag">Guía 5</div>
+            <h3>Guía Maestra</h3>
+            <div class="age">Tu mapa general</div>
+            <ul>
+              <li>BLW / Tradicional / Mixto</li>
+              <li>Prohibidos por edad</li>
+              <li>Alergias y preguntas frecuentes</li>
+              <li>Base clara para empezar sin dudas</li>
+            </ul>
+          </article>
+
+          <article class="deliver-card">
+            <div class="deliver-media">
+              <img src="/metodo/images/ebook6%20rescate.webp" alt="Portada de la Guía de Rescate para padres" loading="lazy" />
+            </div>
+            <div class="tag">Guía 6</div>
+            <h3>Guía de Rescate</h3>
+            <div class="age">Consulta rápida, sin estrés</div>
+            <ul>
+              <li>Índices y tablas de consulta rápida</li>
+              <li>Decisión rápida diaria</li>
+              <li>Apoyo cuando no sabes qué ofrecer</li>
+              <li>Menos vueltas, más claridad</li>
+            </ul>
+          </article>
+        </div>
 </div>
 </section>
 <section class="section">
@@ -1506,52 +1556,67 @@
 <p class="section-lead">Diseñados para eliminar miedo, ahorrar tiempo y ayudarte a reaccionar con más claridad en lo cotidiano.</p>
 </div>
 <div class="grid bonus-grid" style="margin-top:24px;">
-<article class="bonus-card">
-<div class="tag">Bono 1</div>
-<h3>Certificado de Seguridad</h3>
-<p class="small" style="margin:0;"><strong>Valor $27</strong> · Gratis hoy</p>
-<ul>
-<li>Arcada vs atragantamiento</li>
-<li>Maniobra Heimlich pediátrica</li>
-<li>Cortes seguros para empezar con más calma</li>
-</ul>
-</article>
-<article class="bonus-card">
-<div class="tag">Bono 2</div>
-<h3>Método Domingo meal prep 2 horas</h3>
-<p class="small" style="margin:0;"><strong>Valor $19</strong> · Gratis hoy</p>
-<ul>
-<li>Cómo adelantar la semana sin agotarte</li>
-<li>Organización simple y realista</li>
-<li>Más orden, menos estrés diario</li>
-</ul>
-</article>
-<article class="bonus-card">
-<div class="tag">Bono 3</div>
-<h3>Kit rastreo alergias + lista compra inteligente</h3>
-<p class="small" style="margin:0;"><strong>Valor $17</strong> · Gratis hoy</p>
-<ul>
-<li>Imprimibles para registrar con claridad</li>
-<li>Seguimiento simple para tu rutina</li>
-<li>Compra más ordenada y funcional</li>
-</ul>
-</article>
-<article class="bonus-card">
-<div class="tag">Bono 4</div>
-<h3>SOS mamá recetario crisis 5 min</h3>
-<p class="small" style="margin:0;"><strong>Valor $12</strong> · Gratis hoy</p>
-<ul>
-<li>Recetas rápidas para días complicados</li>
-<li>Apoyo cuando no tienes tiempo</li>
-<li>Más resolución, menos improvisación</li>
-</ul>
-</article>
-</div>
+          <article class="bonus-card">
+            <div class="bonus-media">
+              <img src="/metodo/images/bono1.webp" alt="Portada del Bono 1 Certificado de Seguridad" loading="lazy" />
+            </div>
+            <div class="tag">Bono 1</div>
+            <h3>Certificado de Seguridad</h3>
+            <p class="small" style="margin:0;"><strong>Valor $27</strong> · Gratis hoy</p>
+            <ul>
+              <li>Arcada vs atragantamiento</li>
+              <li>Maniobra Heimlich pediátrica</li>
+              <li>Cortes seguros para empezar con más calma</li>
+            </ul>
+          </article>
+
+          <article class="bonus-card">
+            <div class="bonus-media">
+              <img src="/metodo/images/bono2.webp" alt="Portada del Bono 2 Método Domingo meal prep" loading="lazy" />
+            </div>
+            <div class="tag">Bono 2</div>
+            <h3>Método Domingo meal prep 2 horas</h3>
+            <p class="small" style="margin:0;"><strong>Valor $19</strong> · Gratis hoy</p>
+            <ul>
+              <li>Cómo adelantar la semana sin agotarte</li>
+              <li>Organización simple y realista</li>
+              <li>Más orden, menos estrés diario</li>
+            </ul>
+          </article>
+
+          <article class="bonus-card">
+            <div class="bonus-media">
+              <img src="/metodo/images/bono3.webp" alt="Portada del Bono 3 Kit de rastreo de alergias" loading="lazy" />
+            </div>
+            <div class="tag">Bono 3</div>
+            <h3>Kit rastreo alergias + lista compra inteligente</h3>
+            <p class="small" style="margin:0;"><strong>Valor $17</strong> · Gratis hoy</p>
+            <ul>
+              <li>Imprimibles para registrar con claridad</li>
+              <li>Seguimiento simple para tu rutina</li>
+              <li>Compra más ordenada y funcional</li>
+            </ul>
+          </article>
+
+          <article class="bonus-card">
+            <div class="bonus-media">
+              <img src="/metodo/images/bono4.webp" alt="Portada del Bono 4 SOS Mamá recetario de crisis" loading="lazy" />
+            </div>
+            <div class="tag">Bono 4</div>
+            <h3>SOS mamá recetario crisis 5 min</h3>
+            <p class="small" style="margin:0;"><strong>Valor $12</strong> · Gratis hoy</p>
+            <ul>
+              <li>Recetas rápidas para días complicados</li>
+              <li>Apoyo cuando no tienes tiempo</li>
+              <li>Más resolución, menos improvisación</li>
+            </ul>
+          </article>
+        </div>
 </div>
 </section>
 <section class="section" id="oferta">
 <div class="container">
-<div class="offer-box" id="offer-trigger">
+<div class="offer-box" id="offer-trigger"><div id="stack"></div>
 <div class="offer-grid">
 <div>
 <div class="tag">Todo lo que incluye tu compra</div>
