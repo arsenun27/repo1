@@ -484,6 +484,7 @@
     }
 
     .author-wrap{ display:grid; gap:18px; align-items:start; }
+    .author-left-col{ display:grid; gap:12px; }
     .author-photo-card,
     .author-copy-card{
       padding:24px;
@@ -509,10 +510,12 @@
       object-fit:cover;
     }
     .author-hook{
-      font-size:clamp(1.7rem, 3vw, 2.6rem);
-      line-height:1.08;
-      margin:10px 0 12px;
-      max-width:12ch;
+      font-size:clamp(1.78rem, 4vw, 3rem);
+      line-height:1.07;
+      letter-spacing:-0.01em;
+      margin:10px 0 14px;
+      max-width:18ch;
+      text-wrap:balance;
     }
     .author-name{
       font-family:Baloo2, system-ui, sans-serif;
@@ -522,28 +525,45 @@
       margin:0 0 8px;
     }
     .author-cred{
-      margin:0 0 16px;
+      margin:0 0 18px;
       font-weight:800;
       color:var(--navy-soft);
     }
     .author-copy-card p:last-child{ margin-bottom:0; }
-    .author-copy-card p{ max-width:58ch; }
-    .author-stats{ display:grid; gap:12px; }
+    .author-copy-card p{
+      max-width:66ch;
+      line-height:1.7;
+      margin:0 0 14px;
+    }
+    .author-copy-card p + p{ margin-top:2px; }
+    .author-stats{ display:grid; gap:10px; }
 
     .stat{
-      padding:18px;
-      border-radius:20px;
+      padding:14px 16px;
+      border-radius:18px;
       background:rgba(255,255,255,.9);
       border:1px solid var(--border);
-      box-shadow:var(--shadow);
+      box-shadow:0 10px 22px rgba(46,69,97,.08);
     }
 
     .stat strong{
       display:block;
-      font-size:1.6rem;
+      font-size:1.28rem;
       color:var(--navy);
-      line-height:1;
-      margin-bottom:6px;
+      line-height:1.05;
+      margin-bottom:4px;
+    }
+    .stat span{
+      display:block;
+      line-height:1.5;
+      font-size:.98rem;
+    }
+    .author-close{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid rgba(46,69,97,.10);
+      font-weight:800;
+      color:var(--navy);
     }
 
     .guarantee{
@@ -818,15 +838,22 @@
       .deliver-grid{grid-template-columns:repeat(2,1fr)}
       .bonus-grid{grid-template-columns:repeat(2,1fr)}
       .testi-grid{grid-template-columns:repeat(3,1fr)}
-      .author-wrap{grid-template-columns:minmax(320px, .84fr) minmax(0, 1.16fr)}
-      .author-photo-card{grid-column:1; grid-row:1;}
-      .author-stats{grid-column:1; grid-row:2;}
-      .author-copy-card{grid-column:2; grid-row:1 / span 2; padding:28px;}
+      .author-wrap{grid-template-columns:minmax(330px, .92fr) minmax(0, 1.18fr); gap:20px;}
+      .author-left-col{grid-column:1; grid-row:1 / span 2;}
+      .author-copy-card{grid-column:2; grid-row:1 / span 2; padding:28px 30px;}
+      .author-hook{max-width:22ch;}
       .offer-grid{grid-template-columns:1.08fr .92fr}
     }
 
     @media (min-width: 820px){
       .mini-compare{ grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 980px){
+      .author-wrap{grid-template-columns:minmax(360px, .86fr) minmax(0, 1.14fr); gap:22px;}
+      .author-hook{max-width:none; font-size:clamp(2rem, 3.2vw, 3.2rem);}
+      .author-stats{gap:9px;}
+      .stat{padding:13px 15px;}
     }
 
     @media (min-width: 900px){
@@ -1369,7 +1396,7 @@
 
           <article class="deliver-card">
             <div class="deliver-media">
-              <img src="/metodo/images/ebook6.webp" alt="Portada de la Guía de Rescate para padres" loading="lazy" />
+              <img src="/metodo/images/ebook6%20rescate.webp" alt="Portada de la Guía de Rescate para padres" loading="lazy" />
             </div>
             <div class="tag">Guía 6</div>
             <h3>Guía de Rescate</h3>
@@ -1526,10 +1553,27 @@
     <section class="section">
       <div class="container">
         <div class="author-wrap">
-          <div class="card author-photo-card">
-            <div class="author-photo-wrap">
-              <div class="author-photo-frame">
-                <img src="/metodo/images/marta.webp" alt="Retrato profesional de la Lic. Martha La Fuente" loading="lazy" decoding="async" />
+          <div class="author-left-col">
+            <div class="card author-photo-card">
+              <div class="author-photo-wrap">
+                <div class="author-photo-frame">
+                  <img src="/metodo/images/marta.webp" alt="Retrato profesional de la Lic. Martha La Fuente" loading="lazy" decoding="async" />
+                </div>
+              </div>
+            </div>
+
+            <div class="author-stats">
+              <div class="stat">
+                <strong>17 años</strong>
+                <span>Acompañando a familias en alimentación infantil con enfoque profesional y realista.</span>
+              </div>
+              <div class="stat">
+                <strong>+2,900 familias</strong>
+                <span>Guiadas paso a paso para empezar con más calma, claridad y seguridad.</span>
+              </div>
+              <div class="stat">
+                <strong>180 recetas</strong>
+                <span>Integradas dentro de un sistema modular por etapas, listo para aplicar.</span>
               </div>
             </div>
           </div>
@@ -1547,21 +1591,8 @@
             <p>Por eso creó un sistema simple y útil para la vida real: recetas claras, calendarios por etapa, listas de compras, notas de seguridad y apoyo para situaciones comunes como rechazo o adaptación por alergias.</p>
 
             <p>Hoy, ese sistema es el <strong>Método Modular La Fuente™</strong>: una forma de avanzar con seguridad, más confianza y menos improvisación desde el primer bocado.</p>
-          </div>
 
-          <div class="author-stats">
-            <div class="stat">
-              <strong>17 años</strong>
-              <span>Acompañando a familias en alimentación infantil con enfoque profesional y realista.</span>
-            </div>
-            <div class="stat">
-              <strong>+2,900 familias</strong>
-              <span>Guiadas paso a paso para empezar con más calma, claridad y seguridad.</span>
-            </div>
-            <div class="stat">
-              <strong>180 recetas</strong>
-              <span>Integradas dentro de un sistema modular por etapas, listo para aplicar.</span>
-            </div>
+            <p class="author-close">Por eso hoy miles de madres ya no improvisan: siguen un sistema claro desde el primer día.</p>
           </div>
         </div>
       </div>
