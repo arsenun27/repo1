@@ -1257,6 +1257,49 @@
         max-width:31ch;
       }
     }
+
+    .offer-proof{
+      margin-top:18px;
+      display:grid;
+      gap:12px;
+    }
+
+    .offer-proof-head{
+      text-align:center;
+      color:var(--navy);
+      font-weight:900;
+      font-size:1rem;
+      line-height:1.35;
+      margin:0;
+    }
+
+    .offer-proof-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    .offer-proof-card{
+      background:rgba(255,255,255,.94);
+      border:1px solid var(--border);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .offer-proof-card img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+    }
+
+    @media (min-width: 700px){
+      .offer-proof-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -1716,6 +1759,20 @@
 </div>
 <a aria-label="Comprar ahora" class="cta" href="https://pay.hotmart.com/Q104668319P?checkoutMode=10&amp;offDiscount=LAFUENTE&amp;bid=1772516312334">✅ Acceder ahora por $9.99</a>
 <p class="microcopy">Pago seguro en Hotmart · Acceso inmediato · Garantía 15 días</p>
+<div class="offer-proof">
+<p class="offer-proof-head">No solo se ve completo: también se usa en la vida real</p>
+<div class="offer-proof-grid">
+<article class="offer-proof-card">
+<img alt="Testimonio de Andrea P. sobre rechazo de comida y cómo ahora sabe cómo seguir" loading="lazy" src="/metodo/images/andrea.webp"/>
+</article>
+<article class="offer-proof-card">
+<img alt="Testimonio de Mariana D. sobre cómo el calendario y la lista de compras le ahorraron tiempo real" loading="lazy" src="/metodo/images/mariana.webp"/>
+</article>
+<article class="offer-proof-card">
+<img alt="Testimonio de Valeria T. sobre cómo el Método Modular no es otro PDF más sino un sistema claro y práctico" loading="lazy" src="/metodo/images/valeria.webp"/>
+</article>
+</div>
+</div>
 <p class="seed-line">Bonos incluidos hoy con tu acceso. En el checkout podrás añadir imprimibles opcionales para momentos de pancita, noches difíciles y decisión rápida diaria.</p>
 </div>
 </div>
