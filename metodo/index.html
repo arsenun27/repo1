@@ -330,6 +330,50 @@
       color:var(--navy);
     }
 
+    /* TESTIMONIOS VISUALES */
+    .testi-visual-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:24px;
+      align-items:start;
+    }
+
+    .testi-visual-card{
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      padding:0;
+      margin:0;
+    }
+
+    .testi-visual-frame{
+      display:block;
+      width:100%;
+      max-width:420px;
+      margin:0 auto;
+      border-radius:22px;
+      overflow:hidden;
+      background:transparent;
+    }
+
+    .testi-visual-frame img{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:contain;
+      border-radius:22px;
+    }
+
+    .testi-visual-label{
+      text-align:center;
+      font-weight:800;
+      color:var(--navy);
+      font-size:.98rem;
+      margin:0 0 10px;
+    }
+
+
     .deliver-media,
     .bonus-media{
       display:grid;
@@ -785,6 +829,8 @@
       .deliver-grid{grid-template-columns:repeat(2,1fr)}
       .bonus-grid{grid-template-columns:repeat(2,1fr)}
       .testi-grid{grid-template-columns:repeat(3,1fr)}
+      .testi-visual-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+      .testi-visual-frame{max-width:100%}
       .author-wrap{grid-template-columns:1.22fr .78fr}
       .author-bio-grid{grid-template-columns:minmax(240px, 320px) minmax(0, 1fr)}
       .offer-grid{grid-template-columns:1.08fr .92fr}
@@ -1404,18 +1450,24 @@
 <h2 class="section-title">Lo que más repiten las mamás: “ahora me siento tranquila”.</h2>
 <p class="section-lead">No porque todo sea perfecto, sino porque por fin tienen una guía clara y una forma simple de avanzar.</p>
 </div>
-<div class="grid testi-grid" style="margin-top:24px;">
-<article class="testi-card">
-<h3 style="margin:0 0 8px; color:var(--navy);">★★★★★ “Me dio paz mental desde el primer día”</h3>
-<p class="small" style="margin:0;">“Abría la guía, veía el día y listo. Sentí mucha más seguridad.”</p>
+<div class="testi-visual-grid">
+<article class="testi-visual-card">
+<p class="testi-visual-label">“Tenía miedo de empezar mal”</p>
+<div class="testi-visual-frame">
+<img alt="Testimonio de Carla M. sobre empezar la alimentación complementaria con más calma y seguridad" loading="lazy" src="/metodo/images/carla.webp"/>
+</div>
 </article>
-<article class="testi-card">
-<h3 style="margin:0 0 8px; color:var(--navy);">★★★★★ “Cuando rechazaba, ya no entraba en pánico”</h3>
-<p class="small" style="margin:0;">“Ahora sé cómo insistir sin estrés y sin convertir la comida en pelea.”</p>
+<article class="testi-visual-card">
+<p class="testi-visual-label">“Había visto demasiado y seguía confundida”</p>
+<div class="testi-visual-frame">
+<img alt="Testimonio de Lucía R. sobre encontrar claridad y orden con el Método Modular" loading="lazy" src="/metodo/images/lucia.webp"/>
+</div>
 </article>
-<article class="testi-card">
-<h3 style="margin:0 0 8px; color:var(--navy);">★★★★★ “Se siente rápido y práctico”</h3>
-<p class="small" style="margin:0;">“Los tiempos exactos y las listas de compras me facilitaron demasiado la semana.”</p>
+<article class="testi-visual-card">
+<p class="testi-visual-label">“En casa no nos poníamos de acuerdo”</p>
+<div class="testi-visual-frame">
+<img alt="Testimonio de Sofía G. sobre combinar BLW y método tradicional con más paz y seguridad" loading="lazy" src="/metodo/images/sofia.webp"/>
+</div>
 </article>
 </div>
 </div>
