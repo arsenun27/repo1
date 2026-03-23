@@ -484,7 +484,7 @@
     }
 
     .author-wrap{ display:grid; gap:18px; align-items:start; }
-    .author-left-col{ display:grid; gap:12px; }
+    .author-left-col{ display:contents; }
     .author-photo-card,
     .author-copy-card{
       padding:24px;
@@ -535,8 +535,19 @@
       line-height:1.7;
       margin:0 0 14px;
     }
-    .author-copy-card p + p{ margin-top:2px; }
+    .author-copy-card p + p{ margin-top:6px; }
     .author-stats{ display:grid; gap:10px; }
+
+    .offer-image picture,
+    .offer-image img{
+      display:block;
+      width:100%;
+    }
+    .offer-image img{
+      height:auto;
+      border-radius:22px;
+      box-shadow:0 14px 28px rgba(46,69,97,.10);
+    }
 
     .stat{
       padding:14px 16px;
@@ -839,7 +850,7 @@
       .bonus-grid{grid-template-columns:repeat(2,1fr)}
       .testi-grid{grid-template-columns:repeat(3,1fr)}
       .author-wrap{grid-template-columns:minmax(330px, .92fr) minmax(0, 1.18fr); gap:20px;}
-      .author-left-col{grid-column:1; grid-row:1 / span 2;}
+      .author-left-col{display:grid; gap:12px; grid-column:1; grid-row:1 / span 2;}
       .author-copy-card{grid-column:2; grid-row:1 / span 2; padding:28px 30px;}
       .author-hook{max-width:22ch;}
       .offer-grid{grid-template-columns:1.08fr .92fr}
@@ -1534,7 +1545,10 @@
               </div>
 
               <div class="offer-image" style="margin:12px 0 14px;">
-                <img src="/metodo/images/hero_c6.webp" alt="Método Modular La Fuente con todo lo incluido" loading="lazy" />
+                <picture>
+                  <source media="(min-width: 900px)" srcset="/metodo/images/stackpc.webp" />
+                  <img src="/metodo/images/stackmo.webp" alt="Stack del Método Modular La Fuente con 6 guías y 4 bonos incluidos" loading="lazy" />
+                </picture>
               </div>
 
               <a class="cta" href="[URL_HOTMART_CHECKOUT]?utm_source={{utm_source}}&utm_medium={{utm_medium}}&utm_campaign={{utm_campaign}}&utm_content={{utm_content}}" aria-label="Comprar ahora">
