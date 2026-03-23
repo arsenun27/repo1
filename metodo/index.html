@@ -1233,8 +1233,7 @@
 </div>
 <div class="visual-block">
 <div class="visual-frame">
-<img alt="Así funciona el Método Modular La Fuente en 3 pasos en versión escritorio" class="img-desktop" loading="lazy" src="/metodo/images/3pasos-pc.webp"/>
-<img alt="Así funciona el Método Modular La Fuente en 3 pasos en versión móvil" class="img-mobile" loading="lazy" src="/metodo/images/3pasos-mo.webp"/>
+<img alt="Así funciona el Método Modular La Fuente en 3 pasos" class="js-responsive-img" data-breakpoint="768" data-desktop-src="/metodo/images/3pasos-pc.webp" data-mobile-src="/metodo/images/3pasos-mo.webp" loading="lazy" src="/metodo/images/3pasos-mo.webp"/>
 </div>
 </div>
 </div>
@@ -1248,8 +1247,7 @@
 </div>
 <div class="visual-block pain-visual-block">
 <div class="visual-frame pain-visual-frame">
-<img alt="Versión escritorio de la sección de dudas sobre la alimentación del bebé" class="img-desktop" loading="lazy" src="/metodo/images/duda1.webp"/>
-<img alt="Versión móvil de la sección de dudas sobre la alimentación del bebé" class="img-mobile" loading="lazy" src="/metodo/images/duda2.webp"/>
+<img alt="Dudas frecuentes al empezar la alimentación complementaria" class="js-responsive-img" data-breakpoint="768" data-desktop-src="/metodo/images/duda1.webp" data-mobile-src="/metodo/images/duda2.webp" loading="lazy" src="/metodo/images/duda2.webp"/>
 </div>
 </div>
 <div class="grid pain-grid" style="margin-top:24px;">
@@ -1292,8 +1290,7 @@
 </div>
 <div class="visual-block">
 <div class="visual-frame">
-<img alt="Sistema modular en versión escritorio" class="img-desktop" loading="lazy" src="/metodo/images/salida-pc.webp"/>
-<img alt="Sistema modular en versión móvil" class="img-mobile" loading="lazy" src="/metodo/images/salida-mo.webp"/>
+<img alt="Cómo se organiza el Método Modular La Fuente" class="js-responsive-img" data-breakpoint="768" data-desktop-src="/metodo/images/salida-pc.webp" data-mobile-src="/metodo/images/salida-mo.webp" loading="lazy" src="/metodo/images/salida-mo.webp"/>
 </div>
 </div>
 </div>
@@ -1307,8 +1304,7 @@
 </div>
 <div class="visual-block diff-visual-block">
 <div class="visual-frame diff-visual-frame">
-<img alt="Comparativa entre otros recetarios y el Método Modular La Fuente en versión escritorio" class="img-desktop" loading="lazy" src="/metodo/images/diferencia1.webp"/>
-<img alt="Comparativa entre otros recetarios y el Método Modular La Fuente en versión móvil" class="img-mobile" loading="lazy" src="/metodo/images/diferencia2.webp"/>
+<img alt="Comparativa entre otros recetarios y el Método Modular La Fuente" class="js-responsive-img" data-breakpoint="768" data-desktop-src="/metodo/images/diferencia1.webp" data-mobile-src="/metodo/images/diferencia2.webp" loading="lazy" src="/metodo/images/diferencia2.webp"/>
 </div>
 </div>
 <div class="diff-wrap">
@@ -1601,7 +1597,7 @@
 <span class="trust-pill">✅ Prueba 15 días</span>
 </div>
 <div class="offer-image" style="margin:12px 0 14px;">
-<img alt="Método Modular La Fuente con todo lo incluido" loading="lazy" src="/metodo/images/hero_c6.webp"/>
+<img alt="Stack del Método Modular La Fuente con 6 guías y 4 bonos incluidos" class="js-responsive-img" data-breakpoint="900" data-desktop-src="/metodo/images/stackpc.webp" data-mobile-src="/metodo/images/stackmo.webp" loading="lazy" src="/metodo/images/stackmo.webp"/>
 </div>
 <a aria-label="Comprar ahora" class="cta" href="https://pay.hotmart.com/Q104668319P?checkoutMode=10&amp;offDiscount=LAFUENTE&amp;bid=1772516312334">✅ Acceder ahora por $9.99</a>
 <p class="microcopy">Pago seguro en Hotmart · Acceso inmediato · Garantía 15 días</p>
@@ -1692,5 +1688,33 @@
     window.addEventListener('resize', toggleStickyCta);
     window.addEventListener('load', toggleStickyCta);
   </script>
+<script>
+(function(){
+  function updateResponsiveSwapImages(){
+    var images=document.querySelectorAll('.js-responsive-img');
+    images.forEach(function(img){
+      var breakpoint=parseInt(img.getAttribute('data-breakpoint')||'768',10);
+      var mobileSrc=img.getAttribute('data-mobile-src')||img.getAttribute('src');
+      var desktopSrc=img.getAttribute('data-desktop-src')||mobileSrc;
+      var target=window.innerWidth>=breakpoint ? desktopSrc : mobileSrc;
+      if(target && img.getAttribute('src')!==target){
+        img.setAttribute('src',target);
+      }
+    });
+  }
+
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(updateResponsiveSwapImages, 80);
+  });
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', updateResponsiveSwapImages);
+  }else{
+    updateResponsiveSwapImages();
+  }
+})();
+</script>
 </body>
 </html>
