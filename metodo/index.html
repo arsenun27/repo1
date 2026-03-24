@@ -1882,12 +1882,12 @@
     });
 
     const stickyCta = document.getElementById('stickyCta');
-    const offerTrigger = document.getElementById('offer-trigger');
+    const stickyStart = document.querySelector('.offer-proof');
 
     function toggleStickyCta() {
-      if (!offerTrigger) return;
-      const rect = offerTrigger.getBoundingClientRect();
-      const shouldShow = rect.top <= window.innerHeight * 0.72;
+      if (!stickyCta || !stickyStart) return;
+      const rect = stickyStart.getBoundingClientRect();
+      const shouldShow = rect.top <= window.innerHeight * 0.78;
       stickyCta.classList.toggle('visible', shouldShow);
     }
 
