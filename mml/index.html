@@ -34,18 +34,68 @@
   }
   .hero-pain-frame {
     background: var(--green-soft);
-    border: 3px solid var(--green-mid);
-    border-radius: 24px;
+    border: 5px solid var(--green-mid);
+    border-radius: 26px;
     padding: 8px;
-    box-shadow: 0 4px 24px rgba(122,184,147,0.25);
+    box-shadow: 0 6px 28px rgba(122,184,147,0.3);
   }
   .hero-pain-frame img {
     width: 100%;
     display: block;
-    border-radius: 18px;
+    border-radius: 20px;
     object-fit: cover;
     max-height: 420px;
   }
+
+  /* ── GUARANTEE BIG ── */
+  .guarantee-big {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    background: var(--green-soft);
+    border: 2px solid var(--green-mid);
+    border-radius: 20px;
+    padding: 20px 20px;
+    margin: 18px 0 20px;
+    text-align: left;
+  }
+  .guarantee-big-shield {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .guarantee-big-days {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--green-deep);
+    text-align: center;
+    line-height: 1.1;
+  }
+  .guarantee-big-days span {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .guarantee-big-content { flex: 1; }
+  .guarantee-big-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(15px, 4vw, 17px);
+    font-weight: 900;
+    color: var(--green-deep);
+    margin-bottom: 6px;
+  }
+  .guarantee-big-text {
+    font-family: 'Lora', serif;
+    font-size: clamp(14px, 3.8vw, 15px);
+    color: #3a5a42;
+    line-height: 1.65;
+  }
+  .guarantee-big-text strong { font-weight: 700; color: var(--green-deep); }
 
   /* ── HIGHLIGHT ── */
   .hl-green { background: linear-gradient(180deg, transparent 55%, #c8edd6 55%); padding: 0 3px; border-radius: 3px; }
@@ -485,14 +535,6 @@
       <div class="get-item"><span class="get-dot"></span><span>🎁 Bono 4: <strong>SOS Mamá</strong> recetario de crisis 5 min (valor $12)</span></div>
     </div>
 
-    <div class="guarantee-strip">
-      <div class="guarantee-icon">🛡️</div>
-      <div class="guarantee-text">
-        <h4>Garantía 15 días — sin preguntas</h4>
-        <p>Pruébalo con tu bebé. Si sientes que no era lo que necesitabas, te devolvemos el 100% de tu dinero. Sin formularios. Sin excusas.</p>
-      </div>
-    </div>
-
     <div class="price-box">
       <!-- AllInOne responsive dentro del price box -->
       <picture>
@@ -509,9 +551,25 @@
       </div>
       <!-- REEMPLAZA el href con tu link real de Hotmart -->
       <a href="https://pay.hotmart.com/TU-LINK-AQUI" class="cta-btn">🍼 Quiero que mi bebé empiece a comer bien</a>
+
+      <!-- GARANTÍA — justo debajo del botón -->
+      <div class="guarantee-big">
+        <div class="guarantee-big-shield">
+          <svg width="52" height="60" viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 2L4 11V28C4 40.5 13.5 52 26 56C38.5 52 48 40.5 48 28V11L26 2Z" fill="#e8f3ec" stroke="#4a8c65" stroke-width="2.5"/>
+            <path d="M26 6L7 14V28C7 39 15.5 49.5 26 53C36.5 49.5 45 39 45 28V14L26 6Z" fill="#c8edd6"/>
+            <path d="M17 29.5L23 35.5L35 23" stroke="#4a8c65" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="guarantee-big-days">15<span>días</span></div>
+        </div>
+        <div class="guarantee-big-content">
+          <div class="guarantee-big-title">Garantía total sin preguntas</div>
+          <div class="guarantee-big-text">Pruébalo con tu bebé. Si sientes que no era lo que necesitabas, te devolvemos el <strong>100% de tu dinero</strong>. Sin formularios. Sin excusas.</div>
+        </div>
+      </div>
+
       <div class="cta-support">
         <span>Acceso inmediato por email</span>
-        <span>Garantía 15 días</span>
         <span>Pago seguro en Hotmart</span>
       </div>
     </div>
