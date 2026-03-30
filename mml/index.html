@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Modular La Fuente™ — Alimentación Complementaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf8f2;
+    --warm-white: #fffcf8;
+    --green-soft: #e8f3ec;
+    --green-mid: #7ab893;
+    --green-deep: #4a8c65;
+    --pink-soft: #fdeef0;
+    --pink-mid: #f0a8b0;
+    --pink-deep: #c9606e;
+    --sage: #a8c5b0;
+    --peach: #fde8d8;
+    --yellow-highlight: #fff176;
+    --orange-highlight: #ffe0b2;
+    --text-dark: #3a2e28;
+    --text-mid: #6b5a50;
+    --text-light: #9e8e84;
+    --border: rgba(168,197,176,0.35);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.7; }
+  .page { max-width: 680px; margin: 0 auto; padding: 0 20px 80px; }
+
+  /* ── HIGHLIGHT ── */
+  .hl-green { background: linear-gradient(180deg, transparent 55%, #c8edd6 55%); padding: 0 3px; border-radius: 3px; }
+  .hl-pink  { background: linear-gradient(180deg, transparent 55%, #fcd0d5 55%); padding: 0 3px; border-radius: 3px; }
+  .hl-yellow{ background: linear-gradient(180deg, transparent 55%, #fff176 55%); padding: 0 3px; border-radius: 3px; }
+
+  /* ── LABEL ── */
+  .label { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); background: var(--green-soft); padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; }
+
+  /* ── URGENCY BAR ── */
+  .urgency-bar { background: linear-gradient(135deg, #4a8c65, #7ab893); color: #fff; padding: 18px 16px; text-align: center; border-radius: 20px; margin: 24px 0 0; box-shadow: 0 4px 24px rgba(74,140,101,0.22); }
+  .ub-title { font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); margin-bottom: 12px; }
+  .countdown { display: flex; justify-content: center; gap: 10px; align-items: center; }
+  .cd-unit { display: flex; flex-direction: column; align-items: center; }
+  .cd-num { background: rgba(255,255,255,0.2); border-radius: 12px; padding: 8px 12px; font-size: 36px; font-weight: 900; color: #fff; line-height: 1; min-width: 60px; text-align: center; }
+  .cd-label { font-size: 10px; color: rgba(255,255,255,0.8); font-weight: 700; margin-top: 5px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .cd-sep { font-size: 32px; color: rgba(255,255,255,0.5); font-weight: 900; padding-bottom: 20px; }
+  .urgency-note { font-size: 13px; color: rgba(255,255,255,0.9); margin-top: 12px; font-weight: 700; }
+
+  /* ── HEADLINE ── */
+  .headline-block { padding: 48px 0 36px; border-bottom: 2px dashed rgba(168,197,176,0.45); }
+  .headline-block h1 { font-family: 'Nunito', sans-serif; font-size: clamp(26px, 7vw, 40px); font-weight: 900; line-height: 1.22; color: var(--text-dark); margin-bottom: 20px; }
+  .subhead { font-family: 'Lora', serif; font-size: clamp(16px, 4vw, 18px); color: var(--text-mid); line-height: 1.85; }
+
+  /* ── MIRROR BLOCK ── */
+  .section { padding: 44px 0; border-bottom: 2px dashed rgba(168,197,176,0.45); }
+  .section h2 { font-family: 'Nunito', sans-serif; font-size: clamp(20px, 5vw, 24px); font-weight: 900; margin-bottom: 8px; color: var(--text-dark); line-height: 1.28; }
+  .section-intro { font-family: 'Lora', serif; font-size: 14px; color: var(--text-light); margin-bottom: 22px; font-style: italic; }
+  .mirror-list { display: flex; flex-direction: column; gap: 12px; }
+  .mirror-item { display: flex; gap: 14px; align-items: flex-start; background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 18px; padding: 16px 18px; }
+  .mirror-emoji { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .mirror-text { font-size: clamp(14px, 3.5vw, 15px); color: var(--text-mid); line-height: 1.65; }
+  .mirror-text strong { font-weight: 800; color: var(--text-dark); display: block; margin-bottom: 3px; font-size: clamp(14px, 3.5vw, 15px); }
+  .mirror-cta { margin-top: 22px; background: var(--pink-soft); border-left: 3px solid var(--pink-mid); border-radius: 0 16px 16px 0; padding: 18px 22px; font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 16px); font-style: italic; color: #6b3040; line-height: 1.8; }
+
+  /* ── PAIN ── */
+  .pain-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .pain-list li { display: flex; gap: 14px; align-items: flex-start; font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 16px); color: var(--text-mid); line-height: 1.7; }
+  .pain-x { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--pink-soft); color: var(--pink-deep); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; margin-top: 2px; border: 1.5px solid var(--pink-mid); }
+  .callout { background: var(--pink-soft); border-left: 3px solid var(--pink-mid); border-radius: 0 16px 16px 0; padding: 20px 22px; margin: 28px 0; font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 17px); font-style: italic; color: #6b3040; line-height: 1.8; }
+
+  /* ── BRIDGE / BODY TEXT ── */
+  .body-p { font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 16px); color: var(--text-mid); margin-bottom: 16px; line-height: 1.85; }
+  .body-p strong { font-weight: 700; color: var(--text-dark); }
+
+  /* ── MARTHA ── */
+  .martha-card { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 22px; padding: 24px; }
+  .martha-header { display: flex; gap: 14px; align-items: center; margin-bottom: 20px; }
+  .martha-avatar { width: 54px; height: 54px; border-radius: 50%; background: var(--green-soft); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--green-deep); flex-shrink: 0; border: 2px solid var(--sage); }
+  .martha-meta h3 { font-size: clamp(15px, 4vw, 16px); font-weight: 800; color: var(--text-dark); margin-bottom: 3px; }
+  .martha-meta p { font-size: 12px; color: var(--text-light); }
+  .martha-story { font-family: 'Lora', serif; font-size: clamp(14px, 3.8vw, 15px); color: var(--text-mid); line-height: 1.9; }
+  .martha-story p { margin-bottom: 14px; }
+  .martha-story em { font-style: italic; color: var(--text-dark); }
+  .martha-quote { border-left: 3px solid var(--sage); padding: 12px 18px; margin: 16px 0; font-style: italic; font-size: clamp(14px, 3.8vw, 16px); color: var(--green-deep); background: var(--green-soft); border-radius: 0 12px 12px 0; line-height: 1.75; }
+  .martha-stats { display: flex; margin-top: 20px; border-top: 2px dashed rgba(168,197,176,0.4); padding-top: 18px; }
+  .martha-stat { flex: 1; text-align: center; }
+  .martha-stat:not(:last-child) { border-right: 2px dashed rgba(168,197,176,0.4); }
+  .martha-stat .num { font-size: clamp(18px, 5vw, 22px); font-weight: 900; color: var(--green-deep); }
+  .martha-stat .desc { font-size: 11px; color: var(--text-light); margin-top: 3px; line-height: 1.4; }
+
+  /* ── SOLUTION ── */
+  .solution-title { font-family: 'Nunito', sans-serif; font-size: clamp(24px, 6vw, 30px); font-weight: 900; margin-bottom: 6px; color: var(--text-dark); }
+  .solution-sub { font-size: clamp(13px, 3.5vw, 14px); color: var(--text-light); margin-bottom: 28px; line-height: 1.6; }
+  .hero-picture { display: block; width: 100%; max-width: 520px; margin: 0 auto 32px; }
+  .hero-picture img { width: 100%; border-radius: 20px; display: block; }
+  .feature-pills { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 8px; }
+  .pill { background: var(--green-soft); border-radius: 20px; padding: 7px 14px; font-size: clamp(12px, 3vw, 13px); font-weight: 700; color: var(--green-deep); border: 1px solid rgba(122,184,147,0.3); }
+  .guides-label { font-size: clamp(18px, 5vw, 20px); font-weight: 900; color: var(--text-dark); margin-bottom: 18px; }
+  .guides-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 32px; }
+  .extra-guides { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+  .guide-card { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .guide-card img { width: 100%; display: block; }
+  .guide-card-body { padding: 10px 12px 13px; }
+  .guide-card-body p { font-size: clamp(11px, 3vw, 12px); color: var(--text-light); line-height: 1.5; font-weight: 600; }
+
+  /* ── TESTIMONIAL CAROUSEL ── */
+  .testi-section { padding: 44px 0; border-bottom: 2px dashed rgba(168,197,176,0.45); }
+  .testi-section h2 { font-family: 'Nunito', sans-serif; font-size: clamp(20px, 5vw, 24px); font-weight: 900; margin-bottom: 6px; color: var(--text-dark); text-align: center; }
+  .testi-section .testi-sub { font-size: clamp(13px, 3.5vw, 14px); color: var(--text-light); text-align: center; margin-bottom: 28px; font-family: 'Lora', serif; font-style: italic; }
+  .carousel-wrap { position: relative; }
+  .carousel-track-outer { overflow: hidden; border-radius: 18px; }
+  .carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); }
+  .testi-slide { min-width: 100%; padding: 0 2px; }
+  .testi-card { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 18px; padding: 24px 22px; }
+  .testi-card .stars { color: #f0a840; font-size: 18px; margin-bottom: 12px; }
+  .testi-quote { font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 16px); color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; font-style: italic; }
+  .testi-author-row { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--green-soft); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 900; color: var(--green-deep); flex-shrink: 0; border: 1.5px solid var(--sage); }
+  .testi-name { font-size: 14px; font-weight: 800; color: var(--text-dark); }
+  .testi-loc { font-size: 12px; color: var(--text-light); }
+  .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+  .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; padding: 0; transition: background 0.2s, transform 0.2s; }
+  .carousel-dot.active { background: var(--green-deep); transform: scale(1.25); }
+  .carousel-arrows { display: flex; justify-content: center; gap: 12px; margin-top: 14px; }
+  .carousel-btn { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; color: var(--green-deep); font-weight: 800; transition: background 0.15s; }
+  .carousel-btn:hover { background: var(--green-soft); }
+
+  /* ── BONOS ── */
+  .bonos-value-bar { background: #fff9e6; border: 2px solid #f5c842; border-radius: 14px; padding: 16px 20px; text-align: center; margin-bottom: 24px; }
+  .bonos-value-bar .bvb-label { font-size: clamp(13px, 3.5vw, 14px); color: var(--text-mid); font-weight: 700; margin-bottom: 4px; }
+  .bonos-value-bar .bvb-value { font-size: clamp(18px, 5vw, 22px); font-weight: 900; color: #b8860b; }
+  .bonos-value-bar .bvb-was { text-decoration: line-through; color: var(--text-light); font-size: clamp(14px, 3.5vw, 16px); font-weight: 600; margin-right: 8px; }
+  .bonos-value-bar .bvb-free { color: #e63946; font-size: clamp(20px, 5vw, 24px); font-weight: 900; }
+  .bonos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .bono-card { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; position: relative; }
+  .bono-badge { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); background: #e63946; color: #fff; font-size: 11px; font-weight: 900; padding: 4px 14px; border-radius: 20px; white-space: nowrap; letter-spacing: 0.05em; z-index: 2; }
+  .bono-card img { width: 100%; display: block; }
+  .bono-card-body { padding: 10px 12px 14px; }
+  .bono-card-body .bono-name { font-size: clamp(13px, 3.5vw, 14px); font-weight: 800; color: var(--text-dark); margin-bottom: 4px; }
+  .bono-card-body .bono-desc { font-size: clamp(11px, 3vw, 12px); color: var(--text-light); line-height: 1.5; margin-bottom: 8px; }
+  .bono-price-row { display: flex; align-items: center; gap: 6px; }
+  .bono-was { font-size: 12px; color: var(--text-light); text-decoration: line-through; font-weight: 600; }
+  .bono-arrow { font-size: 12px; color: var(--text-light); }
+  .bono-free { background: #e63946; color: #fff; font-size: 12px; font-weight: 900; padding: 3px 10px; border-radius: 10px; }
+
+  /* ── OBJECTIONS ── */
+  .obj-item { margin-bottom: 14px; background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 16px; padding: 16px 18px; }
+  .obj-q { font-weight: 800; font-size: clamp(14px, 3.8vw, 15px); color: var(--text-dark); margin-bottom: 7px; }
+  .obj-a { font-family: 'Lora', serif; font-size: clamp(14px, 3.8vw, 15px); color: var(--text-mid); line-height: 1.75; }
+
+  /* ── WHAT YOU GET ── */
+  .what-you-get { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .get-item { display: flex; align-items: flex-start; gap: 12px; font-size: clamp(14px, 3.8vw, 15px); color: var(--text-mid); }
+  .get-dot { flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--green-mid); margin-top: 8px; }
+
+  /* ── GUARANTEE ── */
+  .guarantee-strip { background: var(--green-soft); border: 1.5px solid rgba(122,184,147,0.4); border-radius: 18px; padding: 18px 20px; display: flex; gap: 14px; align-items: center; margin: 0 0 22px; }
+  .guarantee-icon { font-size: 32px; flex-shrink: 0; }
+  .guarantee-text h4 { font-size: clamp(14px, 3.8vw, 15px); font-weight: 800; color: var(--green-deep); margin-bottom: 4px; }
+  .guarantee-text p { font-size: clamp(12px, 3vw, 13px); color: #4a6a52; line-height: 1.55; font-family: 'Lora', serif; }
+
+  /* ── PRICE BOX ── */
+  .price-box { background: var(--warm-white); border: 2px solid rgba(168,197,176,0.5); border-radius: 26px; padding: 28px 20px; text-align: center; margin-bottom: 20px; }
+  .price-box-img { width: 100%; max-width: 300px; margin: 0 auto 20px; display: block; border-radius: 14px; }
+  .price-was { font-size: 14px; color: var(--text-light); text-decoration: line-through; margin-bottom: 4px; font-weight: 600; }
+  .price-now { font-size: clamp(48px, 12vw, 60px); font-weight: 900; color: var(--text-dark); line-height: 1; margin-bottom: 4px; }
+  .price-rises { font-size: clamp(12px, 3.2vw, 13px); color: var(--pink-deep); font-weight: 800; margin-bottom: 18px; }
+  .mini-countdown { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; align-items: center; }
+  .mini-unit { display: flex; flex-direction: column; align-items: center; }
+  .mini-cd { background: var(--green-soft); color: var(--green-deep); border-radius: 10px; padding: 6px 10px; font-size: clamp(18px, 5vw, 22px); font-weight: 900; min-width: 38px; text-align: center; border: 1.5px solid rgba(122,184,147,0.4); }
+  .mini-sep { font-size: 20px; color: var(--sage); font-weight: 900; padding-bottom: 18px; }
+  .mini-label { font-size: 10px; color: var(--text-light); text-align: center; margin-top: 3px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .cta-btn { display: block; background: var(--green-deep); color: #fff; font-family: 'Nunito', sans-serif; font-size: clamp(15px, 4.5vw, 17px); font-weight: 900; padding: 18px 24px; border-radius: 50px; margin-bottom: 14px; cursor: pointer; border: none; width: 100%; text-decoration: none; text-align: center; line-height: 1.3; }
+  .cta-btn:hover { background: #3a7050; }
+  .cta-btn-secondary { display: block; background: var(--pink-deep); color: #fff; font-family: 'Nunito', sans-serif; font-size: clamp(15px, 4.5vw, 17px); font-weight: 900; padding: 18px 24px; border-radius: 50px; margin-bottom: 14px; cursor: pointer; border: none; width: 100%; text-decoration: none; text-align: center; line-height: 1.3; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-support { font-size: clamp(11px, 3vw, 12px); color: var(--text-light); display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; font-weight: 700; }
+  .cta-support span::before { content: "✓ "; color: var(--green-mid); }
+
+  /* ── CLOSE ── */
+  .close-block { padding: 44px 0 0; }
+  .close-block h2 { font-family: 'Nunito', sans-serif; font-size: clamp(20px, 5.5vw, 24px); font-weight: 900; color: var(--text-dark); margin-bottom: 16px; line-height: 1.3; }
+  .close-urgency { font-weight: 900; color: var(--pink-deep); font-size: clamp(14px, 3.8vw, 15px); font-family: 'Nunito', sans-serif; margin-bottom: 24px; display: block; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══ URGENCY BAR — 15 MINUTOS ═══ -->
+  <div class="urgency-bar">
+    <p class="ub-title">⏰ PRECIO DE LANZAMIENTO — TERMINA EN:</p>
+    <div class="countdown">
+      <div class="cd-unit"><div class="cd-num" id="cd-m">15</div><div class="cd-label">minutos</div></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-label">segundos</div></div>
+    </div>
+    <p class="urgency-note">🌿 Después sube a $19.99 USD — para siempre</p>
+  </div>
+
+  <!-- ═══ HEADLINE ═══ -->
+  <div class="headline-block">
+    <span class="label">Método Modular La Fuente™</span>
+    <h1>¿Tu bebé <span class="hl-pink">rechaza todo</span> lo que le das y ya no sabes qué hacer? 🥺</h1>
+    <p class="subhead">No es que tu hijo "no tenga hambre". No es que seas mala cocinera. Es que nadie te enseñó cómo presentarle la comida en cada etapa — y ese error silencioso está convirtiendo <strong>cada comida en una batalla.</strong></p>
+  </div>
+
+  <!-- ═══ MIRROR BLOCK ═══ -->
+  <div class="section">
+    <h2>Esto es para ti si te identificas con <span class="hl-yellow">alguna de estas situaciones</span> 💛</h2>
+    <p class="section-intro">Marca mentalmente las que aplican. Si reconoces 2 o más, este método fue creado exactamente para ti.</p>
+    <div class="mirror-list">
+      <div class="mirror-item">
+        <span class="mirror-emoji">😮‍💨</span>
+        <div class="mirror-text"><strong>Cocinaste con amor y lo tiró al piso</strong>Preparaste algo con cuidado, él lo miró, hizo una mueca y lo rechazó. Limpiaste en silencio, con ese nudo que no sabes cómo explicar.</div>
+      </div>
+      <div class="mirror-item">
+        <span class="mirror-emoji">📱</span>
+        <div class="mirror-text"><strong>Google es tu pediatra de las 10pm</strong>Cada noche buscas "por qué mi bebé no quiere comer" y encuentras 15 respuestas que se contradicen. Cierras el teléfono más angustiada que antes.</div>
+      </div>
+      <div class="mirror-item">
+        <span class="mirror-emoji">🫣</span>
+        <div class="mirror-text"><strong>Tienes miedo de que no esté comiendo suficiente</strong>No sabes si las porciones son correctas. No sabes si el rechazo es normal para su edad. Y ese "no sé" te pesa todos los días.</div>
+      </div>
+      <div class="mirror-item">
+        <span class="mirror-emoji">🗣️</span>
+        <div class="mirror-text"><strong>Todos en casa opinan diferente</strong>Tu mamá dice una cosa, tu suegra otra, tu pareja dice que lo estás consiniendo. Y tú quedas en el medio, sola, sin saber a quién hacerle caso.</div>
+      </div>
+      <div class="mirror-item">
+        <span class="mirror-emoji">📚</span>
+        <div class="mirror-text"><strong>Tienes guías guardadas que nunca usaste</strong>Compraste PDFs, sigues cuentas de Instagram, estás en grupos de WhatsApp — y aun así, mañana en el desayuno no sabes exactamente qué darle.</div>
+      </div>
+    </div>
+    <div class="mirror-cta">Si te identificaste con 2 o más situaciones, no es casualidad que estés aquí. Sigue leyendo — lo que viene es exactamente lo que necesitas. 🌸</div>
+  </div>
+
+  <!-- ═══ PAIN BLOCK ═══ -->
+  <div class="section">
+    <h2>Y lo peor no es el rechazo en sí... es lo que <span class="hl-pink">sientes después</span> 💔</h2>
+    <ul class="pain-list">
+      <li><span class="pain-x">✕</span>La culpa de pensar que quizás estás haciendo algo mal.</li>
+      <li><span class="pain-x">✕</span>El miedo silencioso de que tu bebé no esté recibiendo lo que necesita.</li>
+      <li><span class="pain-x">✕</span>El agotamiento de improvisar tres veces al día sin saber si vas bien.</li>
+      <li><span class="pain-x">✕</span>Las noches despierta buscando respuestas que nunca terminan de convencerte.</li>
+    </ul>
+    <div class="callout">"Cocinaste 45 minutos. Él lo probó una vez, escupió y cerró la boca. Tú limpiaste el piso callada, con un nudo en el estómago que no te atreves a llamar por su nombre."</div>
+    <p class="body-p">Ese nudo no es exageración. Es el peso de no saber si lo que estás haciendo está bien — y tener que decidirlo sola, todos los días, tres veces al día.</p>
+  </div>
+
+  <!-- ═══ BRIDGE ═══ -->
+  <div class="section">
+    <h2>El problema <span class="hl-green">no eres tú</span> 🤍 El rechazo tiene etapas — y cada etapa se resuelve diferente.</h2>
+    <p class="body-p">Un bebé de 6 meses rechaza por razones distintas a uno de 10 meses. Y las estrategias que funcionan a los 8 meses pueden no funcionar a los 12. Improvisar en cada etapa es como intentar abrir puertas distintas con la misma llave.</p>
+    <p class="body-p"><strong>No necesitas más recetas de Instagram.</strong> Necesitas un sistema que te diga exactamente qué presentar, cómo cortarlo, qué textura usar, y qué hacer cuando tu bebé lo rechaza — organizado por la edad de tu bebé, hoy.</p>
+  </div>
+
+  <!-- ═══ MARTHA ═══ -->
+  <div class="section">
+    <h2>¿Por qué existe <span class="hl-green">este método</span>? 🌿</h2>
+    <div class="martha-card">
+      <div class="martha-header">
+        <div class="martha-avatar">ML</div>
+        <div class="martha-meta">
+          <h3>Lic. Martha La Fuente</h3>
+          <p>Nutrióloga Pediátrica Certificada · 17 años de experiencia</p>
+        </div>
+      </div>
+      <div class="martha-story">
+        <p>Durante años, Martha atendió en su consultorio a cientos de mamás con el mismo problema. No llegaban con enfermedades raras ni casos complicados. Llegaban <em>agotadas, confundidas y llenas de culpa</em> — porque su bebé rechazaba la comida y nadie les había explicado por qué ni qué hacer.</p>
+        <p>Lo que más le dolía no era el problema en sí. Era que <em>la solución existía</em>. Estaba en su cabeza, en sus 17 años de experiencia. Pero las mamás no tenían acceso a eso fuera del consultorio.</p>
+        <div class="martha-quote">"Vi a demasiadas mamás cargando una culpa que no merecían. Decidí que tenía que cambiar eso."</div>
+        <p>Por eso creó el Método Modular La Fuente™: para que cualquier mamá pueda abrir una guía a las 7am, saber exactamente qué darle a su bebé en el desayuno, y no tener que adivinar ni culparse si hay rechazo. Hoy, más de 2,900 familias ya no improvisan.</p>
+      </div>
+      <div class="martha-stats">
+        <div class="martha-stat"><div class="num">17</div><div class="desc">años acompañando familias</div></div>
+        <div class="martha-stat"><div class="num">+2,900</div><div class="desc">familias acompañadas</div></div>
+        <div class="martha-stat"><div class="num">180</div><div class="desc">recetas en el sistema</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SOLUTION ═══ -->
+  <div class="section">
+    <span class="label">La solución 🌱</span>
+    <h2 class="solution-title">El <span class="hl-green">Método Modular</span> La Fuente™</h2>
+    <p class="solution-sub">Un sistema completo organizado por etapa. Abres → sigues → sirves. Sin improvisar, sin googlear, sin culpa.</p>
+    <picture class="hero-picture">
+      <source media="(min-width: 768px)" srcset="images/AllInOne-desktop.webp">
+      <img src="images/AllInOne.webp" alt="Método Modular La Fuente — sistema completo" loading="lazy">
+    </picture>
+    <div class="feature-pills">
+      <span class="pill">🍽️ 180 recetas</span>
+      <span class="pill">📅 112 días planeados</span>
+      <span class="pill">🔄 Protocolo si rechaza</span>
+      <span class="pill">📊 Por etapa de edad</span>
+      <span class="pill">⏱️ Tiempos exactos</span>
+      <span class="pill">🌾 Alergias incluidas</span>
+    </div>
+    <h3 class="guides-label" style="margin-top:32px;">Las 4 guías por etapa:</h3>
+    <div class="guides-grid">
+      <div class="guide-card"><img src="images/Ebook1.webp" alt="Guía 1 — Primeros bocados 6-7 meses" loading="lazy"><div class="guide-card-body"><p>45 recetas · Calendario 4 semanas · Texturas adaptadas</p></div></div>
+      <div class="guide-card"><img src="images/Ebook2.webp" alt="Guía 2 — Explorando sabores 8-9 meses" loading="lazy"><div class="guide-card-body"><p>45 recetas · Calendario 4 semanas · Tamaños blandos</p></div></div>
+      <div class="guide-card"><img src="images/Ebook3.webp" alt="Guía 3 — Autonomía en la mesa 10-12 meses" loading="lazy"><div class="guide-card-body"><p>45 recetas · Calendario 4 semanas · Porciones manejables</p></div></div>
+      <div class="guide-card"><img src="images/Ebook4.webp" alt="Guía 4 — Pequeño Gourmet 12-15 meses" loading="lazy"><div class="guide-card-body"><p>45 recetas · Calendario 4 semanas · Sin presión</p></div></div>
+    </div>
+    <h3 class="guides-label">Más las guías de consulta rápida:</h3>
+    <div class="extra-guides">
+      <div class="guide-card"><img src="images/Ebook5.webp" alt="Guía Maestra" loading="lazy"><div class="guide-card-body"><p>BLW · Tradicional · Mixto · Prohibidos · Alergias · FAQ</p></div></div>
+      <div class="guide-card"><img src="images/Ebook6.webp" alt="Guía de Rescate" loading="lazy"><div class="guide-card-body"><p>Índices y tablas. Cuando no sabes qué hacer, acá está la respuesta.</p></div></div>
+    </div>
+  </div>
+
+  <!-- ═══ TESTIMONIAL CAROUSEL ═══ -->
+  <div class="testi-section">
+    <h2>Lo que dicen las <span class="hl-pink">mamás felices</span> 💬</h2>
+    <p class="testi-sub">Más de 2,900 familias ya transformaron la hora de comer</p>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carousel">
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="stars">★★★★★</div>
+              <p class="testi-quote">"Mi bebé rechazaba todo. Probé tres métodos distintos y nada funcionaba. Con este método entendí que el problema era la textura y el momento. La primera semana ya había mejorado notablemente. ¡Lloré de alivio!"</p>
+              <div class="testi-author-row">
+                <div class="testi-avatar">AP</div>
+                <div><div class="testi-name">Andrea P.</div><div class="testi-loc">Colombia</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="stars">★★★★★</div>
+              <p class="testi-quote">"Antes de esto, cada comida era una pelea. Mi esposo y yo discutíamos porque él decía que era culpa mía. Ahora seguimos el calendario y la hora de comer dejó de ser el momento más estresante del día."</p>
+              <div class="testi-author-row">
+                <div class="testi-avatar">VT</div>
+                <div><div class="testi-name">Valeria T.</div><div class="testi-loc">México</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="stars">★★★★★</div>
+              <p class="testi-quote">"Lo compré sin mucha fe porque ya había comprado otras guías que nunca usé. Este es diferente: abres, sigues y listo. Cuando mi hija rechazó, tenía los pasos exactos para saber qué hacer sin entrar en pánico."</p>
+              <div class="testi-author-row">
+                <div class="testi-avatar">SG</div>
+                <div><div class="testi-name">Sofía G.</div><div class="testi-loc">Argentina</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="stars">★★★★★</div>
+              <p class="testi-quote">"Mi hija era súper selectiva con la comida. Desde que uso las recetas del libro, come frutas y verduras sin problema. ¡Un cambio increíble! Mi pediatra quedó impresionada con la variedad de nutrientes."</p>
+              <div class="testi-author-row">
+                <div class="testi-avatar">CT</div>
+                <div><div class="testi-name">Camila Torres</div><div class="testi-loc">Chile</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="stars">★★★★★</div>
+              <p class="testi-quote">"Antes lloraba en cada comida. Ahora es el momento más feliz del día. Las recetas de snacks son las favoritas de mi pequeño. No puedo creer el cambio en tan poco tiempo."</p>
+              <div class="testi-author-row">
+                <div class="testi-avatar">SH</div>
+                <div><div class="testi-name">Sofía Hernández</div><div class="testi-loc">Perú</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
+      <div class="carousel-arrows">
+        <button class="carousel-btn" id="prev-btn">&#8592;</button>
+        <button class="carousel-btn" id="next-btn">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ BONOS ═══ -->
+  <div class="section">
+    <h2>Y además, hoy te llevas <span class="hl-yellow">4 bonos gratis</span> 🎁</h2>
+    <div class="bonos-value-bar">
+      <div class="bvb-label">Valor total en bonos:</div>
+      <div><span class="bvb-was">$75 USD</span> <span class="bvb-free">¡HOY GRATIS! 🎁</span></div>
+    </div>
+    <div class="bonos-grid">
+      <div class="bono-card">
+        <div class="bono-badge">⭐ ¡GRATIS!</div>
+        <img src="images/bono1.webp" alt="Bono 1 — Certificado de Seguridad" loading="lazy">
+        <div class="bono-card-body">
+          <div class="bono-name">🩺 Certificado de Seguridad</div>
+          <div class="bono-desc">Primeros auxilios + cortes seguros para comer sin sustos</div>
+          <div class="bono-price-row"><span class="bono-was">$27 USD</span><span class="bono-arrow">›</span><span class="bono-free">$0</span></div>
+        </div>
+      </div>
+      <div class="bono-card">
+        <div class="bono-badge">⭐ ¡GRATIS!</div>
+        <img src="images/bono2.webp" alt="Bono 2 — El Método Domingo" loading="lazy">
+        <div class="bono-card-body">
+          <div class="bono-name">📅 El Método Domingo</div>
+          <div class="bono-desc">Resuelve las comidas de la semana en solo 2 horas</div>
+          <div class="bono-price-row"><span class="bono-was">$19 USD</span><span class="bono-arrow">›</span><span class="bono-free">$0</span></div>
+        </div>
+      </div>
+      <div class="bono-card">
+        <div class="bono-badge">⭐ ¡GRATIS!</div>
+        <img src="images/bono3.webp" alt="Bono 3 — Kit Alergias" loading="lazy">
+        <div class="bono-card-body">
+          <div class="bono-name">🌾 Kit Rastreo de Alergias</div>
+          <div class="bono-desc">Plantillas imprimibles + lista de compra inteligente</div>
+          <div class="bono-price-row"><span class="bono-was">$17 USD</span><span class="bono-arrow">›</span><span class="bono-free">$0</span></div>
+        </div>
+      </div>
+      <div class="bono-card">
+        <div class="bono-badge">⭐ ¡GRATIS!</div>
+        <img src="images/bono4.webp" alt="Bono 4 — SOS Mamá" loading="lazy">
+        <div class="bono-card-body">
+          <div class="bono-name">🆘 SOS Mamá — Crisis 5 min</div>
+          <div class="bono-desc">Recetas express para los días más difíciles</div>
+          <div class="bono-price-row"><span class="bono-was">$12 USD</span><span class="bono-arrow">›</span><span class="bono-free">$0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OBJECTIONS ═══ -->
+  <div class="section">
+    <h2>Antes de que te vayas, <span class="hl-green">responde esto</span> 🤔</h2>
+    <div class="obj-item">
+      <p class="obj-q">"¿Y si ya compré otras guías que nunca usé?"</p>
+      <p class="obj-a">Este método está diseñado exactamente para ese problema. Abres la guía de la edad de tu bebé, sigues el calendario, y sabes qué hacer hoy — sin tener que "leer todo primero".</p>
+    </div>
+    <div class="obj-item">
+      <p class="obj-q">"¿Funciona si mi bebé ya lleva semanas rechazando todo?"</p>
+      <p class="obj-a">Sí. Cada receta incluye un protocolo de qué hacer cuando rechaza. No estarás improvisando — tendrás pasos concretos para avanzar sin convertir la hora de comer en una guerra.</p>
+    </div>
+    <div class="obj-item">
+      <p class="obj-q">"¿Y si no funciona para nosotros?"</p>
+      <p class="obj-a">Tienes 15 días de garantía completa. Si lo usas, lo pruebas con tu bebé, y sientes que no era lo que necesitabas — te devolvemos el 100% sin preguntas.</p>
+    </div>
+  </div>
+
+  <!-- ═══ OFFER + PRICE ═══ -->
+  <div class="section" style="border-bottom:none;">
+    <h2>Todo lo que <span class="hl-green">recibes hoy</span>:</h2>
+    <div class="what-you-get" style="margin-top:16px;">
+      <div class="get-item"><span class="get-dot"></span><span><strong>4 guías modulares por edad</strong> (6 a 15 meses) + Guía Maestra + Guía de Rescate</span></div>
+      <div class="get-item"><span class="get-dot"></span><span><strong>180 recetas profesionales</strong> con tiempos, texturas, cortes y valores nutricionales</span></div>
+      <div class="get-item"><span class="get-dot"></span><span><strong>Protocolo "si rechaza"</strong> incluido en cada receta</span></div>
+      <div class="get-item"><span class="get-dot"></span><span><strong>16 listas de compras semanales</strong></span></div>
+      <div class="get-item"><span class="get-dot"></span><span>🎁 Bono 1: <strong>Certificado de Seguridad</strong> (valor $27)</span></div>
+      <div class="get-item"><span class="get-dot"></span><span>🎁 Bono 2: <strong>Método Domingo</strong> meal prep 2 horas (valor $19)</span></div>
+      <div class="get-item"><span class="get-dot"></span><span>🎁 Bono 3: <strong>Kit de Alergias</strong> + lista inteligente (valor $17)</span></div>
+      <div class="get-item"><span class="get-dot"></span><span>🎁 Bono 4: <strong>SOS Mamá</strong> recetario de crisis 5 min (valor $12)</span></div>
+    </div>
+
+    <div class="guarantee-strip">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-text">
+        <h4>Garantía 15 días — sin preguntas</h4>
+        <p>Pruébalo con tu bebé. Si sientes que no era lo que necesitabas, te devolvemos el 100% de tu dinero. Sin formularios. Sin excusas.</p>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <!-- AllInOne responsive dentro del price box -->
+      <picture>
+        <source media="(min-width: 768px)" srcset="images/AllInOne-desktop.webp">
+        <img class="price-box-img" src="images/AllInOne.webp" alt="Todo lo que incluye el método" loading="lazy">
+      </picture>
+      <p class="price-was">Valor real: $57 USD</p>
+      <p class="price-now">$9.99</p>
+      <p class="price-rises">⚠️ Sube a $19.99 cuando termine el contador</p>
+      <div class="mini-countdown">
+        <div class="mini-unit"><div class="mini-cd" id="pb-m">15</div><div class="mini-label">min</div></div>
+        <span class="mini-sep">:</span>
+        <div class="mini-unit"><div class="mini-cd" id="pb-s">00</div><div class="mini-label">seg</div></div>
+      </div>
+      <!-- REEMPLAZA el href con tu link real de Hotmart -->
+      <a href="https://pay.hotmart.com/TU-LINK-AQUI" class="cta-btn">🍼 Quiero que mi bebé empiece a comer bien</a>
+      <div class="cta-support">
+        <span>Acceso inmediato por email</span>
+        <span>Garantía 15 días</span>
+        <span>Pago seguro en Hotmart</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CLOSE ═══ -->
+  <div class="close-block">
+    <h2>La próxima comida <span class="hl-green">no tiene que terminar</span> igual que las anteriores. 🌸</h2>
+    <p class="body-p">Puedes seguir improvisando, buscando en Google a las 10pm, y sintiendo ese nudo en el estómago cada vez que tu bebé cierra la boca.</p>
+    <p class="body-p">O puedes tener un sistema claro — hoy, mañana, y la semana que viene — por $9.99 con garantía completa.</p>
+    <span class="close-urgency">⏰ El precio sube en cuanto se acabe el contador. No hay segunda vuelta.</span>
+    <!-- REEMPLAZA el href con tu link real de Hotmart -->
+    <a href="https://pay.hotmart.com/TU-LINK-AQUI" class="cta-btn-secondary">🍼 Quiero que mi bebé empiece a comer bien</a>
+    <p style="text-align:center;font-size:12px;color:#9e8e84;margin-top:12px;font-weight:700;">Pago seguro · Acceso inmediato · Garantía 15 días sin preguntas</p>
+  </div>
+
+</div><!-- /page -->
+
+<script>
+/* ─── COUNTDOWN 15 MINUTOS ─── */
+(function() {
+  const KEY = 'lf_deadline_15min_v1';
+  let deadline;
+  try {
+    const stored = localStorage.getItem(KEY);
+    deadline = stored ? parseInt(stored, 10) : null;
+    if (!deadline || isNaN(deadline) || deadline < Date.now()) {
+      deadline = Date.now() + (15 * 60 * 1000);
+      localStorage.setItem(KEY, deadline);
+    }
+  } catch(e) {
+    deadline = Date.now() + (15 * 60 * 1000);
+  }
+
+  function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
+
+  function tick() {
+    const diff = Math.max(0, deadline - Date.now());
+    const m = Math.floor(diff / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const mm = pad(m), ss = pad(s);
+    ['cd-m','pb-m'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = mm; });
+    ['cd-s','pb-s'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = ss; });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* ─── CAROUSEL ─── */
+(function() {
+  const track = document.getElementById('carousel');
+  const dotsContainer = document.getElementById('carousel-dots');
+  const slides = track ? track.querySelectorAll('.testi-slide') : [];
+  const total = slides.length;
+  if (!total) return;
+
+  let current = 0;
+  let autoTimer;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Ir al testimonio ' + (i+1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function updateDots() {
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    updateDots();
+    resetAuto();
+  }
+
+  document.getElementById('prev-btn').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('next-btn').addEventListener('click', () => goTo(current + 1));
+
+  // Swipe support
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+  }, {passive:true});
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 5000);
+  }
+  resetAuto();
+})();
+</script>
+</body>
+</html>
