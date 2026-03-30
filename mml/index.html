@@ -28,6 +28,25 @@
   body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.7; }
   .page { max-width: 680px; margin: 0 auto; padding: 0 20px 80px; }
 
+  /* ── HERO PAIN IMAGE ── */
+  .hero-pain-wrap {
+    padding: 32px 0 0;
+  }
+  .hero-pain-frame {
+    background: var(--green-soft);
+    border: 3px solid var(--green-mid);
+    border-radius: 24px;
+    padding: 8px;
+    box-shadow: 0 4px 24px rgba(122,184,147,0.25);
+  }
+  .hero-pain-frame img {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    object-fit: cover;
+    max-height: 420px;
+  }
+
   /* ── HIGHLIGHT ── */
   .hl-green { background: linear-gradient(180deg, transparent 55%, #c8edd6 55%); padding: 0 3px; border-radius: 3px; }
   .hl-pink  { background: linear-gradient(180deg, transparent 55%, #fcd0d5 55%); padding: 0 3px; border-radius: 3px; }
@@ -201,6 +220,13 @@
     <span class="label">Método Modular La Fuente™</span>
     <h1>¿Tu bebé <span class="hl-pink">rechaza todo</span> lo que le das y ya no sabes qué hacer? 🥺</h1>
     <p class="subhead">No es que tu hijo "no tenga hambre". No es que seas mala cocinera. Es que nadie te enseñó cómo presentarle la comida en cada etapa — y ese error silencioso está convirtiendo <strong>cada comida en una batalla.</strong></p>
+  </div>
+
+  <!-- ═══ HERO IMAGE — dolor visual ═══ -->
+  <div class="hero-pain-wrap">
+    <div class="hero-pain-frame">
+      <img src="/mml/images/hero.webp" alt="Mamá frustrada intentando darle de comer a su bebé que rechaza la comida" loading="eager">
+    </div>
   </div>
 
   <!-- ═══ MIRROR BLOCK ═══ -->
