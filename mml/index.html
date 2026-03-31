@@ -950,5 +950,12 @@
 
 })();
 </script>
+  <script>
+  document.querySelectorAll('a[href*="hotmart"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      clarity("event", "click_cta_compra");
+    });
+  });
+</script>
 </body>
 </html>
