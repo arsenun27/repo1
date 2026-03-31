@@ -239,9 +239,76 @@
   .mini-cd { background: var(--green-soft); color: var(--green-deep); border-radius: 10px; padding: 6px 10px; font-size: clamp(18px, 5vw, 22px); font-weight: 900; min-width: 38px; text-align: center; border: 1.5px solid rgba(122,184,147,0.4); }
   .mini-sep { font-size: 20px; color: var(--sage); font-weight: 900; padding-bottom: 18px; }
   .mini-label { font-size: 10px; color: var(--text-light); text-align: center; margin-top: 3px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-  .cta-btn { display: block; background: var(--green-deep); color: #fff; font-family: 'Nunito', sans-serif; font-size: clamp(15px, 4.5vw, 17px); font-weight: 900; padding: 18px 24px; border-radius: 50px; margin-bottom: 14px; cursor: pointer; border: none; width: 100%; text-decoration: none; text-align: center; line-height: 1.3; }
-  .cta-btn:hover { background: #3a7050; }
-  .cta-btn-secondary { display: block; background: var(--pink-deep); color: #fff; font-family: 'Nunito', sans-serif; font-size: clamp(15px, 4.5vw, 17px); font-weight: 900; padding: 18px 24px; border-radius: 50px; margin-bottom: 14px; cursor: pointer; border: none; width: 100%; text-decoration: none; text-align: center; line-height: 1.3; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-btn {
+    display: block;
+    background: linear-gradient(180deg, #5aaa78 0%, #3a7a52 100%);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(17px, 4.8vw, 20px);
+    font-weight: 900;
+    padding: 20px 28px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.3;
+    box-shadow: 0 6px 0px #2a5a3a, 0 8px 20px rgba(58,122,82,0.45);
+    transform: translateY(0);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    letter-spacing: 0.01em;
+    position: relative;
+  }
+  .cta-btn::after {
+    content: " →";
+    font-size: 1.1em;
+  }
+  .cta-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 4px 0px #2a5a3a, 0 6px 16px rgba(58,122,82,0.4);
+  }
+  .cta-btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 1px 0px #2a5a3a, 0 2px 8px rgba(58,122,82,0.3);
+  }
+  .cta-btn-secondary {
+    display: block;
+    background: linear-gradient(180deg, #e07888 0%, #b84858 100%);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(17px, 4.8vw, 20px);
+    font-weight: 900;
+    padding: 20px 28px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 6px 0px #8a2838, 0 8px 20px rgba(184,72,88,0.45);
+    transform: translateY(0);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    letter-spacing: 0.01em;
+  }
+  .cta-btn-secondary::after {
+    content: " →";
+    font-size: 1.1em;
+  }
+  .cta-btn-secondary:hover {
+    transform: translateY(2px);
+    box-shadow: 0 4px 0px #8a2838, 0 6px 16px rgba(184,72,88,0.4);
+  }
+  .cta-btn-secondary:active {
+    transform: translateY(5px);
+    box-shadow: 0 1px 0px #8a2838, 0 2px 8px rgba(184,72,88,0.3);
+  }
   .cta-support { font-size: clamp(13px, 3.5vw, 13px); color: var(--text-light); display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; font-weight: 700; }
   .cta-support span::before { content: "✓ "; color: var(--green-mid); }
 
@@ -667,6 +734,193 @@
     autoTimer = setInterval(() => goTo(current + 1), 5000);
   }
   resetAuto();
+})();
+
+/* ─── SOCIAL PROOF NOTIFICATIONS ─── */
+(function() {
+
+  const compras = [
+    { nombre: "María G.",      pais: "México",    bandera: "🇲🇽", tiempo: "hace 1 minuto" },
+    { nombre: "Valentina R.",  pais: "Colombia",  bandera: "🇨🇴", tiempo: "hace 2 minutos" },
+    { nombre: "Camila T.",     pais: "Argentina", bandera: "🇦🇷", tiempo: "hace 3 minutos" },
+    { nombre: "Sofía M.",      pais: "Chile",     bandera: "🇨🇱", tiempo: "hace 4 minutos" },
+    { nombre: "Fernanda L.",   pais: "Perú",      bandera: "🇵🇪", tiempo: "hace 2 minutos" },
+    { nombre: "Daniela P.",    pais: "Venezuela", bandera: "🇻🇪", tiempo: "hace 5 minutos" },
+    { nombre: "Andrea S.",     pais: "Ecuador",   bandera: "🇪🇨", tiempo: "hace 1 minuto" },
+    { nombre: "Paola N.",      pais: "Bolivia",   bandera: "🇧🇴", tiempo: "hace 3 minutos" },
+    { nombre: "Luciana F.",    pais: "Uruguay",   bandera: "🇺🇾", tiempo: "hace 6 minutos" },
+    { nombre: "Isabella C.",   pais: "Paraguay",  bandera: "🇵🇾", tiempo: "hace 2 minutos" },
+    { nombre: "Natalia V.",    pais: "Guatemala", bandera: "🇬🇹", tiempo: "hace 4 minutos" },
+    { nombre: "Carolina B.",   pais: "España",    bandera: "🇪🇸", tiempo: "hace 1 minuto" },
+  ];
+
+  // Inject CSS
+  const style = document.createElement('style');
+  style.textContent = `
+    .sp-popup {
+      position: fixed;
+      bottom: 24px;
+      left: 16px;
+      max-width: 300px;
+      width: calc(100vw - 32px);
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      z-index: 9999;
+      border-left: 4px solid #4a8c65;
+      transform: translateX(-120%);
+      opacity: 0;
+      transition: transform 0.45s cubic-bezier(.34,1.56,.64,1), opacity 0.35s ease;
+      cursor: pointer;
+    }
+    .sp-popup.sp-show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    .sp-popup.sp-hide {
+      transform: translateX(-120%);
+      opacity: 0;
+      transition: transform 0.35s ease, opacity 0.3s ease;
+    }
+    .sp-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e8f3ec, #c8edd6);
+      border: 2px solid #7ab893;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 900;
+      color: #4a8c65;
+      flex-shrink: 0;
+      font-family: 'Nunito', sans-serif;
+    }
+    .sp-body { flex: 1; min-width: 0; }
+    .sp-name {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: #3a2e28;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sp-action {
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      color: #6b5a50;
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+    .sp-action strong {
+      color: #4a8c65;
+      font-weight: 800;
+    }
+    .sp-meta {
+      font-size: 11px;
+      color: #9e8e84;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sp-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #7ab893;
+      display: inline-block;
+      animation: sp-pulse 1.5s infinite;
+    }
+    @keyframes sp-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .sp-close {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #f0ebe3;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #9e8e84;
+      padding: 0;
+      font-family: sans-serif;
+      line-height: 1;
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Create popup element
+  const popup = document.createElement('div');
+  popup.className = 'sp-popup';
+  popup.innerHTML = `
+    <div class="sp-avatar" id="sp-avatar"></div>
+    <div class="sp-body">
+      <div class="sp-name" id="sp-name"></div>
+      <div class="sp-action">acaba de acceder al <strong>Método La Fuente™</strong></div>
+      <div class="sp-meta"><span class="sp-dot"></span><span id="sp-tiempo"></span>&nbsp;·&nbsp;<span id="sp-pais"></span></div>
+    </div>
+    <button class="sp-close" id="sp-close">✕</button>
+  `;
+  document.body.appendChild(popup);
+
+  document.getElementById('sp-close').addEventListener('click', function(e) {
+    e.stopPropagation();
+    hidePopup();
+  });
+  popup.addEventListener('click', function() {
+    document.querySelector('.cta-btn') && document.querySelector('.cta-btn').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  let currentIdx = 0;
+  let hideTimer, showTimer;
+
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+  const shuffled = shuffle([...compras]);
+
+  function showPopup() {
+    const data = shuffled[currentIdx % shuffled.length];
+    currentIdx++;
+
+    document.getElementById('sp-avatar').textContent = data.bandera;
+    document.getElementById('sp-name').textContent = data.nombre;
+    document.getElementById('sp-tiempo').textContent = data.tiempo;
+    document.getElementById('sp-pais').textContent = data.pais;
+
+    popup.classList.remove('sp-hide');
+    popup.classList.add('sp-show');
+
+    hideTimer = setTimeout(hidePopup, 5000);
+  }
+
+  function hidePopup() {
+    clearTimeout(hideTimer);
+    popup.classList.remove('sp-show');
+    popup.classList.add('sp-hide');
+    showTimer = setTimeout(showPopup, 8000 + Math.random() * 6000);
+  }
+
+  // First popup after 4 seconds
+  showTimer = setTimeout(showPopup, 4000);
+
 })();
 </script>
 </body>
