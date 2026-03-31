@@ -341,17 +341,6 @@
 <body>
 <div class="page">
 
-  <!-- ═══ URGENCY BAR — 15 MINUTOS ═══ -->
-  <div class="urgency-bar">
-    <p class="ub-title">⏰ PRECIO DE LANZAMIENTO — TERMINA EN:</p>
-    <div class="countdown">
-      <div class="cd-unit"><div class="cd-num" id="cd-m">15</div><div class="cd-label">minutos</div></div>
-      <span class="cd-sep">:</span>
-      <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-label">segundos</div></div>
-    </div>
-    <p class="urgency-note">🌿 Después sube a $19.99 USD — para siempre</p>
-  </div>
-
   <!-- ═══ HEADLINE ═══ -->
   <div class="headline-block">
     <span class="label">Método Modular La Fuente™</span>
@@ -633,16 +622,22 @@
         <source media="(min-width: 768px)" srcset="/mml/images/AllInOne-desktop.webp">
         <img class="price-box-img" src="/mml/images/AllInOne.webp" alt="Todo lo que incluye el método" loading="lazy">
       </picture>
+
+      <!-- CONTADOR dentro del price box -->
+      <div class="urgency-bar" style="margin: 0 0 20px; border-radius: 16px;">
+        <p class="ub-title">⏰ PRECIO DE LANZAMIENTO — TERMINA EN:</p>
+        <div class="countdown">
+          <div class="cd-unit"><div class="cd-num" id="cd-m">15</div><div class="cd-label">minutos</div></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-label">segundos</div></div>
+        </div>
+        <p class="urgency-note">🌿 Después sube a $19.99 USD — para siempre</p>
+      </div>
+
       <p class="price-was">Valor real: $57 USD</p>
       <p class="price-now">$9.99</p>
-      <p class="price-rises">⚠️ Sube a $19.99 cuando termine el contador</p>
-      <div class="mini-countdown">
-        <div class="mini-unit"><div class="mini-cd" id="pb-m">15</div><div class="mini-label">min</div></div>
-        <span class="mini-sep">:</span>
-        <div class="mini-unit"><div class="mini-cd" id="pb-s">00</div><div class="mini-label">seg</div></div>
-      </div>
-      <!-- REEMPLAZA el href con tu link real de Hotmart -->
-      <a href="https://pay.hotmart.com/TU-LINK-AQUI" class="cta-btn">🍼 Quiero que mi bebé empiece a comer bien</a>
+      <p class="price-rises">⚠️ Solo por tiempo limitado</p>
+      <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn1" class="cta-btn">🍼 Quiero que mi bebé empiece a comer bien</a>
 
       <!-- GARANTÍA — justo debajo del botón -->
       <div class="guarantee-big">
@@ -674,7 +669,7 @@
     <p class="body-p" style="text-align:center;">O puedes tener un sistema claro — hoy, mañana, y la semana que viene — por $9.99 con garantía completa.</p>
     <span class="close-urgency">⏰ El precio sube en cuanto se acabe el contador. No hay segunda vuelta.</span>
     <!-- REEMPLAZA el href con tu link real de Hotmart -->
-    <a href="https://pay.hotmart.com/TU-LINK-AQUI" class="cta-btn-secondary">🍼 Quiero que mi bebé empiece a comer bien</a>
+    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn2" class="cta-btn-secondary">🍼 Quiero que mi bebé empiece a comer bien</a>
     <p style="text-align:center;font-size:14px;color:#9e8e84;margin-top:12px;font-weight:700;">Pago seguro · Acceso inmediato · Garantía 15 días sin preguntas</p>
   </div>
 
@@ -703,8 +698,8 @@
     const m = Math.floor(diff / 60000);
     const s = Math.floor((diff % 60000) / 1000);
     const mm = pad(m), ss = pad(s);
-    ['cd-m','pb-m'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = mm; });
-    ['cd-s','pb-s'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = ss; });
+    const em = document.getElementById('cd-m'); if(em) em.textContent = mm;
+    const es = document.getElementById('cd-s'); if(es) es.textContent = ss;
   }
   tick();
   setInterval(tick, 1000);
