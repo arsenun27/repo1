@@ -696,7 +696,7 @@ body {
 
     <!-- IMAGEN HERO -->
     <div class="hero-img-wrap" style="margin-bottom: 20px;">
-      <img src="/m2/images/hero.jpg" alt="Mamá dándole de comer a su bebé" loading="eager">
+      <img src="images/hero.jpg" alt="Mamá dándole de comer a su bebé" loading="eager">
     </div>
 
     <!-- SOCIAL PROOF RÁPIDA -->
@@ -824,7 +824,7 @@ body {
     <h2 style="font-family:'Nunito',sans-serif;font-size:clamp(20px,5.5vw,24px);font-weight:900;color:var(--text-dark);margin-bottom:20px;">Todo lo que incluye el método 👇</h2>
 
     <!-- IMAGEN -->
-    <img src="/m2/images/all.jpg" alt="El Método Modular La Fuente completo" style="width:100%;max-width:520px;border-radius:0;display:block;margin:0 auto 24px;mix-blend-mode:multiply;" loading="lazy">
+    <img src="images/all.jpg" alt="El Método Modular La Fuente completo" style="width:100%;max-width:520px;border-radius:0;display:block;margin:0 auto 24px;mix-blend-mode:multiply;" loading="lazy">
 
     <!-- LISTA DE ITEMS con checks -->
     <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;text-align:left;">
@@ -1083,22 +1083,25 @@ body {
   const utmSource   = params.get('utm_source');
   const utmCampaign = params.get('utm_campaign');
 
-  if (!utmContent && !utmSource && !utmCampaign) return;
-
-  const srcValue = [utmContent, utmSource, utmCampaign]
+  const utmBase = [utmContent, utmSource, utmCampaign]
     .filter(Boolean)
     .join('_');
 
   document.querySelectorAll('a[href*="hotmart.com"]').forEach(function(link) {
     try {
       const url = new URL(link.href);
-      url.searchParams.set('src', srcValue);
+      const btnValue = url.searchParams.get('src') || 'btn';
+      const srcFinal = utmBase ? utmBase + '_' + btnValue : btnValue;
+      url.searchParams.set('src', srcFinal);
       link.href = url.toString();
     } catch(e) {}
   });
 })();
-document.querySelectorAll('.cta-btn, .cta-btn-pink').forEach(function(btn) {
+
+/* ── CLARITY + PIXEL CTA TRACKING ── */
+document.querySelectorAll('a[href*="hotmart.com"]').forEach(function(btn) {
   btn.addEventListener('click', function() {
+    if(typeof fbq !== 'undefined') fbq('track', 'AddToCart');
     if(typeof clarity !== 'undefined') clarity('event', 'click_cta_compra');
   });
 });
