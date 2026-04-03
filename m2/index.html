@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Modular La Fuente™ — Tu bebé puede empezar a comer hoy</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2167039767401065');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2167039767401065&ev=PageView&noscript=1"/></noscript>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w47ds28i1z");
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #fdf8f2;
+  --warm-white: #fffcf8;
+  --green-soft: #e8f3ec;
+  --green-mid: #7ab893;
+  --green-deep: #4a8c65;
+  --green-dark: #2a5a3a;
+  --pink-soft: #fdeef0;
+  --pink-mid: #f0a8b0;
+  --pink-deep: #c9606e;
+  --sage: #a8c5b0;
+  --text-dark: #3a2e28;
+  --text-mid: #6b5a50;
+  --text-light: #9e8e84;
+  --border: rgba(168,197,176,0.35);
+  --yellow: #fff176;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 640px; margin: 0 auto; padding: 0 18px 60px; }
+
+/* ── URGENCY STRIP TOP ── */
+.top-strip {
+  background: var(--green-deep);
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: clamp(12px, 3.2vw, 13px);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.top-strip span { color: #c8edd6; }
+
+/* ── HERO ── */
+.hero {
+  padding: 32px 0 0;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  background: var(--green-soft);
+  color: var(--green-deep);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(122,184,147,0.4);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(27px, 7.5vw, 38px);
+  font-weight: 900;
+  line-height: 1.18;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.hero h1 .accent {
+  background: linear-gradient(180deg, transparent 58%, #c8edd6 58%);
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+.hero h1 .accent-pink {
+  background: linear-gradient(180deg, transparent 58%, #fcd0d5 58%);
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+.hero-sub {
+  font-family: 'Lora', serif;
+  font-size: clamp(17px, 4.5vw, 19px);
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── HERO IMAGE ── */
+.hero-img-wrap {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 4px solid var(--green-mid);
+  box-shadow: 0 8px 32px rgba(122,184,147,0.25);
+  margin-bottom: 28px;
+}
+.hero-img-wrap img {
+  width: 100%;
+  display: block;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+/* ── TRUST ROW ── */
+.trust-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: clamp(12px, 3.2vw, 13px);
+  font-weight: 800;
+  color: var(--green-deep);
+}
+.trust-item .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green-mid);
+  flex-shrink: 0;
+}
+
+/* ── CTA BUTTON ── */
+.cta-btn {
+  display: block;
+  background: linear-gradient(180deg, #5aaa78 0%, #3a7a52 100%);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(17px, 4.8vw, 21px);
+  font-weight: 900;
+  padding: 20px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.3;
+  box-shadow: 0 6px 0 var(--green-dark), 0 10px 28px rgba(58,122,82,0.4);
+  transform: translateY(0);
+  transition: transform 0.1s, box-shadow 0.1s;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 10px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+.cta-btn:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--green-dark), 0 6px 18px rgba(58,122,82,0.35); }
+.cta-btn:active { transform: translateY(5px); box-shadow: 0 1px 0 var(--green-dark), 0 2px 8px rgba(58,122,82,0.3); }
+
+.cta-btn-pink {
+  display: block;
+  background: linear-gradient(180deg, #e07888 0%, #b84858 100%);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(17px, 4.8vw, 21px);
+  font-weight: 900;
+  padding: 20px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.3;
+  box-shadow: 0 6px 0 #8a2838, 0 10px 28px rgba(184,72,88,0.4);
+  transform: translateY(0);
+  transition: transform 0.1s, box-shadow 0.1s;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 10px;
+  border: none;
+  cursor: pointer;
+}
+.cta-btn-pink:hover { transform: translateY(2px); box-shadow: 0 4px 0 #8a2838, 0 6px 18px rgba(184,72,88,0.35); }
+.cta-btn-pink:active { transform: translateY(5px); box-shadow: 0 1px 0 #8a2838; }
+
+.cta-support {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: clamp(12px, 3.2vw, 13px);
+  color: var(--text-light);
+  font-weight: 700;
+  margin-top: 4px;
+}
+.cta-support span::before { content: "✓ "; color: var(--green-mid); }
+
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 2px dashed rgba(168,197,176,0.45);
+  margin: 40px 0;
+}
+
+/* ── REFRAME BLOCK ── */
+.reframe {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: 22px;
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.reframe-eyebrow {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+.reframe h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(22px, 6vw, 28px);
+  font-weight: 900;
+  color: var(--text-dark);
+  line-height: 1.22;
+  margin-bottom: 14px;
+}
+.reframe p {
+  font-family: 'Lora', serif;
+  font-size: clamp(16px, 4.2vw, 17px);
+  color: var(--text-mid);
+  line-height: 1.85;
+}
+.reframe p strong { color: var(--text-dark); font-weight: 700; }
+
+/* ── 3 PASOS ── */
+.steps-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(21px, 5.5vw, 25px);
+  font-weight: 900;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.steps { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  padding: 18px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.step::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--green-mid);
+  border-radius: 4px 0 0 4px;
+}
+.step-num {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  border: 2px solid var(--green-mid);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--green-deep);
+  margin-top: 1px;
+}
+.step-body {}
+.step-body strong {
+  display: block;
+  font-size: clamp(16px, 4.2vw, 17px);
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.step-body p {
+  font-family: 'Lora', serif;
+  font-size: clamp(15px, 4vw, 16px);
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+
+/* ── CALLOUT PROTOCOLO ── */
+.protocolo-callout {
+  background: var(--green-soft);
+  border: 2px solid var(--green-mid);
+  border-radius: 18px;
+  padding: 20px 22px;
+  margin-bottom: 32px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.protocolo-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.protocolo-body strong {
+  display: block;
+  font-size: clamp(15px, 4vw, 16px);
+  font-weight: 900;
+  color: var(--green-deep);
+  margin-bottom: 5px;
+}
+.protocolo-body p {
+  font-family: 'Lora', serif;
+  font-size: clamp(15px, 4vw, 16px);
+  color: #3a5a42;
+  line-height: 1.75;
+}
+
+/* ── TESTIMONIAL ── */
+.testi-card {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 22px;
+  margin-bottom: 32px;
+}
+.testi-stars { color: #f0a840; font-size: 20px; margin-bottom: 12px; }
+.testi-quote {
+  font-family: 'Lora', serif;
+  font-size: clamp(16px, 4.2vw, 17px);
+  color: var(--text-mid);
+  line-height: 1.85;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.testi-quote strong { font-style: normal; font-weight: 700; color: var(--text-dark); }
+.testi-author-row { display: flex; align-items: center; gap: 12px; }
+.testi-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  border: 1.5px solid var(--sage);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 900; color: var(--green-deep);
+  flex-shrink: 0;
+}
+.testi-name { font-size: 14px; font-weight: 800; color: var(--text-dark); }
+.testi-loc { font-size: 12px; color: var(--text-light); }
+
+/* ── SOCIAL PROOF BAR ── */
+.social-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--green-soft);
+  border: 1px solid rgba(122,184,147,0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.social-bar-text {
+  font-size: clamp(13px, 3.5vw, 14px);
+  font-weight: 800;
+  color: var(--green-deep);
+}
+.social-bar-flags { font-size: 16px; letter-spacing: 2px; }
+
+/* ── LO QUE RECIBES ── */
+.receives-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(21px, 5.5vw, 25px);
+  font-weight: 900;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.receives-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.receive-item {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.receive-dot {
+  flex-shrink: 0;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green-mid);
+  margin-top: 8px;
+}
+.receive-item p {
+  font-size: clamp(13px, 3.5vw, 14px);
+  color: var(--text-mid);
+  line-height: 1.5;
+  font-weight: 700;
+}
+.receive-item p strong { display: block; color: var(--text-dark); margin-bottom: 2px; font-size: clamp(14px, 3.8vw, 15px); }
+
+/* ── BONOS MINI ── */
+.bonos-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.bono-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff9e6;
+  border: 1.5px solid #f5c842;
+  border-radius: 12px;
+  padding: 11px 14px;
+}
+.bono-mini-tag {
+  flex-shrink: 0;
+  background: #e63946;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.bono-mini-text {
+  font-size: clamp(13px, 3.5vw, 14px);
+  font-weight: 800;
+  color: var(--text-dark);
+  flex: 1;
+}
+.bono-mini-price {
+  font-size: 12px;
+  color: var(--text-light);
+  text-decoration: line-through;
+  flex-shrink: 0;
+}
+
+/* ── OBJECION RAPIDA ── */
+.obj-item {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+}
+.obj-q {
+  font-size: clamp(15px, 4vw, 16px);
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.obj-a {
+  font-family: 'Lora', serif;
+  font-size: clamp(15px, 4vw, 16px);
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+
+/* ── PRICE BOX ── */
+.price-box {
+  background: var(--warm-white);
+  border: 2px solid rgba(122,184,147,0.45);
+  border-radius: 26px;
+  padding: 28px 20px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.price-was {
+  font-size: 14px;
+  color: var(--text-light);
+  text-decoration: line-through;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.price-now {
+  font-size: clamp(52px, 14vw, 68px);
+  font-weight: 900;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.price-now span {
+  font-size: clamp(20px, 5vw, 26px);
+  font-weight: 700;
+  color: var(--text-mid);
+}
+.price-rises {
+  font-size: clamp(12px, 3.2vw, 13px);
+  color: var(--pink-deep);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* ── COUNTDOWN ── */
+.countdown-wrap {
+  background: linear-gradient(135deg, #4a8c65, #7ab893);
+  border-radius: 16px;
+  padding: 16px 14px;
+  margin-bottom: 22px;
+}
+.cd-label-top {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.cd-unit { display: flex; flex-direction: column; align-items: center; }
+.cd-num {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 7px 14px;
+  font-size: clamp(32px, 9vw, 40px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  min-width: 60px;
+  text-align: center;
+}
+.cd-txt { font-size: 10px; color: rgba(255,255,255,0.75); font-weight: 700; margin-top: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+.cd-sep { font-size: 30px; color: rgba(255,255,255,0.45); font-weight: 900; padding-bottom: 20px; }
+.cd-note { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 700; margin-top: 10px; }
+
+/* ── GUARANTEE ── */
+.guarantee {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: var(--green-soft);
+  border: 2px solid var(--green-mid);
+  border-radius: 18px;
+  padding: 18px 18px;
+  margin: 18px 0 18px;
+  text-align: left;
+}
+.guarantee-shield { flex-shrink: 0; }
+.guarantee-content {}
+.guarantee-title {
+  font-size: clamp(15px, 4vw, 16px);
+  font-weight: 900;
+  color: var(--green-deep);
+  margin-bottom: 5px;
+}
+.guarantee-text {
+  font-family: 'Lora', serif;
+  font-size: clamp(14px, 3.8vw, 15px);
+  color: #3a5a42;
+  line-height: 1.65;
+}
+.guarantee-text strong { font-weight: 700; color: var(--green-deep); }
+
+/* ── CLOSE ── */
+.close-block {
+  text-align: center;
+  padding: 20px 0 0;
+}
+.close-block h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(22px, 6vw, 27px);
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.close-block p {
+  font-family: 'Lora', serif;
+  font-size: clamp(16px, 4.2vw, 17px);
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 24px;
+}
+.close-urgency {
+  display: block;
+  font-size: clamp(13px, 3.5vw, 14px);
+  font-weight: 800;
+  color: var(--pink-deep);
+  margin-bottom: 18px;
+}
+
+/* ── SOCIAL PROOF POPUP ── */
+.sp-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 14px;
+  max-width: 290px;
+  width: calc(100vw - 28px);
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  z-index: 9999;
+  border-left: 4px solid var(--green-deep);
+  transform: translateX(-120%);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(.34,1.56,.64,1), opacity 0.35s ease;
+  cursor: pointer;
+}
+.sp-popup.sp-show { transform: translateX(0); opacity: 1; }
+.sp-popup.sp-hide { transform: translateX(-120%); opacity: 0; transition: transform 0.3s ease, opacity 0.25s ease; }
+.sp-flag { font-size: 22px; flex-shrink: 0; }
+.sp-body { flex: 1; min-width: 0; }
+.sp-name { font-size: 13px; font-weight: 900; color: var(--text-dark); margin-bottom: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sp-action { font-size: 11px; color: var(--text-mid); line-height: 1.4; }
+.sp-action strong { color: var(--green-deep); font-weight: 800; }
+.sp-meta { font-size: 10px; color: var(--text-light); display: flex; align-items: center; gap: 4px; margin-top: 2px; }
+.sp-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-mid); display: inline-block; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
+.sp-close { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; background: #f0ebe3; border: none; cursor: pointer; font-size: 11px; color: var(--text-light); display: flex; align-items: center; justify-content: center; }
+
+/* ── HIGHLIGHT ── */
+.hl-green { background: linear-gradient(180deg, transparent 55%, #c8edd6 55%); padding: 0 3px; border-radius: 3px; }
+.hl-pink  { background: linear-gradient(180deg, transparent 55%, #fcd0d5 55%); padding: 0 3px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- TOP URGENCY STRIP -->
+<div class="top-strip" style="background:#c0392b;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:11px 16px;">
+  <span style="display:flex;align-items:center;gap:7px;font-size:clamp(12px,3.5vw,14px);font-weight:900;letter-spacing:0.04em;color:#fff;">
+    🔥 OFERTA TERMINA EN: <span id="strip-timer" style="font-size:clamp(13px,3.8vw,15px);letter-spacing:0.08em;">15:00</span>
+  </span>
+  <span style="background:#fff;color:#c0392b;font-size:clamp(11px,3vw,13px);font-weight:900;padding:4px 14px;border-radius:20px;letter-spacing:0.06em;white-space:nowrap;">87% DE DESCUENTO</span>
+</div>
+
+<div class="page">
+
+  <!-- ═══ HERO ═══ -->
+  <div class="hero">
+    <span class="hero-eyebrow">Método Modular La Fuente™</span>
+
+    <h1>Tu bebé no rechaza la comida.<br>Rechaza la <span class="accent-pink">etapa incorrecta.</span></h1>
+
+    <p class="hero-sub">Cada edad necesita texturas, porciones y estrategias distintas. Este es el único sistema organizado por etapa — con un protocolo exacto para <strong>cuando rechaza.</strong></p>
+
+    <!-- IMAGEN HERO -->
+    <div class="hero-img-wrap" style="margin-bottom: 20px;">
+      <img src="images/hero.jpg" alt="Mamá dándole de comer a su bebé" loading="eager">
+    </div>
+
+    <!-- SOCIAL PROOF RÁPIDA -->
+    <div class="social-bar">
+      <span class="social-bar-flags">🇲🇽 🇨🇴 🇦🇷 🇨🇱 🇵🇪</span>
+      <span class="social-bar-text">+2,900 familias ya no improvisan</span>
+    </div>
+
+    <!-- PRIMER CTA -->
+    <a href="#cta-principal" class="cta-btn" onclick="event.preventDefault();document.getElementById('cta-principal').scrollIntoView({behavior:'smooth',block:'start'});">
+      🍼 Ver todo lo que incluye el método
+    </a>
+    <div class="cta-support" style="margin-bottom: 0;">
+      <span>Acceso inmediato</span>
+      <span>Garantía 15 días</span>
+      <span>Pago seguro</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══ REFRAME ═══ -->
+  <div class="reframe">
+    <div class="reframe-eyebrow">Por qué pasa esto</div>
+    <h2>No es falta de amor.<br>Es falta de un <span class="hl-green">sistema.</span></h2>
+    <p>Lo que funciona a los 6 meses puede ser <strong>exactamente lo que causa el rechazo</strong> a los 10. Sin esa información, cada comida es una guerra — sin importar cuánto te esfuerces o cuántas recetas pruebes.</p>
+  </div>
+
+  <!-- ═══ 3 PASOS ═══ -->
+  <h2 class="steps-title">Cómo funciona el método <span class="hl-green">en la práctica</span></h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Abres la guía de la edad de tu bebé</strong>
+        <p>4 guías separadas: 6–7, 8–9, 10–12 y 13–15 meses. No buscas entre 180 recetas — abres la que corresponde hoy.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Sigues el calendario del día</strong>
+        <p>112 días planificados. Desayuno, almuerzo y cena ya están resueltos — con texturas, cortes y porciones exactas para su etapa.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Sirves. Sin adivinar.</strong>
+        <p>Y si rechaza, no improvisas. Tienes un protocolo paso a paso para ese momento exacto — sin entrar en pánico, sin convertirlo en guerra.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROTOCOLO CALLOUT -->
+  <div class="protocolo-callout">
+    <span class="protocolo-icon">🔄</span>
+    <div class="protocolo-body">
+      <strong>El protocolo de rechazo — lo que hace diferente a este método</strong>
+      <p>Cada receta incluye pasos concretos para cuando tu bebé dice no. No "inténtalo de nuevo mañana". Pasos exactos, en ese momento. Es lo que ninguna guía de recetas tiene.</p>
+    </div>
+  </div>
+
+  <!-- ═══ TESTIMONIO FUERTE ═══ -->
+  <div class="testi-card">
+    <div class="testi-stars">★★★★★</div>
+    <p class="testi-quote">"Lo compré sin mucha fe porque ya había comprado otras guías que nunca usé. <strong>Este es diferente: abres, sigues y listo.</strong> Cuando mi hija rechazó, tenía los pasos exactos para saber qué hacer sin entrar en pánico."</p>
+    <div class="testi-author-row">
+      <div class="testi-avatar">SG</div>
+      <div>
+        <div class="testi-name">Sofía G.</div>
+        <div class="testi-loc">Argentina</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEGUNDO TESTIMONIO -->
+  <div class="testi-card">
+    <div class="testi-stars">★★★★★</div>
+    <p class="testi-quote">"Mi bebé rechazaba todo. Probé tres métodos distintos y nada funcionaba. <strong>Con este método entendí que el problema era la textura y el momento.</strong> La primera semana ya había mejorado notablemente. ¡Lloré de alivio!"</p>
+    <div class="testi-author-row">
+      <div class="testi-avatar">AP</div>
+      <div>
+        <div class="testi-name">Andrea P.</div>
+        <div class="testi-loc">Colombia</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+
+
+  <!-- ═══ OBJECIONES RÁPIDAS ═══ -->
+  <div class="obj-item">
+    <p class="obj-q">"Ya compré guías que nunca usé."</p>
+    <p class="obj-a">Este no requiere leer todo primero. Abres la guía de la edad de tu bebé, sigues el calendario de hoy, y ya sabes qué hacer mañana en el desayuno.</p>
+  </div>
+  <div class="obj-item">
+    <p class="obj-q">"¿Y si no funciona para nosotros?"</p>
+    <p class="obj-a">Tienes 15 días de garantía completa. Lo pruebas con tu bebé y si no era lo que necesitabas, te devolvemos el 100% sin preguntas.</p>
+  </div>
+
+  <hr class="divider" style="margin: 32px 0;">
+
+  <!-- ═══ PRECIO + CTA FINAL ═══ -->
+  <!-- ═══ PRICE BOX ═══ -->
+  <div id="cta-principal" style="background:var(--warm-white);border:2px solid rgba(122,184,147,0.4);border-radius:28px;padding:32px 22px 28px;text-align:center;box-shadow:0 8px 40px rgba(122,184,147,0.15);">
+
+    <!-- TITULO -->
+    <div style="display:inline-block;background:var(--green-soft);color:var(--green-deep);font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;padding:5px 18px;border-radius:20px;border:1px solid rgba(122,184,147,0.4);margin-bottom:20px;">Todo lo que recibes hoy</div>
+
+    <!-- IMAGEN -->
+    <img src="images/all.jpg" alt="El Método Modular La Fuente completo" style="width:100%;max-width:520px;border-radius:0;display:block;margin:0 auto 24px;mix-blend-mode:multiply;" loading="lazy">
+
+    <!-- LISTA DE ITEMS con checks -->
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;text-align:left;">
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);">
+        <span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span>
+        <div>
+          <strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">4 guías organizadas por etapa</strong>
+          <span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">6–7, 8–9, 10–12 y 13–15 meses — cada una para su edad exacta</span>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);">
+        <span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span>
+        <div>
+          <strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">180 recetas profesionales</strong>
+          <span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">con texturas, cortes, porciones y tiempos exactos por etapa</span>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);">
+        <span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span>
+        <div>
+          <strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">112 días de calendario planificado</strong>
+          <span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">desayuno, almuerzo y cena ya resueltos — sin adivinar nada</span>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);">
+        <span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span>
+        <div>
+          <strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">Protocolo paso a paso cuando rechaza</strong>
+          <span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">Incluido en cada receta — lo que ninguna otra guía tiene</span>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);">
+        <span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span>
+        <div>
+          <strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">Guía Maestra de consulta rápida</strong>
+          <span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">BLW, tradicional, mixto, alimentos prohibidos y alergias</span>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);">
+        <span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span>
+        <div>
+          <strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">16 listas de compra semanales</strong>
+          <span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">lo que necesitas cada semana, ya organizado</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEPARADOR BONOS -->
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <div style="flex:1;height:2px;background:linear-gradient(90deg,transparent,rgba(168,197,176,0.5));"></div>
+      <span style="font-size:12px;font-weight:900;letter-spacing:0.1em;color:var(--text-light);text-transform:uppercase;white-space:nowrap;">+ 4 bonos gratis 🎁</span>
+      <div style="flex:1;height:2px;background:linear-gradient(270deg,transparent,rgba(168,197,176,0.5));"></div>
+    </div>
+
+    <!-- BONOS -->
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;text-align:left;">
+      <div style="display:flex;align-items:center;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:13px;padding:12px 14px;">
+        <span style="font-size:18px;flex-shrink:0;">✅</span>
+        <span style="font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--text-dark);flex:1;">🩺 Certificado de Seguridad <span style="font-weight:400;color:var(--text-light);">— primeros auxilios y cortes seguros</span></span>
+        <span style="font-size:12px;color:var(--text-light);text-decoration:line-through;flex-shrink:0;white-space:nowrap;">$27 USD</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:13px;padding:12px 14px;">
+        <span style="font-size:18px;flex-shrink:0;">✅</span>
+        <span style="font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--text-dark);flex:1;">📅 Método Domingo <span style="font-weight:400;color:var(--text-light);">— resuelve la semana en 2 horas</span></span>
+        <span style="font-size:12px;color:var(--text-light);text-decoration:line-through;flex-shrink:0;white-space:nowrap;">$19 USD</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:13px;padding:12px 14px;">
+        <span style="font-size:18px;flex-shrink:0;">✅</span>
+        <span style="font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--text-dark);flex:1;">🌾 Kit de Alergias <span style="font-weight:400;color:var(--text-light);">— plantillas + lista inteligente</span></span>
+        <span style="font-size:12px;color:var(--text-light);text-decoration:line-through;flex-shrink:0;white-space:nowrap;">$17 USD</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:13px;padding:12px 14px;">
+        <span style="font-size:18px;flex-shrink:0;">✅</span>
+        <span style="font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--text-dark);flex:1;">🆘 SOS Mamá <span style="font-weight:400;color:var(--text-light);">— recetas express para días difíciles</span></span>
+        <span style="font-size:12px;color:var(--text-light);text-decoration:line-through;flex-shrink:0;white-space:nowrap;">$12 USD</span>
+      </div>
+    </div>
+
+    <!-- VALOR TOTAL -->
+    <div style="background:linear-gradient(135deg,#fff8e1,#fffde7);border:2px solid #fcd34d;border-radius:16px;padding:16px 18px;margin-bottom:24px;">
+      <p style="font-size:12px;color:var(--text-light);font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em;">Valor total del paquete completo</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;">
+        <span style="font-size:clamp(15px,4vw,17px);color:var(--text-light);text-decoration:line-through;font-weight:700;">$132 USD</span>
+        <span style="font-size:clamp(24px,6.5vw,30px);font-weight:900;color:#e63946;">¡HOY $9.99 USD! 🎉</span>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown-wrap" style="margin-bottom:22px;">
+      <div class="cd-label-top">⏰ Precio de lanzamiento — termina en:</div>
+      <div class="countdown">
+        <div class="cd-unit"><div class="cd-num" id="cd-m">15</div><div class="cd-txt">min</div></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-txt">seg</div></div>
+      </div>
+      <div class="cd-note">🌿 Después sube a $19.99 USD — para siempre</div>
+    </div>
+
+    <!-- CTA -->
+    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn1" class="cta-btn" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
+      🍼 Quiero que mi bebé empiece a comer bien
+    </a>
+
+    <!-- GARANTIA -->
+    <div class="guarantee" style="margin-top:18px;">
+      <div class="guarantee-shield">
+        <svg width="48" height="56" viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26 2L4 11V28C4 40.5 13.5 52 26 56C38.5 52 48 40.5 48 28V11L26 2Z" fill="#e8f3ec" stroke="#4a8c65" stroke-width="2.5"/>
+          <path d="M26 6L7 14V28C7 39 15.5 49.5 26 53C36.5 49.5 45 39 45 28V14L26 6Z" fill="#c8edd6"/>
+          <path d="M17 29.5L23 35.5L35 23" stroke="#4a8c65" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="guarantee-content">
+        <div class="guarantee-title">Garantía 15 días — sin preguntas</div>
+        <div class="guarantee-text">Pruébalo con tu bebé. Si sientes que no era lo que necesitabas, te devolvemos el <strong>100% de tu dinero</strong>. Sin formularios. Sin excusas.</div>
+      </div>
+    </div>
+
+    <div class="cta-support" style="margin-top:14px;">
+      <span>Acceso inmediato por email</span>
+      <span>Pago seguro en Hotmart</span>
+    </div>
+  </div>
+
+  <!-- ═══ CIERRE ═══ -->
+  <div class="close-block">
+    <h2>La próxima comida <span class="hl-green">no tiene que terminar</span> igual que las anteriores.</h2>
+    <p>Puedes seguir improvisando, buscando en Google a las 10pm, sintiendo ese nudo cada vez que tu bebé cierra la boca.<br><br>O puedes tener un sistema claro — hoy, mañana y la semana que viene — por $9.99 USD con garantía completa.</p>
+    <span class="close-urgency">⏰ El precio sube cuando termine el contador. No hay segunda vuelta.</span>
+    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn2" class="cta-btn-pink" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
+      🍼 Quiero que mi bebé empiece a comer bien
+    </a>
+    <p style="text-align:center; font-size:13px; color:var(--text-light); margin-top:12px; font-weight:700;">Pago seguro · Acceso inmediato · Garantía 15 días sin preguntas</p>
+  </div>
+
+</div><!-- /page -->
+
+<!-- SOCIAL PROOF POPUP -->
+<div class="sp-popup" id="sp-popup">
+  <span class="sp-flag" id="sp-flag"></span>
+  <div class="sp-body">
+    <div class="sp-name" id="sp-name"></div>
+    <div class="sp-action">acaba de acceder al <strong>Método La Fuente™</strong></div>
+    <div class="sp-meta"><span class="sp-dot"></span><span id="sp-tiempo"></span>&nbsp;·&nbsp;<span id="sp-pais"></span></div>
+  </div>
+  <button class="sp-close" id="sp-close">✕</button>
+</div>
+
+<script>
+/* ── COUNTDOWN ── */
+(function() {
+  const KEY = 'lf_deadline_paid_v1';
+  let deadline;
+  try {
+    const s = localStorage.getItem(KEY);
+    deadline = s ? parseInt(s, 10) : null;
+    if (!deadline || isNaN(deadline) || deadline < Date.now()) {
+      deadline = Date.now() + 15 * 60 * 1000;
+      localStorage.setItem(KEY, deadline);
+    }
+  } catch(e) { deadline = Date.now() + 15 * 60 * 1000; }
+
+  function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
+  function tick() {
+    const diff = Math.max(0, deadline - Date.now());
+    const em = document.getElementById('cd-m');
+    const es = document.getElementById('cd-s');
+    const strip = document.getElementById('strip-timer');
+    const mins = pad(Math.floor(diff / 60000));
+    const secs = pad(Math.floor((diff % 60000) / 1000));
+    if(em) em.textContent = mins;
+    if(es) es.textContent = secs;
+    if(strip) strip.textContent = mins + ':' + secs;
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* ── SOCIAL PROOF ── */
+(function() {
+  const data = [
+    { nombre: "María G.", pais: "México", bandera: "🇲🇽", tiempo: "hace 1 minuto" },
+    { nombre: "Valentina R.", pais: "Colombia", bandera: "🇨🇴", tiempo: "hace 2 minutos" },
+    { nombre: "Camila T.", pais: "Argentina", bandera: "🇦🇷", tiempo: "hace 3 minutos" },
+    { nombre: "Sofía M.", pais: "Chile", bandera: "🇨🇱", tiempo: "hace 4 minutos" },
+    { nombre: "Fernanda L.", pais: "Perú", bandera: "🇵🇪", tiempo: "hace 2 minutos" },
+    { nombre: "Andrea S.", pais: "Ecuador", bandera: "🇪🇨", tiempo: "hace 1 minuto" },
+    { nombre: "Paola N.", pais: "Bolivia", bandera: "🇧🇴", tiempo: "hace 3 minutos" },
+    { nombre: "Natalia V.", pais: "Guatemala", bandera: "🇬🇹", tiempo: "hace 4 minutos" },
+    { nombre: "Carolina B.", pais: "España", bandera: "🇪🇸", tiempo: "hace 1 minuto" },
+  ];
+
+  const popup = document.getElementById('sp-popup');
+  let idx = 0, hideTimer, showTimer;
+
+  function shuffle(a) {
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+    return a;
+  }
+  const shuffled = shuffle([...data]);
+
+  function show() {
+    const d = shuffled[idx % shuffled.length]; idx++;
+    document.getElementById('sp-flag').textContent = d.bandera;
+    document.getElementById('sp-name').textContent = d.nombre;
+    document.getElementById('sp-tiempo').textContent = d.tiempo;
+    document.getElementById('sp-pais').textContent = d.pais;
+    popup.classList.remove('sp-hide');
+    popup.classList.add('sp-show');
+    hideTimer = setTimeout(hide, 5000);
+  }
+  function hide() {
+    clearTimeout(hideTimer);
+    popup.classList.remove('sp-show');
+    popup.classList.add('sp-hide');
+    showTimer = setTimeout(show, 8000 + Math.random() * 5000);
+  }
+
+  document.getElementById('sp-close').addEventListener('click', function(e) {
+    e.stopPropagation(); hide();
+  });
+  popup.addEventListener('click', function() {
+    document.getElementById('cta-principal').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  // Arranca al llegar al CTA
+  const target = document.getElementById('cta-principal');
+  if (target && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(function(entries) {
+      if(entries[0].isIntersecting) { setTimeout(show, 1200); obs.disconnect(); }
+    }, { threshold: 0.2 });
+    obs.observe(target);
+  } else {
+    setTimeout(show, 7000);
+  }
+})();
+
+/* ── CLARITY CTA TRACKING ── */
+document.querySelectorAll('.cta-btn, .cta-btn-pink').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    if(typeof clarity !== 'undefined') clarity('event', 'click_cta_compra');
+  });
+});
+</script>
+
+</body>
+</html>
