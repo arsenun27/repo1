@@ -1,0 +1,6 @@
+{
+  "name": "hotmart-meta-capi",
+  "version": "1.0.0",
+  "description": "Hotmart webhook to Meta CAPI bridge",
+  "private": true
+}
