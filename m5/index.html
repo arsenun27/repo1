@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método La Fuente™: Sistema de Activación Progresiva</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P568JZPZ');</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "w79q8oi9c1");
+</script>
+  
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #fdf8f2;
+  --warm-white: #fffcf8;
+  --green-soft: #e8f3ec;
+  --green-mid: #7ab893;
+  --green-deep: #4a8c65;
+  --green-dark: #2a5a3a;
+  --pink-soft: #fdeef0;
+  --pink-mid: #f0a8b0;
+  --pink-deep: #c9606e;
+  --sage: #a8c5b0;
+  --text-dark: #3a2e28;
+  --text-mid: #6b5a50;
+  --text-light: #9e8e84;
+  --border: rgba(168,197,176,0.35);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.page { max-width: 640px; margin: 0 auto; padding: 0 18px 60px; }
+
+.hero { padding: 32px 0 0; text-align: center; }
+.hero-eyebrow { display: inline-block; background: var(--green-soft); color: var(--green-deep); font-size: 11px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; border: 1px solid rgba(122,184,147,0.4); margin-bottom: 20px; }
+.hero h1 { font-family: 'Nunito', sans-serif; font-size: clamp(27px, 7.5vw, 38px); font-weight: 900; line-height: 1.18; color: var(--text-dark); margin-bottom: 16px; }
+.hero h1 .accent { background: linear-gradient(180deg, transparent 58%, #c8edd6 58%); padding: 0 4px; border-radius: 3px; }
+.hero h1 .accent-pink { background: linear-gradient(180deg, transparent 58%, #fcd0d5 58%); padding: 0 4px; border-radius: 3px; }
+.hero-sub { font-family: 'Lora', serif; font-size: clamp(17px, 4.5vw, 19px); color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.hero-proof { display: inline-flex; align-items: center; gap: 8px; background: var(--green-soft); border: 1px solid rgba(122,184,147,0.4); border-radius: 50px; padding: 8px 18px; margin-bottom: 22px; }
+.hero-proof-stars { font-size: 14px; letter-spacing: 1px; color: #f5b800; }
+.hero-proof-text { font-size: clamp(13px, 3.5vw, 14px); font-weight: 800; color: var(--green-deep); }
+.hero-img-wrap { border-radius: 22px; overflow: hidden; border: 4px solid var(--green-mid); box-shadow: 0 8px 32px rgba(122,184,147,0.25); margin-bottom: 28px; }
+.hero-img-wrap img { width: 100%; display: block; max-height: 380px; object-fit: cover; }
+
+.cta-btn { display: block; background: linear-gradient(180deg, #5aaa78 0%, #3a7a52 100%); color: #fff; font-family: 'Nunito', sans-serif; font-size: clamp(17px, 4.8vw, 21px); font-weight: 900; padding: 20px 24px; border-radius: 50px; text-decoration: none; text-align: center; line-height: 1.3; box-shadow: 0 6px 0 var(--green-dark), 0 10px 28px rgba(58,122,82,0.4); transform: translateY(0); transition: transform 0.1s, box-shadow 0.1s; width: 100%; max-width: 480px; margin: 0 auto 10px; border: none; cursor: pointer; }
+.cta-btn:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--green-dark), 0 6px 18px rgba(58,122,82,0.35); }
+.cta-btn:active { transform: translateY(5px); box-shadow: 0 1px 0 var(--green-dark); }
+.cta-btn-pink { display: block; background: linear-gradient(180deg, #e07888 0%, #b84858 100%); color: #fff; font-family: 'Nunito', sans-serif; font-size: clamp(17px, 4.8vw, 21px); font-weight: 900; padding: 20px 24px; border-radius: 50px; text-decoration: none; text-align: center; line-height: 1.3; box-shadow: 0 6px 0 #8a2838, 0 10px 28px rgba(184,72,88,0.4); transform: translateY(0); transition: transform 0.1s, box-shadow 0.1s; width: 100%; max-width: 480px; margin: 0 auto 10px; border: none; cursor: pointer; }
+.cta-btn-pink:hover { transform: translateY(2px); box-shadow: 0 4px 0 #8a2838, 0 6px 18px rgba(184,72,88,0.35); }
+.cta-btn-pink:active { transform: translateY(5px); box-shadow: 0 1px 0 #8a2838; }
+.cta-support { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; font-size: clamp(12px, 3.2vw, 13px); color: var(--text-light); font-weight: 700; margin-top: 4px; }
+.cta-support span::before { content: "✓ "; color: var(--green-mid); }
+
+.cta-mid-block { background: var(--warm-white); border: 2px solid rgba(122,184,147,0.4); border-radius: 22px; padding: 24px 22px; text-align: center; margin-bottom: 32px; box-shadow: 0 4px 20px rgba(122,184,147,0.12); }
+.cta-mid-eyebrow { display: inline-block; background: #fff8e1; color: #b8860b; font-size: 11px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; border: 1px solid #fcd34d; margin-bottom: 12px; }
+.cta-mid-title { font-family: 'Nunito', sans-serif; font-size: clamp(18px, 4.8vw, 21px); font-weight: 900; color: var(--text-dark); line-height: 1.3; margin-bottom: 8px; }
+.cta-mid-price { font-family: 'Nunito', sans-serif; font-size: clamp(15px, 4vw, 16px); color: var(--text-mid); margin-bottom: 16px; font-weight: 700; }
+.cta-mid-price .old { text-decoration: line-through; color: var(--text-light); margin-right: 8px; }
+.cta-mid-price .new { color: #e63946; font-weight: 900; font-size: clamp(18px, 4.8vw, 20px); }
+
+.divider { border: none; border-top: 2px dashed rgba(168,197,176,0.45); margin: 40px 0; }
+
+.lead-block { font-family: 'Lora', serif; font-size: clamp(16px, 4.2vw, 18px); color: var(--text-mid); line-height: 2; }
+.lead-block p { margin-bottom: 8px; }
+.lead-block strong { color: var(--text-dark); font-weight: 700; }
+
+.reframe { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 22px; padding: 28px 24px; text-align: center; margin-bottom: 32px; }
+.reframe-eyebrow { font-size: 11px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; }
+.reframe h2 { font-family: 'Nunito', sans-serif; font-size: clamp(22px, 6vw, 28px); font-weight: 900; color: var(--text-dark); line-height: 1.22; margin-bottom: 14px; }
+.reframe p { font-family: 'Lora', serif; font-size: clamp(16px, 4.2vw, 17px); color: var(--text-mid); line-height: 1.85; }
+.reframe p strong { color: var(--text-dark); font-weight: 700; }
+
+.protocolo-callout { background: var(--green-soft); border: 2px solid var(--green-mid); border-radius: 18px; padding: 20px 22px; margin-bottom: 32px; display: flex; gap: 14px; align-items: flex-start; }
+.protocolo-body strong { display: block; font-size: clamp(15px, 4vw, 16px); font-weight: 900; color: var(--green-deep); margin-bottom: 5px; }
+.protocolo-body p { font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 16px); color: #3a5a42; line-height: 1.75; }
+
+.social-bar { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--green-soft); border: 1px solid rgba(122,184,147,0.4); border-radius: 50px; padding: 10px 20px; margin-bottom: 32px; flex-wrap: wrap; text-align: center; }
+.social-bar-text { font-size: clamp(13px, 3.5vw, 14px); font-weight: 800; color: var(--green-deep); }
+.social-bar-flags { font-size: 16px; letter-spacing: 2px; }
+
+.obj-item { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 16px; padding: 16px 18px; margin-bottom: 10px; }
+.obj-q { font-size: clamp(15px, 4vw, 16px); font-weight: 900; color: var(--text-dark); margin-bottom: 6px; }
+.obj-a { font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 16px); color: var(--text-mid); line-height: 1.75; }
+
+.countdown-wrap { background: linear-gradient(135deg, #4a8c65, #7ab893); border-radius: 16px; padding: 16px 14px; margin-bottom: 22px; }
+.cd-label-top { font-size: 12px; font-weight: 800; color: rgba(255,255,255,0.85); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+.countdown { display: flex; justify-content: center; gap: 10px; align-items: center; }
+.cd-unit { display: flex; flex-direction: column; align-items: center; }
+.cd-num { background: rgba(255,255,255,0.2); border-radius: 10px; padding: 7px 14px; font-size: clamp(32px, 9vw, 40px); font-weight: 900; color: #fff; line-height: 1; min-width: 60px; text-align: center; }
+.cd-txt { font-size: 10px; color: rgba(255,255,255,0.75); font-weight: 700; margin-top: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+.cd-sep { font-size: 30px; color: rgba(255,255,255,0.45); font-weight: 900; padding-bottom: 20px; }
+.cd-note { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 700; margin-top: 10px; }
+
+.guarantee { display: flex; gap: 14px; align-items: center; background: var(--green-soft); border: 2px solid var(--green-mid); border-radius: 18px; padding: 18px; text-align: left; }
+.guarantee-shield { flex-shrink: 0; }
+.guarantee-title { font-size: clamp(15px, 4vw, 16px); font-weight: 900; color: var(--green-deep); margin-bottom: 5px; }
+.guarantee-text { font-family: 'Lora', serif; font-size: clamp(14px, 3.8vw, 15px); color: #3a5a42; line-height: 1.65; }
+.guarantee-text strong { font-weight: 700; color: var(--green-deep); }
+
+.sp-popup { position: fixed; bottom: 20px; left: 14px; max-width: 290px; width: calc(100vw - 28px); background: #fff; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 10px; padding: 12px 14px; z-index: 9999; border-left: 4px solid var(--green-deep); transform: translateX(-120%); opacity: 0; transition: transform 0.45s cubic-bezier(.34,1.56,.64,1), opacity 0.35s ease; cursor: pointer; }
+.sp-popup.sp-show { transform: translateX(0); opacity: 1; }
+.sp-popup.sp-hide { transform: translateX(-120%); opacity: 0; transition: transform 0.3s ease, opacity 0.25s ease; }
+.sp-flag { font-size: 22px; flex-shrink: 0; }
+.sp-body { flex: 1; min-width: 0; }
+.sp-name { font-size: 13px; font-weight: 900; color: var(--text-dark); margin-bottom: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sp-action { font-size: 11px; color: var(--text-mid); line-height: 1.4; }
+.sp-action strong { color: var(--green-deep); font-weight: 800; }
+.sp-meta { font-size: 10px; color: var(--text-light); display: flex; align-items: center; gap: 4px; margin-top: 2px; }
+.sp-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-mid); display: inline-block; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
+.sp-close { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; background: #f0ebe3; border: none; cursor: pointer; font-size: 11px; color: var(--text-light); display: flex; align-items: center; justify-content: center; }
+
+.hl-green { background: linear-gradient(180deg, transparent 55%, #c8edd6 55%); padding: 0 3px; border-radius: 3px; }
+.hl-pink  { background: linear-gradient(180deg, transparent 55%, #fcd0d5 55%); padding: 0 3px; border-radius: 3px; }
+
+.carousel-wrap { position: relative; overflow: hidden; border-radius: 16px; margin-bottom: 14px; }
+.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; align-items: flex-start; }
+.carousel-slide { min-width: 100%; flex-shrink: 0; }
+.carousel-slide img { width: 80%; display: block; border-radius: 16px; object-fit: contain; height: auto; margin: 0 auto; max-width: 340px; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.92); border: none; border-radius: 50%; width: 38px; height: 38px; font-size: 18px; color: var(--green-deep); cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; }
+.carousel-btn:hover { background: #fff; }
+.carousel-prev { left: 4px; }
+.carousel-next { right: 4px; }
+.carousel-dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+.carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; padding: 0; transition: background 0.2s, transform 0.2s; }
+.carousel-dot.active { background: var(--green-deep); transform: scale(1.25); }
+
+.benefits-list { display: flex; flex-direction: column; gap: 10px; }
+.cslide { flex: 0 0 100%; width: 100%; display: flex; align-items: center; justify-content: center; padding: 0 8px; }
+.cslide img { width: 100%; max-width: 360px; height: auto; display: block; border-radius: 14px; object-fit: contain; }
+.benefit-item { display: flex; align-items: flex-start; gap: 12px; background: var(--cream); border: 1.5px solid var(--border); border-radius: 16px; padding: 14px 16px; }
+.benefit-check { flex-shrink: 0; font-size: 18px; line-height: 1.3; }
+.benefit-text { font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 16px); color: var(--text-mid); line-height: 1.65; }
+.benefit-text strong { font-style: normal; font-weight: 700; color: var(--text-dark); }
+
+.martha-section { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 22px; padding: 28px 24px; margin-bottom: 32px; }
+.martha-section h2 { font-family: 'Nunito', sans-serif; font-size: clamp(20px, 5.5vw, 24px); font-weight: 900; color: var(--green-deep); margin-bottom: 18px; text-align: center; }
+.martha-section p { font-family: 'Lora', serif; font-size: clamp(15px, 4vw, 16px); color: var(--text-mid); line-height: 1.85; margin-bottom: 10px; }
+.martha-section p strong { color: var(--text-dark); font-weight: 700; }
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P568JZPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-eyebrow">Método La Fuente™</span>
+    <h1>Que tu bebé <span class="accent">coma tranquilo</span> y <span class="accent-pink">sonría en la mesa</span>, desde el primer intento.</h1>
+    <p class="hero-sub">Cómo una nutrióloga pediátrica desarrolló el <span class="hl-green" style="font-weight:800;color:var(--text-dark);">Sistema de Activación Progresiva™</span> que induce al cerebro del bebé a aceptar cualquier alimento <strong>sin berrinches, sin llanto y sin necesidad de forzarlo.</strong></p>
+
+    <div class="hero-proof">
+      <span class="hero-proof-stars">★★★★★</span>
+      <span class="hero-proof-text">Más de 2,900 mamás ya lo están usando</span>
+    </div>
+   
+    <div class="hero-img-wrap" style="margin-bottom:20px;">
+      <img src="/m5/images/hero.jpg" alt="Mamá dándole de comer a su bebé feliz" loading="eager">
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LEAD -->
+  <div style="background:var(--warm-white);border:1.5px solid var(--border);border-radius:22px;padding:28px 24px;margin-bottom:32px;">
+    <h2 style="font-family:'Nunito',sans-serif;font-size:clamp(20px,5.5vw,24px);font-weight:900;color:var(--text-dark);text-align:center;line-height:1.25;margin-bottom:20px;">Lo que ningún pediatra te dice <span class="hl-pink">en la consulta</span></h2>
+    <div class="lead-block">
+      <p>Hay algo que ningún pediatra te dice en esa consulta de 10 minutos.</p>
+      <p>Mientras tu bebé rechaza la cuchara...</p>
+      <p>Tira el plato al piso.</p>
+      <p>Llora cada vez que se sienta a la mesa.</p>
+      <p>Su cuerpo sigue creciendo. Sigue demandando hierro, calcio, proteínas. Cada día.</p>
+      <p><strong>Si tu bebé no recibe las proteínas, el calcio y el hierro que necesita de los sólidos. Eso afecta directamente su talla y su peso.</strong></p>
+      <p>Hay mamás que terminan en el consultorio escuchando que su bebé tiene anemia.</p>
+      <p>Otras, con un diagnóstico de desnutrición severa.</p>
+      <p>Y todas pensaban que estaban haciendo lo posible.</p>
+      <p>La verdad es que no fallaron en nada.</p>
+      <p>Nadie les explicó lo que realmente está pasando.</p>
+    </div>
+  </div>
+
+  <!-- REFRAME -->
+  <div class="reframe">
+    <div class="reframe-eyebrow">Lo que nadie te ha dicho</div>
+    <h2>El rechazo de tu bebé no es capricho.<br>Es una <span class="hl-green">respuesta neurológica.</span></h2>
+    <p>Su cerebro clasifica cada alimento nuevo como una amenaza. Y cada vez que insististe, que rogaste, que lo forzaste con todo tu amor, <strong>esa respuesta se hizo más fuerte.</strong> Sin que nadie te avisara. Hasta hoy.</p>
+  </div>
+
+  <!-- MARKETING ARGUMENT -->
+  <div class="martha-section">
+    <h2>¿Qué es el Método La Fuente?</h2>
+    <p>Es un <strong><span class="hl-green" style="font-weight:900;color:var(--text-dark);">Sistema de Activación Progresiva</span></strong> que no lucha contra el cerebro del bebé.</p>
+    <p>Lo programa.</p>
+    <p>Creado por la nutrióloga pediátrica <strong>Martha La Fuente</strong>, cada receta está construida con combinaciones específicas de sabor, textura y temperatura, diseñadas por edad, que inducen al cerebro del bebé a clasificar el alimento como seguro.</p>
+    <p>No como amenaza. Como algo familiar. Como algo que quiere.</p>
+    <p>Y cuando eso ocurre, no hay rechazo. No hay berrinche. No hay forcejeo.</p>
+    <p><strong>Solo un bebé que abre la boca y come. Desde el primer intento.</strong></p>
+    <p>Y tú, por primera vez, puedes sentarte a la mesa sin miedo. Sabiendo que tu bebé está recibiendo cada proteína, cada gramo de hierro, cada nutriente que necesita para crecer sano.</p>
+    <p>Sin adivinar. Sin preocuparte. Con la certeza de que esta vez sí funciona.</p>
+  </div>
+
+  <!-- QUIÉN ES MARTHA -->
+  <div class="protocolo-callout" style="flex-direction:column;align-items:center;text-align:center;">
+    <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;border:3px solid var(--green-mid);margin-bottom:14px;flex-shrink:0;box-shadow:0 4px 16px rgba(122,184,147,0.3);">
+      <img src="/m5/images/martha.webp" alt="Martha La Fuente, Nutrióloga Pediátrica" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div style="text-align:center;width:100%;">
+      <p style="font-family:'Nunito',sans-serif;font-size:clamp(17px,4.5vw,19px);font-weight:900;color:var(--text-dark);margin-bottom:4px;">Lic. Martha La Fuente</p>
+      <p style="font-family:'Lora',serif;font-size:13px;color:var(--text-light);margin-bottom:20px;">Nutrióloga Pediátrica Certificada · 17 años de experiencia</p>
+
+      <p style="font-family:'Lora',serif;font-size:clamp(15px,4vw,16px);color:var(--text-mid);line-height:1.85;margin-bottom:14px;text-align:left;">Durante años, Martha atendió en su consultorio a cientos de mamás con el mismo problema. No llegaban con enfermedades raras ni casos complicados. Llegaban <em><strong>agotadas, confundidas y llenas de culpa</strong></em>, porque su bebé rechazaba la comida y nadie les había explicado por qué ni qué hacer.</p>
+
+      <p style="font-family:'Lora',serif;font-size:clamp(15px,4vw,16px);color:var(--text-mid);line-height:1.85;margin-bottom:16px;text-align:left;">Lo que más le dolía no era el problema en sí. Era que <em>la solución existía</em>. Estaba en su cabeza, en sus 17 años de experiencia. Pero las mamás no tenían acceso a eso fuera del consultorio.</p>
+
+      <div style="background:var(--green-soft);border-left:4px solid var(--green-mid);border-radius:10px;padding:14px 18px;margin-bottom:16px;text-align:left;">
+        <p style="font-family:'Lora',serif;font-size:clamp(15px,4vw,16px);color:var(--green-deep);line-height:1.85;font-style:italic;">"Vi a demasiadas mamás cargando una culpa que no merecían. Decidí que tenía que cambiar eso."</p>
+      </div>
+
+      <p style="font-family:'Lora',serif;font-size:clamp(15px,4vw,16px);color:var(--text-mid);line-height:1.85;margin-bottom:20px;text-align:left;">Por eso creó el Método La Fuente: para que cualquier mamá pueda abrir una guía a las 7am, saber exactamente qué darle a su bebé en el desayuno, y no tener que adivinar ni culparse si hay rechazo. Hoy, más de 2,900 familias ya no improvisan.</p>
+
+      <div style="display:flex;justify-content:space-around;border-top:1.5px dashed rgba(168,197,176,0.45);padding-top:18px;gap:8px;">
+        <div style="text-align:center;flex:1;">
+          <p style="font-family:'Nunito',sans-serif;font-size:clamp(22px,6vw,28px);font-weight:900;color:var(--green-deep);line-height:1;">17</p>
+          <p style="font-family:'Lora',serif;font-size:12px;color:var(--text-light);margin-top:4px;line-height:1.4;">años acompañando familias</p>
+        </div>
+        <div style="width:1.5px;background:rgba(168,197,176,0.45);flex-shrink:0;"></div>
+        <div style="text-align:center;flex:1;">
+          <p style="font-family:'Nunito',sans-serif;font-size:clamp(22px,6vw,28px);font-weight:900;color:var(--green-deep);line-height:1;">+2,900</p>
+          <p style="font-family:'Lora',serif;font-size:12px;color:var(--text-light);margin-top:4px;line-height:1.4;">familias acompañadas</p>
+        </div>
+        <div style="width:1.5px;background:rgba(168,197,176,0.45);flex-shrink:0;"></div>
+        <div style="text-align:center;flex:1;">
+          <p style="font-family:'Nunito',sans-serif;font-size:clamp(22px,6vw,28px);font-weight:900;color:var(--green-deep);line-height:1;">180</p>
+          <p style="font-family:'Lora',serif;font-size:12px;color:var(--text-light);margin-top:4px;line-height:1.4;">recetas en el sistema</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA INTERMEDIO -->
+  <div class="cta-mid-block">
+    <div class="cta-mid-eyebrow">⏰ Precio de lanzamiento</div>
+    <p class="cta-mid-title">¿Lista para que tu bebé empiece a comer hoy?</p>
+    <p class="cta-mid-price"><span class="old">$132 USD</span><span class="new">Hoy $9.99 USD</span></p>
+    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn-mid" class="cta-btn" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
+      🍼 Quiero empezar hoy mismo
+    </a>
+    <p style="font-size:clamp(12px,3.2vw,13px);color:var(--text-light);font-weight:700;margin-top:8px;">Acceso inmediato • Garantía 15 días sin preguntas</p>
+  </div>
+
+  <!-- TESTIMONIOS CARRUSEL -->
+  <div style="background:var(--warm-white);border:1.5px solid var(--border);border-radius:22px;padding:28px 20px;margin-bottom:32px;">
+    <h2 style="font-family:'Nunito',sans-serif;font-size:clamp(20px,5.5vw,24px);font-weight:900;color:var(--text-dark);text-align:center;margin-bottom:6px;line-height:1.3;">Lo que dicen las <span class="hl-green">mamás reales</span></h2>
+    <p style="font-family:'Lora',serif;font-size:14px;color:var(--text-light);text-align:center;margin-bottom:20px;">Screenshots reales de WhatsApp</p>
+
+    <div id="carouselWrap" style="position:relative;">
+      <!-- slides -->
+      <div id="carouselInner" style="overflow:hidden;border-radius:14px;">
+        <div id="carouselTrack" style="display:flex;transition:transform 0.4s ease;will-change:transform;">
+          <div class="cslide"><img src="/m5/images/test1.jpg" alt="Testimonio Mariela" loading="lazy"></div>
+          <div class="cslide"><img src="/m5/images/test2.jpg" alt="Testimonio Fernanda" loading="lazy"></div>
+          <div class="cslide"><img src="/m5/images/test3.jpg" alt="Testimonio Brenda" loading="lazy"></div>
+          <div class="cslide"><img src="/m5/images/test4.jpg" alt="Testimonio Majo" loading="lazy"></div>
+          <div class="cslide"><img src="/m5/images/test5.jpg" alt="Testimonio Carla" loading="lazy"></div>
+          <div class="cslide"><img src="/m5/images/test6.jpg" alt="Testimonio Mariana" loading="lazy"></div>
+        </div>
+      </div>
+      <!-- arrows -->
+      <button id="cPrev" aria-label="Anterior" style="position:absolute;top:50%;left:6px;transform:translateY(-50%);background:rgba(255,255,255,0.95);border:none;border-radius:50%;width:36px;height:36px;font-size:18px;color:#4a8c65;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;z-index:10;">&#8592;</button>
+      <button id="cNext" aria-label="Siguiente" style="position:absolute;top:50%;right:6px;transform:translateY(-50%);background:rgba(255,255,255,0.95);border:none;border-radius:50%;width:36px;height:36px;font-size:18px;color:#4a8c65;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;z-index:10;">&#8594;</button>
+    </div>
+    <!-- dots -->
+    <div id="cDots" style="display:flex;justify-content:center;gap:7px;margin-top:14px;"></div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BENEFICIOS -->
+  <div style="background:var(--warm-white);border:1.5px solid var(--border);border-radius:22px;padding:28px 24px;margin-bottom:32px;">
+    <h2 style="font-family:'Nunito',sans-serif;font-size:clamp(20px,5.5vw,24px);font-weight:900;color:var(--text-dark);text-align:center;margin-bottom:20px;line-height:1.3;">Con el Método La Fuente <span class="hl-green">vas a lograr:</span></h2>
+    <div class="benefits-list">
+      <div class="benefit-item"><span class="benefit-check">✅</span><p class="benefit-text"><strong>Que tu bebé acepte los sólidos desde el primer intento</strong> sin forcejeos, sin llanto, sin suplicar.</p></div>
+      <div class="benefit-item"><span class="benefit-check">✅</span><p class="benefit-text"><strong>Saber exactamente qué darle según su edad</strong> sin adivinar, sin improvisar, sin buscar en Google a las 10pm.</p></div>
+      <div class="benefit-item"><span class="benefit-check">✅</span><p class="benefit-text"><strong>Que tu bebé reciba todas las proteínas, el hierro y el calcio que necesita</strong> y tú puedas verlo en su peso, su talla y su desarrollo.</p></div>
+      <div class="benefit-item"><span class="benefit-check">✅</span><p class="benefit-text"><strong>Terminar con la hora de la comida convertida en una pesadilla</strong> para reemplazarla por un momento tranquilo en familia.</p></div>
+      <div class="benefit-item"><span class="benefit-check">✅</span><p class="benefit-text"><strong>Dejar de sentirte mala madre porque tu bebé no come</strong> y empezar a sentirte segura de lo que le estás dando.</p></div>
+      <div class="benefit-item"><span class="benefit-check">✅</span><p class="benefit-text"><strong>Tener un plan claro semana a semana</strong> sin improvisar ni repetir siempre lo mismo.</p></div>
+      <div class="benefit-item"><span class="benefit-check">✅</span><p class="benefit-text"><strong>Resolver cualquier comida en 5 minutos</strong> los días en que no tienes tiempo ni energía.</p></div>
+      <div class="benefit-item"><span class="benefit-check">✅</span><p class="benefit-text"><strong>Preparar toda la semana en solo 2 horas</strong> y descansar sabiendo que tu bebé va a comer bien todos los días.</p></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CTA PRINCIPAL -->
+  <div id="cta-principal" style="background:var(--warm-white);border:2px solid rgba(122,184,147,0.4);border-radius:28px;padding:32px 22px 28px;text-align:center;box-shadow:0 8px 40px rgba(122,184,147,0.15);">
+    <div style="display:inline-block;background:var(--green-soft);color:var(--green-deep);font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;padding:5px 18px;border-radius:20px;border:1px solid rgba(122,184,147,0.4);margin-bottom:10px;">Esto es lo que recibes hoy</div>
+    <h2 style="font-family:'Nunito',sans-serif;font-size:clamp(20px,5.5vw,24px);font-weight:900;color:var(--text-dark);margin-bottom:20px;">Todo lo que incluye el Método La Fuente 👇</h2>
+    <img src="/m5/images/all.jpg" alt="El Método La Fuente completo" style="width:100%;max-width:520px;border-radius:0;display:block;margin:0 auto 24px;mix-blend-mode:multiply;" loading="lazy">
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;text-align:left;">
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);"><span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span><div><strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">Guía Maestra: Fundamentos</strong><span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">BLW, tradicional, mixto, alimentos prohibidos, alergias y seguridad. Todo lo que necesitás saber, en un solo lugar.</span></div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);"><span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span><div><strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">Guía 1: Primeros Bocados (6–7 meses)</strong><span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">45 recetas seguras + calendario de 4 semanas. Texturas y porciones adaptadas.</span></div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);"><span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span><div><strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">Guía 2: Explorando Sabores (8–9 meses)</strong><span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">45 recetas con más variedad y texturas blandas + calendario de 4 semanas.</span></div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);"><span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span><div><strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">Guía 3: Autonomía en la Mesa (10–12 meses)</strong><span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">45 recetas con porciones manejables + calendario de 4 semanas. Acompañar sin forzar.</span></div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;background:var(--cream);border-radius:14px;padding:13px 15px;border:1.5px solid var(--border);"><span style="font-size:20px;flex-shrink:0;line-height:1.2;">✅</span><div><strong style="font-size:clamp(15px,4vw,16px);color:var(--text-dark);display:block;margin-bottom:2px;">Guía 4: Pequeño Gourmet (12–15 meses)</strong><span style="font-size:clamp(13px,3.5vw,14px);color:var(--text-light);">45 recetas con texturas variadas + calendario de 4 semanas. Come con la familia, a su ritmo.</span></div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <div style="flex:1;height:2px;background:linear-gradient(90deg,transparent,rgba(168,197,176,0.5));"></div>
+      <span style="font-size:12px;font-weight:900;letter-spacing:0.1em;color:var(--text-light);text-transform:uppercase;white-space:nowrap;">+ 4 bonos exclusivos 🎁</span>
+      <div style="flex:1;height:2px;background:linear-gradient(270deg,transparent,rgba(168,197,176,0.5));"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;text-align:left;">
+      <div style="display:flex;align-items:center;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:13px;padding:12px 14px;"><span style="font-size:18px;flex-shrink:0;">✅</span><span style="font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--text-dark);flex:1;">🩺 Certificado de Seguridad <span style="font-weight:400;color:var(--text-light);">— primeros auxilios y cortes seguros.</span></span><span style="font-size:12px;color:var(--text-light);text-decoration:line-through;flex-shrink:0;white-space:nowrap;">$27 USD</span></div>
+      <div style="display:flex;align-items:center;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:13px;padding:12px 14px;"><span style="font-size:18px;flex-shrink:0;">✅</span><span style="font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--text-dark);flex:1;">📅 El Método Domingo <span style="font-weight:400;color:var(--text-light);">— resuelve las comidas de toda la semana en 2 horas.</span></span><span style="font-size:12px;color:var(--text-light);text-decoration:line-through;flex-shrink:0;white-space:nowrap;">$19 USD</span></div>
+      <div style="display:flex;align-items:center;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:13px;padding:12px 14px;"><span style="font-size:18px;flex-shrink:0;">✅</span><span style="font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--text-dark);flex:1;">🌾 Kit de Rastreo de Alergias <span style="font-weight:400;color:var(--text-light);">— plantillas imprimibles + lista de compra inteligente.</span></span><span style="font-size:12px;color:var(--text-light);text-decoration:line-through;flex-shrink:0;white-space:nowrap;">$17 USD</span></div>
+      <div style="display:flex;align-items:center;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:13px;padding:12px 14px;"><span style="font-size:18px;flex-shrink:0;">✅</span><span style="font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--text-dark);flex:1;">🆘 SOS Mamá <span style="font-weight:400;color:var(--text-light);">— recetas express en 5 minutos para los días difíciles.</span></span><span style="font-size:12px;color:var(--text-light);text-decoration:line-through;flex-shrink:0;white-space:nowrap;">$12 USD</span></div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#fff8e1,#fffde7);border:2px solid #fcd34d;border-radius:16px;padding:16px 18px;margin-bottom:24px;">
+      <p style="font-size:12px;color:var(--text-light);font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em;">Valor total del paquete completo</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;">
+        <span style="font-size:clamp(15px,4vw,17px);color:var(--text-light);text-decoration:line-through;font-weight:700;">$132 USD</span>
+        <span style="font-size:clamp(24px,6.5vw,30px);font-weight:900;color:#e63946;">¡HOY $9.99 USD! 🎉</span>
+      </div>
+    </div>
+
+    <div class="countdown-wrap">
+      <div class="cd-label-top">⏰ Precio de lanzamiento, termina en:</div>
+      <div class="countdown">
+        <div class="cd-unit"><div class="cd-num" id="cd-m">15</div><div class="cd-txt">min</div></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-txt">seg</div></div>
+      </div>
+      <div class="cd-note">🌿 Después sube a $19.99 USD para siempre</div>
+    </div>
+
+    <p style="font-family:'Lora',serif;font-size:clamp(16px,4.2vw,17px);color:var(--green-deep);font-weight:600;text-align:center;margin-bottom:16px;">Descargable. Lo abres desde cualquier dispositivo: celular, tablet o computadora. Acceso inmediato.</p>
+
+    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn1" class="cta-btn" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
+      🍼 Quiero saber qué darle de comer HOY
+    </a>
+    <p style="font-size:clamp(12px,3.2vw,13px);color:var(--text-light);font-weight:700;text-align:center;margin-bottom:4px;">Acceso inmediato • Empieza hoy mismo • Sin complicaciones</p>
+    <div class="cta-support" style="margin-top:10px;">
+      <span>Acceso inmediato por email</span><span>Pago seguro en Hotmart</span>
+    </div>
+  </div>
+
+  <!-- ═══ GARANTÍA INDEPENDIENTE ═══ -->
+  <div style="margin-top:32px;text-align:center;">
+    <img src="/m5/images/garantia.png" alt="Satisfacción 100% Garantizada" style="width:160px;height:160px;display:block;margin:0 auto 20px;object-fit:contain;">
+    <div class="guarantee">
+      <div class="guarantee-shield">
+        <svg width="48" height="56" viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26 2L4 11V28C4 40.5 13.5 52 26 56C38.5 52 48 40.5 48 28V11L26 2Z" fill="#e8f3ec" stroke="#4a8c65" stroke-width="2.5"/>
+          <path d="M26 6L7 14V28C7 39 15.5 49.5 26 53C36.5 49.5 45 39 45 28V14L26 6Z" fill="#c8edd6"/>
+          <path d="M17 29.5L23 35.5L35 23" stroke="#4a8c65" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="guarantee-content">
+        <div class="guarantee-title">Garantía 15 días sin preguntas</div>
+        <div class="guarantee-text">Pruébalo con tu bebé. Si sientes que no era lo que necesitabas, te devolvemos el <strong>100% de tu dinero</strong>. Sin formularios. Sin excusas.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" style="margin:32px 0;">
+
+  <!-- OBJECIONES -->
+  <div class="obj-item"><p class="obj-q">¿Funciona para bebés que rechazan absolutamente todo?</p><p class="obj-a">Sí. El Sistema de Activación Progresiva fue diseñado específicamente para bebés con rechazo severo a los sólidos, sin importar cuántas veces lo haya rechazado antes.</p></div>
+  <div class="obj-item"><p class="obj-q">¿Y si ya probé otros métodos y no me funcionaron?</p><p class="obj-a">Esa es justamente la razón por la que el Método La Fuente existe. La mayoría de las mamás que llegan acá ya probaron BLW puro, papillas tradicionales, distraer con juegos, esconder la verdura. Nada funcionó porque ninguno ataca el problema real: la respuesta neurológica del bebé. El Sistema de Activación Progresiva no compite con esos métodos, los reemplaza desde la raíz.</p></div>
+  <div class="obj-item"><p class="obj-q">¿Sirve si mi bebé tiene reflujo, alergias o nació prematuro?</p><p class="obj-a">Sí. La Guía Maestra incluye un capítulo completo sobre alergias, intolerancias y casos especiales. Las recetas están construidas con ingredientes simples y fácilmente sustituibles. Igualmente, si tu bebé tiene una condición médica diagnosticada, siempre te recomendamos validar con tu pediatra antes de empezar.</p></div>
+  <div class="obj-item"><p class="obj-q">¿Para qué edades sirve?</p><p class="obj-a">Para bebés de 6 a 15 meses. Cada guía está diseñada para una etapa específica del desarrollo.</p></div>
+  <div class="obj-item"><p class="obj-q">Mi bebé ya tiene más de 15 meses, ¿igual me sirve?</p><p class="obj-a">Sí, especialmente la Guía 4 (Pequeño Gourmet) y la Guía Maestra. Los principios del Sistema de Activación Progresiva funcionan a cualquier edad porque atacan cómo el cerebro del bebé clasifica los alimentos, no su edad cronológica. Muchas mamás con bebés de 16-24 meses ven resultados igual de rápido.</p></div>
+  <div class="obj-item"><p class="obj-q">¿Necesito cocinar todo el día?</p><p class="obj-a">Para nada. El bono "El Método Domingo" te enseña exactamente cómo dejar resueltas las comidas de toda la semana en solo 2 horas. Y el bono "SOS Mamá" tiene recetas express de 5 minutos para los días en que no tenés tiempo ni energía.</p></div>
+  <div class="obj-item"><p class="obj-q">¿Cómo recibo el producto?</p><p class="obj-a">Inmediatamente después de tu compra recibes acceso por email. Lo abres desde cualquier dispositivo: celular, tablet o computadora. Sin complicaciones.</p></div>
+  <div class="obj-item"><p class="obj-q">¿Y si no me funciona?</p><p class="obj-a">Tienes 15 días de garantía total. Si no ves resultados, te devolvemos el 100% de tu dinero. Sin formularios. Sin excusas.</p></div>
+
+  <hr class="divider">
+
+  <!-- CIERRE -->
+  <div style="background:var(--warm-white);border:1.5px solid var(--border);border-radius:22px;padding:32px 24px;text-align:center;">
+    <h2 style="font-family:'Nunito',sans-serif;font-size:clamp(22px,6vw,27px);font-weight:900;color:var(--text-dark);margin-bottom:14px;line-height:1.3;">Tu bebé no puede <span class="hl-pink">esperar.</span></h2>
+    <p style="font-family:'Lora',serif;font-size:clamp(16px,4.2vw,17px);color:var(--text-mid);line-height:1.85;margin-bottom:16px;">Cada día que pasa sin los nutrientes que necesita, es un día que su cuerpo no puede recuperar.</p>
+    <p style="font-family:'Lora',serif;font-size:clamp(16px,4.2vw,17px);color:var(--text-mid);line-height:1.85;margin-bottom:16px;">Puedes seguir improvisando, buscando en Google a las 10pm, sintiendo ese nudo en el estómago cada vez que tu bebé cierra la boca.</p>
+    <p style="font-family:'Lora',serif;font-size:clamp(16px,4.2vw,17px);color:var(--text-mid);line-height:1.85;margin-bottom:24px;">O puedes tener un sistema claro hoy, mañana y la semana que viene, por $9.99 USD con garantía completa.</p>
+    <p style="font-family:'Nunito',sans-serif;font-size:clamp(17px,4.5vw,19px);font-weight:900;color:var(--green-deep);margin-bottom:20px;">Tu bebé merece comer bien. Y tú mereces dejar de preocuparte. Hoy es el día.</p>
+    <span style="display:block;font-size:clamp(13px,3.5vw,14px);font-weight:800;color:var(--pink-deep);margin-bottom:18px;">⏰ El precio sube cuando termine el contador. No hay segunda vuelta.</span>
+    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn2" class="cta-btn-pink" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
+      🍼 Quiero saber qué darle de comer HOY
+    </a>
+    <p style="text-align:center;font-size:13px;color:var(--text-light);margin-top:12px;font-weight:700;">Acceso inmediato • Empieza hoy mismo • Garantía 15 días sin preguntas</p>
+  </div>
+
+</div>
+
+<!-- SOCIAL PROOF POPUP -->
+<div class="sp-popup" id="sp-popup">
+  <span class="sp-flag" id="sp-flag"></span>
+  <div class="sp-body">
+    <div class="sp-name" id="sp-name"></div>
+    <div class="sp-action">acaba de acceder al <strong>Método La Fuente™</strong></div>
+    <div class="sp-meta"><span class="sp-dot"></span><span id="sp-tiempo"></span>&nbsp;·&nbsp;<span id="sp-pais"></span></div>
+  </div>
+  <button class="sp-close" id="sp-close">✕</button>
+</div>
+
+<script>
+(function() {
+  const KEY = 'lf_deadline_paid_v2_m5';
+  let deadline;
+  try {
+    const s = localStorage.getItem(KEY);
+    deadline = s ? parseInt(s, 10) : null;
+    if (!deadline || isNaN(deadline) || deadline < Date.now()) {
+      deadline = Date.now() + 15 * 60 * 1000;
+      localStorage.setItem(KEY, deadline);
+    }
+  } catch(e) { deadline = Date.now() + 15 * 60 * 1000; }
+  function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
+  function tick() {
+    const diff = Math.max(0, deadline - Date.now());
+    const mins = pad(Math.floor(diff / 60000));
+    const secs = pad(Math.floor((diff % 60000) / 1000));
+    const em = document.getElementById('cd-m');
+    const es = document.getElementById('cd-s');
+    const strip = document.getElementById('strip-timer');
+    if(em) em.textContent = mins;
+    if(es) es.textContent = secs;
+    if(strip) strip.textContent = mins + ':' + secs;
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+(function() {
+  const data = [
+    { nombre: "María G.", pais: "México", bandera: "🇲🇽", tiempo: "hace 1 minuto" },
+    { nombre: "Valentina R.", pais: "Colombia", bandera: "🇨🇴", tiempo: "hace 2 minutos" },
+    { nombre: "Camila T.", pais: "Argentina", bandera: "🇦🇷", tiempo: "hace 3 minutos" },
+    { nombre: "Sofía M.", pais: "Chile", bandera: "🇨🇱", tiempo: "hace 4 minutos" },
+    { nombre: "Fernanda L.", pais: "Perú", bandera: "🇵🇪", tiempo: "hace 2 minutos" },
+    { nombre: "Andrea S.", pais: "Ecuador", bandera: "🇪🇨", tiempo: "hace 1 minuto" },
+    { nombre: "Paola N.", pais: "Bolivia", bandera: "🇧🇴", tiempo: "hace 3 minutos" },
+    { nombre: "Natalia V.", pais: "Guatemala", bandera: "🇬🇹", tiempo: "hace 4 minutos" },
+    { nombre: "Carolina B.", pais: "España", bandera: "🇪🇸", tiempo: "hace 1 minuto" },
+  ];
+  const popup = document.getElementById('sp-popup');
+  let idx = 0, hideTimer;
+  function shuffle(a) { for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+  const shuffled = shuffle([...data]);
+  function show() {
+    const d = shuffled[idx % shuffled.length]; idx++;
+    document.getElementById('sp-flag').textContent = d.bandera;
+    document.getElementById('sp-name').textContent = d.nombre;
+    document.getElementById('sp-tiempo').textContent = d.tiempo;
+    document.getElementById('sp-pais').textContent = d.pais;
+    popup.classList.remove('sp-hide'); popup.classList.add('sp-show');
+    hideTimer = setTimeout(hide, 5000);
+  }
+  function hide() {
+    clearTimeout(hideTimer);
+    popup.classList.remove('sp-show'); popup.classList.add('sp-hide');
+    setTimeout(show, 8000 + Math.random() * 5000);
+  }
+  document.getElementById('sp-close').addEventListener('click', function(e) { e.stopPropagation(); hide(); });
+  popup.addEventListener('click', function() { document.getElementById('cta-principal').scrollIntoView({behavior:'smooth', block:'center'}); });
+  const target = document.getElementById('cta-principal');
+  if (target && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(function(entries) {
+      if(entries[0].isIntersecting) { setTimeout(show, 1200); obs.disconnect(); }
+    }, { threshold: 0.2 });
+    obs.observe(target);
+  } else { setTimeout(show, 7000); }
+})();
+
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const utmBase = [params.get('utm_content'), params.get('utm_source'), params.get('utm_campaign')].filter(Boolean).join('_');
+  document.querySelectorAll('a[href*="hotmart.com"]').forEach(function(link) {
+    try {
+      const url = new URL(link.href);
+      const btnValue = url.searchParams.get('src') || 'btn';
+      url.searchParams.set('src', utmBase ? utmBase + '_' + btnValue : btnValue);
+      link.href = url.toString();
+    } catch(e) {}
+  });
+})();
+
+document.querySelectorAll('a[href*="hotmart.com"]').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    if(typeof fbq !== 'undefined') fbq('track', 'AddToCart');
+    if(typeof clarity !== 'undefined') clarity('event', 'click_cta_compra');
+  });
+});
+
+(function() {
+  const inner = document.getElementById('carouselInner');
+  const track = document.getElementById('carouselTrack');
+  const dotsWrap = document.getElementById('cDots');
+  if (!track || !inner) return;
+
+  const slides = track.querySelectorAll('.cslide');
+  const total = slides.length;
+  let current = 0;
+  let startX = 0;
+  let isDragging = false;
+
+  // Set each slide width to match container
+  function setWidths() {
+    const w = inner.offsetWidth;
+    slides.forEach(function(s) { s.style.flex = '0 0 ' + w + 'px'; s.style.width = w + 'px'; });
+    goTo(current, false);
+  }
+
+  // Build dots
+  slides.forEach(function(_, i) {
+    const dot = document.createElement('button');
+    dot.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;padding:0;transition:background 0.2s,transform 0.2s;background:' + (i === 0 ? '#4a8c65' : 'rgba(168,197,176,0.35)') + ';' + (i === 0 ? 'transform:scale(1.25);' : '');
+    dot.setAttribute('aria-label', 'Testimonio ' + (i + 1));
+    dot.addEventListener('click', function() { goTo(i); });
+    dotsWrap.appendChild(dot);
+  });
+
+  function updateDots() {
+    dotsWrap.querySelectorAll('button').forEach(function(d, i) {
+      d.style.background = i === current ? '#4a8c65' : 'rgba(168,197,176,0.35)';
+      d.style.transform = i === current ? 'scale(1.25)' : 'scale(1)';
+    });
+  }
+
+  function goTo(index, animate) {
+    if (animate === false) track.style.transition = 'none';
+    else track.style.transition = 'transform 0.4s ease';
+    current = (index + total) % total;
+    const w = inner.offsetWidth;
+    track.style.transform = 'translateX(' + (-current * w) + 'px)';
+    updateDots();
+    if (animate === false) setTimeout(function() { track.style.transition = 'transform 0.4s ease'; }, 50);
+  }
+
+  document.getElementById('cPrev').addEventListener('click', function() { goTo(current - 1); });
+  document.getElementById('cNext').addEventListener('click', function() { goTo(current + 1); });
+
+  // Touch
+  inner.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
+  inner.addEventListener('touchend', function(e) {
+    if (!isDragging) return;
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    isDragging = false;
+  });
+
+  // Init
+  setWidths();
+  window.addEventListener('resize', setWidths);
+})();
+</script>
+</body>
+</html>
