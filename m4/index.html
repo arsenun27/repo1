@@ -539,9 +539,6 @@ document.querySelectorAll('a[href*="hotmart.com"]').forEach(function(btn) {
     isDragging = false;
   });
 
-  // Auto advance
-  setInterval(function() { goTo(current + 1); }, 5000);
-
   // Init
   setWidths();
   window.addEventListener('resize', setWidths);
