@@ -465,11 +465,13 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 (function() {
   const params = new URLSearchParams(window.location.search);
   const utmBase = [params.get('utm_content'), params.get('utm_source'), params.get('utm_campaign')].filter(Boolean).join('_');
+  const fbclid = params.get('fbclid') || '';
   document.querySelectorAll('a[href*="hotmart.com"]').forEach(function(link) {
     try {
       const url = new URL(link.href);
       const btnValue = url.searchParams.get('src') || 'btn';
       url.searchParams.set('src', utmBase ? utmBase + '_' + btnValue : btnValue);
+      if (fbclid) url.searchParams.set('fbclid', fbclid);
       link.href = url.toString();
     } catch(e) {}
   });
