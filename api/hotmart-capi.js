@@ -15,22 +15,22 @@ function normalizePhone(phone) {
 }
 
 module.exports = async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
   try {
-    const body = req.body;
-    console.log('Hotmart payload:', JSON.stringify(body));
+    // Lee tanto GET (query params) como POST (body)
+    const query = req.query || {};
+    const body = req.body || {};
+    const data = { ...query, ...body };
 
-    const email    = body.buyer_email || body.email || '';
-    const phone    = body.buyer_phone || body.phone || '';
-    const name     = body.buyer_name  || body.name  || '';
-    const price    = parseFloat(body.producer_price || body.price || '9.99');
-    const currency = body.currency || 'USD';
-    const src      = body.src || '';
-    const status   = body.status || body.purchase_status || 'COMPLETE';
-    const transactionId = body.transaction || body.purchase_transaction || body.hottok || Date.now().toString();
+    console.log('Data received:', JSON.stringify(data));
+
+    const email    = data.buyer_email || data.email || '';
+    const phone    = data.buyer_phone || data.phone || '';
+    const name     = data.buyer_name  || data.name  || '';
+    const price    = parseFloat(data.producer_price || data.price || '9.99');
+    const currency = data.currency || 'USD';
+    const src      = data.src || '';
+    const status   = data.status || data.purchase_status || 'COMPLETE';
+    const transactionId = data.transaction || data.hottok || Date.now().toString();
 
     if (status && !['COMPLETE','approved','APPROVED'].includes(status)) {
       return res.status(200).json({ message: 'Skipped', status });
@@ -89,7 +89,6 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({
       success: true,
       events_received: metaResult.events_received,
-      fbtrace_id: metaResult.fbtrace_id,
       meta_raw: metaResult
     });
 
