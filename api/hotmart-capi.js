@@ -2,6 +2,7 @@ const crypto = require('crypto');
 
 const PIXEL_ID = '2167039767401065';
 const ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
+const TEST_EVENT_CODE = process.env.TEST_EVENT_CODE;
 
 function hashSHA256(value) {
   if (!value) return undefined;
@@ -62,6 +63,12 @@ module.exports = async function handler(req, res) {
       }]
     };
 
+    if (TEST_EVENT_CODE) {
+      eventPayload.test_event_code = TEST_EVENT_CODE;
+    }
+
+    console.log('Sending to Meta:', JSON.stringify(eventPayload));
+
     const metaRes = await fetch(
       `https://graph.facebook.com/v19.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
       {
@@ -72,12 +79,13 @@ module.exports = async function handler(req, res) {
     );
 
     const metaResult = await metaRes.json();
-    console.log('Meta CAPI response:', JSON.stringify(metaResult));
+    console.log('Meta response:', JSON.stringify(metaResult));
 
     return res.status(200).json({
       success: true,
       events_received: metaResult.events_received,
-      fbtrace_id: metaResult.fbtrace_id
+      fbtrace_id: metaResult.fbtrace_id,
+      meta_raw: metaResult
     });
 
   } catch (error) {
