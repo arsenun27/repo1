@@ -30,12 +30,17 @@ module.exports = async function handler(req, res) {
     const currency = body.currency || 'USD';
     const src      = body.src || '';
     const status   = body.status || body.purchase_status || 'COMPLETE';
+    const transactionId = body.transaction || body.purchase_transaction || body.hottok || Date.now().toString();
 
     if (status && !['COMPLETE','approved','APPROVED'].includes(status)) {
       return res.status(200).json({ message: 'Skipped', status });
     }
 
-    const userData = {};
+    const userData = {
+      client_user_agent: req.headers['user-agent'] || 'Mozilla/5.0',
+      external_id: hashSHA256(transactionId || email || Date.now().toString()),
+    };
+
     if (email) userData.em = hashSHA256(email);
     if (phone) userData.ph = hashSHA256(normalizePhone(phone));
     if (name) {
