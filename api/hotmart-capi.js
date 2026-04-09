@@ -16,39 +16,47 @@ function normalizePhone(phone) {
 
 module.exports = async function handler(req, res) {
   try {
-    // Lee tanto GET (query params) como POST (body)
-    const query = req.query || {};
     const body = req.body || {};
-    const data = { ...query, ...body };
+    console.log('Hotmart payload:', JSON.stringify(body));
 
-    console.log('Data received:', JSON.stringify(data));
+    // Hotmart v2.0 estructura real
+    const data = body.data || body;
+    const buyers = data.buyers || data.buyer || {};
+    const purchase = data.purchase || {};
 
-    const email    = data.buyer_email || data.email || '';
-    const phone    = data.buyer_phone || data.phone || '';
-    const name     = data.buyer_name  || data.name  || '';
-    const price    = parseFloat(data.producer_price || data.price || '9.99');
-    const currency = data.currency || 'USD';
-    const src      = data.src || '';
-    const status   = data.status || data.purchase_status || 'COMPLETE';
-    const transactionId = data.transaction || data.hottok || Date.now().toString();
+    // Datos del comprador
+    const firstName = buyers.first_name || buyers.name || '';
+    const lastName  = buyers.last_name || '';
+    const email     = buyers.email || '';
+    const phoneCode = buyers.checkout_phone_code || '';
+    const phoneNum  = buyers.checkout_phone || buyers.phone || '';
+    const phone     = phoneCode + phoneNum;
 
-    if (status && !['COMPLETE','approved','APPROVED'].includes(status)) {
+    // Datos de la compra
+    const transactionId = purchase.transaction || body.hottok || Date.now().toString();
+    const status        = purchase.status || data.status || 'COMPLETE';
+    const price         = parseFloat((purchase.price && purchase.price.value) || data.producer_price || '9.99');
+    const currency      = (purchase.price && purchase.price.currency_value) || data.currency || 'USD';
+    const src           = (data.purchase && data.purchase.src) || body.src || '';
+
+    console.log('Extracted:', { email, phone, firstName, lastName, price, currency, status, transactionId });
+
+    // Solo procesar compras completadas
+    if (status && !['COMPLETE', 'COMPLETED', 'approved', 'APPROVED'].includes(status)) {
       return res.status(200).json({ message: 'Skipped', status });
     }
 
+    // Construir user_data hasheado
     const userData = {
       client_user_agent: req.headers['user-agent'] || 'Mozilla/5.0',
-      external_id: hashSHA256(transactionId || email || Date.now().toString()),
+      external_id: hashSHA256(transactionId),
     };
 
-    if (email) userData.em = hashSHA256(email);
-    if (phone) userData.ph = hashSHA256(normalizePhone(phone));
-    if (name) {
-      const parts = name.trim().split(' ');
-      userData.fn = hashSHA256(parts[0]);
-      if (parts.length > 1) userData.ln = hashSHA256(parts.slice(1).join(' '));
-    }
-    if (src) userData.fbc = `fb.1.${Date.now()}.${src}`;
+    if (email)     userData.em = hashSHA256(email);
+    if (phone)     userData.ph = hashSHA256(normalizePhone(phone));
+    if (firstName) userData.fn = hashSHA256(firstName);
+    if (lastName)  userData.ln = hashSHA256(lastName);
+    if (src)       userData.fbc = `fb.1.${Date.now()}.${src}`;
 
     const eventPayload = {
       data: [{
