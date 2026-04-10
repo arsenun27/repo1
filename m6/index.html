@@ -213,7 +213,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
   <div class="hero">
     <!-- Bloque 1: Pre-headlines -->
     <div class="hero-badges">
-      <span class="hero-badge hero-badge-alert">⚠️ Alerta para mamás primerizas</span>
+      <span class="hero-badge hero-badge-alert">⚠️ La verdad sobre por qué rechaza la comida</span>
       <span class="hero-badge hero-badge-new">🆕 Nuevo: Incluye plan de alimentación semanal</span>
     </div>
 
@@ -234,7 +234,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
     </div>
 
     <!-- Bloque 5: CTA primario emocional -->
-    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn-hero" class="cta-btn" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
+    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btnhero" class="cta-btn" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
       🍼 ¡SÍ, QUIERO QUE MI BEBÉ COMA BIEN!
     </a>
     <div class="cta-support"><span>Acceso inmediato</span><span>Garantía 15 días</span></div>
@@ -349,7 +349,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
     <div class="cta-mid-eyebrow">⏰ Precio de lanzamiento</div>
     <p class="cta-mid-title">¿Lista para que tu bebé empiece a comer hoy?</p>
     <p class="cta-mid-price"><span class="old">$132 USD</span><span class="new">Hoy $9.99 USD</span></p>
-    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btn-mid" class="cta-btn" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
+    <a href="https://go.hotmart.com/L104732899F?ap=4d8e&offDiscount=LAFUENTE&hideBillet=1&src=btnmid" class="cta-btn" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout');">
       🍼 Quiero empezar hoy mismo
     </a>
     <p style="font-size:clamp(12px,3.2vw,13px);color:var(--text-light);font-weight:700;margin-top:8px;">Acceso inmediato • Garantía 15 días sin preguntas</p>
@@ -589,12 +589,12 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 
 (function() {
   const params = new URLSearchParams(window.location.search);
-  const utmBase = [params.get('utm_content'), params.get('utm_source'), params.get('utm_campaign')].filter(Boolean).join('_');
+  const utmBase = [params.get('utm_content'), params.get('utm_source'), params.get('utm_campaign')].filter(Boolean).join('');
   document.querySelectorAll('a[href*="hotmart.com"]').forEach(function(link) {
     try {
       const url = new URL(link.href);
       const btnValue = url.searchParams.get('src') || 'btn';
-      url.searchParams.set('src', utmBase ? utmBase + '_' + btnValue : btnValue);
+      url.searchParams.set('src', utmBase ? utmBase + btnValue : btnValue);
       link.href = url.toString();
     } catch(e) {}
   });
