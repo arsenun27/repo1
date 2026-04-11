@@ -19,41 +19,42 @@ module.exports = async function handler(req, res) {
     const body = req.body || {};
     console.log('Hotmart payload:', JSON.stringify(body));
 
-    // Hotmart v2.0 estructura real
     const data = body.data || body;
-    const buyers = data.buyers || data.buyer || {};
+    const buyer = data.buyer || data.buyers || {};
     const purchase = data.purchase || {};
 
-    // Datos del comprador
-    const firstName = buyers.first_name || buyers.name || '';
-    const lastName  = buyers.last_name || '';
-    const email     = buyers.email || '';
-    const phoneCode = buyers.checkout_phone_code || '';
-    const phoneNum  = buyers.checkout_phone || buyers.phone || '';
+    // Email — puede estar en buyer.email directamente
+    const email     = buyer.email || '';
+    const firstName = buyer.first_name || buyer.name || '';
+    const lastName  = buyer.last_name || '';
+    const phoneCode = buyer.checkout_phone_code || '';
+    const phoneNum  = buyer.checkout_phone || buyer.phone || '';
     const phone     = phoneCode + phoneNum;
 
-    // Datos de la compra
+    // Precio — Hotmart real usa original_offer_price
+    const priceObj  = purchase.original_offer_price || purchase.price || {};
+    const price     = parseFloat(priceObj.value || data.producer_price || '9.99');
+    const currency  = priceObj.currency_value || data.currency || 'USD';
+
+    // Transaccion y status
     const transactionId = purchase.transaction || body.hottok || Date.now().toString();
-    const status        = purchase.status || data.status || 'COMPLETE';
-    const price         = parseFloat((purchase.price && purchase.price.value) || data.producer_price || '9.99');
-    const currency      = (purchase.price && purchase.price.currency_value) || data.currency || 'USD';
-    const src           = (data.purchase && data.purchase.src) || body.src || '';
+    const status        = purchase.status || data.status || 'COMPLETED';
+    const src           = purchase.src || data.src || body.src || '';
 
     console.log('Extracted:', { email, phone, firstName, lastName, price, currency, status, transactionId });
 
-    // Solo procesar compras completadas
     if (status && !['COMPLETE', 'COMPLETED', 'approved', 'APPROVED'].includes(status)) {
+      console.log('Skipped status:', status);
       return res.status(200).json({ message: 'Skipped', status });
     }
 
-    // Construir user_data hasheado
     const userData = {
       client_user_agent: req.headers['user-agent'] || 'Mozilla/5.0',
       external_id: hashSHA256(transactionId),
     };
 
     if (email)     userData.em = hashSHA256(email);
-    if (phone)     userData.ph = hashSHA256(normalizePhone(phone));
+    if (phone && normalizePhone(phone)) userData.ph = hashSHA256(normalizePhone(phone));
     if (firstName) userData.fn = hashSHA256(firstName);
     if (lastName)  userData.ln = hashSHA256(lastName);
     if (src)       userData.fbc = `fb.1.${Date.now()}.${src}`;
