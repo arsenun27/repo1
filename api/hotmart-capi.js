@@ -11,7 +11,8 @@ function hashSHA256(value) {
 
 function normalizePhone(phone) {
   if (!phone) return undefined;
-  return phone.replace(/[^\d]/g, '');
+  const cleaned = phone.replace(/[^\d]/g, '');
+  return cleaned.length > 0 ? cleaned : undefined;
 }
 
 module.exports = async function handler(req, res) {
@@ -23,7 +24,7 @@ module.exports = async function handler(req, res) {
     const buyer = data.buyer || data.buyers || {};
     const purchase = data.purchase || {};
 
-    // Email — puede estar en buyer.email directamente
+    // Datos del comprador
     const email     = buyer.email || '';
     const firstName = buyer.first_name || buyer.name || '';
     const lastName  = buyer.last_name || '';
@@ -31,48 +32,58 @@ module.exports = async function handler(req, res) {
     const phoneNum  = buyer.checkout_phone || buyer.phone || '';
     const phone     = phoneCode + phoneNum;
 
-    // Precio — Hotmart real usa original_offer_price
-    const priceObj  = purchase.original_offer_price || purchase.price || {};
-    const price     = parseFloat(priceObj.value || data.producer_price || '9.99');
-    const currency  = priceObj.currency_value || data.currency || 'USD';
-
-    // Transaccion y status
+    // Datos de la compra
+    const priceObj      = purchase.original_offer_price || purchase.price || {};
+    const price         = parseFloat(priceObj.value || data.producer_price || '9.99');
+    const currency      = priceObj.currency_value || data.currency || 'USD';
     const transactionId = purchase.transaction || body.hottok || Date.now().toString();
-    const status        = purchase.status || data.status || 'COMPLETED';
+    const status        = purchase.status || data.status || '';
     const src           = purchase.src || data.src || body.src || '';
+    const event         = body.event || '';
 
-    console.log('Extracted:', { email, phone, firstName, lastName, price, currency, status, transactionId });
+    console.log('Extracted:', { email, firstName, lastName, price, currency, status, transactionId, event });
 
-    if (status && !['COMPLETE', 'COMPLETED', 'approved', 'APPROVED'].includes(status)) {
-      console.log('Skipped status:', status);
-      return res.status(200).json({ message: 'Skipped', status });
+    // Determinar tipo de evento
+    const isApproved  = ['COMPLETE', 'COMPLETED', 'APPROVED', 'approved'].includes(status) || event === 'PURCHASE_COMPLETE' || event === 'PURCHASE_APPROVED';
+    const isRefunded  = ['REFUNDED', 'CANCELLED', 'CANCELED', 'CHARGEBACK'].includes(status) || event === 'PURCHASE_REFUNDED' || event === 'PURCHASE_CHARGEBACK';
+
+    if (!isApproved && !isRefunded) {
+      console.log('Skipped - status/event not handled:', { status, event });
+      return res.status(200).json({ message: 'Skipped', status, event });
     }
 
+    // Construir user_data
     const userData = {
       client_user_agent: req.headers['user-agent'] || 'Mozilla/5.0',
       external_id: hashSHA256(transactionId),
     };
 
-    if (email)     userData.em = hashSHA256(email);
-    if (phone && normalizePhone(phone)) userData.ph = hashSHA256(normalizePhone(phone));
-    if (firstName) userData.fn = hashSHA256(firstName);
-    if (lastName)  userData.ln = hashSHA256(lastName);
-    if (src)       userData.fbc = `fb.1.${Date.now()}.${src}`;
+    if (email)                    userData.em = hashSHA256(email);
+    if (normalizePhone(phone))    userData.ph = hashSHA256(normalizePhone(phone));
+    if (firstName)                userData.fn = hashSHA256(firstName);
+    if (lastName)                 userData.ln = hashSHA256(lastName);
+    if (src)                      userData.fbc = `fb.1.${Date.now()}.${src}`;
+
+    const eventName = isRefunded ? 'Purchase' : 'Purchase';
+    // Meta no tiene evento Refund nativo via CAPI — mandamos Purchase con valor negativo para reembolsos
+    const eventValue = isRefunded ? -Math.abs(price) : price;
 
     const eventPayload = {
       data: [{
-        event_name: 'Purchase',
+        event_name: eventName,
         event_time: Math.floor(Date.now() / 1000),
         event_source_url: 'https://pay.hotmart.com',
         action_source: 'website',
         user_data: userData,
         custom_data: {
-          value: price,
+          value: eventValue,
           currency: currency,
           content_name: 'Metodo La Fuente',
           content_type: 'product',
           content_ids: ['metodo-la-fuente'],
-          num_items: 1
+          num_items: 1,
+          order_id: transactionId,
+          ...(isRefunded && { custom_properties: { refund: true } })
         }
       }]
     };
@@ -97,6 +108,8 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
+      event_sent: eventName,
+      is_refund: isRefunded,
       events_received: metaResult.events_received,
       meta_raw: metaResult
     });
